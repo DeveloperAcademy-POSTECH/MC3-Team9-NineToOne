@@ -1,0 +1,5 @@
+# Lines starting with '#' are comments.
+# Each line is a file pattern followed by one or more owners.
+
+# These owners will be the default owners for everything in the repo.
+* @taek0622 @limhyoseok @feldblume5263 @Somin-DS @moonjs0113 @jsyworks
