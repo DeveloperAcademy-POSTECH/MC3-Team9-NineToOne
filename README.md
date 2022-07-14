@@ -26,6 +26,7 @@
 
 
 ## ✨ Skills & Tech Stack
+
 UIKit
 
 ## 📚 Documentation
@@ -38,6 +39,9 @@ UIKit
 [MIT](https://choosealicense.com/licenses/mit/)
 
 ## ✔️ History
-2022.07.14. GIT REPO CREATED
+
+- 2022.07.14. GIT REPO CREATED
 
 ## 🧩 ETC
+
+Blah Blah
