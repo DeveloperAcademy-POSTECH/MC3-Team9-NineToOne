@@ -36,3 +36,8 @@ UIKit
 ## :lock_with_ink_pen: License
 
 [MIT](https://choosealicense.com/licenses/mit/)
+
+## ✔️ History
+2022.07.14. GIT REPO CREATED
+
+## 🧩 ETC
