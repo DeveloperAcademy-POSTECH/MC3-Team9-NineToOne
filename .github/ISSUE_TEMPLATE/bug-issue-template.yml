@@ -15,7 +15,7 @@ body:
     validations:
       required: true
       
-  - type: markdown
+  - type: textarea
     id: what-bug
     attributes:
       label: Bug Report
