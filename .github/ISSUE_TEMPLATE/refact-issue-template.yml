@@ -1,4 +1,4 @@
-name: Fix Template
+name: Refactoring Template
 description: 리펙토링 할 때 사용하는 템플릿
 title: "[Refact]: Refact 이슈 제목"
 labels: ["refact"]
