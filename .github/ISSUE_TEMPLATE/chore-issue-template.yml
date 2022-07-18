@@ -1,0 +1,14 @@
+name: Chore Template
+description: 기타 사항에 대한 이슈 템플릿
+title: "[Chore]: 이슈 제목"
+labels: ["chore"]
+
+body:
+  - type: textarea
+    id: what-chore
+    attributes:
+      label: Contents
+      description: 수정 사항을 적어주세요.
+      placeholder: "수정된 내용"
+    validations:
+      required: true
