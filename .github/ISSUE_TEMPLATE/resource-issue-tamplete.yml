@@ -1,0 +1,30 @@
+name: Resource Tamplate
+description: Resource를 추가하거나, 변경, 삭제했을 때 사용하는 템플릿
+title: "[Resource]: Feature Title"
+labels: ["resource"]
+
+body:
+  - type: textarea
+    id: resource-contents
+    attributes:
+      label: Resource 설명
+      description: 추가되었거나, 변경된 Resource를 적어주세요.
+      placeholder: ex. Color Assets 추가
+    validations:
+      required: true
+  - type: input
+    id: related-issue
+    attributes:
+      label: Related Issue(Optional)
+      description: 관련된 Issue가 있다면 적어주세요.
+      placeholder: "ex. #14"
+    validations:
+      required: false
+  - type: textarea
+    id: photo
+    attributes:
+      label: Photo(Optional)
+      description: 필요한 경우 이미지 등을 첨부해주세요.
+      placeholder: ex. 맞춤법 요정 이미지
+    validations:
+      required: false
