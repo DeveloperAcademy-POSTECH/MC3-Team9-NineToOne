@@ -1,0 +1,28 @@
+name: Fix Template
+description: 리펙토링 할 때 사용하는 템플릿
+title: "[Refact]: Refact 이슈 제목"
+labels: ["refact"]
+
+body:
+  - type: textarea
+    id: before-fix
+    attributes:
+      label: Current State
+      description: Refactoring 할 내용(파일)
+      placeholder: "Convention 내용에 따라 변수명 변경"
+    validations:
+      required: true
+  - type: input
+    id: expected-period
+    attributes:
+      label: 예상 작업 기간
+      placeholder: ~ MM/DD(E) ex. ~ 07/12(화)
+    validations:
+      required: true
+  - type: input
+    id: real-period
+    attributes:
+      label: 실제 작업 기간(PR 작성 직전에 수정)
+      placeholder: ~ MM/DD(E) ex. ~ 07/12(화)
+    validations:
+      required: false
