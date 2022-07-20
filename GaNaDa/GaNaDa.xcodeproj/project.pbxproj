@@ -1,0 +1,601 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C70BCA2628878A4800569961 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70BCA2528878A4800569961 /* AppDelegate.swift */; };
+		C70BCA2828878A4800569961 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70BCA2728878A4800569961 /* SceneDelegate.swift */; };
+		C70BCA2A28878A4800569961 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70BCA2928878A4800569961 /* ViewController.swift */; };
+		C70BCA2D28878A4800569961 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C70BCA2B28878A4800569961 /* Main.storyboard */; };
+		C70BCA2F28878A4900569961 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C70BCA2E28878A4900569961 /* Assets.xcassets */; };
+		C70BCA3228878A4900569961 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C70BCA3028878A4900569961 /* LaunchScreen.storyboard */; };
+		C70BCA3D28878A4900569961 /* GaNaDaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70BCA3C28878A4900569961 /* GaNaDaTests.swift */; };
+		C70BCA4728878A4900569961 /* GaNaDaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70BCA4628878A4900569961 /* GaNaDaUITests.swift */; };
+		C70BCA4928878A4900569961 /* GaNaDaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70BCA4828878A4900569961 /* GaNaDaUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C70BCA3928878A4900569961 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C70BCA1A28878A4800569961 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C70BCA2128878A4800569961;
+			remoteInfo = GaNaDa;
+		};
+		C70BCA4328878A4900569961 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C70BCA1A28878A4800569961 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C70BCA2128878A4800569961;
+			remoteInfo = GaNaDa;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		C70BCA2228878A4800569961 /* GaNaDa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GaNaDa.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C70BCA2528878A4800569961 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C70BCA2728878A4800569961 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		C70BCA2928878A4800569961 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C70BCA2C28878A4800569961 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C70BCA2E28878A4900569961 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C70BCA3128878A4900569961 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C70BCA3328878A4900569961 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C70BCA3828878A4900569961 /* GaNaDaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GaNaDaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C70BCA3C28878A4900569961 /* GaNaDaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaNaDaTests.swift; sourceTree = "<group>"; };
+		C70BCA4228878A4900569961 /* GaNaDaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GaNaDaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C70BCA4628878A4900569961 /* GaNaDaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaNaDaUITests.swift; sourceTree = "<group>"; };
+		C70BCA4828878A4900569961 /* GaNaDaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaNaDaUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C70BCA1F28878A4800569961 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C70BCA3528878A4900569961 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C70BCA3F28878A4900569961 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C70BCA1928878A4800569961 = {
+			isa = PBXGroup;
+			children = (
+				C70BCA2428878A4800569961 /* GaNaDa */,
+				C70BCA3B28878A4900569961 /* GaNaDaTests */,
+				C70BCA4528878A4900569961 /* GaNaDaUITests */,
+				C70BCA2328878A4800569961 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C70BCA2328878A4800569961 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C70BCA2228878A4800569961 /* GaNaDa.app */,
+				C70BCA3828878A4900569961 /* GaNaDaTests.xctest */,
+				C70BCA4228878A4900569961 /* GaNaDaUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C70BCA2428878A4800569961 /* GaNaDa */ = {
+			isa = PBXGroup;
+			children = (
+				C70BCA2528878A4800569961 /* AppDelegate.swift */,
+				C70BCA2728878A4800569961 /* SceneDelegate.swift */,
+				C70BCA2928878A4800569961 /* ViewController.swift */,
+				C70BCA2B28878A4800569961 /* Main.storyboard */,
+				C70BCA2E28878A4900569961 /* Assets.xcassets */,
+				C70BCA3028878A4900569961 /* LaunchScreen.storyboard */,
+				C70BCA3328878A4900569961 /* Info.plist */,
+			);
+			path = GaNaDa;
+			sourceTree = "<group>";
+		};
+		C70BCA3B28878A4900569961 /* GaNaDaTests */ = {
+			isa = PBXGroup;
+			children = (
+				C70BCA3C28878A4900569961 /* GaNaDaTests.swift */,
+			);
+			path = GaNaDaTests;
+			sourceTree = "<group>";
+		};
+		C70BCA4528878A4900569961 /* GaNaDaUITests */ = {
+			isa = PBXGroup;
+			children = (
+				C70BCA4628878A4900569961 /* GaNaDaUITests.swift */,
+				C70BCA4828878A4900569961 /* GaNaDaUITestsLaunchTests.swift */,
+			);
+			path = GaNaDaUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C70BCA2128878A4800569961 /* GaNaDa */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C70BCA4C28878A4900569961 /* Build configuration list for PBXNativeTarget "GaNaDa" */;
+			buildPhases = (
+				C70BCA1E28878A4800569961 /* Sources */,
+				C70BCA1F28878A4800569961 /* Frameworks */,
+				C70BCA2028878A4800569961 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GaNaDa;
+			productName = GaNaDa;
+			productReference = C70BCA2228878A4800569961 /* GaNaDa.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C70BCA3728878A4900569961 /* GaNaDaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C70BCA4F28878A4900569961 /* Build configuration list for PBXNativeTarget "GaNaDaTests" */;
+			buildPhases = (
+				C70BCA3428878A4900569961 /* Sources */,
+				C70BCA3528878A4900569961 /* Frameworks */,
+				C70BCA3628878A4900569961 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C70BCA3A28878A4900569961 /* PBXTargetDependency */,
+			);
+			name = GaNaDaTests;
+			productName = GaNaDaTests;
+			productReference = C70BCA3828878A4900569961 /* GaNaDaTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		C70BCA4128878A4900569961 /* GaNaDaUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C70BCA5228878A4900569961 /* Build configuration list for PBXNativeTarget "GaNaDaUITests" */;
+			buildPhases = (
+				C70BCA3E28878A4900569961 /* Sources */,
+				C70BCA3F28878A4900569961 /* Frameworks */,
+				C70BCA4028878A4900569961 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C70BCA4428878A4900569961 /* PBXTargetDependency */,
+			);
+			name = GaNaDaUITests;
+			productName = GaNaDaUITests;
+			productReference = C70BCA4228878A4900569961 /* GaNaDaUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C70BCA1A28878A4800569961 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1330;
+				LastUpgradeCheck = 1330;
+				TargetAttributes = {
+					C70BCA2128878A4800569961 = {
+						CreatedOnToolsVersion = 13.3;
+					};
+					C70BCA3728878A4900569961 = {
+						CreatedOnToolsVersion = 13.3;
+						TestTargetID = C70BCA2128878A4800569961;
+					};
+					C70BCA4128878A4900569961 = {
+						CreatedOnToolsVersion = 13.3;
+						TestTargetID = C70BCA2128878A4800569961;
+					};
+				};
+			};
+			buildConfigurationList = C70BCA1D28878A4800569961 /* Build configuration list for PBXProject "GaNaDa" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C70BCA1928878A4800569961;
+			productRefGroup = C70BCA2328878A4800569961 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C70BCA2128878A4800569961 /* GaNaDa */,
+				C70BCA3728878A4900569961 /* GaNaDaTests */,
+				C70BCA4128878A4900569961 /* GaNaDaUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C70BCA2028878A4800569961 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C70BCA3228878A4900569961 /* LaunchScreen.storyboard in Resources */,
+				C70BCA2F28878A4900569961 /* Assets.xcassets in Resources */,
+				C70BCA2D28878A4800569961 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C70BCA3628878A4900569961 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C70BCA4028878A4900569961 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C70BCA1E28878A4800569961 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C70BCA2A28878A4800569961 /* ViewController.swift in Sources */,
+				C70BCA2628878A4800569961 /* AppDelegate.swift in Sources */,
+				C70BCA2828878A4800569961 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C70BCA3428878A4900569961 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C70BCA3D28878A4900569961 /* GaNaDaTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C70BCA3E28878A4900569961 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C70BCA4928878A4900569961 /* GaNaDaUITestsLaunchTests.swift in Sources */,
+				C70BCA4728878A4900569961 /* GaNaDaUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C70BCA3A28878A4900569961 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C70BCA2128878A4800569961 /* GaNaDa */;
+			targetProxy = C70BCA3928878A4900569961 /* PBXContainerItemProxy */;
+		};
+		C70BCA4428878A4900569961 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C70BCA2128878A4800569961 /* GaNaDa */;
+			targetProxy = C70BCA4328878A4900569961 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C70BCA2B28878A4800569961 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C70BCA2C28878A4800569961 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C70BCA3028878A4900569961 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C70BCA3128878A4900569961 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C70BCA4A28878A4900569961 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C70BCA4B28878A4900569961 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C70BCA4D28878A4900569961 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = GaNaDa/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.9to1.GaNaDa;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		C70BCA4E28878A4900569961 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = GaNaDa/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.9to1.GaNaDa;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		C70BCA5028878A4900569961 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.9to1.GaNaDaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GaNaDa.app/GaNaDa";
+			};
+			name = Debug;
+		};
+		C70BCA5128878A4900569961 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.9to1.GaNaDaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GaNaDa.app/GaNaDa";
+			};
+			name = Release;
+		};
+		C70BCA5328878A4900569961 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.9to1.GaNaDaUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = GaNaDa;
+			};
+			name = Debug;
+		};
+		C70BCA5428878A4900569961 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.9to1.GaNaDaUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = GaNaDa;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C70BCA1D28878A4800569961 /* Build configuration list for PBXProject "GaNaDa" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C70BCA4A28878A4900569961 /* Debug */,
+				C70BCA4B28878A4900569961 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C70BCA4C28878A4900569961 /* Build configuration list for PBXNativeTarget "GaNaDa" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C70BCA4D28878A4900569961 /* Debug */,
+				C70BCA4E28878A4900569961 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C70BCA4F28878A4900569961 /* Build configuration list for PBXNativeTarget "GaNaDaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C70BCA5028878A4900569961 /* Debug */,
+				C70BCA5128878A4900569961 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C70BCA5228878A4900569961 /* Build configuration list for PBXNativeTarget "GaNaDaUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C70BCA5328878A4900569961 /* Debug */,
+				C70BCA5428878A4900569961 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C70BCA1A28878A4800569961 /* Project object */;
+}
