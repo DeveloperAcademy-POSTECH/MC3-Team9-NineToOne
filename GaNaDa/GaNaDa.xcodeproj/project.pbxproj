@@ -9,13 +9,13 @@
 /* Begin PBXBuildFile section */
 		C70BCA2628878A4800569961 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70BCA2528878A4800569961 /* AppDelegate.swift */; };
 		C70BCA2828878A4800569961 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70BCA2728878A4800569961 /* SceneDelegate.swift */; };
-		C70BCA2A28878A4800569961 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70BCA2928878A4800569961 /* ViewController.swift */; };
 		C70BCA2D28878A4800569961 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C70BCA2B28878A4800569961 /* Main.storyboard */; };
 		C70BCA2F28878A4900569961 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C70BCA2E28878A4900569961 /* Assets.xcassets */; };
 		C70BCA3228878A4900569961 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C70BCA3028878A4900569961 /* LaunchScreen.storyboard */; };
 		C70BCA3D28878A4900569961 /* GaNaDaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70BCA3C28878A4900569961 /* GaNaDaTests.swift */; };
 		C70BCA4728878A4900569961 /* GaNaDaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70BCA4628878A4900569961 /* GaNaDaUITests.swift */; };
 		C70BCA4928878A4900569961 /* GaNaDaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70BCA4828878A4900569961 /* GaNaDaUITestsLaunchTests.swift */; };
+		C70BCA612887975400569961 /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C70BCA602887975400569961 /* Color.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +39,6 @@
 		C70BCA2228878A4800569961 /* GaNaDa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GaNaDa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C70BCA2528878A4800569961 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C70BCA2728878A4800569961 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C70BCA2928878A4800569961 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C70BCA2C28878A4800569961 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C70BCA2E28878A4900569961 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C70BCA3128878A4900569961 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +48,7 @@
 		C70BCA4228878A4900569961 /* GaNaDaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GaNaDaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C70BCA4628878A4900569961 /* GaNaDaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaNaDaUITests.swift; sourceTree = "<group>"; };
 		C70BCA4828878A4900569961 /* GaNaDaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaNaDaUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		C70BCA602887975400569961 /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,13 +99,11 @@
 		C70BCA2428878A4800569961 /* GaNaDa */ = {
 			isa = PBXGroup;
 			children = (
-				C70BCA2528878A4800569961 /* AppDelegate.swift */,
-				C70BCA2728878A4800569961 /* SceneDelegate.swift */,
-				C70BCA2928878A4800569961 /* ViewController.swift */,
-				C70BCA2B28878A4800569961 /* Main.storyboard */,
-				C70BCA2E28878A4900569961 /* Assets.xcassets */,
-				C70BCA3028878A4900569961 /* LaunchScreen.storyboard */,
-				C70BCA3328878A4900569961 /* Info.plist */,
+				C70BCA5C2887948900569961 /* Manager */,
+				C70BCA582887929C00569961 /* Model */,
+				C70BCA572887929900569961 /* View */,
+				C70BCA562887928B00569961 /* Resource */,
+				C70BCA552887928400569961 /* App */,
 			);
 			path = GaNaDa;
 			sourceTree = "<group>";
@@ -125,6 +123,80 @@
 				C70BCA4828878A4900569961 /* GaNaDaUITestsLaunchTests.swift */,
 			);
 			path = GaNaDaUITests;
+			sourceTree = "<group>";
+		};
+		C70BCA552887928400569961 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				C70BCA2528878A4800569961 /* AppDelegate.swift */,
+				C70BCA2728878A4800569961 /* SceneDelegate.swift */,
+				C70BCA3328878A4900569961 /* Info.plist */,
+				C70BCA3028878A4900569961 /* LaunchScreen.storyboard */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		C70BCA562887928B00569961 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				C70BCA5A288792D900569961 /* Assets */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		C70BCA572887929900569961 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C70BCA2B28878A4800569961 /* Main.storyboard */,
+				C70BCA5D288796CC00569961 /* TodayQuiz */,
+				C70BCA5E288796D700569961 /* History */,
+				C70BCA5F288796E300569961 /* QuizDetail */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C70BCA582887929C00569961 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C70BCA5A288792D900569961 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				C70BCA2E28878A4900569961 /* Assets.xcassets */,
+				C70BCA602887975400569961 /* Color.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		C70BCA5C2887948900569961 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		C70BCA5D288796CC00569961 /* TodayQuiz */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = TodayQuiz;
+			sourceTree = "<group>";
+		};
+		C70BCA5E288796D700569961 /* History */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = History;
+			sourceTree = "<group>";
+		};
+		C70BCA5F288796E300569961 /* QuizDetail */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = QuizDetail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,6 +304,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C70BCA3228878A4900569961 /* LaunchScreen.storyboard in Resources */,
+				C70BCA612887975400569961 /* Color.xcassets in Resources */,
 				C70BCA2F28878A4900569961 /* Assets.xcassets in Resources */,
 				C70BCA2D28878A4800569961 /* Main.storyboard in Resources */,
 			);
@@ -258,7 +331,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C70BCA2A28878A4800569961 /* ViewController.swift in Sources */,
 				C70BCA2628878A4800569961 /* AppDelegate.swift in Sources */,
 				C70BCA2828878A4800569961 /* SceneDelegate.swift in Sources */,
 			);
@@ -366,7 +438,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -420,7 +492,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -438,12 +510,15 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = GaNaDa/Info.plist;
+				INFOPLIST_FILE = GaNaDa/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UIUserInterfaceStyle = LIght;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -465,12 +540,15 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = GaNaDa/Info.plist;
+				INFOPLIST_FILE = GaNaDa/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UIUserInterfaceStyle = LIght;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
