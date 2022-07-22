@@ -16,6 +16,11 @@
 		C70BCA4728878A4900569961 /* GaNaDaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70BCA4628878A4900569961 /* GaNaDaUITests.swift */; };
 		C70BCA4928878A4900569961 /* GaNaDaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70BCA4828878A4900569961 /* GaNaDaUITestsLaunchTests.swift */; };
 		C70BCA612887975400569961 /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C70BCA602887975400569961 /* Color.xcassets */; };
+		C7FB2D8D2889A67400D0A8A5 /* CardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FB2D8C2889A67400D0A8A5 /* CardCollectionViewCell.swift */; };
+		C7FB2D8F2889A6F000D0A8A5 /* CardCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7FB2D8E2889A6F000D0A8A5 /* CardCollectionViewCell.xib */; };
+		C7FB2D912889A95200D0A8A5 /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FB2D902889A95200D0A8A5 /* CardViewController.swift */; };
+		C7FB2D942889BF4800D0A8A5 /* CardTransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FB2D922889B2C000D0A8A5 /* CardTransitionManager.swift */; };
+		C7FB2D962889C26000D0A8A5 /* QuizDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FB2D952889C26000D0A8A5 /* QuizDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +54,11 @@
 		C70BCA4628878A4900569961 /* GaNaDaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaNaDaUITests.swift; sourceTree = "<group>"; };
 		C70BCA4828878A4900569961 /* GaNaDaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaNaDaUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		C70BCA602887975400569961 /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
+		C7FB2D8C2889A67400D0A8A5 /* CardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCollectionViewCell.swift; sourceTree = "<group>"; };
+		C7FB2D8E2889A6F000D0A8A5 /* CardCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardCollectionViewCell.xib; sourceTree = "<group>"; };
+		C7FB2D902889A95200D0A8A5 /* CardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
+		C7FB2D922889B2C000D0A8A5 /* CardTransitionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardTransitionManager.swift; sourceTree = "<group>"; };
+		C7FB2D952889C26000D0A8A5 /* QuizDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +109,7 @@
 		C70BCA2428878A4800569961 /* GaNaDa */ = {
 			isa = PBXGroup;
 			children = (
+				C7FB2D8B2889A65900D0A8A5 /* CardTransition */,
 				C70BCA5C2887948900569961 /* Manager */,
 				C70BCA582887929C00569961 /* Model */,
 				C70BCA572887929900569961 /* View */,
@@ -197,6 +208,26 @@
 			children = (
 			);
 			path = QuizDetail;
+			sourceTree = "<group>";
+		};
+		C7FB2D8B2889A65900D0A8A5 /* CardTransition */ = {
+			isa = PBXGroup;
+			children = (
+				C7FB2D972889C85100D0A8A5 /* Dummy */,
+				C7FB2D8C2889A67400D0A8A5 /* CardCollectionViewCell.swift */,
+				C7FB2D902889A95200D0A8A5 /* CardViewController.swift */,
+				C7FB2D8E2889A6F000D0A8A5 /* CardCollectionViewCell.xib */,
+			);
+			path = CardTransition;
+			sourceTree = "<group>";
+		};
+		C7FB2D972889C85100D0A8A5 /* Dummy */ = {
+			isa = PBXGroup;
+			children = (
+				C7FB2D952889C26000D0A8A5 /* QuizDetailViewController.swift */,
+				C7FB2D922889B2C000D0A8A5 /* CardTransitionManager.swift */,
+			);
+			path = Dummy;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -304,6 +335,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C70BCA3228878A4900569961 /* LaunchScreen.storyboard in Resources */,
+				C7FB2D8F2889A6F000D0A8A5 /* CardCollectionViewCell.xib in Resources */,
 				C70BCA612887975400569961 /* Color.xcassets in Resources */,
 				C70BCA2F28878A4900569961 /* Assets.xcassets in Resources */,
 				C70BCA2D28878A4800569961 /* Main.storyboard in Resources */,
@@ -331,7 +363,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C7FB2D962889C26000D0A8A5 /* QuizDetailViewController.swift in Sources */,
+				C7FB2D942889BF4800D0A8A5 /* CardTransitionManager.swift in Sources */,
+				C7FB2D912889A95200D0A8A5 /* CardViewController.swift in Sources */,
 				C70BCA2628878A4800569961 /* AppDelegate.swift in Sources */,
+				C7FB2D8D2889A67400D0A8A5 /* CardCollectionViewCell.swift in Sources */,
 				C70BCA2828878A4800569961 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -509,6 +545,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Z629PZ4XVL;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GaNaDa/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -539,6 +576,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Z629PZ4XVL;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GaNaDa/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iZb-QC-tCB">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -76,7 +77,7 @@
         <!--오늘의 퀴즈-->
         <scene sceneID="shC-P3-r5k">
             <objects>
-                <viewController id="Ut6-Yp-ny7" sceneMemberID="viewController">
+                <viewController id="Ut6-Yp-ny7" customClass="CardViewController" customModule="GaNaDa" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MEl-QI-cKU">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -120,39 +121,24 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="4mY-0s-P4z">
+                            <collectionView multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="4mY-0s-P4z">
                                 <rect key="frame" x="9" y="149" width="396" height="664"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="04W-3r-vlb">
-                                    <size key="itemSize" width="128" height="128"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="04W-3r-vlb">
+                                    <size key="itemSize" width="396" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="cdl-jE-xCm">
-                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                    <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" id="v3b-w7-o6e">
+                                        <rect key="frame" x="0.0" y="0.0" width="396" height="128"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="fNz-MM-Vax">
-                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="pBl-yL-AD1">
+                                            <rect key="frame" x="0.0" y="0.0" width="396" height="128"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </collectionViewCellContentView>
-                                    </collectionViewCell>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="GqC-tz-aPF">
-                                        <rect key="frame" x="268" y="0.0" width="128" height="128"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="bsQ-nF-SXr">
-                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </collectionViewCellContentView>
-                                    </collectionViewCell>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="5H4-6K-zHz">
-                                        <rect key="frame" x="0.0" y="138" width="128" height="128"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="i65-Jw-4Yq">
-                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="396" height="128"/>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -171,15 +157,18 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="오늘의 퀴즈" image="house" catalog="system" id="k31-Zn-Wt3"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="quizCollectionView" destination="4mY-0s-P4z" id="SuI-71-dht"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bLh-Mq-iJa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1842" y="-237"/>
+            <point key="canvasLocation" x="1840.5797101449277" y="-237.05357142857142"/>
         </scene>
-        <!--View Controller-->
+        <!--Quiz Detail View Controller-->
         <scene sceneID="ad0-NP-btC">
             <objects>
-                <viewController id="HqB-oE-7TX" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="QuizDetailView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="HqB-oE-7TX" customClass="QuizDetailViewController" customModule="GaNaDa" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jGW-QO-JZ1">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -188,7 +177,7 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="753"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dgr-9M-jCM">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="203.5"/>
+                                        <rect key="frame" x="0.0" y="30" width="414" height="203.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="xJf-Z5-IWa">
                                                 <rect key="frame" x="48" y="0.0" width="318" height="203.5"/>
@@ -263,7 +252,7 @@
                                     </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="dgr-9M-jCM" firstAttribute="top" secondItem="iRL-uH-0gS" secondAttribute="top" id="6Xh-y6-rbY"/>
+                                    <constraint firstItem="dgr-9M-jCM" firstAttribute="top" secondItem="iRL-uH-0gS" secondAttribute="top" constant="30" id="6Xh-y6-rbY"/>
                                     <constraint firstAttribute="bottom" secondItem="dgr-9M-jCM" secondAttribute="bottom" id="8rH-gP-0EZ"/>
                                     <constraint firstItem="dgr-9M-jCM" firstAttribute="leading" secondItem="iRL-uH-0gS" secondAttribute="leading" id="chF-aE-dKe"/>
                                     <constraint firstItem="dgr-9M-jCM" firstAttribute="width" secondItem="iRL-uH-0gS" secondAttribute="width" id="mrt-Qa-Emr"/>
@@ -292,10 +281,14 @@
                             <constraint firstItem="iPr-DK-wq3" firstAttribute="trailing" secondItem="iRL-uH-0gS" secondAttribute="trailing" id="om3-tU-2zA"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="closeButton" destination="duc-qO-GO4" id="k43-Cb-NnC"/>
+                        <outlet property="scrollView" destination="iRL-uH-0gS" id="hBM-rO-bJl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="axR-qC-znk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2768" y="183"/>
+            <point key="canvasLocation" x="2920" y="-38"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="HcO-s7-EBO">
