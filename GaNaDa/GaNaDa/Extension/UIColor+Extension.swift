@@ -21,28 +21,29 @@ extension UIColor {
         )
     }
     
-    convenience init(rgb: Int) {
+    convenience init(hex: Int) {
         self.init(
-            red: (rgb >> 16) & 0xFF,
-            green: (rgb >> 8) & 0xFF,
-            blue: rgb & 0xFF
+            red: (hex >> 16) & 0xFF,
+            green: (hex >> 8) & 0xFF,
+            blue: hex & 0xFF
         )
+        
     }
     
     static func customColor(_ name: AssetsColor) -> UIColor {
         switch name {
         case .brand:
-            return UIColor(rgb:  0x217CE6)
+            return UIColor(hex: 0x217CE6)
         case .subBrand:
-            return UIColor(rgb: 0x7DBAFC)
+            return UIColor(hex: 0x7DBAFC)
         case .customGreen:
-            return UIColor(rgb: 0x57CA44)
+            return UIColor(hex: 0x57CA44)
         case .customRed:
-            return UIColor(rgb: 0xE31109)
+            return UIColor(hex: 0xE31109)
         case .customGray:
-            return UIColor(rgb: 0x979797)
+            return UIColor(hex: 0x979797)
         case .customLightgray:
-            return UIColor(rgb: 0xFAFAFB)
+            return UIColor(hex: 0xFAFAFB)
         }
     }
 }
