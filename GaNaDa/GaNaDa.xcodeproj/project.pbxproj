@@ -16,6 +16,9 @@
 		C70BCA4728878A4900569961 /* GaNaDaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70BCA4628878A4900569961 /* GaNaDaUITests.swift */; };
 		C70BCA4928878A4900569961 /* GaNaDaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70BCA4828878A4900569961 /* GaNaDaUITestsLaunchTests.swift */; };
 		C70BCA612887975400569961 /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C70BCA602887975400569961 /* Color.xcassets */; };
+		E29228C1288D033D0051779B /* QuizType1.xib in Resources */ = {isa = PBXBuildFile; fileRef = E29228C0288D033D0051779B /* QuizType1.xib */; };
+		E29228C7288D263C0051779B /* QuizType1.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29228C6288D263C0051779B /* QuizType1.swift */; };
+		E29228CB288D9D690051779B /* Quiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29228CA288D9D690051779B /* Quiz.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,9 @@
 		C70BCA4628878A4900569961 /* GaNaDaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaNaDaUITests.swift; sourceTree = "<group>"; };
 		C70BCA4828878A4900569961 /* GaNaDaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaNaDaUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		C70BCA602887975400569961 /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
+		E29228C0288D033D0051779B /* QuizType1.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuizType1.xib; sourceTree = "<group>"; };
+		E29228C6288D263C0051779B /* QuizType1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizType1.swift; sourceTree = "<group>"; };
+		E29228CA288D9D690051779B /* Quiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quiz.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +187,9 @@
 		C70BCA5D288796CC00569961 /* TodayQuiz */ = {
 			isa = PBXGroup;
 			children = (
+				E29228C6288D263C0051779B /* QuizType1.swift */,
+				E29228C0288D033D0051779B /* QuizType1.xib */,
+				E29228CA288D9D690051779B /* Quiz.swift */,
 			);
 			path = TodayQuiz;
 			sourceTree = "<group>";
@@ -304,6 +313,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C70BCA3228878A4900569961 /* LaunchScreen.storyboard in Resources */,
+				E29228C1288D033D0051779B /* QuizType1.xib in Resources */,
 				C70BCA612887975400569961 /* Color.xcassets in Resources */,
 				C70BCA2F28878A4900569961 /* Assets.xcassets in Resources */,
 				C70BCA2D28878A4800569961 /* Main.storyboard in Resources */,
@@ -332,6 +342,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				C70BCA2628878A4800569961 /* AppDelegate.swift in Sources */,
+				E29228CB288D9D690051779B /* Quiz.swift in Sources */,
+				E29228C7288D263C0051779B /* QuizType1.swift in Sources */,
 				C70BCA2828878A4800569961 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
