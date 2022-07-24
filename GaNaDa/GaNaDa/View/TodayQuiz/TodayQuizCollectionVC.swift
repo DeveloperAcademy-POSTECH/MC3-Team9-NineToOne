@@ -11,6 +11,7 @@ import UIKit
 class TodayQuizViewController: UIViewController {
 
     @IBOutlet weak var todayQuizCollectionView: UICollectionView!
+    @IBOutlet weak var dateLabel: UILabel!
     
     var todayQuizs: [Quiz] = [Quiz(question: "나는 ios 개발자가 * 싶다.", type: "blank", rightAnswer: "되고", wrongAnswer: "돼고"),
                               Quiz(question: "정말 너를 * 좋니.", type: "blank", rightAnswer: "어떡하면", wrongAnswer: "어떻하면"),
@@ -18,6 +19,11 @@ class TodayQuizViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy/MM/dd"
+        let currentDate = formatter.string(from: Date())
+        dateLabel.text = currentDate
 
         // Do any additional setup after loading the view.
         let todayQuizBlankCellNib = UINib(nibName: "QuizType1", bundle: nil)

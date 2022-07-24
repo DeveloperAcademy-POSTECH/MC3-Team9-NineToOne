@@ -155,6 +155,7 @@
                     <tabBarItem key="tabBarItem" title="오늘의 퀴즈" image="house" catalog="system" id="k31-Zn-Wt3"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="dateLabel" destination="eXL-v2-ZMH" id="27Q-a3-SrV"/>
                         <outlet property="todayQuizCollectionView" destination="4mY-0s-P4z" id="bKy-hQ-2F6"/>
                     </connections>
                 </viewController>
