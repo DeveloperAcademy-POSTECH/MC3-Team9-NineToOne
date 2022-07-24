@@ -19,6 +19,7 @@
 		E29228C1288D033D0051779B /* QuizType1.xib in Resources */ = {isa = PBXBuildFile; fileRef = E29228C0288D033D0051779B /* QuizType1.xib */; };
 		E29228C7288D263C0051779B /* QuizType1.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29228C6288D263C0051779B /* QuizType1.swift */; };
 		E29228CB288D9D690051779B /* Quiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29228CA288D9D690051779B /* Quiz.swift */; };
+		E29228CD288DB04E0051779B /* TodayQuizCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29228CC288DB04E0051779B /* TodayQuizCollectionVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		E29228C0288D033D0051779B /* QuizType1.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuizType1.xib; sourceTree = "<group>"; };
 		E29228C6288D263C0051779B /* QuizType1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizType1.swift; sourceTree = "<group>"; };
 		E29228CA288D9D690051779B /* Quiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quiz.swift; sourceTree = "<group>"; };
+		E29228CC288DB04E0051779B /* TodayQuizCollectionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayQuizCollectionVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +189,7 @@
 		C70BCA5D288796CC00569961 /* TodayQuiz */ = {
 			isa = PBXGroup;
 			children = (
+				E29228CC288DB04E0051779B /* TodayQuizCollectionVC.swift */,
 				E29228C6288D263C0051779B /* QuizType1.swift */,
 				E29228C0288D033D0051779B /* QuizType1.xib */,
 				E29228CA288D9D690051779B /* Quiz.swift */,
@@ -345,6 +348,7 @@
 				E29228CB288D9D690051779B /* Quiz.swift in Sources */,
 				E29228C7288D263C0051779B /* QuizType1.swift in Sources */,
 				C70BCA2828878A4800569961 /* SceneDelegate.swift in Sources */,
+				E29228CD288DB04E0051779B /* TodayQuizCollectionVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
