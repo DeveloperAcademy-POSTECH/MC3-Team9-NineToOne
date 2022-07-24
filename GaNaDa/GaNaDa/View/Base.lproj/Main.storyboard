@@ -81,7 +81,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="3aM-7C-r0S">
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="3aM-7C-r0S" userLabel="level">
                                 <rect key="frame" x="9" y="84" width="396" height="45"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="NN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H4h-95-Tth">
@@ -121,7 +121,7 @@
                                 </subviews>
                             </stackView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="4mY-0s-P4z">
-                                <rect key="frame" x="19" y="149" width="376" height="664"/>
+                                <rect key="frame" x="19" y="179.5" width="376" height="633.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="04W-3r-vlb">
                                     <size key="itemSize" width="128" height="128"/>
@@ -131,16 +131,24 @@
                                 </collectionViewFlowLayout>
                                 <cells/>
                             </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eXL-v2-ZMH" userLabel="date">
+                                <rect key="frame" x="9" y="151" width="41.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="5R0-Ss-FXP"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="3aM-7C-r0S" firstAttribute="centerX" secondItem="5R0-Ss-FXP" secondAttribute="centerX" id="4lT-uI-IFb"/>
+                            <constraint firstItem="eXL-v2-ZMH" firstAttribute="leading" secondItem="3aM-7C-r0S" secondAttribute="leading" id="6OC-3i-XQa"/>
                             <constraint firstItem="3aM-7C-r0S" firstAttribute="width" secondItem="5R0-Ss-FXP" secondAttribute="width" multiplier="43/45" id="OgD-FD-4B9"/>
                             <constraint firstItem="4mY-0s-P4z" firstAttribute="centerX" secondItem="5R0-Ss-FXP" secondAttribute="centerX" id="SUz-CO-pIr"/>
                             <constraint firstItem="3aM-7C-r0S" firstAttribute="top" secondItem="5R0-Ss-FXP" secondAttribute="top" constant="40" id="cu4-LC-e1l"/>
                             <constraint firstItem="5R0-Ss-FXP" firstAttribute="bottom" secondItem="4mY-0s-P4z" secondAttribute="bottom" id="hQn-hE-Zly"/>
-                            <constraint firstItem="4mY-0s-P4z" firstAttribute="top" secondItem="3aM-7C-r0S" secondAttribute="bottom" constant="20" id="oWY-8J-zFd"/>
+                            <constraint firstItem="4mY-0s-P4z" firstAttribute="top" secondItem="eXL-v2-ZMH" secondAttribute="bottom" constant="8" id="phe-eb-J5B"/>
+                            <constraint firstItem="eXL-v2-ZMH" firstAttribute="top" secondItem="3aM-7C-r0S" secondAttribute="bottom" constant="22" id="qBv-1T-EEf"/>
                             <constraint firstItem="4mY-0s-P4z" firstAttribute="width" secondItem="5R0-Ss-FXP" secondAttribute="width" multiplier="354/390" id="yhs-pu-fHr"/>
                         </constraints>
                     </view>
