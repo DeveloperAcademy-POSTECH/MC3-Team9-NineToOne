@@ -157,9 +157,16 @@
 			children = (
 				AB3D6B10288E70D3005C452F /* QuizType1.swift */,
 				AB3D6B11288E70D3005C452F /* QuizType1.xib */,
-				AB3D6B12288E70D3005C452F /* Quiz.swift */,
 			);
 			path = TodayQuiz;
+			sourceTree = "<group>";
+		};
+		AB3D6B17288E7515005C452F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AB3D6B12288E70D3005C452F /* Quiz.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		AB75333B288A6DA800A68BFB /* Extension */ = {
@@ -212,8 +219,7 @@
 			isa = PBXGroup;
 			children = (
 				AB75333B288A6DA800A68BFB /* Extension */,
-				C70BCA5C2887948900569961 /* Manager */,
-				C70BCA582887929C00569961 /* Model */,
+				AB3D6B17288E7515005C452F /* Model */,
 				C70BCA572887929900569961 /* View */,
 				C70BCA562887928B00569961 /* Resource */,
 				C70BCA552887928400569961 /* App */,
@@ -264,16 +270,8 @@
 				C70BCA2B28878A4800569961 /* Main.storyboard */,
 				AB3D6B0F288E70D3005C452F /* TodayQuiz */,
 				AB24C04A288E395C00849B38 /* History */,
-				C70BCA5F288796E300569961 /* QuizDetail */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		C70BCA582887929C00569961 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		C70BCA5A288792D900569961 /* Assets */ = {
@@ -283,20 +281,6 @@
 				C70BCA602887975400569961 /* Color.xcassets */,
 			);
 			path = Assets;
-			sourceTree = "<group>";
-		};
-		C70BCA5C2887948900569961 /* Manager */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Manager;
-			sourceTree = "<group>";
-		};
-		C70BCA5F288796E300569961 /* QuizDetail */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = QuizDetail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
