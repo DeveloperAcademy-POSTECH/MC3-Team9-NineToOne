@@ -13,7 +13,7 @@ final class QuizType1: UICollectionViewCell {
     @IBOutlet weak var rightAnswer: UIButton!
     @IBOutlet weak var wrongAnswer: UIButton!
 
-    var data: Quiz = Quiz(question: "샘플 문장", type: "Blank", rightAnswer: "정답", wrongAnswer: "오답") {
+    var data: Quiz = Quiz(question: "샘플 문장", type: QuizType.Blank, rightAnswer: "정답", wrongAnswer: "오답") {
         didSet {
             quizQuestion.text = makeQuizSentence(quiz: data)
             rightAnswer.setTitle(data.rightAnswer, for: UIControl.State.normal)
