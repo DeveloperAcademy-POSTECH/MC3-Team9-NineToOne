@@ -19,7 +19,7 @@ struct HistoryLayoutValue {
 
 final class HistoryViewController: UIViewController {
     
-    private var historyCollectionView = HistoryCollectionView()
+    private lazy var historyCollectionView = HistoryCollectionView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
