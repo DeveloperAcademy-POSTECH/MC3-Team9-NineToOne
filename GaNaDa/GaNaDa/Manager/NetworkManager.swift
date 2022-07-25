@@ -18,7 +18,6 @@ enum NetworkError: Error {
     case invalidData
     case invalidURL
     case failureResponse
-    case managerIsNil
     case errorEncodingJson
     case errorDecodingJson
 }
@@ -81,7 +80,7 @@ extension NetworkManager {
     }
     
     /// GET Request
-    func getRequest(route: Route, _ completeHandler: @escaping NetworkClosure) {
+    func getRequest(route: Route, _ completeHandler: @escaping NetworkClosure<Data>) {
         let urlString = self.baseURL + route.rawValue
         
         guard let url = URL(string: urlString) else {
@@ -95,7 +94,7 @@ extension NetworkManager {
     }
     
     /// POST Request
-    func postRequest<D: Codable>(route: Route, body: D, _ completeHandler: @escaping NetworkClosure) {
+    func postRequest<D: Codable>(route: Route, body: D, _ completeHandler: @escaping NetworkClosure<Data>) {
         let urlString = self.baseURL + route.rawValue
         
         guard let url = URL(string: urlString) else {
