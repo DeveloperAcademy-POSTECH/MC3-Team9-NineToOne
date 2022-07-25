@@ -24,7 +24,7 @@ final class QuizType1: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        contentView.layer.cornerRadius = 16
+        contentView.layer.cornerRadius = QuizType1LayoutValue.Cell.cornerLadius
     }
 }
 
@@ -33,5 +33,11 @@ private extension QuizType1 {
         var quizQuestion = quiz.question
         quizQuestion = quizQuestion.replacingOccurrences(of: "*", with: String(repeating: "_", count: quiz.rightAnswer.count + 2))
         return quizQuestion
+    }
+    
+    struct QuizType1LayoutValue {
+        enum Cell {
+            static let cornerLadius = 16.0
+        }
     }
 }
