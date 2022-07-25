@@ -5,7 +5,6 @@
 //  Created by hyo on 2022/07/24.
 //
 
-import Foundation
 import UIKit
 
 final class QuizType1: UICollectionViewCell {
