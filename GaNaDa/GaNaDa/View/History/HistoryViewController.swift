@@ -14,9 +14,6 @@ final class HistoryViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let flowLayout = historyCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
-            flowLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
-        }
         configureCollectionView()
     }
     
@@ -33,16 +30,17 @@ private extension HistoryViewController {
     
     func setCollectionViewLayout() {
         historyCollectionView.translatesAutoresizingMaskIntoConstraints = false
-        historyCollectionView.topAnchor.constraint(equalTo: view.topAnchor,
-                                                   constant: 140).isActive = true
-        historyCollectionView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
-        historyCollectionView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
-        historyCollectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -1 * (tabBarController?.tabBar.frame.height ?? .zero)).isActive = true
+        NSLayoutConstraint.activate([
+            historyCollectionView.topAnchor.constraint(equalTo: view.topAnchor, constant: 140),
+            historyCollectionView.rightAnchor.constraint(equalTo: view.rightAnchor),
+            historyCollectionView.leftAnchor.constraint(equalTo: view.leftAnchor),
+            historyCollectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -1 * (tabBarController?.tabBar.frame.height ?? .zero))
+        ])
     }
 }
 
 extension HistoryViewController: UICollectionViewDelegate {
-    
+
 }
 
 extension HistoryViewController: UICollectionViewDataSource {
@@ -52,10 +50,9 @@ extension HistoryViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = historyCollectionView.dequeueReusableCell(withReuseIdentifier: QuizType2CollectionViewCell.id, for: indexPath) as? QuizType2CollectionViewCell
-        else {
-            return UICollectionViewCell()
-        }
+        else { return UICollectionViewCell() }
         cell.backgroundColor = .lightGray
+        cell.layer.cornerRadius = 16.0
         return cell
     }
 }
