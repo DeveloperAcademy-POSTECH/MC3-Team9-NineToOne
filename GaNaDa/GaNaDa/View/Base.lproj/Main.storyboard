@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iZb-QC-tCB">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -12,7 +13,7 @@
         <!--히스토리-->
         <scene sceneID="Ndz-E1-Iq5">
             <objects>
-                <viewController id="evk-su-QYa" sceneMemberID="viewController">
+                <viewController id="evk-su-QYa" customClass="HistoryViewController" customModule="GaNaDa" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yIK-I3-T0p">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -43,28 +44,13 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="2z2-JT-9tu">
-                                <rect key="frame" x="9" y="115" width="396" height="781"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="nEv-l3-9uA">
-                                    <size key="itemSize" width="128" height="128"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells/>
-                            </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ncQ-WY-gLi"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="JsH-H6-tkZ" firstAttribute="centerX" secondItem="ncQ-WY-gLi" secondAttribute="centerX" id="4Un-t8-qAv"/>
                             <constraint firstItem="JsH-H6-tkZ" firstAttribute="top" secondItem="ncQ-WY-gLi" secondAttribute="top" constant="40" id="Spv-dq-UK9"/>
-                            <constraint firstItem="2z2-JT-9tu" firstAttribute="top" secondItem="JsH-H6-tkZ" secondAttribute="bottom" id="TXi-Ka-jWK"/>
-                            <constraint firstAttribute="bottom" secondItem="2z2-JT-9tu" secondAttribute="bottom" id="aSU-qf-sFE"/>
                             <constraint firstItem="JsH-H6-tkZ" firstAttribute="width" secondItem="ncQ-WY-gLi" secondAttribute="width" multiplier="43/45" id="hvG-gX-Yd6"/>
-                            <constraint firstItem="2z2-JT-9tu" firstAttribute="width" secondItem="ncQ-WY-gLi" secondAttribute="width" multiplier="0.956522" id="ibZ-2k-9et"/>
-                            <constraint firstItem="2z2-JT-9tu" firstAttribute="centerX" secondItem="ncQ-WY-gLi" secondAttribute="centerX" id="keU-0W-5CB"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="히스토리" image="leaf.fill" catalog="system" id="wRH-Xf-YwM"/>
