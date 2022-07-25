@@ -7,6 +7,15 @@
 
 import UIKit
 
+struct HistoryLayoutValue {
+    enum CornerLadius {
+        static let cell = 16.0
+    }
+    
+    enum Padding {
+        static let collectionViewFromTop: CGFloat = 140
+    }
+}
 
 final class HistoryViewController: UIViewController {
     
@@ -19,6 +28,7 @@ final class HistoryViewController: UIViewController {
     
 }
 
+// MARK: - Configure CollectionView
 private extension HistoryViewController {
     func configureCollectionView() {
         historyCollectionView.dataSource = self
@@ -28,10 +38,15 @@ private extension HistoryViewController {
         historyCollectionView.backgroundColor = .secondarySystemBackground
     }
     
+    
+}
+
+// MARK: - Controller Layout
+private extension HistoryViewController {
     func setCollectionViewLayout() {
         historyCollectionView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            historyCollectionView.topAnchor.constraint(equalTo: view.topAnchor, constant: 140),
+            historyCollectionView.topAnchor.constraint(equalTo: view.topAnchor, constant: HistoryLayoutValue.Padding.collectionViewFromTop),
             historyCollectionView.rightAnchor.constraint(equalTo: view.rightAnchor),
             historyCollectionView.leftAnchor.constraint(equalTo: view.leftAnchor),
             historyCollectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -1 * (tabBarController?.tabBar.frame.height ?? .zero))
@@ -45,14 +60,14 @@ extension HistoryViewController: UICollectionViewDelegate {
 
 extension HistoryViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
+        return 5
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = historyCollectionView.dequeueReusableCell(withReuseIdentifier: QuizType2CollectionViewCell.id, for: indexPath) as? QuizType2CollectionViewCell
         else { return UICollectionViewCell() }
-        cell.backgroundColor = .lightGray
-        cell.layer.cornerRadius = 16.0
+        cell.backgroundColor = .lightGray // TODO: - merge 이후 extension 이용하여 수정 예정
+        cell.layer.cornerRadius = HistoryLayoutValue.CornerLadius.cell
         return cell
     }
 }
