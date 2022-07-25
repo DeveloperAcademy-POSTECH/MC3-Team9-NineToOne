@@ -19,7 +19,7 @@ struct HistoryLayoutValue {
 
 final class HistoryViewController: UIViewController {
     
-    @IBOutlet weak private var historyCollectionView: UICollectionView!
+    private var historyCollectionView = HistoryCollectionView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,11 +31,9 @@ final class HistoryViewController: UIViewController {
 // MARK: - Configure CollectionView
 private extension HistoryViewController {
     func configureCollectionView() {
-        historyCollectionView.dataSource = self
-        historyCollectionView.delegate = self
-        historyCollectionView.register(QuizType2CollectionViewCell.self, forCellWithReuseIdentifier: QuizType2CollectionViewCell.id)
-        setCollectionViewLayout()
-        historyCollectionView.backgroundColor = .secondarySystemBackground
+        self.view.addSubview(historyCollectionView)
+        historyCollectionView.collectionView.dataSource = self
+        historyCollectionView.collectionView.delegate = self
     }
 }
 
@@ -64,9 +62,8 @@ extension HistoryViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = historyCollectionView.dequeueReusableCell(withReuseIdentifier: QuizType2CollectionViewCell.id, for: indexPath) as? QuizType2CollectionViewCell
+        guard let cell = historyCollectionView.collectionView.dequeueReusableCell(withReuseIdentifier: QuizType2CollectionViewCell.id, for: indexPath) as? QuizType2CollectionViewCell
         else { return UICollectionViewCell() }
-        cell.backgroundColor = .lightGray // TODO: - merge 이후 extension 이용하여 수정 예정
         cell.layer.cornerRadius = HistoryLayoutValue.CornerLadius.cell
         return cell
     }

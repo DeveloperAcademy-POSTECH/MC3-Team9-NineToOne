@@ -43,15 +43,15 @@ final class QuizType2CollectionViewCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        configureComponents(frame: frame)
+        configureComponents()
     }
     
     required init?(coder: NSCoder) {
         fatalError("Not implemented required init?(coder: NSCoder)")
     }
     
-    private func configureComponents(frame: CGRect) {
-        configureContentView(frame: frame)
+    private func configureComponents() {
+        configureContentView()
         configureContentNumberLabel()
         configureContentLabel()
         configurecontentAnswerAButton()
@@ -61,8 +61,9 @@ final class QuizType2CollectionViewCell: UICollectionViewCell {
 
 // MARK: - Cell autolayout
 private extension QuizType2CollectionViewCell {
-    func configureContentView(frame: CGRect) {
+    func configureContentView() {
         self.contentView.translatesAutoresizingMaskIntoConstraints = false
+        self.backgroundColor = .customColor(.customLightgray)
         NSLayoutConstraint.activate([
             self.contentView.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width - QuizType2LayoutValue.Padding.cellHoriz * 2),
             self.topAnchor.constraint(equalTo: self.contentView.topAnchor),
@@ -75,12 +76,13 @@ private extension QuizType2CollectionViewCell {
     func configureContentNumberLabel() {
         self.contentView.addSubview(contentNumberLabel)
         contentNumberLabel.translatesAutoresizingMaskIntoConstraints = false
-        contentNumberLabel.text = "문제 2"
-        contentNumberLabel.font = UIFont.systemFont(ofSize: 14) // TODO: - merge 이후 extension 이용하여 수정 예정
-        contentNumberLabel.textColor = .black // TODO: - merge 이후 extension 이용하여 수정 예정
+        contentNumberLabel.text = "문제 N"
+        contentNumberLabel.font = UIFont.customFont(.content) // TODO: - merge 이후 extension 이용하여 수정 예정
+        contentNumberLabel.textColor = UIColor.customColor(.customGray) // TODO: - merge 이후 extension 이용하여 수정 예정
         contentNumberLabel.textAlignment = .left
         contentNumberLabel.sizeToFit()
         NSLayoutConstraint.activate([
+            contentNumberLabel.heightAnchor.constraint(equalToConstant: 20),
             contentNumberLabel.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: QuizType2LayoutValue.Padding.textTop),
             contentNumberLabel.leftAnchor.constraint(equalTo: self.contentView.leftAnchor, constant: QuizType2LayoutValue.Padding.textLeft)
         ])
@@ -90,11 +92,12 @@ private extension QuizType2CollectionViewCell {
         self.contentView.addSubview(quizContentLabel)
         quizContentLabel.translatesAutoresizingMaskIntoConstraints = false
         quizContentLabel.text = "다음 중 맞는 것을 고르세요"
-        quizContentLabel.font = UIFont.systemFont(ofSize: 14) // TODO: - merge 이후 extension 이용하여 수정 예정
-        quizContentLabel.textColor = .black // TODO: - merge 이후 extension 이용하여 수정 예정
+        quizContentLabel.font = UIFont.customFont(.content) // TODO: - merge 이후 extension 이용하여 수정 예정
+        quizContentLabel.textColor = UIColor.customColor(.customGray)// TODO: - merge 이후 extension 이용하여 수정 예정
         quizContentLabel.textAlignment = .left
         quizContentLabel.sizeToFit()
         NSLayoutConstraint.activate([
+            quizContentLabel.heightAnchor.constraint(equalToConstant: 20),
             quizContentLabel.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: QuizType2LayoutValue.Padding.textTop),
             quizContentLabel.leftAnchor.constraint(equalTo: self.contentNumberLabel.rightAnchor, constant: QuizType2LayoutValue.Padding.rightFromContentNumber)
         ])
@@ -109,7 +112,7 @@ private extension QuizType2CollectionViewCell {
             contentAnswerAButton.rightAnchor.constraint(equalTo: self.contentView.rightAnchor, constant: -1 * QuizType2LayoutValue.Padding.buttonHoriz),
             contentAnswerAButton.heightAnchor.constraint(equalToConstant: QuizType2LayoutValue.Size.Height.answerButton)
         ])
-        contentAnswerAButton.backgroundColor = .blue
+        contentAnswerAButton.backgroundColor = .customColor(.subBrand)
         contentAnswerAButton.layer.cornerRadius = QuizType2LayoutValue.CornerRadius.answerButton
     }
     
@@ -123,7 +126,7 @@ private extension QuizType2CollectionViewCell {
             contentAnswerBButton.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor, constant: -1 * QuizType2LayoutValue.Padding.buttonFromBottom),
             contentAnswerBButton.heightAnchor.constraint(equalToConstant: QuizType2LayoutValue.Size.Height.answerButton)
         ])
-        contentAnswerBButton.backgroundColor = .blue
+        contentAnswerBButton.backgroundColor = .customColor(.subBrand)
         contentAnswerBButton.layer.cornerRadius = QuizType2LayoutValue.CornerRadius.answerButton
     }
 }

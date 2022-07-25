@@ -41,7 +41,7 @@ extension UIColor {
         case .customRed:
             return UIColor(hex: 0xE31109)
         case .customGray:
-            return UIColor(hex: 0x979797)
+            return UIColor(hex: 0x767676)
         case .customLightgray:
             return UIColor(hex: 0xFAFAFB)
         }
