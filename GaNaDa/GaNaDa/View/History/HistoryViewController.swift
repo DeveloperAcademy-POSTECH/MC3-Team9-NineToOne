@@ -37,8 +37,6 @@ private extension HistoryViewController {
         setCollectionViewLayout()
         historyCollectionView.backgroundColor = .secondarySystemBackground
     }
-    
-    
 }
 
 // MARK: - Controller Layout
@@ -54,10 +52,12 @@ private extension HistoryViewController {
     }
 }
 
+// MARK: - UICollectionViewDelegate
 extension HistoryViewController: UICollectionViewDelegate {
 
 }
 
+// MARK: - UICollectionViewDataSource
 extension HistoryViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 5

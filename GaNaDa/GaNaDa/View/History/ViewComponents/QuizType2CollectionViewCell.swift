@@ -59,6 +59,7 @@ final class QuizType2CollectionViewCell: UICollectionViewCell {
     }
 }
 
+// MARK: - Cell autolayout
 private extension QuizType2CollectionViewCell {
     func configureContentView(frame: CGRect) {
         self.contentView.translatesAutoresizingMaskIntoConstraints = false
