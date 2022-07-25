@@ -7,14 +7,17 @@
 
 import Foundation
 
-struct Quiz {
+struct Quiz: Codable {
+    var quizID: Int = 0
     let question: String
     let type: QuizType
     let rightAnswer: String
     let wrongAnswer: String
+    var description: String = ""
+    var example: [String] = []
 }
 
-enum QuizType {
+enum QuizType: String, Codable {
     case Blank
     case choice
 }
