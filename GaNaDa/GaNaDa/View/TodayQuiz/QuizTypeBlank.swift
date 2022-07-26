@@ -7,13 +7,13 @@
 
 import UIKit
 
-final class QuizType1: UICollectionViewCell {
+final class QuizTypeBlank: UICollectionViewCell {
     @IBOutlet weak var quizIndex: UILabel!
     @IBOutlet weak var quizQuestion: UILabel!
     @IBOutlet weak var rightAnswer: UIButton!
     @IBOutlet weak var wrongAnswer: UIButton!
 
-    var data: Quiz = Quiz(question: "샘플 문장", type: QuizType.Blank, rightAnswer: "정답", wrongAnswer: "오답") {
+    var data: Quiz = Quiz(question: "샘플 문장", type: QuizType.blank, rightAnswer: "정답", wrongAnswer: "오답") {
         didSet {
             quizQuestion.text = makeQuizSentence(quiz: data)
             rightAnswer.setTitle(data.rightAnswer, for: UIControl.State.normal)
@@ -27,7 +27,7 @@ final class QuizType1: UICollectionViewCell {
     }
 }
 
-private extension QuizType1 {
+private extension QuizTypeBlank {
     func makeQuizSentence(quiz: Quiz) -> String {
         var quizQuestion = quiz.question
         quizQuestion = quizQuestion.replacingOccurrences(of: "*", with: String(repeating: "_", count: quiz.rightAnswer.count + 2))

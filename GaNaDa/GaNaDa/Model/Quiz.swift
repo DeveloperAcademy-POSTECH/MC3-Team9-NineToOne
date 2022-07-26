@@ -18,7 +18,7 @@ struct Quiz: Codable {
 }
 
 enum QuizType: String, Codable {
-    case Blank
+    case blank
     case choice
 }
 
