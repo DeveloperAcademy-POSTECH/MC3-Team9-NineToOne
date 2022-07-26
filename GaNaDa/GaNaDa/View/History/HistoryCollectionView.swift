@@ -33,7 +33,6 @@ class HistoryCollectionView: UIView {
 private extension HistoryCollectionView {
     func configureCollectionView() {
         self.addSubview(self.collectionView)
-        collectionView.backgroundColor = .secondarySystemBackground
     }
     
     func setCollectionViewLayout() {

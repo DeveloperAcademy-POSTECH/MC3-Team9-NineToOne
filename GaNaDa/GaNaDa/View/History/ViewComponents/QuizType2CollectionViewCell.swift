@@ -71,6 +71,7 @@ private extension QuizType2CollectionViewCell {
     func configureContentView() {
         self.backgroundColor = .customColor(.customLightgray)
         self.layer.cornerRadius = HistoryLayoutValue.CornerLadius.cell
+        self.layer.applyFigmaShadow(color: .black, alpha: 0.1, x: 0, y: 4, blur: 25, spread: 0)
         NSLayoutConstraint.activate([
             self.contentView.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width - QuizType2LayoutValue.Padding.cellHoriz * 2),
             self.contentView.topAnchor.constraint(equalTo: self.topAnchor),
@@ -121,6 +122,8 @@ private extension QuizType2CollectionViewCell {
         ])
         contentAnswerAButton.backgroundColor = .customColor(.subBrand)
         contentAnswerAButton.layer.cornerRadius = QuizType2LayoutValue.CornerRadius.answerButton
+        contentAnswerAButton.titleLabel?.font = .customFont(.subContent)
+        contentAnswerAButton.setTitleColor(.white, for: .normal)
     }
     
     func configurecontentAnswerBButton() {
@@ -135,5 +138,24 @@ private extension QuizType2CollectionViewCell {
         ])
         contentAnswerBButton.backgroundColor = .customColor(.subBrand)
         contentAnswerBButton.layer.cornerRadius = QuizType2LayoutValue.CornerRadius.answerButton
+        contentAnswerBButton.titleLabel?.font = .customFont(.subContent)
+        contentAnswerBButton.setTitleColor(.white, for: .normal)
+    }
+}
+
+// REFERENCE: - https://baechukim.tistory.com/112
+extension CALayer {
+    func applyFigmaShadow(color: UIColor, alpha: Float, x: CGFloat, y: CGFloat, blur: CGFloat, spread: CGFloat) {
+        masksToBounds = false
+        shadowColor = color.cgColor
+        shadowOpacity = alpha
+        shadowOffset = CGSize(width: x, height: y)
+        shadowRadius = blur / UIScreen.main.scale
+        if spread == 0 {
+            shadowPath = nil
+        } else {
+            let rect = bounds.insetBy(dx: -spread, dy: -spread)
+            shadowPath = UIBezierPath(rect: rect).cgPath
+        }
     }
 }
