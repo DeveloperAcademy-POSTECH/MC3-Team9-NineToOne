@@ -12,9 +12,9 @@ final class TodayQuizViewController: UIViewController {
 
     @IBOutlet weak var todayQuizCollectionView: UICollectionView!
     
-    var todayQuizs: [Quiz] = [Quiz(question: "나는 ios 개발자가 * 싶다.", type: QuizType.Blank, rightAnswer: "되고", wrongAnswer: "돼고"),
-                              Quiz(question: "정말 너를 * 좋니.", type: QuizType.Blank, rightAnswer: "어떡하면", wrongAnswer: "어떻하면"),
-                              Quiz(question: "오늘도 안 오면 *.", type: QuizType.Blank, rightAnswer: "어떡해", wrongAnswer: "어떻게")]
+    var todayQuizs: [Quiz] = [Quiz(question: "나는 ios 개발자가 * 싶다.", type: QuizType.blank, rightAnswer: "되고", wrongAnswer: "돼고"),
+                              Quiz(question: "정말 너를 * 좋니.", type: QuizType.blank, rightAnswer: "어떡하면", wrongAnswer: "어떻하면"),
+                              Quiz(question: "오늘도 안 오면 *.", type: QuizType.blank, rightAnswer: "어떡해", wrongAnswer: "어떻게")]
     
     override func viewDidLoad() {
         super.viewDidLoad()
