@@ -8,7 +8,7 @@
 import UIKit
 
 
-class TodayQuizViewController: UIViewController {
+final class TodayQuizViewController: UIViewController {
 
     @IBOutlet weak var todayQuizCollectionView: UICollectionView!
     
@@ -31,7 +31,7 @@ class TodayQuizViewController: UIViewController {
     }
 }
 
-extension TodayQuizViewController {
+private extension TodayQuizViewController {
     func creatCompositionalLayout() -> UICollectionViewLayout {
         
         let layout = UICollectionViewCompositionalLayout{
