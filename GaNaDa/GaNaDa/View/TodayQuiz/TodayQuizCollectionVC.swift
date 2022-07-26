@@ -20,7 +20,7 @@ final class TodayQuizViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        let todayQuizBlankCellNib = UINib(nibName: "QuizType1", bundle: nil)
+        let todayQuizBlankCellNib = UINib(nibName: "QuizTypeBlank", bundle: nil)
         
         todayQuizCollectionView.register(todayQuizBlankCellNib, forCellWithReuseIdentifier: "todayQuizBlankCell")
         
@@ -68,7 +68,7 @@ extension TodayQuizViewController: UICollectionViewDataSource{
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = todayQuizCollectionView.dequeueReusableCell(withReuseIdentifier: "todayQuizBlankCell", for: indexPath) as! QuizType1
+        let cell = todayQuizCollectionView.dequeueReusableCell(withReuseIdentifier: "todayQuizBlankCell", for: indexPath) as! QuizTypeBlank
         
         cell.data = self.todayQuizs[indexPath.item]
         cell.quizIndex.text = "문제 \(indexPath.item + 1)"

@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class QuizType1: UICollectionViewCell {
+final class QuizTypeBlank: UICollectionViewCell {
     @IBOutlet weak var quizIndex: UILabel!
     @IBOutlet weak var quizQuestion: UILabel!
     @IBOutlet weak var rightAnswer: UIButton!
@@ -27,7 +27,7 @@ final class QuizType1: UICollectionViewCell {
     }
 }
 
-private extension QuizType1 {
+private extension QuizTypeBlank {
     func makeQuizSentence(quiz: Quiz) -> String {
         var quizQuestion = quiz.question
         quizQuestion = quizQuestion.replacingOccurrences(of: "*", with: String(repeating: "_", count: quiz.rightAnswer.count + 2))
