@@ -8,10 +8,6 @@
 import UIKit
 
 struct HistoryLayoutValue {
-    enum CornerLadius {
-        static let cell = 16.0
-    }
-    
     enum Padding {
         static let collectionViewFromTop: CGFloat = 140
     }

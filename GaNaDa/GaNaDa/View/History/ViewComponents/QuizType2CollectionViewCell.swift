@@ -20,6 +20,7 @@ struct QuizType2LayoutValue {
     }
     
     enum CornerRadius {
+        static let cell = 16.0
         static let answerButton = 9.8
     }
     
@@ -36,6 +37,7 @@ final class QuizType2CollectionViewCell: UICollectionViewCell {
     private lazy var quizContentLabel = UILabel()
     private lazy var contentAnswerAButton = UIButton()
     private lazy var contentAnswerBButton = UIButton()
+    private lazy var visualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .dark))
     
     static var id: String {
         NSStringFromClass(Self.self).components(separatedBy: ".").last ?? "Error ID"
@@ -63,6 +65,8 @@ final class QuizType2CollectionViewCell: UICollectionViewCell {
         quizContentLabel.text = quiz.question
         contentAnswerAButton.setTitle(quiz.rightAnswer, for: .normal)
         contentAnswerBButton.setTitle(quiz.wrongAnswer, for: .normal)
+        //TODO: - if 문제가 아직 열리지 않았으면!!
+        if quizNum % 4 == 0 { configureBlurView(flag: true) } else { configureBlurView(flag: false) }
     }
 }
 
@@ -70,8 +74,10 @@ final class QuizType2CollectionViewCell: UICollectionViewCell {
 private extension QuizType2CollectionViewCell {
     func configureContentView() {
         self.backgroundColor = .customColor(.customLightgray)
-        self.layer.cornerRadius = HistoryLayoutValue.CornerLadius.cell
+        self.layer.cornerRadius = QuizType2LayoutValue.CornerRadius.cell
         self.layer.applyFigmaShadow(color: .black, alpha: 0.1, x: 0, y: 4, blur: 25, spread: 0)
+        self.clipsToBounds = false
+        self.layer.masksToBounds = false
         NSLayoutConstraint.activate([
             self.contentView.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width - QuizType2LayoutValue.Padding.cellHoriz * 2),
             self.contentView.topAnchor.constraint(equalTo: self.topAnchor),
@@ -140,6 +146,24 @@ private extension QuizType2CollectionViewCell {
         contentAnswerBButton.layer.cornerRadius = QuizType2LayoutValue.CornerRadius.answerButton
         contentAnswerBButton.titleLabel?.font = .customFont(.subContent)
         contentAnswerBButton.setTitleColor(.white, for: .normal)
+    }
+    
+    func configureBlurView(flag: Bool) {
+        if flag {
+            self.addSubview(visualEffectView)
+            visualEffectView.translatesAutoresizingMaskIntoConstraints = false
+            visualEffectView.layer.cornerRadius = QuizType2LayoutValue.CornerRadius.cell
+            visualEffectView.clipsToBounds = true
+            visualEffectView.layer.opacity = 0.9
+            NSLayoutConstraint.activate([
+                visualEffectView.topAnchor.constraint(equalTo: self.topAnchor),
+                visualEffectView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+                visualEffectView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+                visualEffectView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
+            ])
+        } else {
+            visualEffectView.removeFromSuperview()
+        }
     }
 }
 
