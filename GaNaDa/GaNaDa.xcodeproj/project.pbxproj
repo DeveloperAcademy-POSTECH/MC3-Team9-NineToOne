@@ -13,6 +13,7 @@
 		AB3D6B13288E70D3005C452F /* QuizType1.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3D6B10288E70D3005C452F /* QuizType1.swift */; };
 		AB3D6B14288E70D3005C452F /* QuizType1.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB3D6B11288E70D3005C452F /* QuizType1.xib */; };
 		AB3D6B15288E70D3005C452F /* Quiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3D6B12288E70D3005C452F /* Quiz.swift */; };
+		AB3D6B1928906B7C005C452F /* FilteringButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3D6B1828906B7C005C452F /* FilteringButtonsView.swift */; };
 		AB75333D288A6DCD00A68BFB /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB75333C288A6DCD00A68BFB /* UIColor+Extension.swift */; };
 		AB753377288A7A6400A68BFB /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = AB75336E288A7A6400A68BFB /* Pretendard-SemiBold.otf */; };
 		AB753378288A7A6400A68BFB /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = AB75336E288A7A6400A68BFB /* Pretendard-SemiBold.otf */; };
@@ -86,6 +87,7 @@
 		AB3D6B10288E70D3005C452F /* QuizType1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizType1.swift; sourceTree = "<group>"; };
 		AB3D6B11288E70D3005C452F /* QuizType1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuizType1.xib; sourceTree = "<group>"; };
 		AB3D6B12288E70D3005C452F /* Quiz.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Quiz.swift; sourceTree = "<group>"; };
+		AB3D6B1828906B7C005C452F /* FilteringButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilteringButtonsView.swift; sourceTree = "<group>"; };
 		AB75333C288A6DCD00A68BFB /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		AB75336E288A7A6400A68BFB /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.otf"; sourceTree = "<group>"; };
 		AB75336F288A7A6400A68BFB /* Pretendard-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Black.otf"; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 		AB24C04B288E395C00849B38 /* ViewComponents */ = {
 			isa = PBXGroup;
 			children = (
+				AB3D6B1828906B7C005C452F /* FilteringButtonsView.swift */,
 				AB24C04C288E395C00849B38 /* QuizType2CollectionViewCell.swift */,
 			);
 			path = ViewComponents;
@@ -468,6 +471,7 @@
 			files = (
 				C7DED593288E7C3D004A2322 /* NetworkService.swift in Sources */,
 				AB24C04E288E395C00849B38 /* QuizType2CollectionViewCell.swift in Sources */,
+				AB3D6B1928906B7C005C452F /* FilteringButtonsView.swift in Sources */,
 				AB75333D288A6DCD00A68BFB /* UIColor+Extension.swift in Sources */,
 				C70BCA2628878A4800569961 /* AppDelegate.swift in Sources */,
 				C7DED595288E7CA8004A2322 /* NetworkManager.swift in Sources */,

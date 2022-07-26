@@ -15,11 +15,13 @@ struct HistoryLayoutValue {
 
 final class HistoryViewController: UIViewController {
     
+    private lazy var historyFilteringButtonsView = FilteringButtonsView()
     private lazy var historyCollectionView = HistoryCollectionView()
     private var quizs = [Quiz.preview, Quiz.preview, Quiz.preview, Quiz.preview, Quiz.preview, Quiz.preview, Quiz.preview, Quiz.preview, Quiz.preview, Quiz.preview, Quiz.preview, Quiz.preview]
     
     override func loadView() {
         super.loadView()
+        configureFilteringButtons()
         configureCollectionView()
         setCollectionViewLayout()
     }
@@ -28,6 +30,21 @@ final class HistoryViewController: UIViewController {
         super.viewDidLoad()
     }
     
+}
+
+// MARK: - Configure Filtering Buttons
+private extension HistoryViewController {
+    func configureFilteringButtons() {
+        self.view.addSubview(historyFilteringButtonsView)
+        historyFilteringButtonsView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            historyFilteringButtonsView.topAnchor.constraint(equalTo: view.topAnchor, constant: 70),
+            historyFilteringButtonsView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            historyFilteringButtonsView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            historyFilteringButtonsView.heightAnchor.constraint(equalToConstant: 30)
+            
+        ])
+    }
 }
 
 // MARK: - Configure CollectionView
