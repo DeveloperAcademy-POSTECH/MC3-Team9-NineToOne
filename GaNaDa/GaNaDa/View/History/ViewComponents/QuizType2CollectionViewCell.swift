@@ -57,6 +57,13 @@ final class QuizType2CollectionViewCell: UICollectionViewCell {
         configurecontentAnswerAButton()
         configurecontentAnswerBButton()
     }
+    
+    func setQuiz(quizNum: Int, quiz: Quiz) {
+        contentNumberLabel.text = "문제 \(quizNum)"
+        quizContentLabel.text = quiz.question
+        contentAnswerAButton.setTitle(quiz.rightAnswer, for: .normal)
+        contentAnswerBButton.setTitle(quiz.wrongAnswer, for: .normal)
+    }
 }
 
 // MARK: - Cell autolayout

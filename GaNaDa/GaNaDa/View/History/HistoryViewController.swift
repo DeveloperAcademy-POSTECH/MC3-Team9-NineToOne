@@ -20,6 +20,7 @@ struct HistoryLayoutValue {
 final class HistoryViewController: UIViewController {
     
     private lazy var historyCollectionView = HistoryCollectionView()
+    private var quizs = [Quiz.preview, Quiz.preview, Quiz.preview]
     
     override func loadView() {
         super.loadView()
@@ -65,12 +66,13 @@ extension HistoryViewController: UICollectionViewDelegate {
 // MARK: - UICollectionViewDataSource
 extension HistoryViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return quizs.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = historyCollectionView.collectionView.dequeueReusableCell(withReuseIdentifier: QuizType2CollectionViewCell.id, for: indexPath) as? QuizType2CollectionViewCell
         else { return UICollectionViewCell() }
+        cell.setQuiz(quizNum: (indexPath.row) + 1, quiz: quizs[indexPath.row])
         return cell
     }
 }
