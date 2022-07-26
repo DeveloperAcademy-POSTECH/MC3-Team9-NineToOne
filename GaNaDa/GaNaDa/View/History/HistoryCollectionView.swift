@@ -9,10 +9,19 @@ import UIKit
 
 class HistoryCollectionView: UIView {
     
-    lazy var collectionView = UICollectionView(frame: CGRect(origin: .zero, size: CGSize(width: 0, height: 0 )))
+    lazy var collectionView: UICollectionView = {
+        var layout: UICollectionViewFlowLayout {
+            var newlayout = UICollectionViewFlowLayout()
+            newlayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
+            return newlayout
+        }
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        return collectionView
+    }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        configureCollectionView()
         setCollectionViewLayout()
     }
     
@@ -21,21 +30,19 @@ class HistoryCollectionView: UIView {
     }
 }
 
-
 private extension HistoryCollectionView {
     func configureCollectionView() {
         self.addSubview(self.collectionView)
-        collectionView.register(QuizType2CollectionViewCell.self, forCellWithReuseIdentifier: QuizType2CollectionViewCell.id)
         collectionView.backgroundColor = .secondarySystemBackground
     }
     
     func setCollectionViewLayout() {
-        self.collectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             collectionView.topAnchor.constraint(equalTo: self.topAnchor),
-            collectionView.rightAnchor.constraint(equalTo: self.rightAnchor),
+            collectionView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             collectionView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
-            collectionView.leftAnchor.constraint(equalTo: self.leftAnchor)
+            collectionView.trailingAnchor.constraint(equalTo: self.trailingAnchor)
         ])
     }
 }
