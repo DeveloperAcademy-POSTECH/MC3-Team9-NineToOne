@@ -52,6 +52,13 @@ final class NetworkManager {
 }
 
 extension NetworkManager {
+    private func sendRequest(with request: URLRequest) async throws -> Data {
+        guard let (data, _) = try? await self.session.data(for: request) else {
+            throw NetworkError.failureResponse
+        }
+        return data
+    }
+    
     /// Internal Request Function
     private func sendRequest(with request: URLRequest, _ completeHandler: @escaping NetworkClosure<Data>) {
         self.session.dataTask(with: request) { data, response, error in
@@ -77,6 +84,18 @@ extension NetworkManager {
             completeHandler(.success(data))
         }
         .resume()
+    }
+    
+    /// GET Request
+    func getRequest(route: Route) async throws -> Data {
+        let urlString = self.baseURL + route.rawValue
+        
+        guard let url = URL(string: urlString) else {
+            throw NetworkError.invalidURL
+        }
+        
+        let request = self.request(url, .GET)
+        return try await self.sendRequest(with: request)
     }
     
     /// GET Request

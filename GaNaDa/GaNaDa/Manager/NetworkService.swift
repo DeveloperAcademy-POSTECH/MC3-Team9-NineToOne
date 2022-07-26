@@ -13,6 +13,18 @@ enum NetworkService {
 }
 
 extension NetworkService {
+    static func requestFirstUserToken() async throws -> User {
+        guard let data = try? await self.manager.getRequest(route: .firstUserToken) else {
+            throw NetworkError.failureResponse
+        }
+        
+        guard let user = try? JSONDecoder().decode(User.self, from: data) else {
+            throw NetworkError.errorDecodingJson
+        }
+        
+        return user
+    }
+    
     static func requestFirstUserToken(_ completeHandler: @escaping NetworkClosure<User>) {
         self.manager.getRequest(route: .firstUserToken) { result in
             switch result {

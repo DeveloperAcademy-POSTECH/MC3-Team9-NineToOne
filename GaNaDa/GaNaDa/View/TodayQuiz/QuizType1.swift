@@ -24,6 +24,29 @@ final class QuizType1: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         contentView.layer.cornerRadius = QuizType1LayoutValue.Cell.cornerLadius
+        NetworkService.requestTodayQuiz { result in
+            switch result {
+            case .success(let todayQuizList):
+                // 데이터 다루기
+                break
+            case .failure(let e):
+                // 암튼 Error 처리
+                break
+            }
+        }
+        
+        // 옛날
+        async {
+            do {
+                let todayQuizList = try await NetworkService.requestFirstUserToken()
+            } catch(let e) {
+                // 암튼 Error 처리
+            }
+        }
+        
+        Task {
+            let todayQuizList = try await NetworkService.requestFirstUserToken()
+        }
     }
 }
 
