@@ -7,11 +7,22 @@
 
 import UIKit
 
+enum FilteringButtonType: Int {
+    case correct = 0
+    case wrong = 1
+    case incomplete = 2
+}
+
+protocol FilteringButtonsDelegate: AnyObject {
+    func filteringButtonPressed(type: FilteringButtonType)
+}
+
 class FilteringButtonsView: UIView {
     lazy private var correctFilteringButton = UIButton()
     lazy private var wrongFilteringButton = UIButton()
     lazy private var incompleteFilteringButton = UIButton()
     
+    weak var delegate: FilteringButtonsDelegate?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -20,6 +31,21 @@ class FilteringButtonsView: UIView {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    @objc func buttonsAction(_ sender: UIButton) {
+        if let delegate = delegate {
+            switch sender.tag {
+            case FilteringButtonType.correct.rawValue:
+                delegate.filteringButtonPressed(type: .correct)
+            case FilteringButtonType.wrong.rawValue:
+                delegate.filteringButtonPressed(type: .wrong)
+            case FilteringButtonType.incomplete.rawValue:
+                delegate.filteringButtonPressed(type: .incomplete)
+            default:
+                delegate.filteringButtonPressed(type: .correct)
+            }
+        }
     }
 }
 
@@ -36,6 +62,8 @@ private extension FilteringButtonsView {
         ])
         correctFilteringButton.setTitle("정답", for: .normal)
         correctFilteringButton.setTitleColor(.black, for: .normal)
+        correctFilteringButton.tag = FilteringButtonType.correct.rawValue
+        correctFilteringButton.addTarget(self, action: #selector(buttonsAction), for: .touchUpInside)
         
         
         
@@ -49,6 +77,8 @@ private extension FilteringButtonsView {
         ])
         wrongFilteringButton.setTitle("오답", for: .normal)
         wrongFilteringButton.setTitleColor(.black, for: .normal)
+        wrongFilteringButton.tag = FilteringButtonType.wrong.rawValue
+        wrongFilteringButton.addTarget(self, action: #selector(buttonsAction), for: .touchUpInside)
         
         
         self.addSubview(incompleteFilteringButton)
@@ -61,5 +91,7 @@ private extension FilteringButtonsView {
         ])
         incompleteFilteringButton.setTitle("미완", for: .normal)
         incompleteFilteringButton.setTitleColor(.black, for: .normal)
+        incompleteFilteringButton.tag = FilteringButtonType.incomplete.rawValue
+        incompleteFilteringButton.addTarget(self, action: #selector(buttonsAction), for: .touchUpInside)
     }
 }
