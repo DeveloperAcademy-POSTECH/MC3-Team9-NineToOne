@@ -9,7 +9,12 @@ import Foundation
 
 struct Quiz {
     let question: String
-    let type: String
+    let type: QuizType
     let rightAnswer: String
     let wrongAnswer: String
+}
+
+enum QuizType {
+    case Blank
+    case choice
 }

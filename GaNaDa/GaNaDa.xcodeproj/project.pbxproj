@@ -7,6 +7,46 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AB24C04E288E395C00849B38 /* QuizType2CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB24C04C288E395C00849B38 /* QuizType2CollectionViewCell.swift */; };
+		AB24C04F288E395C00849B38 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB24C04D288E395C00849B38 /* HistoryViewController.swift */; };
+		AB24C051288E585800849B38 /* HistoryCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB24C050288E585800849B38 /* HistoryCollectionView.swift */; };
+		AB3D6B13288E70D3005C452F /* QuizType1.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3D6B10288E70D3005C452F /* QuizType1.swift */; };
+		AB3D6B14288E70D3005C452F /* QuizType1.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB3D6B11288E70D3005C452F /* QuizType1.xib */; };
+		AB3D6B15288E70D3005C452F /* Quiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3D6B12288E70D3005C452F /* Quiz.swift */; };
+		AB75333D288A6DCD00A68BFB /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB75333C288A6DCD00A68BFB /* UIColor+Extension.swift */; };
+		AB753377288A7A6400A68BFB /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = AB75336E288A7A6400A68BFB /* Pretendard-SemiBold.otf */; };
+		AB753378288A7A6400A68BFB /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = AB75336E288A7A6400A68BFB /* Pretendard-SemiBold.otf */; };
+		AB753379288A7A6400A68BFB /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = AB75336E288A7A6400A68BFB /* Pretendard-SemiBold.otf */; };
+		AB75337A288A7A6400A68BFB /* Pretendard-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = AB75336F288A7A6400A68BFB /* Pretendard-Black.otf */; };
+		AB75337B288A7A6400A68BFB /* Pretendard-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = AB75336F288A7A6400A68BFB /* Pretendard-Black.otf */; };
+		AB75337C288A7A6400A68BFB /* Pretendard-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = AB75336F288A7A6400A68BFB /* Pretendard-Black.otf */; };
+		AB75337D288A7A6400A68BFB /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = AB753370288A7A6400A68BFB /* Pretendard-Bold.otf */; };
+		AB75337E288A7A6400A68BFB /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = AB753370288A7A6400A68BFB /* Pretendard-Bold.otf */; };
+		AB75337F288A7A6400A68BFB /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = AB753370288A7A6400A68BFB /* Pretendard-Bold.otf */; };
+		AB753380288A7A6400A68BFB /* Pretendard-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = AB753371288A7A6400A68BFB /* Pretendard-Light.otf */; };
+		AB753381288A7A6400A68BFB /* Pretendard-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = AB753371288A7A6400A68BFB /* Pretendard-Light.otf */; };
+		AB753382288A7A6400A68BFB /* Pretendard-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = AB753371288A7A6400A68BFB /* Pretendard-Light.otf */; };
+		AB753383288A7A6400A68BFB /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = AB753372288A7A6400A68BFB /* Pretendard-Regular.otf */; };
+		AB753384288A7A6400A68BFB /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = AB753372288A7A6400A68BFB /* Pretendard-Regular.otf */; };
+		AB753385288A7A6400A68BFB /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = AB753372288A7A6400A68BFB /* Pretendard-Regular.otf */; };
+		AB753386288A7A6400A68BFB /* Pretendard-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = AB753373288A7A6400A68BFB /* Pretendard-Thin.otf */; };
+		AB753387288A7A6400A68BFB /* Pretendard-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = AB753373288A7A6400A68BFB /* Pretendard-Thin.otf */; };
+		AB753388288A7A6400A68BFB /* Pretendard-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = AB753373288A7A6400A68BFB /* Pretendard-Thin.otf */; };
+		AB753389288A7A6400A68BFB /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = AB753374288A7A6400A68BFB /* Pretendard-Medium.otf */; };
+		AB75338A288A7A6400A68BFB /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = AB753374288A7A6400A68BFB /* Pretendard-Medium.otf */; };
+		AB75338B288A7A6400A68BFB /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = AB753374288A7A6400A68BFB /* Pretendard-Medium.otf */; };
+		AB75338C288A7A6400A68BFB /* Pretendard-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = AB753375288A7A6400A68BFB /* Pretendard-ExtraLight.otf */; };
+		AB75338D288A7A6400A68BFB /* Pretendard-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = AB753375288A7A6400A68BFB /* Pretendard-ExtraLight.otf */; };
+		AB75338E288A7A6400A68BFB /* Pretendard-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = AB753375288A7A6400A68BFB /* Pretendard-ExtraLight.otf */; };
+		AB75338F288A7A6400A68BFB /* Pretendard-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = AB753376288A7A6400A68BFB /* Pretendard-ExtraBold.otf */; };
+		AB753390288A7A6400A68BFB /* Pretendard-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = AB753376288A7A6400A68BFB /* Pretendard-ExtraBold.otf */; };
+		AB753391288A7A6400A68BFB /* Pretendard-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = AB753376288A7A6400A68BFB /* Pretendard-ExtraBold.otf */; };
+		AB753393288A7B2900A68BFB /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB753392288A7B2900A68BFB /* UIFont+Extension.swift */; };
+		AB753394288A7B2900A68BFB /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB753392288A7B2900A68BFB /* UIFont+Extension.swift */; };
+		AB753395288A7B2900A68BFB /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB753392288A7B2900A68BFB /* UIFont+Extension.swift */; };
+		AB75339B288A7E0C00A68BFB /* NanumPen.otf in Resources */ = {isa = PBXBuildFile; fileRef = AB75339A288A7E0C00A68BFB /* NanumPen.otf */; };
+		AB75339C288A7E0C00A68BFB /* NanumPen.otf in Resources */ = {isa = PBXBuildFile; fileRef = AB75339A288A7E0C00A68BFB /* NanumPen.otf */; };
+		AB75339D288A7E0C00A68BFB /* NanumPen.otf in Resources */ = {isa = PBXBuildFile; fileRef = AB75339A288A7E0C00A68BFB /* NanumPen.otf */; };
 		C70BCA2628878A4800569961 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70BCA2528878A4800569961 /* AppDelegate.swift */; };
 		C70BCA2828878A4800569961 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70BCA2728878A4800569961 /* SceneDelegate.swift */; };
 		C70BCA2D28878A4800569961 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C70BCA2B28878A4800569961 /* Main.storyboard */; };
@@ -16,9 +56,6 @@
 		C70BCA4728878A4900569961 /* GaNaDaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70BCA4628878A4900569961 /* GaNaDaUITests.swift */; };
 		C70BCA4928878A4900569961 /* GaNaDaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70BCA4828878A4900569961 /* GaNaDaUITestsLaunchTests.swift */; };
 		C70BCA612887975400569961 /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C70BCA602887975400569961 /* Color.xcassets */; };
-		E29228C1288D033D0051779B /* QuizType1.xib in Resources */ = {isa = PBXBuildFile; fileRef = E29228C0288D033D0051779B /* QuizType1.xib */; };
-		E29228C7288D263C0051779B /* QuizType1.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29228C6288D263C0051779B /* QuizType1.swift */; };
-		E29228CB288D9D690051779B /* Quiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29228CA288D9D690051779B /* Quiz.swift */; };
 		E29228CD288DB04E0051779B /* TodayQuizCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29228CC288DB04E0051779B /* TodayQuizCollectionVC.swift */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +77,24 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AB24C04C288E395C00849B38 /* QuizType2CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizType2CollectionViewCell.swift; sourceTree = "<group>"; };
+		AB24C04D288E395C00849B38 /* HistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+		AB24C050288E585800849B38 /* HistoryCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCollectionView.swift; sourceTree = "<group>"; };
+		AB3D6B10288E70D3005C452F /* QuizType1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizType1.swift; sourceTree = "<group>"; };
+		AB3D6B11288E70D3005C452F /* QuizType1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuizType1.xib; sourceTree = "<group>"; };
+		AB3D6B12288E70D3005C452F /* Quiz.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Quiz.swift; sourceTree = "<group>"; };
+		AB75333C288A6DCD00A68BFB /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		AB75336E288A7A6400A68BFB /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.otf"; sourceTree = "<group>"; };
+		AB75336F288A7A6400A68BFB /* Pretendard-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Black.otf"; sourceTree = "<group>"; };
+		AB753370288A7A6400A68BFB /* Pretendard-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.otf"; sourceTree = "<group>"; };
+		AB753371288A7A6400A68BFB /* Pretendard-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Light.otf"; sourceTree = "<group>"; };
+		AB753372288A7A6400A68BFB /* Pretendard-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Regular.otf"; sourceTree = "<group>"; };
+		AB753373288A7A6400A68BFB /* Pretendard-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Thin.otf"; sourceTree = "<group>"; };
+		AB753374288A7A6400A68BFB /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
+		AB753375288A7A6400A68BFB /* Pretendard-ExtraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraLight.otf"; sourceTree = "<group>"; };
+		AB753376288A7A6400A68BFB /* Pretendard-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraBold.otf"; sourceTree = "<group>"; };
+		AB753392288A7B2900A68BFB /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
+		AB75339A288A7E0C00A68BFB /* NanumPen.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumPen.otf; sourceTree = "<group>"; };
 		C70BCA2228878A4800569961 /* GaNaDa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GaNaDa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C70BCA2528878A4800569961 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C70BCA2728878A4800569961 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -53,9 +108,6 @@
 		C70BCA4628878A4900569961 /* GaNaDaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaNaDaUITests.swift; sourceTree = "<group>"; };
 		C70BCA4828878A4900569961 /* GaNaDaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaNaDaUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		C70BCA602887975400569961 /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
-		E29228C0288D033D0051779B /* QuizType1.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuizType1.xib; sourceTree = "<group>"; };
-		E29228C6288D263C0051779B /* QuizType1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizType1.swift; sourceTree = "<group>"; };
-		E29228CA288D9D690051779B /* Quiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quiz.swift; sourceTree = "<group>"; };
 		E29228CC288DB04E0051779B /* TodayQuizCollectionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayQuizCollectionVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -84,6 +136,68 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AB24C04A288E395C00849B38 /* History */ = {
+			isa = PBXGroup;
+			children = (
+				AB24C04D288E395C00849B38 /* HistoryViewController.swift */,
+				AB24C050288E585800849B38 /* HistoryCollectionView.swift */,
+				AB24C04B288E395C00849B38 /* ViewComponents */,
+			);
+			path = History;
+			sourceTree = "<group>";
+		};
+		AB24C04B288E395C00849B38 /* ViewComponents */ = {
+			isa = PBXGroup;
+			children = (
+				AB24C04C288E395C00849B38 /* QuizType2CollectionViewCell.swift */,
+			);
+			path = ViewComponents;
+			sourceTree = "<group>";
+		};
+		AB3D6B0F288E70D3005C452F /* TodayQuiz */ = {
+			isa = PBXGroup;
+			children = (
+				E29228CC288DB04E0051779B /* TodayQuizCollectionVC.swift */,
+				AB3D6B10288E70D3005C452F /* QuizType1.swift */,
+				AB3D6B11288E70D3005C452F /* QuizType1.xib */,
+			);
+			path = TodayQuiz;
+			sourceTree = "<group>";
+		};
+		AB3D6B17288E7515005C452F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AB3D6B12288E70D3005C452F /* Quiz.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		AB75333B288A6DA800A68BFB /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				AB75333C288A6DCD00A68BFB /* UIColor+Extension.swift */,
+				AB753392288A7B2900A68BFB /* UIFont+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		AB753369288A7A3C00A68BFB /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				AB75336F288A7A6400A68BFB /* Pretendard-Black.otf */,
+				AB753370288A7A6400A68BFB /* Pretendard-Bold.otf */,
+				AB753376288A7A6400A68BFB /* Pretendard-ExtraBold.otf */,
+				AB753375288A7A6400A68BFB /* Pretendard-ExtraLight.otf */,
+				AB753371288A7A6400A68BFB /* Pretendard-Light.otf */,
+				AB753374288A7A6400A68BFB /* Pretendard-Medium.otf */,
+				AB753372288A7A6400A68BFB /* Pretendard-Regular.otf */,
+				AB75336E288A7A6400A68BFB /* Pretendard-SemiBold.otf */,
+				AB753373288A7A6400A68BFB /* Pretendard-Thin.otf */,
+				AB75339A288A7E0C00A68BFB /* NanumPen.otf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
 		C70BCA1928878A4800569961 = {
 			isa = PBXGroup;
 			children = (
@@ -107,8 +221,8 @@
 		C70BCA2428878A4800569961 /* GaNaDa */ = {
 			isa = PBXGroup;
 			children = (
-				C70BCA5C2887948900569961 /* Manager */,
-				C70BCA582887929C00569961 /* Model */,
+				AB75333B288A6DA800A68BFB /* Extension */,
+				AB3D6B17288E7515005C452F /* Model */,
 				C70BCA572887929900569961 /* View */,
 				C70BCA562887928B00569961 /* Resource */,
 				C70BCA552887928400569961 /* App */,
@@ -147,6 +261,7 @@
 		C70BCA562887928B00569961 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				AB753369288A7A3C00A68BFB /* Font */,
 				C70BCA5A288792D900569961 /* Assets */,
 			);
 			path = Resource;
@@ -156,18 +271,10 @@
 			isa = PBXGroup;
 			children = (
 				C70BCA2B28878A4800569961 /* Main.storyboard */,
-				C70BCA5D288796CC00569961 /* TodayQuiz */,
-				C70BCA5E288796D700569961 /* History */,
-				C70BCA5F288796E300569961 /* QuizDetail */,
+				AB3D6B0F288E70D3005C452F /* TodayQuiz */,
+				AB24C04A288E395C00849B38 /* History */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		C70BCA582887929C00569961 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		C70BCA5A288792D900569961 /* Assets */ = {
@@ -184,17 +291,6 @@
 			children = (
 			);
 			path = Manager;
-			sourceTree = "<group>";
-		};
-		C70BCA5D288796CC00569961 /* TodayQuiz */ = {
-			isa = PBXGroup;
-			children = (
-				E29228CC288DB04E0051779B /* TodayQuizCollectionVC.swift */,
-				E29228C6288D263C0051779B /* QuizType1.swift */,
-				E29228C0288D033D0051779B /* QuizType1.xib */,
-				E29228CA288D9D690051779B /* Quiz.swift */,
-			);
-			path = TodayQuiz;
 			sourceTree = "<group>";
 		};
 		C70BCA5E288796D700569961 /* History */ = {
@@ -316,10 +412,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				C70BCA3228878A4900569961 /* LaunchScreen.storyboard in Resources */,
-				E29228C1288D033D0051779B /* QuizType1.xib in Resources */,
+				AB75337D288A7A6400A68BFB /* Pretendard-Bold.otf in Resources */,
+				AB75338F288A7A6400A68BFB /* Pretendard-ExtraBold.otf in Resources */,
 				C70BCA612887975400569961 /* Color.xcassets in Resources */,
 				C70BCA2F28878A4900569961 /* Assets.xcassets in Resources */,
+				AB753377288A7A6400A68BFB /* Pretendard-SemiBold.otf in Resources */,
+				AB3D6B14288E70D3005C452F /* QuizType1.xib in Resources */,
 				C70BCA2D28878A4800569961 /* Main.storyboard in Resources */,
+				AB75339B288A7E0C00A68BFB /* NanumPen.otf in Resources */,
+				AB75337A288A7A6400A68BFB /* Pretendard-Black.otf in Resources */,
+				AB75338C288A7A6400A68BFB /* Pretendard-ExtraLight.otf in Resources */,
+				AB753383288A7A6400A68BFB /* Pretendard-Regular.otf in Resources */,
+				AB753386288A7A6400A68BFB /* Pretendard-Thin.otf in Resources */,
+				AB753380288A7A6400A68BFB /* Pretendard-Light.otf in Resources */,
+				AB753389288A7A6400A68BFB /* Pretendard-Medium.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -327,6 +433,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB75338D288A7A6400A68BFB /* Pretendard-ExtraLight.otf in Resources */,
+				AB753390288A7A6400A68BFB /* Pretendard-ExtraBold.otf in Resources */,
+				AB753384288A7A6400A68BFB /* Pretendard-Regular.otf in Resources */,
+				AB753387288A7A6400A68BFB /* Pretendard-Thin.otf in Resources */,
+				AB75338A288A7A6400A68BFB /* Pretendard-Medium.otf in Resources */,
+				AB75337E288A7A6400A68BFB /* Pretendard-Bold.otf in Resources */,
+				AB75337B288A7A6400A68BFB /* Pretendard-Black.otf in Resources */,
+				AB753381288A7A6400A68BFB /* Pretendard-Light.otf in Resources */,
+				AB753378288A7A6400A68BFB /* Pretendard-SemiBold.otf in Resources */,
+				AB75339C288A7E0C00A68BFB /* NanumPen.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,6 +450,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB75338E288A7A6400A68BFB /* Pretendard-ExtraLight.otf in Resources */,
+				AB753391288A7A6400A68BFB /* Pretendard-ExtraBold.otf in Resources */,
+				AB753385288A7A6400A68BFB /* Pretendard-Regular.otf in Resources */,
+				AB753388288A7A6400A68BFB /* Pretendard-Thin.otf in Resources */,
+				AB75338B288A7A6400A68BFB /* Pretendard-Medium.otf in Resources */,
+				AB75337F288A7A6400A68BFB /* Pretendard-Bold.otf in Resources */,
+				AB75337C288A7A6400A68BFB /* Pretendard-Black.otf in Resources */,
+				AB753382288A7A6400A68BFB /* Pretendard-Light.otf in Resources */,
+				AB753379288A7A6400A68BFB /* Pretendard-SemiBold.otf in Resources */,
+				AB75339D288A7E0C00A68BFB /* NanumPen.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,11 +470,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB24C04E288E395C00849B38 /* QuizType2CollectionViewCell.swift in Sources */,
+				AB75333D288A6DCD00A68BFB /* UIColor+Extension.swift in Sources */,
 				C70BCA2628878A4800569961 /* AppDelegate.swift in Sources */,
-				E29228CB288D9D690051779B /* Quiz.swift in Sources */,
-				E29228C7288D263C0051779B /* QuizType1.swift in Sources */,
+				AB24C04F288E395C00849B38 /* HistoryViewController.swift in Sources */,
+				AB24C051288E585800849B38 /* HistoryCollectionView.swift in Sources */,
+				AB753393288A7B2900A68BFB /* UIFont+Extension.swift in Sources */,
+				AB3D6B13288E70D3005C452F /* QuizType1.swift in Sources */,
 				C70BCA2828878A4800569961 /* SceneDelegate.swift in Sources */,
 				E29228CD288DB04E0051779B /* TodayQuizCollectionVC.swift in Sources */,
+				AB3D6B15288E70D3005C452F /* Quiz.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,6 +487,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB753394288A7B2900A68BFB /* UIFont+Extension.swift in Sources */,
 				C70BCA3D28878A4900569961 /* GaNaDaTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -364,6 +496,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB753395288A7B2900A68BFB /* UIFont+Extension.swift in Sources */,
 				C70BCA4928878A4900569961 /* GaNaDaUITestsLaunchTests.swift in Sources */,
 				C70BCA4728878A4900569961 /* GaNaDaUITests.swift in Sources */,
 			);
@@ -533,7 +666,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UIUserInterfaceStyle = LIght;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -563,7 +696,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UIUserInterfaceStyle = LIght;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
