@@ -56,6 +56,10 @@
 		C70BCA4728878A4900569961 /* GaNaDaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70BCA4628878A4900569961 /* GaNaDaUITests.swift */; };
 		C70BCA4928878A4900569961 /* GaNaDaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70BCA4828878A4900569961 /* GaNaDaUITestsLaunchTests.swift */; };
 		C70BCA612887975400569961 /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C70BCA602887975400569961 /* Color.xcassets */; };
+		C7DED593288E7C3D004A2322 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DED592288E7C3D004A2322 /* NetworkService.swift */; };
+		C7DED595288E7CA8004A2322 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DED594288E7CA8004A2322 /* NetworkManager.swift */; };
+		C7DED599288E8806004A2322 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DED598288E8806004A2322 /* User.swift */; };
+		C7DED59B288E8C0A004A2322 /* SubmitAnswerDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DED59A288E8C0A004A2322 /* SubmitAnswerDTO.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +111,10 @@
 		C70BCA4628878A4900569961 /* GaNaDaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaNaDaUITests.swift; sourceTree = "<group>"; };
 		C70BCA4828878A4900569961 /* GaNaDaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaNaDaUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		C70BCA602887975400569961 /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
+		C7DED592288E7C3D004A2322 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		C7DED594288E7CA8004A2322 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		C7DED598288E8806004A2322 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		C7DED59A288E8C0A004A2322 /* SubmitAnswerDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitAnswerDTO.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +173,8 @@
 			isa = PBXGroup;
 			children = (
 				AB3D6B12288E70D3005C452F /* Quiz.swift */,
+				C7DED598288E8806004A2322 /* User.swift */,
+				C7DED59A288E8C0A004A2322 /* SubmitAnswerDTO.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -218,6 +228,7 @@
 		C70BCA2428878A4800569961 /* GaNaDa */ = {
 			isa = PBXGroup;
 			children = (
+				C7DED591288E7C30004A2322 /* Manager */,
 				AB75333B288A6DA800A68BFB /* Extension */,
 				AB3D6B17288E7515005C452F /* Model */,
 				C70BCA572887929900569961 /* View */,
@@ -281,6 +292,15 @@
 				C70BCA602887975400569961 /* Color.xcassets */,
 			);
 			path = Assets;
+			sourceTree = "<group>";
+		};
+		C7DED591288E7C30004A2322 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				C7DED592288E7C3D004A2322 /* NetworkService.swift */,
+				C7DED594288E7CA8004A2322 /* NetworkManager.swift */,
+			);
+			path = Manager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -446,15 +466,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C7DED593288E7C3D004A2322 /* NetworkService.swift in Sources */,
 				AB24C04E288E395C00849B38 /* QuizType2CollectionViewCell.swift in Sources */,
 				AB75333D288A6DCD00A68BFB /* UIColor+Extension.swift in Sources */,
 				C70BCA2628878A4800569961 /* AppDelegate.swift in Sources */,
+				C7DED595288E7CA8004A2322 /* NetworkManager.swift in Sources */,
 				AB24C04F288E395C00849B38 /* HistoryViewController.swift in Sources */,
 				AB24C051288E585800849B38 /* HistoryCollectionView.swift in Sources */,
 				AB753393288A7B2900A68BFB /* UIFont+Extension.swift in Sources */,
+				C7DED599288E8806004A2322 /* User.swift in Sources */,
 				AB3D6B13288E70D3005C452F /* QuizType1.swift in Sources */,
 				C70BCA2828878A4800569961 /* SceneDelegate.swift in Sources */,
 				AB3D6B15288E70D3005C452F /* Quiz.swift in Sources */,
+				C7DED59B288E8C0A004A2322 /* SubmitAnswerDTO.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
