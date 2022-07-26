@@ -52,6 +52,12 @@ class FilteringButtonsView: UIView {
 //MARK: - Buttons AutoLayout
 private extension FilteringButtonsView {
     func setButtonslayout() {
+        configureCorrectButton()
+        configureWrongButton()
+        configureIncompleteButton()
+    }
+    
+    func configureCorrectButton() {
         self.addSubview(correctFilteringButton)
         correctFilteringButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -64,9 +70,9 @@ private extension FilteringButtonsView {
         correctFilteringButton.setTitleColor(.black, for: .normal)
         correctFilteringButton.tag = FilteringButtonType.correct.rawValue
         correctFilteringButton.addTarget(self, action: #selector(buttonsAction), for: .touchUpInside)
-        
-        
-        
+    }
+    
+    func configureWrongButton() {
         self.addSubview(wrongFilteringButton)
         wrongFilteringButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -79,8 +85,9 @@ private extension FilteringButtonsView {
         wrongFilteringButton.setTitleColor(.black, for: .normal)
         wrongFilteringButton.tag = FilteringButtonType.wrong.rawValue
         wrongFilteringButton.addTarget(self, action: #selector(buttonsAction), for: .touchUpInside)
-        
-        
+    }
+    
+    func configureIncompleteButton() {
         self.addSubview(incompleteFilteringButton)
         incompleteFilteringButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
