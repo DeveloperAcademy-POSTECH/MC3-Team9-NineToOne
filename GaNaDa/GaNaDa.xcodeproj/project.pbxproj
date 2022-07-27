@@ -53,6 +53,8 @@
 		AB862376288FDAA000F71283 /* CALayer+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB862375288FDAA000F71283 /* CALayer+Extension.swift */; };
 		AB8623852890EC7500F71283 /* QuizCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8623842890EC7500F71283 /* QuizCollectionViewCell.swift */; };
 		AB86238728915FB100F71283 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB86238628915FB100F71283 /* UILabel+Extension.swift */; };
+		AB86238A2891640200F71283 /* SolvedQuizType2CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8623882891640200F71283 /* SolvedQuizType2CollectionViewCell.swift */; };
+		AB86238B2891640200F71283 /* SolvedQuizType2CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB8623892891640200F71283 /* SolvedQuizType2CollectionViewCell.xib */; };
 		C70BCA2628878A4800569961 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70BCA2528878A4800569961 /* AppDelegate.swift */; };
 		C70BCA2828878A4800569961 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70BCA2728878A4800569961 /* SceneDelegate.swift */; };
 		C70BCA2D28878A4800569961 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C70BCA2B28878A4800569961 /* Main.storyboard */; };
@@ -111,6 +113,8 @@
 		AB862375288FDAA000F71283 /* CALayer+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+Extension.swift"; sourceTree = "<group>"; };
 		AB8623842890EC7500F71283 /* QuizCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizCollectionViewCell.swift; sourceTree = "<group>"; };
 		AB86238628915FB100F71283 /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
+		AB8623882891640200F71283 /* SolvedQuizType2CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolvedQuizType2CollectionViewCell.swift; sourceTree = "<group>"; };
+		AB8623892891640200F71283 /* SolvedQuizType2CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SolvedQuizType2CollectionViewCell.xib; sourceTree = "<group>"; };
 		C70BCA2228878A4800569961 /* GaNaDa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GaNaDa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C70BCA2528878A4800569961 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C70BCA2728878A4800569961 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -174,6 +178,8 @@
 				AB3D6B1828906B7C005C452F /* FilteringButtonsView.swift */,
 				AB24C04C288E395C00849B38 /* QuizType2CollectionViewCell.swift */,
 				AB8623842890EC7500F71283 /* QuizCollectionViewCell.swift */,
+				AB8623882891640200F71283 /* SolvedQuizType2CollectionViewCell.swift */,
+				AB8623892891640200F71283 /* SolvedQuizType2CollectionViewCell.xib */,
 			);
 			path = ViewComponents;
 			sourceTree = "<group>";
@@ -436,6 +442,7 @@
 				AB753377288A7A6400A68BFB /* Pretendard-SemiBold.otf in Resources */,
 				AB862374288F7FF900F71283 /* SolvedQuizType1CollectionViewCell.xib in Resources */,
 				AB3D6B14288E70D3005C452F /* QuizTypeBlank.xib in Resources */,
+				AB86238B2891640200F71283 /* SolvedQuizType2CollectionViewCell.xib in Resources */,
 				C70BCA2D28878A4800569961 /* Main.storyboard in Resources */,
 				AB75339B288A7E0C00A68BFB /* NanumPen.otf in Resources */,
 				AB75337A288A7A6400A68BFB /* Pretendard-Black.otf in Resources */,
@@ -507,6 +514,7 @@
 				AB3D6B15288E70D3005C452F /* Quiz.swift in Sources */,
 				AB862373288F7FF900F71283 /* SolvedQuizType1CollectionViewCell.swift in Sources */,
 				C7DED59B288E8C0A004A2322 /* SubmitAnswerDTO.swift in Sources */,
+				AB86238A2891640200F71283 /* SolvedQuizType2CollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
