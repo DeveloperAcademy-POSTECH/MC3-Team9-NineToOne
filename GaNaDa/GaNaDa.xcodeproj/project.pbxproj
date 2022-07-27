@@ -51,6 +51,7 @@
 		AB862373288F7FF900F71283 /* SolvedQuizType1CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB862371288F7FF900F71283 /* SolvedQuizType1CollectionViewCell.swift */; };
 		AB862374288F7FF900F71283 /* SolvedQuizType1CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB862372288F7FF900F71283 /* SolvedQuizType1CollectionViewCell.xib */; };
 		AB862376288FDAA000F71283 /* CALayer+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB862375288FDAA000F71283 /* CALayer+Extension.swift */; };
+		AB8623852890EC7500F71283 /* QuizCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8623842890EC7500F71283 /* QuizCollectionViewCell.swift */; };
 		C70BCA2628878A4800569961 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70BCA2528878A4800569961 /* AppDelegate.swift */; };
 		C70BCA2828878A4800569961 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70BCA2728878A4800569961 /* SceneDelegate.swift */; };
 		C70BCA2D28878A4800569961 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C70BCA2B28878A4800569961 /* Main.storyboard */; };
@@ -107,6 +108,7 @@
 		AB862371288F7FF900F71283 /* SolvedQuizType1CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolvedQuizType1CollectionViewCell.swift; sourceTree = "<group>"; };
 		AB862372288F7FF900F71283 /* SolvedQuizType1CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SolvedQuizType1CollectionViewCell.xib; sourceTree = "<group>"; };
 		AB862375288FDAA000F71283 /* CALayer+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+Extension.swift"; sourceTree = "<group>"; };
+		AB8623842890EC7500F71283 /* QuizCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizCollectionViewCell.swift; sourceTree = "<group>"; };
 		C70BCA2228878A4800569961 /* GaNaDa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GaNaDa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C70BCA2528878A4800569961 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C70BCA2728878A4800569961 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 				AB862372288F7FF900F71283 /* SolvedQuizType1CollectionViewCell.xib */,
 				AB3D6B1828906B7C005C452F /* FilteringButtonsView.swift */,
 				AB24C04C288E395C00849B38 /* QuizType2CollectionViewCell.swift */,
+				AB8623842890EC7500F71283 /* QuizCollectionViewCell.swift */,
 			);
 			path = ViewComponents;
 			sourceTree = "<group>";
@@ -482,6 +485,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB8623852890EC7500F71283 /* QuizCollectionViewCell.swift in Sources */,
 				C7DED593288E7C3D004A2322 /* NetworkService.swift in Sources */,
 				AB24C04E288E395C00849B38 /* QuizType2CollectionViewCell.swift in Sources */,
 				AB3D6B1928906B7C005C452F /* FilteringButtonsView.swift in Sources */,
