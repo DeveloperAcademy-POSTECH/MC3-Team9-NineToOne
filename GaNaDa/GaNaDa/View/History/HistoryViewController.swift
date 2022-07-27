@@ -11,15 +11,22 @@ struct HistoryLayoutValue {
     enum Padding {
         static let collectionViewFromTop: CGFloat = 140
     }
+    
+    enum Size {
+        static let filteringButtonsHeight: CGFloat = 30
+    }
 }
 
 final class HistoryViewController: UIViewController {
     
+    private lazy var historyFilteringButtonsView = FilteringButtonsView()
     private lazy var historyCollectionView = HistoryCollectionView()
     private var quizs = [Quiz.preview, Quiz.preview, Quiz.preview, Quiz.preview, Quiz.preview, Quiz.preview, Quiz.preview, Quiz.preview, Quiz.preview, Quiz.preview, Quiz.preview, Quiz.preview]
     
     override func loadView() {
         super.loadView()
+        configureFilteringButtons()
+        setFilteringButtons()
         configureCollectionView()
         setCollectionViewLayout()
     }
@@ -28,6 +35,30 @@ final class HistoryViewController: UIViewController {
         super.viewDidLoad()
     }
     
+}
+
+// MARK: - Configure Filtering Buttons
+extension HistoryViewController: FilteringButtonsDelegate {
+    func filteringButtonPressed(type: FilteringButtonType) {
+        print(type)
+        // TODO: - HISTORY database 만든 이후 구현 필요
+    }
+    
+    private func configureFilteringButtons() {
+        historyFilteringButtonsView.delegate = self
+    }
+    
+    private func setFilteringButtons() {
+        self.view.addSubview(historyFilteringButtonsView)
+        historyFilteringButtonsView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            historyFilteringButtonsView.topAnchor.constraint(equalTo: view.topAnchor, constant: HistoryLayoutValue.Padding.collectionViewFromTop / 2),
+            historyFilteringButtonsView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            historyFilteringButtonsView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            historyFilteringButtonsView.heightAnchor.constraint(equalToConstant: HistoryLayoutValue.Size.filteringButtonsHeight)
+            
+        ])
+    }
 }
 
 // MARK: - Configure CollectionView
