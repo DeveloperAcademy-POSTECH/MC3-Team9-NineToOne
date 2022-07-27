@@ -198,16 +198,16 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="378" height="125"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="MFf-1t-5Gt" userLabel="Quiz Section">
-                                                                <rect key="frame" x="22" y="22" width="52.5" height="48"/>
+                                                                <rect key="frame" x="22" y="22" width="334" height="48"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="500" text="문제 번호" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aJA-Za-3aY">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="52.5" height="17"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="334" height="17"/>
                                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
                                                                         <color key="textColor" red="0.46274509803921571" green="0.46274509803921571" blue="0.46274509803921571" alpha="1" colorSpace="calibratedRGB"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="문제" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bie-6B-HUI">
-                                                                        <rect key="frame" x="0.0" y="32" width="52.5" height="16"/>
+                                                                        <rect key="frame" x="0.0" y="32" width="334" height="16"/>
                                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="13"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
@@ -239,16 +239,16 @@
                                                         <rect key="frame" x="0.0" y="177" width="378" height="189"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="qBY-X4-R1Q" userLabel="Detail Section">
-                                                                <rect key="frame" x="22" y="0.0" width="52.5" height="45.5"/>
+                                                                <rect key="frame" x="22" y="0.0" width="334" height="45.5"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="500" text="문제 풀이" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gW5-B9-GJN">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="52.5" height="17"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="334" height="17"/>
                                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
                                                                         <color key="textColor" red="0.59215686270000001" green="0.59215686270000001" blue="0.59215686270000001" alpha="1" colorSpace="calibratedRGB"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="풀이" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ScC-uv-19a">
-                                                                        <rect key="frame" x="0.0" y="24" width="52.5" height="21.5"/>
+                                                                        <rect key="frame" x="0.0" y="24" width="334" height="21.5"/>
                                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
@@ -269,14 +269,13 @@
                                                             <constraint firstItem="qBY-X4-R1Q" firstAttribute="leading" secondItem="sBj-jF-etY" secondAttribute="leading" constant="22" id="a7B-Jw-eTv"/>
                                                             <constraint firstAttribute="trailing" secondItem="qBY-X4-R1Q" secondAttribute="trailing" constant="22" id="qNm-1g-cc1"/>
                                                             <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="qBY-X4-R1Q" secondAttribute="bottom" id="taU-6S-v0x"/>
-                                                            <constraint firstAttribute="width" secondItem="sBj-jF-etY" secondAttribute="height" multiplier="2:1" id="vGl-MY-fjS"/>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xpS-YS-sqf" userLabel="Sample Section Super">
                                                         <rect key="frame" x="0.0" y="418" width="378" height="350"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="cfJ-aP-egq" userLabel="Sample Section">
-                                                                <rect key="frame" x="20" y="0.0" width="56.5" height="45.5"/>
+                                                                <rect key="frame" x="22" y="0.0" width="56.5" height="45.5"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="500" text="예시" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vw8-Cu-4h0">
                                                                         <rect key="frame" x="0.0" y="0.0" width="56.5" height="17"/>
@@ -293,18 +292,19 @@
                                                                     </label>
                                                                 </subviews>
                                                                 <constraints>
+                                                                    <constraint firstAttribute="trailing" secondItem="Vw8-Cu-4h0" secondAttribute="trailing" id="8wn-iA-tQj"/>
                                                                     <constraint firstItem="Vw8-Cu-4h0" firstAttribute="top" secondItem="cfJ-aP-egq" secondAttribute="top" id="C6P-Ca-oWC"/>
                                                                     <constraint firstAttribute="bottom" secondItem="DpX-44-5Nu" secondAttribute="bottom" id="NlL-rP-LPs"/>
                                                                     <constraint firstItem="DpX-44-5Nu" firstAttribute="top" secondItem="Vw8-Cu-4h0" secondAttribute="bottom" constant="7" id="aPM-b5-wyk"/>
+                                                                    <constraint firstItem="Vw8-Cu-4h0" firstAttribute="leading" secondItem="cfJ-aP-egq" secondAttribute="leading" id="tiU-S5-ZYt"/>
                                                                 </constraints>
                                                             </stackView>
                                                         </subviews>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" secondItem="xpS-YS-sqf" secondAttribute="height" multiplier="2:1" id="InY-C6-a1P"/>
-                                                            <constraint firstItem="cfJ-aP-egq" firstAttribute="leading" secondItem="xpS-YS-sqf" secondAttribute="leading" constant="20" id="fOg-aL-Gyo"/>
+                                                            <constraint firstItem="cfJ-aP-egq" firstAttribute="leading" secondItem="xpS-YS-sqf" secondAttribute="leading" constant="22" id="fOg-aL-Gyo"/>
                                                             <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="cfJ-aP-egq" secondAttribute="bottom" id="vT9-Bj-6jz"/>
-                                                            <constraint firstAttribute="trailing" secondItem="cfJ-aP-egq" secondAttribute="trailing" constant="20" id="x2A-yd-jtJ"/>
+                                                            <constraint firstAttribute="trailing" secondItem="cfJ-aP-egq" secondAttribute="trailing" constant="22" id="x2A-yd-jtJ"/>
                                                             <constraint firstItem="cfJ-aP-egq" firstAttribute="top" secondItem="xpS-YS-sqf" secondAttribute="top" id="xXN-YN-YV3"/>
                                                         </constraints>
                                                     </view>
@@ -346,11 +346,12 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="2Co-X8-vkZ"/>
                                 </constraints>
-                                <color key="tintColor" red="0.97254901959999995" green="0.65098039220000004" blue="0.16078431369999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="0.97254901960784312" green="0.65098039215686276" blue="0.16078431372549018" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="닫기">
                                     <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="14"/>
                                     <color key="baseForegroundColor" systemColor="labelColor"/>
+                                    <color key="baseBackgroundColor" red="0.97254901960784312" green="0.65098039215686276" blue="0.16078431372549018" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </buttonConfiguration>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
