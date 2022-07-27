@@ -7,18 +7,7 @@
 
 import UIKit
 
-struct SolvedQuizCellUIValue {
-    enum CornerRadius {
-        static let solvedQuizCell = 16.0
-    }
-//    struct shadow {
-//        static let boaderWidth = 1
-//        static let Offset = CGSize(width: 0, height: 4)
-//        static let Opacity = 0.1
-//    }
-}
-
-final class SolvedQuizType1CollectionViewCell: UICollectionViewCell {
+final class SolvedQuizType1CollectionViewCell: QuizCollectionViewCell {
 
     static let identifier = "SolvedQuizType1CollectionViewCell"
     @IBOutlet private weak var quizIndexLabel: UILabel!
@@ -26,14 +15,15 @@ final class SolvedQuizType1CollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        drawSolvedCellUI()
+        drawSolvedQuizeType1CellUI()
     }
 
 }
 
-extension SolvedQuizType1CollectionViewCell {
-    func drawSolvedCellUI() {
-        contentView.layer.applyShadow(color: UIColor.black, alpha: 0.1, x: 0, y: 4, blur: 25, spread: 0)
-        contentView.layer.cornerRadius = SolvedQuizCellUIValue.CornerRadius.solvedQuizCell
+private extension SolvedQuizType1CollectionViewCell {
+    func drawSolvedQuizeType1CellUI() {
+        quizIndexLabel.textColor = UIColor.customColor(.customGray)
+        quizIndexLabel.font = UIFont.customFont(.subContent)
+        quizContent.font = UIFont.customFont(.content) //글자크기 확인
     }
 }
