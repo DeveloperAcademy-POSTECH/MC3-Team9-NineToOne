@@ -292,19 +292,18 @@
                                                                     </label>
                                                                 </subviews>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="trailing" secondItem="Vw8-Cu-4h0" secondAttribute="trailing" id="8wn-iA-tQj"/>
                                                                     <constraint firstItem="Vw8-Cu-4h0" firstAttribute="top" secondItem="cfJ-aP-egq" secondAttribute="top" id="C6P-Ca-oWC"/>
+                                                                    <constraint firstItem="Vw8-Cu-4h0" firstAttribute="centerX" secondItem="cfJ-aP-egq" secondAttribute="centerX" id="GMC-2A-7aS"/>
                                                                     <constraint firstAttribute="bottom" secondItem="DpX-44-5Nu" secondAttribute="bottom" id="NlL-rP-LPs"/>
                                                                     <constraint firstItem="DpX-44-5Nu" firstAttribute="top" secondItem="Vw8-Cu-4h0" secondAttribute="bottom" constant="7" id="aPM-b5-wyk"/>
-                                                                    <constraint firstItem="Vw8-Cu-4h0" firstAttribute="leading" secondItem="cfJ-aP-egq" secondAttribute="leading" id="tiU-S5-ZYt"/>
                                                                 </constraints>
                                                             </stackView>
                                                         </subviews>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
-                                                            <constraint firstItem="cfJ-aP-egq" firstAttribute="leading" secondItem="xpS-YS-sqf" secondAttribute="leading" constant="22" id="fOg-aL-Gyo"/>
+                                                            <constraint firstItem="cfJ-aP-egq" firstAttribute="leading" secondItem="xpS-YS-sqf" secondAttribute="leading" constant="22" id="eBU-mP-RaL"/>
+                                                            <constraint firstAttribute="trailing" secondItem="cfJ-aP-egq" secondAttribute="trailing" constant="22" id="fVo-7u-kSP"/>
                                                             <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="cfJ-aP-egq" secondAttribute="bottom" id="vT9-Bj-6jz"/>
-                                                            <constraint firstAttribute="trailing" secondItem="cfJ-aP-egq" secondAttribute="trailing" constant="22" id="x2A-yd-jtJ"/>
                                                             <constraint firstItem="cfJ-aP-egq" firstAttribute="top" secondItem="xpS-YS-sqf" secondAttribute="top" id="xXN-YN-YV3"/>
                                                         </constraints>
                                                     </view>
