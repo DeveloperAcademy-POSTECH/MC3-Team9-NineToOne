@@ -311,10 +311,14 @@
                                                 </subviews>
                                                 <constraints>
                                                     <constraint firstAttribute="bottom" secondItem="xpS-YS-sqf" secondAttribute="bottom" id="4Eb-0p-2Er"/>
+                                                    <constraint firstItem="sBj-jF-etY" firstAttribute="leading" secondItem="gwk-po-f3h" secondAttribute="leading" id="9Wd-Z6-q9u"/>
+                                                    <constraint firstAttribute="trailing" secondItem="xpS-YS-sqf" secondAttribute="trailing" id="Epx-aS-Jaa"/>
                                                     <constraint firstItem="1SN-Po-sPV" firstAttribute="leading" secondItem="gwk-po-f3h" secondAttribute="leading" id="NqA-Gc-qsN"/>
+                                                    <constraint firstItem="xpS-YS-sqf" firstAttribute="leading" secondItem="gwk-po-f3h" secondAttribute="leading" id="YX2-6p-qkH"/>
                                                     <constraint firstItem="xpS-YS-sqf" firstAttribute="top" secondItem="sBj-jF-etY" secondAttribute="bottom" constant="52" id="apS-MZ-a4l"/>
                                                     <constraint firstItem="sBj-jF-etY" firstAttribute="top" secondItem="1SN-Po-sPV" secondAttribute="bottom" constant="52" id="b3b-Fh-kZy"/>
                                                     <constraint firstAttribute="trailing" secondItem="1SN-Po-sPV" secondAttribute="trailing" id="qUI-vr-sdI"/>
+                                                    <constraint firstAttribute="trailing" secondItem="sBj-jF-etY" secondAttribute="trailing" id="uHO-8U-a24"/>
                                                     <constraint firstItem="xpS-YS-sqf" firstAttribute="height" secondItem="sBj-jF-etY" secondAttribute="height" multiplier="1.85185" id="xE3-bP-hIy"/>
                                                     <constraint firstItem="1SN-Po-sPV" firstAttribute="top" secondItem="gwk-po-f3h" secondAttribute="top" id="xgj-Ln-Arx"/>
                                                 </constraints>
