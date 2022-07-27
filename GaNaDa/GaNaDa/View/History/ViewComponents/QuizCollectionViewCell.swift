@@ -7,6 +7,12 @@
 
 import UIKit
 
+struct QuizCellUIValue {
+    enum CornerRadius {
+        static let quizCell = 16.0
+    }
+}
+
 class QuizCollectionViewCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -24,5 +30,6 @@ private extension QuizCollectionViewCell {
         contentView.backgroundColor = UIColor.white
         contentView.layer.borderWidth = 1
         contentView.layer.borderColor = UIColor.orange.cgColor //커스텀컬러로 교체
+        contentView.layer.cornerRadius = QuizCellUIValue.CornerRadius.quizCell
     }
 }
