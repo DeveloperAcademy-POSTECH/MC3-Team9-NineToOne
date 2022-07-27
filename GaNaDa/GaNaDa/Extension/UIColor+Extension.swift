@@ -27,7 +27,6 @@ extension UIColor {
             green: (hex >> 8) & 0xFF,
             blue: hex & 0xFF
         )
-        
     }
     
     static func customColor(_ name: AssetsColor) -> UIColor {

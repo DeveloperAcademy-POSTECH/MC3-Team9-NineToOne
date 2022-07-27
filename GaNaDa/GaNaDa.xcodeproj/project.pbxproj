@@ -56,10 +56,16 @@
 		C70BCA4728878A4900569961 /* GaNaDaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70BCA4628878A4900569961 /* GaNaDaUITests.swift */; };
 		C70BCA4928878A4900569961 /* GaNaDaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70BCA4828878A4900569961 /* GaNaDaUITestsLaunchTests.swift */; };
 		C70BCA612887975400569961 /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C70BCA602887975400569961 /* Color.xcassets */; };
+		C7171E9F2891739D00EFFD5A /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = C7171E9E2891739D00EFFD5A /* Lottie */; };
+		C7171EA12891859200EFFD5A /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7171EA02891859200EFFD5A /* UIViewController+Extension.swift */; };
+		C7171EA328919D0600EFFD5A /* Firework.json in Resources */ = {isa = PBXBuildFile; fileRef = C7171EA228919D0600EFFD5A /* Firework.json */; };
+		C795FC172890EDFF00BF28EF /* QuizAnswerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C795FC162890EDFF00BF28EF /* QuizAnswerViewController.swift */; };
+		C7AC8E2D2890CFF3005F4558 /* LaunchScreen.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7AC8E2C2890CFF3005F4558 /* LaunchScreen.xcassets */; };
 		C7DED593288E7C3D004A2322 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DED592288E7C3D004A2322 /* NetworkService.swift */; };
 		C7DED595288E7CA8004A2322 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DED594288E7CA8004A2322 /* NetworkManager.swift */; };
 		C7DED599288E8806004A2322 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DED598288E8806004A2322 /* User.swift */; };
 		C7DED59B288E8C0A004A2322 /* SubmitAnswerDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DED59A288E8C0A004A2322 /* SubmitAnswerDTO.swift */; };
+		C7FA02892890E0E9006B752F /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FA02882890E0E9006B752F /* QuizViewController.swift */; };
 		E29228CD288DB04E0051779B /* TodayQuizCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29228CC288DB04E0051779B /* TodayQuizCollectionVC.swift */; };
 /* End PBXBuildFile section */
 
@@ -112,10 +118,15 @@
 		C70BCA4628878A4900569961 /* GaNaDaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaNaDaUITests.swift; sourceTree = "<group>"; };
 		C70BCA4828878A4900569961 /* GaNaDaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaNaDaUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		C70BCA602887975400569961 /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
+		C7171EA02891859200EFFD5A /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		C7171EA228919D0600EFFD5A /* Firework.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Firework.json; sourceTree = "<group>"; };
+		C795FC162890EDFF00BF28EF /* QuizAnswerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizAnswerViewController.swift; sourceTree = "<group>"; };
+		C7AC8E2C2890CFF3005F4558 /* LaunchScreen.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = LaunchScreen.xcassets; sourceTree = "<group>"; };
 		C7DED592288E7C3D004A2322 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		C7DED594288E7CA8004A2322 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		C7DED598288E8806004A2322 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		C7DED59A288E8C0A004A2322 /* SubmitAnswerDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitAnswerDTO.swift; sourceTree = "<group>"; };
+		C7FA02882890E0E9006B752F /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
 		E29228CC288DB04E0051779B /* TodayQuizCollectionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayQuizCollectionVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -124,6 +135,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C7171E9F2891739D00EFFD5A /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -186,6 +198,7 @@
 			isa = PBXGroup;
 			children = (
 				AB75333C288A6DCD00A68BFB /* UIColor+Extension.swift */,
+				C7171EA02891859200EFFD5A /* UIViewController+Extension.swift */,
 				AB753392288A7B2900A68BFB /* UIFont+Extension.swift */,
 			);
 			path = Extension;
@@ -272,6 +285,7 @@
 		C70BCA562887928B00569961 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				C7171EA228919D0600EFFD5A /* Firework.json */,
 				AB753369288A7A3C00A68BFB /* Font */,
 				C70BCA5A288792D900569961 /* Assets */,
 			);
@@ -281,6 +295,7 @@
 		C70BCA572887929900569961 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C7FA028A2890E0F4006B752F /* QuizDetail */,
 				C70BCA2B28878A4800569961 /* Main.storyboard */,
 				AB3D6B0F288E70D3005C452F /* TodayQuiz */,
 				AB24C04A288E395C00849B38 /* History */,
@@ -292,6 +307,7 @@
 			isa = PBXGroup;
 			children = (
 				C70BCA2E28878A4900569961 /* Assets.xcassets */,
+				C7AC8E2C2890CFF3005F4558 /* LaunchScreen.xcassets */,
 				C70BCA602887975400569961 /* Color.xcassets */,
 			);
 			path = Assets;
@@ -304,6 +320,15 @@
 				C7DED594288E7CA8004A2322 /* NetworkManager.swift */,
 			);
 			path = Manager;
+			sourceTree = "<group>";
+		};
+		C7FA028A2890E0F4006B752F /* QuizDetail */ = {
+			isa = PBXGroup;
+			children = (
+				C7FA02882890E0E9006B752F /* QuizViewController.swift */,
+				C795FC162890EDFF00BF28EF /* QuizAnswerViewController.swift */,
+			);
+			path = QuizDetail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -322,6 +347,9 @@
 			dependencies = (
 			);
 			name = GaNaDa;
+			packageProductDependencies = (
+				C7171E9E2891739D00EFFD5A /* Lottie */,
+			);
 			productName = GaNaDa;
 			productReference = C70BCA2228878A4800569961 /* GaNaDa.app */;
 			productType = "com.apple.product-type.application";
@@ -394,6 +422,9 @@
 				Base,
 			);
 			mainGroup = C70BCA1928878A4800569961;
+			packageReferences = (
+				C7171E9D2891739D00EFFD5A /* XCRemoteSwiftPackageReference "lottie-ios" */,
+			);
 			productRefGroup = C70BCA2328878A4800569961 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -418,10 +449,12 @@
 				AB753377288A7A6400A68BFB /* Pretendard-SemiBold.otf in Resources */,
 				AB3D6B14288E70D3005C452F /* QuizTypeBlank.xib in Resources */,
 				C70BCA2D28878A4800569961 /* Main.storyboard in Resources */,
+				C7171EA328919D0600EFFD5A /* Firework.json in Resources */,
 				AB75339B288A7E0C00A68BFB /* NanumPen.otf in Resources */,
 				AB75337A288A7A6400A68BFB /* Pretendard-Black.otf in Resources */,
 				AB75338C288A7A6400A68BFB /* Pretendard-ExtraLight.otf in Resources */,
 				AB753383288A7A6400A68BFB /* Pretendard-Regular.otf in Resources */,
+				C7AC8E2D2890CFF3005F4558 /* LaunchScreen.xcassets in Resources */,
 				AB753386288A7A6400A68BFB /* Pretendard-Thin.otf in Resources */,
 				AB753380288A7A6400A68BFB /* Pretendard-Light.otf in Resources */,
 				AB753389288A7A6400A68BFB /* Pretendard-Medium.otf in Resources */,
@@ -470,11 +503,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				C7DED593288E7C3D004A2322 /* NetworkService.swift in Sources */,
+				C795FC172890EDFF00BF28EF /* QuizAnswerViewController.swift in Sources */,
 				AB24C04E288E395C00849B38 /* QuizType2CollectionViewCell.swift in Sources */,
 				AB75333D288A6DCD00A68BFB /* UIColor+Extension.swift in Sources */,
+				C7171EA12891859200EFFD5A /* UIViewController+Extension.swift in Sources */,
 				C70BCA2628878A4800569961 /* AppDelegate.swift in Sources */,
 				C7DED595288E7CA8004A2322 /* NetworkManager.swift in Sources */,
 				AB24C04F288E395C00849B38 /* HistoryViewController.swift in Sources */,
+				C7FA02892890E0E9006B752F /* QuizViewController.swift in Sources */,
 				AB24C051288E585800849B38 /* HistoryCollectionView.swift in Sources */,
 				AB753393288A7B2900A68BFB /* UIFont+Extension.swift in Sources */,
 				C7DED599288E8806004A2322 /* User.swift in Sources */,
@@ -826,6 +862,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C7171E9D2891739D00EFFD5A /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
+			requirement = {
+				kind = exactVersion;
+				version = 3.4.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C7171E9E2891739D00EFFD5A /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C7171E9D2891739D00EFFD5A /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C70BCA1A28878A4800569961 /* Project object */;
 }
