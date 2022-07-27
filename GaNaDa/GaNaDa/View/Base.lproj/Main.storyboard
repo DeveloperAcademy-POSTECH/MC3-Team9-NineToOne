@@ -62,7 +62,7 @@
         <!--오늘의 퀴즈-->
         <scene sceneID="shC-P3-r5k">
             <objects>
-                <viewController id="Ut6-Yp-ny7" sceneMemberID="viewController">
+                <viewController id="Ut6-Yp-ny7" customClass="TodayQuizViewController" customModule="GaNaDa" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MEl-QI-cKU">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -178,6 +178,12 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="오늘의 퀴즈" image="house" catalog="system" id="k31-Zn-Wt3"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="userExp" destination="Ota-2I-TMg" id="9ZZ-5i-g28"/>
+                        <outlet property="userImage" destination="dss-8y-X23" id="Lk5-fz-Ycv"/>
+                        <outlet property="userLevel" destination="Zbc-VP-OdD" id="03U-AN-YlO"/>
+                        <outlet property="userName" destination="PSx-iV-Wal" id="GH1-ls-IFj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bLh-Mq-iJa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
