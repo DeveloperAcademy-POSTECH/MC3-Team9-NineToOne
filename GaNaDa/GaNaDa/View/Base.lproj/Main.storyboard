@@ -180,7 +180,7 @@
         <!--퀴즈해설-->
         <scene sceneID="ad0-NP-btC">
             <objects>
-                <viewController title="퀴즈해설" id="HqB-oE-7TX" sceneMemberID="viewController">
+                <viewController title="퀴즈해설" id="HqB-oE-7TX" customClass="QuizDetailViewController" customModule="GaNaDa" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jGW-QO-JZ1">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -221,7 +221,6 @@
                                                                 </constraints>
                                                             </stackView>
                                                         </subviews>
-                                                        <color key="backgroundColor" red="0.99607843139999996" green="0.92549019610000005" blue="0.76470588240000004" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="trailing" secondItem="MFf-1t-5Gt" secondAttribute="trailing" constant="22" id="CfI-Qb-d7b"/>
                                                             <constraint firstItem="MFf-1t-5Gt" firstAttribute="leading" secondItem="1SN-Po-sPV" secondAttribute="leading" constant="22" id="Ltu-8A-8A6"/>
@@ -375,6 +374,9 @@
                             <constraint firstItem="xjl-zJ-xHN" firstAttribute="top" secondItem="iPr-DK-wq3" secondAttribute="top" id="WiQ-SU-goq"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="quizSection" destination="1SN-Po-sPV" id="Eya-Z1-c69"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="axR-qC-znk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
