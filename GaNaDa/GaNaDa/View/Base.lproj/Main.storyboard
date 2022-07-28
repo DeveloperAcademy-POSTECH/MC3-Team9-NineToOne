@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HqB-oE-7TX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iZb-QC-tCB">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -273,37 +273,34 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xpS-YS-sqf" userLabel="Sample Section Super">
                                                         <rect key="frame" x="0.0" y="418" width="378" height="350"/>
                                                         <subviews>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="cfJ-aP-egq" userLabel="Sample Section">
-                                                                <rect key="frame" x="22" y="0.0" width="56.5" height="45.5"/>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="BdD-Wk-wX7" userLabel="Sample Section">
+                                                                <rect key="frame" x="22" y="0.0" width="334" height="38.5"/>
                                                                 <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="500" text="예시" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vw8-Cu-4h0">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="56.5" height="17"/>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="예시" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pk6-z5-Io3">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="334" height="17"/>
                                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
-                                                                        <color key="textColor" red="0.59215686270000001" green="0.59215686270000001" blue="0.59215686270000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                                        <color key="textColor" red="0.59215686274509804" green="0.59215686274509804" blue="0.59215686274509804" alpha="1" colorSpace="calibratedRGB"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" layoutMarginsFollowReadableWidth="YES" text="- 예시 1" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="DpX-44-5Nu">
-                                                                        <rect key="frame" x="0.0" y="24" width="56.5" height="21.5"/>
-                                                                        <autoresizingMask key="autoresizingMask"/>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="- 예시 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HMJ-aT-Vd0">
+                                                                        <rect key="frame" x="0.0" y="17" width="334" height="21.5"/>
                                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                 </subviews>
                                                                 <constraints>
-                                                                    <constraint firstItem="Vw8-Cu-4h0" firstAttribute="top" secondItem="cfJ-aP-egq" secondAttribute="top" id="C6P-Ca-oWC"/>
-                                                                    <constraint firstItem="Vw8-Cu-4h0" firstAttribute="centerX" secondItem="cfJ-aP-egq" secondAttribute="centerX" id="GMC-2A-7aS"/>
-                                                                    <constraint firstAttribute="bottom" secondItem="DpX-44-5Nu" secondAttribute="bottom" id="NlL-rP-LPs"/>
-                                                                    <constraint firstItem="DpX-44-5Nu" firstAttribute="top" secondItem="Vw8-Cu-4h0" secondAttribute="bottom" constant="7" id="aPM-b5-wyk"/>
+                                                                    <constraint firstItem="HMJ-aT-Vd0" firstAttribute="top" secondItem="pk6-z5-Io3" secondAttribute="bottom" id="FaC-TX-Mcf"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="HMJ-aT-Vd0" secondAttribute="bottom" id="PsO-ig-l1Q"/>
                                                                 </constraints>
                                                             </stackView>
                                                         </subviews>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
-                                                            <constraint firstItem="cfJ-aP-egq" firstAttribute="leading" secondItem="xpS-YS-sqf" secondAttribute="leading" constant="22" id="eBU-mP-RaL"/>
-                                                            <constraint firstAttribute="trailing" secondItem="cfJ-aP-egq" secondAttribute="trailing" constant="22" id="fVo-7u-kSP"/>
-                                                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="cfJ-aP-egq" secondAttribute="bottom" id="vT9-Bj-6jz"/>
-                                                            <constraint firstItem="cfJ-aP-egq" firstAttribute="top" secondItem="xpS-YS-sqf" secondAttribute="top" id="xXN-YN-YV3"/>
+                                                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="BdD-Wk-wX7" secondAttribute="bottom" id="ESb-hh-8JK"/>
+                                                            <constraint firstAttribute="trailing" secondItem="BdD-Wk-wX7" secondAttribute="trailing" constant="22" id="Hb1-Au-X4O"/>
+                                                            <constraint firstItem="BdD-Wk-wX7" firstAttribute="top" secondItem="xpS-YS-sqf" secondAttribute="top" id="L90-9O-o9Q"/>
+                                                            <constraint firstItem="BdD-Wk-wX7" firstAttribute="leading" secondItem="xpS-YS-sqf" secondAttribute="leading" constant="22" id="aaQ-wA-1tI"/>
                                                         </constraints>
                                                     </view>
                                                 </subviews>
@@ -378,7 +375,7 @@
                         <outlet property="closeButton" destination="duc-qO-GO4" id="dpM-qc-zeO"/>
                         <outlet property="quizContent" destination="Bie-6B-HUI" id="qRO-eL-gML"/>
                         <outlet property="quizDetail" destination="ScC-uv-19a" id="TCU-Sm-kAu"/>
-                        <outlet property="quizDetailExample" destination="DpX-44-5Nu" id="9Bu-U2-Tph"/>
+                        <outlet property="quizDetailExample" destination="HMJ-aT-Vd0" id="7gO-Rt-7HS"/>
                         <outlet property="quizNum" destination="aJA-Za-3aY" id="91Z-t2-QRV"/>
                         <outlet property="quizSection" destination="1SN-Po-sPV" id="Eya-Z1-c69"/>
                     </connections>
