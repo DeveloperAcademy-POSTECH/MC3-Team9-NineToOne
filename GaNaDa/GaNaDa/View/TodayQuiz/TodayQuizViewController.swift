@@ -24,8 +24,10 @@ class TodayQuizViewController: UIViewController {
     }
     
     func saveUserData(userName: String) {
-        UserDefaults.standard.setValue(userName, forKey: "userName")
-        UserDefaults.standard.setValue(280, forKey: "userExp")
+        if UserDefaults.standard.object(forKey: "userName") == nil {
+            UserDefaults.standard.setValue(userName, forKey: "userName")
+            UserDefaults.standard.setValue(280, forKey: "userExp")
+        }
     }
     
     func requestUserData() {
