@@ -15,7 +15,8 @@ final class ICloudManager {
         container = CKContainer(identifier: id)
     }
     
-    func requestCloudData(record: String, completion: @escaping (_ record: CKRecord) -> Void) {
+    func requestCloudData(record: String, completion: @escaping (_ records: [CKRecord]) -> Void) {
+        var quizs: [CKRecord] = []
         let predicate = NSPredicate(value: true)
         let query = CKQuery(recordType: record, predicate: predicate)
         let operation = CKQueryOperation(query: query)
@@ -25,7 +26,7 @@ final class ICloudManager {
             operation.recordMatchedBlock = { recordID, result in
                 switch result {
                 case .success(let record):
-                    completion(record)
+                    quizs.append(record)
                 case .failure(let error):
                     print(error)
                 }
@@ -33,11 +34,23 @@ final class ICloudManager {
         } else {
             operation.recordFetchedBlock = { (record: CKRecord?) in
                 if let record = record {
-                    print(record)
+                    quizs.append(record)
                 }
             }
         }
         operation.start()
+        if #available(iOS 15.0, *) {
+            operation.queryResultBlock = { result in
+                switch result {
+                case .success(_):
+                    completion(quizs)
+                case .failure(let error):
+                    print(error)
+                }
+            }
+        } else {
+//            operation.queryCompletionBlock =
+        }
     }
 }
 
@@ -47,29 +60,23 @@ enum ICloudService {
 }
 
 extension ICloudService {
-    static func requestAllHistoryQuizs() {
-        manager.requestCloudData(record: "QuizHistory") { record in
-            print(">>")
-            print(record["rightAnswer"] ?? "")
-        }
-    }
-    
-    static func decode(_ ckRecord: CKRecord) throws {
-        let keyIntersection = Set(self.dtoEncoded.dictionary.keys).intersection(ckRecord.allKeys())
-        var dictionary: [String: Any?] = [:]
-
-        keyIntersection.forEach {
-
-            if let asset = ckRecord[$0] as? CKAsset {
-                dictionary[$0] = try? self.data(from: asset)
-            } else {
-                dictionary[$0] = ckRecord[$0]
+    static func requestAllHistoryQuizs(completion: @escaping (_ quizs: [Quiz]) -> Void) {
+        var quizs: [Quiz] = []
+        manager.requestCloudData(record: "QuizHistory") { records in
+            for record in records {
+                let fetchedQuiz = Quiz(quizID: record["quizID"] as? Int ?? 0,
+                                       question: record["question"] ?? "",
+                                       typeRawValue: record["type"] as? Int ?? 0,
+                                       rightAnswer: record["rightAnswer"] ?? "",
+                                       wrongAnswer: record["wrongAnswer"] ?? "",
+                                       description: record["description"] ?? "",
+                                       example: record["example"] ?? [],
+                                       stateRawValue: record["status"] as? Int ?? 0,
+                                       publishedDate: record["publishedDate"])
+                quizs.append(fetchedQuiz)
             }
+            completion(quizs)
         }
-        guard let data = try? JSONSerialization.data(withJSONObject: dictionary) else { throw Errors.LocalData.isCorrupted }
-        guard let dto = try? JSONDecoder().decode(self.DTO, from: data) else { throw  Errors.LocalData.isCorrupted }
-        do { try decode(dto) }
-        catch { throw error }
     }
 }
 

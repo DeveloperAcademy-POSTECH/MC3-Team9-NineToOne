@@ -21,7 +21,7 @@ final class HistoryViewController: UIViewController {
     
     private lazy var historyFilteringButtonsView = FilteringButtonsView()
     private lazy var historyCollectionView = HistoryCollectionView()
-    private var quizs = [Quiz.preview, Quiz.preview, Quiz.preview, Quiz.preview, Quiz.preview, Quiz.preview, Quiz.preview, Quiz.preview, Quiz.preview, Quiz.preview, Quiz.preview, Quiz.preview]
+    private var quizs: [Quiz] = []
     
     override func loadView() {
         super.loadView()
@@ -37,7 +37,12 @@ final class HistoryViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        ICloudService.requestAllHistoryQuizs()
+        ICloudService.requestAllHistoryQuizs() { quizs in
+            self.quizs = quizs
+            DispatchQueue.main.async {
+                self.historyCollectionView.collectionView.reloadData()
+            }
+        }
     }
     
 }

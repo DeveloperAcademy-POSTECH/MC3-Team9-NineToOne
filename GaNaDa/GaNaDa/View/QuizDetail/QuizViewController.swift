@@ -32,7 +32,7 @@ final class QuizViewController: UIViewController {
     }
     
     private func loadData() {
-        blankQuizGuideLabel.isHidden = (quiz.type == .choice)
+        blankQuizGuideLabel.isHidden = (quiz.quizType == .choice)
         quizLabel.text = quiz.question
         firstAnswerButton.setTitle(quiz.rightAnswer, for: .normal)
         secondAnswerButton.setTitle(quiz.wrongAnswer, for: .normal)
