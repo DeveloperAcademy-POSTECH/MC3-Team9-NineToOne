@@ -35,6 +35,11 @@ final class HistoryViewController: UIViewController {
         super.viewDidLoad()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        ICloudService.requestAllHistoryQuizs()
+    }
+    
 }
 
 // MARK: - Configure Filtering Buttons
