@@ -37,12 +37,7 @@ final class HistoryViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        ICloudService.requestAllHistoryQuizs() { quizs in
-            self.quizs = quizs
-            DispatchQueue.main.async {
-                self.historyCollectionView.collectionView.reloadData()
-            }
-        }
+        loadHistoryCollectionView()
     }
     
 }
@@ -78,6 +73,15 @@ private extension HistoryViewController {
         historyCollectionView.collectionView.dataSource = self
         historyCollectionView.collectionView.delegate = self
         historyCollectionView.collectionView.register(QuizType2CollectionViewCell.self, forCellWithReuseIdentifier: QuizType2CollectionViewCell.id)
+    }
+    
+    func loadHistoryCollectionView() {
+        ICloudService.requestAllHistoryQuizs() { quizs in
+            self.quizs = quizs
+            DispatchQueue.main.async {
+                self.historyCollectionView.collectionView.reloadData()
+            }
+        }
     }
 }
 
