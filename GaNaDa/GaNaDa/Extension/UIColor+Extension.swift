@@ -29,6 +29,15 @@ extension UIColor {
         )
     }
     
+    // 사용법 ex) label.background = .point
+    static let point = UIColor(named: "point")
+    static let customOrange = UIColor(named: "customOrange")
+    static let customIvory = UIColor(named: "customIvory")
+    static let black = UIColor(named: "black")
+    static let darkGray = UIColor(named: "darkGray")
+    static let lightGray = UIColor(named: "lightGray")
+
+    
     static func customColor(_ name: AssetsColor) -> UIColor {
         switch name {
         case .brand:
