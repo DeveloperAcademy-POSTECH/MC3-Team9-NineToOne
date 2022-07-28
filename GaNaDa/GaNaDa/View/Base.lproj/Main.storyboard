@@ -198,7 +198,7 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="378" height="125"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="MFf-1t-5Gt" userLabel="Quiz Section">
-                                                                <rect key="frame" x="22" y="22" width="334" height="48"/>
+                                                                <rect key="frame" x="22" y="22" width="334" height="50"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="500" text="문제 번호" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aJA-Za-3aY">
                                                                         <rect key="frame" x="0.0" y="0.0" width="334" height="17"/>
@@ -206,9 +206,9 @@
                                                                         <color key="textColor" red="0.46274509803921571" green="0.46274509803921571" blue="0.46274509803921571" alpha="1" colorSpace="calibratedRGB"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="문제" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bie-6B-HUI">
-                                                                        <rect key="frame" x="0.0" y="32" width="334" height="16"/>
-                                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="13"/>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="문제" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bie-6B-HUI">
+                                                                        <rect key="frame" x="0.0" y="32" width="334" height="18"/>
+                                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
@@ -350,7 +350,7 @@
                                 </constraints>
                                 <color key="tintColor" red="0.97254901960784312" green="0.65098039215686276" blue="0.16078431372549018" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="닫기">
+                                <buttonConfiguration key="configuration" style="filled" title="홈으로 돌아가기">
                                     <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="14"/>
                                     <color key="baseForegroundColor" systemColor="labelColor"/>
                                     <color key="baseBackgroundColor" red="0.97254901960784312" green="0.65098039215686276" blue="0.16078431372549018" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -375,6 +375,11 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="closeButton" destination="duc-qO-GO4" id="dpM-qc-zeO"/>
+                        <outlet property="quizContent" destination="Bie-6B-HUI" id="qRO-eL-gML"/>
+                        <outlet property="quizDetail" destination="ScC-uv-19a" id="TCU-Sm-kAu"/>
+                        <outlet property="quizDetailExample" destination="DpX-44-5Nu" id="9Bu-U2-Tph"/>
+                        <outlet property="quizNum" destination="aJA-Za-3aY" id="91Z-t2-QRV"/>
                         <outlet property="quizSection" destination="1SN-Po-sPV" id="Eya-Z1-c69"/>
                     </connections>
                 </viewController>
