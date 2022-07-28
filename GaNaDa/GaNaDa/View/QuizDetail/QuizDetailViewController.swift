@@ -13,7 +13,7 @@ class QuizDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        quizSection.layer.borderColor = UIColor.yellow.cgColor
+        quizSection.layer.borderColor = UIColor.orange.cgColor
         quizSection.layer.borderWidth = 1
     }
 }
