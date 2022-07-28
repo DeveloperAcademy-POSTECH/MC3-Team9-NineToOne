@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iZb-QC-tCB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Tt8-LR-Qi1">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -265,6 +265,22 @@
             </objects>
             <point key="canvasLocation" x="2768" y="183"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Ok9-Nh-6A8">
+            <objects>
+                <navigationController id="Tt8-LR-Qi1" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ef2-HZ-bdr">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="jq8-vh-7QN" kind="relationship" relationship="rootViewController" id="PAX-v5-35m"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HaA-9G-t7i" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2804" y="945"/>
+        </scene>
         <!--문제-->
         <scene sceneID="PUG-Ew-g9d">
             <objects>
@@ -274,7 +290,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="BIy-Pt-DkJ">
-                                <rect key="frame" x="73.5" y="159" width="267" height="51"/>
+                                <rect key="frame" x="73.5" y="203" width="267" height="51"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="빈칸에 들어갈 답을 고르세요." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ibf-Wv-rqx">
                                         <rect key="frame" x="0.0" y="0.0" width="267" height="17"/>
@@ -291,7 +307,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="PJe-rB-cXQ">
-                                <rect key="frame" x="45.5" y="360" width="323" height="148.5"/>
+                                <rect key="frame" x="45.5" y="404" width="323" height="148.5"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T3h-I6-72S">
                                         <rect key="frame" x="0.0" y="0.0" width="158.5" height="148.5"/>
@@ -337,7 +353,7 @@
                                 </subviews>
                             </stackView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="D9E-Wo-Z7G">
-                                <rect key="frame" x="62" y="569" width="352" height="327"/>
+                                <rect key="frame" x="62" y="586.5" width="352" height="309.5"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mYt-2C-CQW">
                                 <rect key="frame" x="41.5" y="772" width="331" height="50"/>

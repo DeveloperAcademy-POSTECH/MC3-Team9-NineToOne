@@ -15,13 +15,18 @@ struct Quiz: Codable {
     let wrongAnswer: String
     var description: String = ""
     var example: [String] = []
-    var state: QuizState?
+    var stateRawValue: Int = 0
+    var publishedDate: Date?
+    
+    var quizState: QuizState {
+        return QuizState(rawValue: stateRawValue) ?? QuizState.unsolved
+    }
 }
 
-enum QuizState: String, Codable {
+enum QuizState: Int, Codable {
+    case unsolved
     case rigth
     case wrong
-    case unsolved
 }
 
 enum QuizType: String, Codable {

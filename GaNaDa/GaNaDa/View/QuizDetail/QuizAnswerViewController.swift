@@ -22,14 +22,15 @@ final class QuizAnswerViewController: UIViewController {
         let animationView = AnimationView()
         let animation = Animation.named("Firework")
         animationView.animation = animation
-        lottieView.addSubview(animationView)
-        animationView.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            animationView.widthAnchor.constraint(equalTo: lottieView.widthAnchor, multiplier: 0.5),
-            animationView.heightAnchor.constraint(equalTo: lottieView.heightAnchor, multiplier: 0.5),
-            animationView.centerXAnchor.constraint(equalTo: lottieView.centerXAnchor),
-            animationView.centerYAnchor.constraint(equalTo: lottieView.centerYAnchor),
-        ])
+        view.addSubview(animationView)
+//        animationView.translatesAutoresizingMaskIntoConstraints = false
+        animationView.frame = view.bounds
+//        NSLayoutConstraint.activate([
+//            animationView.widthAnchor.constraint(equalTo: lottieView.widthAnchor, multiplier: 0.7),
+//            animationView.heightAnchor.constraint(equalTo: lottieView.heightAnchor, multiplier: 0.7),
+//            animationView.centerXAnchor.constraint(equalTo: lottieView.centerXAnchor),
+//            animationView.centerYAnchor.constraint(equalTo: lottieView.centerYAnchor),
+//        ])
 //        animationView.autoresizingMask = [.flexibleHeight, .flexibleHeight]
         animationView.contentMode = .scaleAspectFit
 //        animationView.contentScaleFactor = 0.4
@@ -58,7 +59,7 @@ final class QuizAnswerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setNavigationBar(navigationTitle: "문제")
-        if let quizState = quiz.state, quizState == .rigth {
+        if quiz.quizState == .rigth {
             configureLottievView()
         }
     }

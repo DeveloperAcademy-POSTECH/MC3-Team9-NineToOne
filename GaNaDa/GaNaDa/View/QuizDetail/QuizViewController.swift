@@ -57,7 +57,7 @@ final class QuizViewController: UIViewController {
     @IBAction func touchShowAnswer(_ sender: UIButton) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         if let quizAnswerViewController = storyboard.instantiateViewController(withIdentifier: "QuizAnswerView") as? QuizAnswerViewController {
-            quiz.state = (selectedAnswer == quiz.rightAnswer) ? .rigth : .wrong
+            quiz.stateRawValue = (selectedAnswer == quiz.rightAnswer) ? 1 : 2
             quizAnswerViewController.prepareView(quiz: quiz)
             navigationController?.pushViewController(quizAnswerViewController, animated: true)
         }
