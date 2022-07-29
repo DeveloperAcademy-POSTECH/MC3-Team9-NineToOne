@@ -22,14 +22,10 @@ final class TodayQuizViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        configureProgressBar()
         saveUserData(userName: "박가네감자탕둘째며느리의셋째아들")
         requestUserData()
-        
-        userExp.layer.sublayers![1].cornerRadius = 6
-        userExp.subviews[1].clipsToBounds = true
-        userExp.progressTintColor = .point
-        userExp.trackTintColor = .customIvory
         
         let todayQuizBlankCellNib = UINib(nibName: "QuizTypeBlank", bundle: nil)
         
@@ -52,6 +48,13 @@ final class TodayQuizViewController: UIViewController {
         userLevel.text = level(rawValue: UserDefaults.standard.integer(forKey: "userExp") / 100)?.name
         userName.text = UserDefaults.standard.string(forKey: "userName")
         userExp.progress = Float(UserDefaults.standard.integer(forKey: "userExp") % 100) / 100.0
+    }
+    
+    func configureProgressBar() {
+        userExp.layer.sublayers![1].cornerRadius = 6
+        userExp.subviews[1].clipsToBounds = true
+        userExp.progressTintColor = .point
+        userExp.trackTintColor = .customIvory
     }
 }
 
