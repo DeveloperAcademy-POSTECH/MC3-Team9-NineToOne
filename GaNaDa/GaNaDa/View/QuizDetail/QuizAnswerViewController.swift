@@ -23,7 +23,7 @@ final class QuizAnswerViewController: UIViewController {
         
         quiz.type == .blank ? setForBlankType() : setForChoiceType()
         
-        resultImageView.image = UIImage(systemName: "house")
+//        resultImageView.image = UIImage(systemName: "house")
         resultGuideLabel.text = (quiz.quizState == .right) ? "정답이에요.\n경험치 + \(quiz.quizID)" : "오답이에요.\n해설을 확인해보시겠어요?"
         
         

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iZb-QC-tCB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Tt8-LR-Qi1">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -609,23 +609,23 @@
                                                     </label>
                                                 </subviews>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="3Jh-jN-uda">
+                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="3Jh-jN-uda">
                                                 <rect key="frame" x="0.0" y="0.0" width="153" height="29"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OA1-JE-7hW">
-                                                        <rect key="frame" x="0.0" y="5" width="50.5" height="24"/>
+                                                        <rect key="frame" x="0.0" y="2.5" width="50.5" height="24"/>
                                                         <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="20"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" verticalHuggingPriority="251" text="vs" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z3d-cC-0ws">
-                                                        <rect key="frame" x="65.5" y="5" width="22" height="24"/>
+                                                        <rect key="frame" x="65.5" y="2.5" width="22" height="24"/>
                                                         <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="20"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xQL-Do-uKH">
-                                                        <rect key="frame" x="102.5" y="5" width="50.5" height="24"/>
+                                                        <rect key="frame" x="102.5" y="2.5" width="50.5" height="24"/>
                                                         <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="20"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -640,16 +640,16 @@
                                 </constraints>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G2i-a0-dDn">
-                                <rect key="frame" x="62" y="386" width="290" height="180"/>
+                                <rect key="frame" x="62" y="335.5" width="290" height="261"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wAh-Eh-gQw">
-                                        <rect key="frame" x="78" y="0.0" width="134" height="134"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="학동" translatesAutoresizingMaskIntoConstraints="NO" id="wAh-Eh-gQw">
+                                        <rect key="frame" x="27.5" y="0.0" width="235" height="235"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="wAh-Eh-gQw" secondAttribute="height" multiplier="1:1" id="msN-1Y-dND"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Arm-Ng-O0X">
-                                        <rect key="frame" x="109" y="134" width="72" height="46"/>
+                                        <rect key="frame" x="109" y="215" width="72" height="46"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <attributedString key="attributedText">
                                             <fragment>
@@ -676,7 +676,7 @@
                                 <constraints>
                                     <constraint firstItem="wAh-Eh-gQw" firstAttribute="top" secondItem="G2i-a0-dDn" secondAttribute="top" id="7z1-hn-5k0"/>
                                     <constraint firstItem="wAh-Eh-gQw" firstAttribute="centerX" secondItem="G2i-a0-dDn" secondAttribute="centerX" id="LR7-CZ-wfj"/>
-                                    <constraint firstItem="Arm-Ng-O0X" firstAttribute="top" secondItem="wAh-Eh-gQw" secondAttribute="bottom" id="VNg-rd-PIW"/>
+                                    <constraint firstItem="Arm-Ng-O0X" firstAttribute="top" secondItem="wAh-Eh-gQw" secondAttribute="bottom" constant="-20" id="VNg-rd-PIW"/>
                                     <constraint firstItem="Arm-Ng-O0X" firstAttribute="centerX" secondItem="G2i-a0-dDn" secondAttribute="centerX" id="ofh-de-GEZ"/>
                                     <constraint firstAttribute="bottom" secondItem="Arm-Ng-O0X" secondAttribute="bottom" id="tJj-RY-Zyn"/>
                                 </constraints>
@@ -692,7 +692,7 @@
                             <constraint firstItem="oJN-kp-XqD" firstAttribute="centerX" secondItem="fc6-nJ-Ar3" secondAttribute="centerX" id="SbF-c4-gQT"/>
                             <constraint firstItem="wAh-Eh-gQw" firstAttribute="centerY" secondItem="fc6-nJ-Ar3" secondAttribute="centerY" id="XB1-Sf-wml"/>
                             <constraint firstItem="gZe-JW-mpd" firstAttribute="centerX" secondItem="fc6-nJ-Ar3" secondAttribute="centerX" id="Z61-Uz-sJp"/>
-                            <constraint firstItem="wAh-Eh-gQw" firstAttribute="width" secondItem="fc6-nJ-Ar3" secondAttribute="width" multiplier="126/388" id="cAo-e6-5kN"/>
+                            <constraint firstItem="wAh-Eh-gQw" firstAttribute="width" secondItem="fc6-nJ-Ar3" secondAttribute="width" multiplier="220/388" id="cAo-e6-5kN"/>
                             <constraint firstItem="oJN-kp-XqD" firstAttribute="width" secondItem="Tzp-wP-zm7" secondAttribute="width" multiplier="310/388" id="dBw-43-lsm"/>
                             <constraint firstItem="gZe-JW-mpd" firstAttribute="top" secondItem="fc6-nJ-Ar3" secondAttribute="top" constant="115" id="kTM-mX-upO"/>
                             <constraint firstItem="J2U-ev-o8v" firstAttribute="centerY" secondItem="wAh-Eh-gQw" secondAttribute="centerY" id="r3x-ha-v0k"/>
@@ -743,6 +743,7 @@
         <image name="QuizBackground" width="690" height="552"/>
         <image name="questionmark.square" catalog="system" width="128" height="114"/>
         <image name="rectangle.stack" catalog="system" width="128" height="122"/>
+        <image name="학동" width="100" height="100"/>
         <namedColor name="point">
             <color red="1" green="0.43137254901960786" blue="0.14117647058823529" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

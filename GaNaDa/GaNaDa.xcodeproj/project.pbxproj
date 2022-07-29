@@ -68,6 +68,7 @@
 		C7C527E12892E4ED002EC560 /* GowunBatang-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C7C527DF2892E4ED002EC560 /* GowunBatang-Bold.ttf */; };
 		C7C527E22892E4ED002EC560 /* GowunBatang-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C7C527E02892E4ED002EC560 /* GowunBatang-Regular.ttf */; };
 		C7DAC56F289384D0000F4D04 /* UserLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DAC56E289384D0000F4D04 /* UserLevel.swift */; };
+		C7DAC571289386EE000F4D04 /* UserLevel.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7DAC570289386EE000F4D04 /* UserLevel.xcassets */; };
 		C7DED593288E7C3D004A2322 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DED592288E7C3D004A2322 /* NetworkService.swift */; };
 		C7DED595288E7CA8004A2322 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DED594288E7CA8004A2322 /* NetworkManager.swift */; };
 		C7DED599288E8806004A2322 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DED598288E8806004A2322 /* User.swift */; };
@@ -136,6 +137,7 @@
 		C7C527DF2892E4ED002EC560 /* GowunBatang-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GowunBatang-Bold.ttf"; sourceTree = "<group>"; };
 		C7C527E02892E4ED002EC560 /* GowunBatang-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GowunBatang-Regular.ttf"; sourceTree = "<group>"; };
 		C7DAC56E289384D0000F4D04 /* UserLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLevel.swift; sourceTree = "<group>"; };
+		C7DAC570289386EE000F4D04 /* UserLevel.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = UserLevel.xcassets; sourceTree = "<group>"; };
 		C7DED592288E7C3D004A2322 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		C7DED594288E7CA8004A2322 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		C7DED598288E8806004A2322 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -327,6 +329,7 @@
 			isa = PBXGroup;
 			children = (
 				C70BCA2E28878A4900569961 /* Assets.xcassets */,
+				C7DAC570289386EE000F4D04 /* UserLevel.xcassets */,
 				C7AC8E2C2890CFF3005F4558 /* LaunchScreen.xcassets */,
 				C70BCA602887975400569961 /* Color.xcassets */,
 			);
@@ -462,6 +465,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C7DAC571289386EE000F4D04 /* UserLevel.xcassets in Resources */,
 				C70BCA3228878A4900569961 /* LaunchScreen.storyboard in Resources */,
 				C7C527E12892E4ED002EC560 /* GowunBatang-Bold.ttf in Resources */,
 				AB75337D288A7A6400A68BFB /* Pretendard-Bold.otf in Resources */,
