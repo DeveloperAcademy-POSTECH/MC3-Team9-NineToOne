@@ -9,6 +9,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="GowunBatang-Bold.ttf">
+            <string>GowunBatang-Bold</string>
+        </array>
         <array key="Pretendard-SemiBold.otf">
             <string>Pretendard-SemiBold</string>
         </array>
@@ -364,24 +367,52 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="BIy-Pt-DkJ">
-                                <rect key="frame" x="73.5" y="203" width="267" height="51"/>
+                                <rect key="frame" x="127.5" y="203" width="159" height="56"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="빈칸에 들어갈 답을 고르세요." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ibf-Wv-rqx">
-                                        <rect key="frame" x="0.0" y="0.0" width="267" height="17"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="159" height="17"/>
                                         <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="14"/>
                                         <color key="textColor" red="0.59215686270000001" green="0.59215686270000001" blue="0.59215686270000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="나는 iOS 개발자가  (          )  싶다." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bi2-ve-JU5">
-                                        <rect key="frame" x="0.0" y="27" width="267" height="24"/>
-                                        <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="20"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2fq-Gj-ZrK">
+                                        <rect key="frame" x="0.0" y="27" width="159" height="29"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="맞는 답을 고르세요." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bi2-ve-JU5">
+                                                <rect key="frame" x="0.0" y="0.0" width="159" height="29"/>
+                                                <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eNo-iV-xrx">
+                                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="29"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oGQ-8J-qt2">
+                                                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="29"/>
+                                                        <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="20"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="252" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EB4-JR-oCw">
+                                                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="29"/>
+                                                        <fontDescription key="fontDescription" name="GowunBatang-Bold" family="Gowun Batang" pointSize="20"/>
+                                                        <color key="textColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A5j-vX-hgf">
+                                                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="29"/>
+                                                        <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="20"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="PJe-rB-cXQ">
-                                <rect key="frame" x="45.5" y="404" width="323" height="148.5"/>
+                                <rect key="frame" x="45.5" y="409" width="323" height="148.5"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T3h-I6-72S">
                                         <rect key="frame" x="0.0" y="0.0" width="158.5" height="148.5"/>
@@ -471,9 +502,13 @@
                     <connections>
                         <outlet property="answerButton" destination="mYt-2C-CQW" id="ZnY-2o-zCr"/>
                         <outlet property="blankQuizGuideLabel" destination="ibf-Wv-rqx" id="NEs-gv-77I"/>
+                        <outlet property="blankQuizStack" destination="eNo-iV-xrx" id="mec-lM-gt1"/>
+                        <outlet property="emptyQuizLabel" destination="EB4-JR-oCw" id="7AP-jg-ecZ"/>
                         <outlet property="firstAnswerButton" destination="T3h-I6-72S" id="7dR-cg-TbM"/>
+                        <outlet property="leadingQuizLabel" destination="oGQ-8J-qt2" id="PEq-ol-b6d"/>
                         <outlet property="quizLabel" destination="Bi2-ve-JU5" id="z6W-dF-IWv"/>
                         <outlet property="secondAnswerButton" destination="z6N-c6-mSE" id="O16-H6-3O0"/>
+                        <outlet property="trailingQuizLabel" destination="A5j-vX-hgf" id="1Tg-aK-7oM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eZ8-1e-ag4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -488,13 +523,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="efl-uP-R5E">
-                                <rect key="frame" x="0.0" y="5" width="414" height="896"/>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J2U-ev-o8v" customClass="AnimationView" customModule="Lottie">
+                                <rect key="frame" x="-41.5" y="139.5" width="497" height="627"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="lf20_ths0ezn3"/>
+                                </userDefinedRuntimeAttributes>
                             </view>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZZK-my-9r3">
-                                <rect key="frame" x="62" y="569" width="352" height="327"/>
-                            </imageView>
+                            <wkWebView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JU5-NT-Pxf">
+                                <rect key="frame" x="-199.5" y="-85.5" width="896" height="896"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="JU5-NT-Pxf" secondAttribute="height" multiplier="1:1" id="lRD-eP-VWh"/>
+                                </constraints>
+                                <wkWebViewConfiguration key="configuration" allowsAirPlayForMediaPlayback="NO" allowsPictureInPictureMediaPlayback="NO">
+                                    <dataDetectorTypes key="dataDetectorTypes" none="YES"/>
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="oJN-kp-XqD">
                                 <rect key="frame" x="41.5" y="772" width="331" height="50"/>
                                 <subviews>
@@ -539,37 +586,93 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="gZe-JW-mpd">
-                                <rect key="frame" x="73.5" y="159" width="267" height="51"/>
+                                <rect key="frame" x="130.5" y="159" width="153" height="56"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F9x-rM-1HE">
-                                        <rect key="frame" x="0.0" y="0.0" width="267" height="17"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="153" height="17"/>
                                         <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="14"/>
                                         <color key="textColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="나는 iOS 개발자가  (          )  싶다." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FmC-7e-HR7">
-                                        <rect key="frame" x="0.0" y="27" width="267" height="24"/>
-                                        <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="20"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lXB-MC-74A">
+                                        <rect key="frame" x="0.0" y="27" width="153" height="29"/>
+                                        <subviews>
+                                            <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sy8-cN-sCq">
+                                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="29"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z1u-8V-14Z">
+                                                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="29"/>
+                                                        <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="20"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="252" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eUj-IX-5Da">
+                                                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="29"/>
+                                                        <fontDescription key="fontDescription" name="GowunBatang-Bold" family="Gowun Batang" pointSize="20"/>
+                                                        <color key="textColor" red="0.92941176470588238" green="0.43137254901960786" blue="0.1764705882352941" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bJa-tF-e8Y">
+                                                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="29"/>
+                                                        <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="20"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="3Jh-jN-uda">
+                                                <rect key="frame" x="0.0" y="0.0" width="153" height="29"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OA1-JE-7hW">
+                                                        <rect key="frame" x="0.0" y="0.0" width="50.5" height="29"/>
+                                                        <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="20"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="vs" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z3d-cC-0ws">
+                                                        <rect key="frame" x="65.5" y="0.0" width="22" height="29"/>
+                                                        <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="20"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xQL-Do-uKH">
+                                                        <rect key="frame" x="102.5" y="0.0" width="50.5" height="29"/>
+                                                        <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="20"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="z3d-cC-0ws" firstAttribute="centerX" secondItem="gZe-JW-mpd" secondAttribute="centerX" id="jll-uh-WT0"/>
+                                </constraints>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="rwU-1j-5bW">
-                                <rect key="frame" x="140.5" y="345" width="133" height="216"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G2i-a0-dDn">
+                                <rect key="frame" x="62" y="386" width="290" height="197"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wAh-Eh-gQw">
-                                        <rect key="frame" x="0.0" y="0.0" width="133" height="133"/>
+                                        <rect key="frame" x="78" y="0.0" width="134" height="134"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="wAh-Eh-gQw" secondAttribute="height" multiplier="1:1" id="msN-1Y-dND"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Arm-Ng-O0X">
-                                        <rect key="frame" x="0.0" y="150" width="133" height="66"/>
+                                        <rect key="frame" x="109" y="151" width="72" height="46"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <attributedString key="attributedText">
                                             <fragment>
                                                 <string key="content">정답이에요
-경험치 + 15</string>
+</string>
+                                                <attributes>
+                                                    <color key="NSColor" red="0.46274509803921571" green="0.46274509803921571" blue="0.46274509803921571" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <font key="NSFont" size="15" name="Pretendard-SemiBold"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="10" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="경험치 + 15">
                                                 <attributes>
                                                     <color key="NSColor" red="0.46274509803921571" green="0.46274509803921571" blue="0.46274509803921571" alpha="1" colorSpace="calibratedRGB"/>
                                                     <font key="NSFont" size="15" name="Pretendard-SemiBold"/>
@@ -580,35 +683,49 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                            </stackView>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="wAh-Eh-gQw" firstAttribute="top" secondItem="G2i-a0-dDn" secondAttribute="top" id="7z1-hn-5k0"/>
+                                    <constraint firstItem="wAh-Eh-gQw" firstAttribute="centerX" secondItem="G2i-a0-dDn" secondAttribute="centerX" id="LR7-CZ-wfj"/>
+                                    <constraint firstItem="Arm-Ng-O0X" firstAttribute="top" secondItem="wAh-Eh-gQw" secondAttribute="bottom" constant="17" id="VNg-rd-PIW"/>
+                                    <constraint firstItem="Arm-Ng-O0X" firstAttribute="centerX" secondItem="G2i-a0-dDn" secondAttribute="centerX" id="ofh-de-GEZ"/>
+                                    <constraint firstAttribute="bottom" secondItem="Arm-Ng-O0X" secondAttribute="bottom" id="tJj-RY-Zyn"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="fc6-nJ-Ar3"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="J2U-ev-o8v" firstAttribute="height" secondItem="Tzp-wP-zm7" secondAttribute="height" multiplier="0.7" id="2fN-tn-puq"/>
                             <constraint firstItem="fc6-nJ-Ar3" firstAttribute="bottom" secondItem="oJN-kp-XqD" secondAttribute="bottom" constant="40" id="7R2-Uh-goC"/>
-                            <constraint firstItem="ZZK-my-9r3" firstAttribute="height" secondItem="fc6-nJ-Ar3" secondAttribute="height" multiplier="0.4" id="85p-ZR-CHl"/>
-                            <constraint firstItem="wAh-Eh-gQw" firstAttribute="width" secondItem="fc6-nJ-Ar3" secondAttribute="width" multiplier="125/388" id="8k9-XA-VFl"/>
-                            <constraint firstItem="efl-uP-R5E" firstAttribute="centerX" secondItem="fc6-nJ-Ar3" secondAttribute="centerX" id="HPj-7G-gox"/>
-                            <constraint firstItem="rwU-1j-5bW" firstAttribute="centerX" secondItem="fc6-nJ-Ar3" secondAttribute="centerX" id="IpP-UD-ffo"/>
-                            <constraint firstItem="efl-uP-R5E" firstAttribute="width" secondItem="Tzp-wP-zm7" secondAttribute="width" id="Mkd-AA-DIH"/>
-                            <constraint firstItem="fc6-nJ-Ar3" firstAttribute="trailing" secondItem="ZZK-my-9r3" secondAttribute="trailing" id="OhP-np-RH5"/>
+                            <constraint firstItem="JU5-NT-Pxf" firstAttribute="height" secondItem="Tzp-wP-zm7" secondAttribute="height" id="9mj-V3-Fqi"/>
+                            <constraint firstItem="G2i-a0-dDn" firstAttribute="centerX" secondItem="fc6-nJ-Ar3" secondAttribute="centerX" id="AoM-6g-9bJ"/>
+                            <constraint firstItem="JU5-NT-Pxf" firstAttribute="centerY" secondItem="fc6-nJ-Ar3" secondAttribute="centerY" multiplier="0.8" id="KLO-cl-Hmf"/>
+                            <constraint firstItem="G2i-a0-dDn" firstAttribute="width" secondItem="fc6-nJ-Ar3" secondAttribute="width" multiplier="0.7" id="LW6-w8-57l"/>
                             <constraint firstItem="oJN-kp-XqD" firstAttribute="centerX" secondItem="fc6-nJ-Ar3" secondAttribute="centerX" id="SbF-c4-gQT"/>
+                            <constraint firstItem="wAh-Eh-gQw" firstAttribute="centerY" secondItem="fc6-nJ-Ar3" secondAttribute="centerY" id="XB1-Sf-wml"/>
                             <constraint firstItem="gZe-JW-mpd" firstAttribute="centerX" secondItem="fc6-nJ-Ar3" secondAttribute="centerX" id="Z61-Uz-sJp"/>
-                            <constraint firstItem="efl-uP-R5E" firstAttribute="height" secondItem="Tzp-wP-zm7" secondAttribute="height" id="cjP-sc-bJD"/>
-                            <constraint firstItem="ZZK-my-9r3" firstAttribute="width" secondItem="Tzp-wP-zm7" secondAttribute="width" multiplier="0.85" id="cof-BE-zts"/>
+                            <constraint firstItem="wAh-Eh-gQw" firstAttribute="width" secondItem="fc6-nJ-Ar3" secondAttribute="width" multiplier="126/388" id="cAo-e6-5kN"/>
                             <constraint firstItem="oJN-kp-XqD" firstAttribute="width" secondItem="Tzp-wP-zm7" secondAttribute="width" multiplier="310/388" id="dBw-43-lsm"/>
+                            <constraint firstItem="JU5-NT-Pxf" firstAttribute="centerX" secondItem="fc6-nJ-Ar3" secondAttribute="centerX" multiplier="1.2" id="g1s-Xp-fuM"/>
                             <constraint firstItem="gZe-JW-mpd" firstAttribute="top" secondItem="fc6-nJ-Ar3" secondAttribute="top" constant="115" id="kTM-mX-upO"/>
-                            <constraint firstItem="efl-uP-R5E" firstAttribute="centerY" secondItem="fc6-nJ-Ar3" secondAttribute="centerY" id="o0T-O2-p7r"/>
-                            <constraint firstAttribute="bottom" secondItem="ZZK-my-9r3" secondAttribute="bottom" id="v32-hD-4Eo"/>
-                            <constraint firstItem="rwU-1j-5bW" firstAttribute="centerY" secondItem="fc6-nJ-Ar3" secondAttribute="centerY" id="xH7-bf-b0k"/>
+                            <constraint firstItem="J2U-ev-o8v" firstAttribute="centerY" secondItem="wAh-Eh-gQw" secondAttribute="centerY" id="r3x-ha-v0k"/>
+                            <constraint firstItem="J2U-ev-o8v" firstAttribute="width" secondItem="Tzp-wP-zm7" secondAttribute="width" multiplier="1.2" id="rUe-mL-lMi"/>
+                            <constraint firstItem="J2U-ev-o8v" firstAttribute="centerX" secondItem="fc6-nJ-Ar3" secondAttribute="centerX" id="tOT-Aj-4Tu"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="jJf-ib-zWa"/>
                     <connections>
-                        <outlet property="lottieView" destination="efl-uP-R5E" id="Pcn-eH-FuT"/>
-                        <outlet property="quizLabel" destination="FmC-7e-HR7" id="sdJ-rI-2x6"/>
+                        <outlet property="blankQuizStack" destination="Sy8-cN-sCq" id="xmU-i1-M5N"/>
+                        <outlet property="choiceQuizStack" destination="3Jh-jN-uda" id="wlJ-A6-9jq"/>
+                        <outlet property="emptyQuizLabel" destination="eUj-IX-5Da" id="kgO-yv-aP6"/>
+                        <outlet property="leadingQuizLabel" destination="z1u-8V-14Z" id="nQm-b2-kZB"/>
+                        <outlet property="leftAnswer" destination="xQL-Do-uKH" id="VyW-Rh-Epp"/>
+                        <outlet property="lottieWebView" destination="JU5-NT-Pxf" id="tnG-Xk-Sww"/>
                         <outlet property="resultGuideLabel" destination="Arm-Ng-O0X" id="0fZ-uJ-aOD"/>
                         <outlet property="resultImageView" destination="wAh-Eh-gQw" id="IGQ-L4-h9j"/>
+                        <outlet property="rightAnswer" destination="OA1-JE-7hW" id="ago-NE-UOG"/>
+                        <outlet property="trailingQuizLabel" destination="bJa-tF-e8Y" id="bG6-Li-sba"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GXy-WN-Uae" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
