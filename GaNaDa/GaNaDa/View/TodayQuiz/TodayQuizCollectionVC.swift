@@ -37,7 +37,7 @@ private extension TodayQuizViewController {
         let layout = UICollectionViewCompositionalLayout{
             (sectionIndex: Int, layoutEnvironment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection? in
             
-            let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(171))
+            let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(125))
             
             let item = NSCollectionLayoutItem(layoutSize: itemSize)
             
