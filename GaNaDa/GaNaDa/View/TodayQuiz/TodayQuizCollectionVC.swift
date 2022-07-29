@@ -17,23 +17,27 @@ final class TodayQuizViewController: UIViewController {
 
     @IBOutlet weak var todayQuizCollectionView: UICollectionView!
     
+    var currentHour: Int = 0
     var flag = true
+    var openTimes = [9,11,18]
+    
     var todayQuizs: [Quiz] = [Quiz(question: "나는 ios 개발자가 * 싶다.", type: QuizType.blank, rightAnswer: "되고", wrongAnswer: "돼고"),
                               Quiz(question: "정말 너를 * 좋니.", type: QuizType.blank, rightAnswer: "어떡하면", wrongAnswer: "어떻하면"),
                               Quiz(question: "오늘도 안 오면 *.", type: QuizType.blank, rightAnswer: "어떡해", wrongAnswer: "어떻게")]
-    
+
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        if Bool.random() {
-            flag.toggle()
-        }
-        print("\(flag ? "true" : "false")")
+
+        let formatter = DateFormatter()
+        formatter.dateFormat = "HH"
+        currentHour = Int(formatter.string(from: Date())) ?? 0
+        print("\(currentHour)")
         todayQuizCollectionView.reloadData()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         let todayQuizBlankCellNib = UINib(nibName: "QuizTypeBlank", bundle: nil)
         
@@ -71,7 +75,6 @@ private extension TodayQuizViewController {
     
 }
 
-
 extension TodayQuizViewController: UICollectionViewDelegate {
     
 }
@@ -85,7 +88,7 @@ extension TodayQuizViewController: UICollectionViewDataSource{
         let cell = todayQuizCollectionView.dequeueReusableCell(withReuseIdentifier: "todayQuizBlankCell", for: indexPath) as! QuizTypeBlank
         cell.data = self.todayQuizs[indexPath.item]
         cell.quizIndex.text = "문제 \(indexPath.item + 1)"
-        cell.flag = flag
+        cell.flag = currentHour < openTimes[indexPath.item]
         cell.applyBlur()
         return cell
     }
