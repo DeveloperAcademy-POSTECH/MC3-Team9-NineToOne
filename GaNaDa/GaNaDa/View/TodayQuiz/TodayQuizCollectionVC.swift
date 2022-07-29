@@ -28,6 +28,8 @@ final class TodayQuizViewController: UIViewController {
         
         userExp.layer.sublayers![1].cornerRadius = 6
         userExp.subviews[1].clipsToBounds = true
+        userExp.progressTintColor = .point
+        userExp.trackTintColor = .customIvory
         
         let todayQuizBlankCellNib = UINib(nibName: "QuizTypeBlank", bundle: nil)
         
