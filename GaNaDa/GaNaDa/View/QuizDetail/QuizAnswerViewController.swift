@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import WebKit
+import Lottie
 
 final class QuizAnswerViewController: UIViewController {
     // MARK: - Properties
@@ -25,6 +25,9 @@ final class QuizAnswerViewController: UIViewController {
         
         resultImageView.image = UIImage(systemName: "house")
         resultGuideLabel.text = (quiz.quizState == .right) ? "정답이에요.\n경험치 + \(quiz.quizID)" : "오답이에요.\n해설을 확인해보시겠어요?"
+        
+        
+//        resultImageView.image = UIImage(named: <#T##String#>)
     }
     
     private func setForBlankType() {
@@ -56,7 +59,7 @@ final class QuizAnswerViewController: UIViewController {
     
     private func setSelectAnswerFont(label: UILabel, strikethroughStyle: Bool) {
         label.font = UIFont(name: "GowunBatang-Bold", size: 24)
-        label.textColor = .init(hex: 0xED6E2D)
+        label.textColor = UIColor.point
         if strikethroughStyle {
             let attributedStr = NSMutableAttributedString(string: quiz.wrongAnswer)
             attributedStr.addAttribute(.strikethroughStyle,
@@ -67,30 +70,14 @@ final class QuizAnswerViewController: UIViewController {
     }
     
     private func configureLottievView() {
-        let fileName = "fireWork"
-        
-        guard let url = Bundle.main.url(forResource: fileName, withExtension: "gif") else {
-            return
-        }
-        
-        guard let data = try? Data(contentsOf: url) else {
-            return
-        }
-        
-        lottieWebView.load(data,
-                           mimeType: "image/gif",
-                           characterEncodingName: "UTF-8",
-                           baseURL: url.deletingLastPathComponent())
-        lottieWebView.scrollView.isScrollEnabled = false
-        lottieWebView.scrollView.isUserInteractionEnabled = false
-        //        lottieWebView.transform =  CGAffineTransform(rotationAngle: 90 * .pi / 180)
-        lottieWebView.isHidden = false
+        lottieView.isHidden = false
+        lottieView.loopMode = .loop
+        lottieView.layer.opacity = 0.5
+        lottieView.play()
     }
     
     // MARK: - IBOutlets
-    @IBOutlet weak var lottieWebView: WKWebView!
-    
-    //    @IBOutlet weak var quizLabel: UILabel!
+    @IBOutlet weak var lottieView: AnimationView!
     
     // Choice
     @IBOutlet weak var choiceQuizStack: UIStackView!
