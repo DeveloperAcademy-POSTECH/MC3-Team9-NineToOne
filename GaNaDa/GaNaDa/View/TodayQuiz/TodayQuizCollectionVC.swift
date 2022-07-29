@@ -7,14 +7,29 @@
 
 import UIKit
 
+struct TodayQuizLayoutValue {
+    enum CornerRadius {
+        static let cell = 16.0
+    }
+}
 
 final class TodayQuizViewController: UIViewController {
 
     @IBOutlet weak var todayQuizCollectionView: UICollectionView!
     
+    var flag = true
     var todayQuizs: [Quiz] = [Quiz(question: "나는 ios 개발자가 * 싶다.", type: QuizType.blank, rightAnswer: "되고", wrongAnswer: "돼고"),
                               Quiz(question: "정말 너를 * 좋니.", type: QuizType.blank, rightAnswer: "어떡하면", wrongAnswer: "어떻하면"),
                               Quiz(question: "오늘도 안 오면 *.", type: QuizType.blank, rightAnswer: "어떡해", wrongAnswer: "어떻게")]
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if Bool.random() {
+            flag.toggle()
+        }
+        print("\(flag ? "true" : "false")")
+        todayQuizCollectionView.reloadData()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,8 +38,7 @@ final class TodayQuizViewController: UIViewController {
         let todayQuizBlankCellNib = UINib(nibName: "QuizTypeBlank", bundle: nil)
         
         todayQuizCollectionView.register(todayQuizBlankCellNib, forCellWithReuseIdentifier: "todayQuizBlankCell")
-        
-        
+
         todayQuizCollectionView.dataSource = self
         
         todayQuizCollectionView.collectionViewLayout = creatCompositionalLayout()
@@ -69,9 +83,10 @@ extension TodayQuizViewController: UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = todayQuizCollectionView.dequeueReusableCell(withReuseIdentifier: "todayQuizBlankCell", for: indexPath) as! QuizTypeBlank
-        
         cell.data = self.todayQuizs[indexPath.item]
         cell.quizIndex.text = "문제 \(indexPath.item + 1)"
+        cell.flag = flag
+        cell.applyBlur()
         return cell
     }
 }
