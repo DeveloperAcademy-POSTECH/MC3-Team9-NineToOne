@@ -416,15 +416,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J2U-ev-o8v" customClass="AnimationView" customModule="Lottie">
+                                <rect key="frame" x="-41.5" y="139.5" width="497" height="627"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="lf20_ths0ezn3"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                             <wkWebView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JU5-NT-Pxf">
-                                <rect key="frame" x="-113" y="133" width="640" height="640"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <rect key="frame" x="-199.5" y="-85.5" width="896" height="896"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="640" id="Bxd-tD-HTC"/>
                                     <constraint firstAttribute="width" secondItem="JU5-NT-Pxf" secondAttribute="height" multiplier="1:1" id="lRD-eP-VWh"/>
                                 </constraints>
                                 <wkWebViewConfiguration key="configuration" allowsAirPlayForMediaPlayback="NO" allowsPictureInPictureMediaPlayback="NO">
-                                    <dataDetectorTypes key="dataDetectorTypes"/>
+                                    <dataDetectorTypes key="dataDetectorTypes" none="YES"/>
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
                                     <wkPreferences key="preferences"/>
                                 </wkWebViewConfiguration>
@@ -538,7 +544,7 @@
                                 </constraints>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G2i-a0-dDn">
-                                <rect key="frame" x="62" y="354.5" width="290" height="197"/>
+                                <rect key="frame" x="62" y="386" width="290" height="197"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wAh-Eh-gQw">
                                         <rect key="frame" x="78" y="0.0" width="134" height="134"/>
@@ -583,17 +589,22 @@
                         <viewLayoutGuide key="safeArea" id="fc6-nJ-Ar3"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="J2U-ev-o8v" firstAttribute="height" secondItem="Tzp-wP-zm7" secondAttribute="height" multiplier="0.7" id="2fN-tn-puq"/>
                             <constraint firstItem="fc6-nJ-Ar3" firstAttribute="bottom" secondItem="oJN-kp-XqD" secondAttribute="bottom" constant="40" id="7R2-Uh-goC"/>
+                            <constraint firstItem="JU5-NT-Pxf" firstAttribute="height" secondItem="Tzp-wP-zm7" secondAttribute="height" id="9mj-V3-Fqi"/>
                             <constraint firstItem="G2i-a0-dDn" firstAttribute="centerX" secondItem="fc6-nJ-Ar3" secondAttribute="centerX" id="AoM-6g-9bJ"/>
-                            <constraint firstItem="JU5-NT-Pxf" firstAttribute="centerY" secondItem="fc6-nJ-Ar3" secondAttribute="centerY" id="KLO-cl-Hmf"/>
+                            <constraint firstItem="JU5-NT-Pxf" firstAttribute="centerY" secondItem="fc6-nJ-Ar3" secondAttribute="centerY" multiplier="0.8" id="KLO-cl-Hmf"/>
                             <constraint firstItem="G2i-a0-dDn" firstAttribute="width" secondItem="fc6-nJ-Ar3" secondAttribute="width" multiplier="0.7" id="LW6-w8-57l"/>
-                            <constraint firstItem="G2i-a0-dDn" firstAttribute="centerY" secondItem="fc6-nJ-Ar3" secondAttribute="centerY" id="Mm6-oj-dDS"/>
                             <constraint firstItem="oJN-kp-XqD" firstAttribute="centerX" secondItem="fc6-nJ-Ar3" secondAttribute="centerX" id="SbF-c4-gQT"/>
+                            <constraint firstItem="wAh-Eh-gQw" firstAttribute="centerY" secondItem="fc6-nJ-Ar3" secondAttribute="centerY" id="XB1-Sf-wml"/>
                             <constraint firstItem="gZe-JW-mpd" firstAttribute="centerX" secondItem="fc6-nJ-Ar3" secondAttribute="centerX" id="Z61-Uz-sJp"/>
                             <constraint firstItem="wAh-Eh-gQw" firstAttribute="width" secondItem="fc6-nJ-Ar3" secondAttribute="width" multiplier="126/388" id="cAo-e6-5kN"/>
                             <constraint firstItem="oJN-kp-XqD" firstAttribute="width" secondItem="Tzp-wP-zm7" secondAttribute="width" multiplier="310/388" id="dBw-43-lsm"/>
-                            <constraint firstItem="JU5-NT-Pxf" firstAttribute="centerX" secondItem="fc6-nJ-Ar3" secondAttribute="centerX" id="g1s-Xp-fuM"/>
+                            <constraint firstItem="JU5-NT-Pxf" firstAttribute="centerX" secondItem="fc6-nJ-Ar3" secondAttribute="centerX" multiplier="1.2" id="g1s-Xp-fuM"/>
                             <constraint firstItem="gZe-JW-mpd" firstAttribute="top" secondItem="fc6-nJ-Ar3" secondAttribute="top" constant="115" id="kTM-mX-upO"/>
+                            <constraint firstItem="J2U-ev-o8v" firstAttribute="centerY" secondItem="wAh-Eh-gQw" secondAttribute="centerY" id="r3x-ha-v0k"/>
+                            <constraint firstItem="J2U-ev-o8v" firstAttribute="width" secondItem="Tzp-wP-zm7" secondAttribute="width" multiplier="1.2" id="rUe-mL-lMi"/>
+                            <constraint firstItem="J2U-ev-o8v" firstAttribute="centerX" secondItem="fc6-nJ-Ar3" secondAttribute="centerX" id="tOT-Aj-4Tu"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="jJf-ib-zWa"/>
@@ -603,7 +614,7 @@
                         <outlet property="emptyQuizLabel" destination="eUj-IX-5Da" id="kgO-yv-aP6"/>
                         <outlet property="leadingQuizLabel" destination="z1u-8V-14Z" id="nQm-b2-kZB"/>
                         <outlet property="leftAnswer" destination="xQL-Do-uKH" id="VyW-Rh-Epp"/>
-                        <outlet property="lottieWebView" destination="JU5-NT-Pxf" id="vUG-wt-wgP"/>
+                        <outlet property="lottieWebView" destination="JU5-NT-Pxf" id="tnG-Xk-Sww"/>
                         <outlet property="resultGuideLabel" destination="Arm-Ng-O0X" id="0fZ-uJ-aOD"/>
                         <outlet property="resultImageView" destination="wAh-Eh-gQw" id="IGQ-L4-h9j"/>
                         <outlet property="rightAnswer" destination="OA1-JE-7hW" id="ago-NE-UOG"/>
