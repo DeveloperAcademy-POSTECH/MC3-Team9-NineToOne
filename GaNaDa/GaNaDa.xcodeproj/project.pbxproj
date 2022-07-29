@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		262FD09C28918A7700AF5DA1 /* QuizDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262FD09B28918A7700AF5DA1 /* QuizDetailViewController.swift */; };
+		2686E5E82890D1AF00BB8C09 /* TodayQuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2686E5E72890D1AF00BB8C09 /* TodayQuizViewController.swift */; };
 		AB24C04E288E395C00849B38 /* QuizType2CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB24C04C288E395C00849B38 /* QuizType2CollectionViewCell.swift */; };
 		AB24C04F288E395C00849B38 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB24C04D288E395C00849B38 /* HistoryViewController.swift */; };
 		AB24C051288E585800849B38 /* HistoryCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB24C050288E585800849B38 /* HistoryCollectionView.swift */; };
@@ -92,6 +94,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		262FD09B28918A7700AF5DA1 /* QuizDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizDetailViewController.swift; sourceTree = "<group>"; };
+		2686E5E72890D1AF00BB8C09 /* TodayQuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayQuizViewController.swift; sourceTree = "<group>"; };
 		AB24C04C288E395C00849B38 /* QuizType2CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizType2CollectionViewCell.swift; sourceTree = "<group>"; };
 		AB24C04D288E395C00849B38 /* HistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		AB24C050288E585800849B38 /* HistoryCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCollectionView.swift; sourceTree = "<group>"; };
@@ -340,6 +344,7 @@
 		C7FA028A2890E0F4006B752F /* QuizDetail */ = {
 			isa = PBXGroup;
 			children = (
+				262FD09B28918A7700AF5DA1 /* QuizDetailViewController.swift */,
 				C7FA02882890E0E9006B752F /* QuizViewController.swift */,
 				C795FC162890EDFF00BF28EF /* QuizAnswerViewController.swift */,
 			);
@@ -521,6 +526,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C7C527DA2892D7FE002EC560 /* Int+Extension.swift in Sources */,
+				262FD09C28918A7700AF5DA1 /* QuizDetailViewController.swift in Sources */,
 				C7DED593288E7C3D004A2322 /* NetworkService.swift in Sources */,
 				C795FC172890EDFF00BF28EF /* QuizAnswerViewController.swift in Sources */,
 				AB24C04E288E395C00849B38 /* QuizType2CollectionViewCell.swift in Sources */,
