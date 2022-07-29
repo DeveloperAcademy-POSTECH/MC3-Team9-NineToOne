@@ -23,11 +23,11 @@ final class QuizAnswerViewController: UIViewController {
         
         quiz.type == .blank ? setForBlankType() : setForChoiceType()
         
-//        resultImageView.image = UIImage(systemName: "house")
+        // TODO: 실제 USER 정보로 바꿔야함
+        resultImageView.image = LevelCase.level(exp: User.preview.exp).levelImage
+        
+        // TODO: 실제 USER 정보로 바꿔야함
         resultGuideLabel.text = (quiz.quizState == .right) ? "정답이에요.\n경험치 + \(quiz.quizID)" : "오답이에요.\n해설을 확인해보시겠어요?"
-        
-        
-//        resultImageView.image = UIImage(named: <#T##String#>)
     }
     
     private func setForBlankType() {
