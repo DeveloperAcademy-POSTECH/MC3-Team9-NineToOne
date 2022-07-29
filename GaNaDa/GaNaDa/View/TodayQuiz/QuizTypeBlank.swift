@@ -10,27 +10,25 @@ import UIKit
 final class QuizTypeBlank: UICollectionViewCell {
     @IBOutlet weak var quizIndex: UILabel!
     @IBOutlet weak var quizQuestion: UILabel!
-    @IBOutlet weak var rightAnswer: UIButton!
-    @IBOutlet weak var wrongAnswer: UIButton!
 
     var data: Quiz = Quiz(question: "샘플 문장", type: QuizType.blank, rightAnswer: "정답", wrongAnswer: "오답") {
         didSet {
             quizQuestion.text = makeQuizSentence(quiz: data)
-            rightAnswer.setTitle(data.rightAnswer, for: UIControl.State.normal)
-            wrongAnswer.setTitle(data.wrongAnswer, for: UIControl.State.normal)
         }
     }
     
     override func awakeFromNib() {
         super.awakeFromNib()
         contentView.layer.cornerRadius = QuizType1LayoutValue.Cell.cornerLadius
+        contentView.layer.borderWidth = 1
+        contentView.layer.borderColor = UIColor.customOrange.cgColor
     }
 }
 
 private extension QuizTypeBlank {
     func makeQuizSentence(quiz: Quiz) -> String {
         var quizQuestion = quiz.question
-        quizQuestion = quizQuestion.replacingOccurrences(of: "*", with: String(repeating: "_", count: quiz.rightAnswer.count + 2))
+        quizQuestion = quizQuestion.replacingOccurrences(of: "*", with: "( \(data.rightAnswer) / \(data.wrongAnswer) )")
         return quizQuestion
     }
     
