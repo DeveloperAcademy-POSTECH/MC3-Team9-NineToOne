@@ -21,7 +21,7 @@ final class HistoryViewController: UIViewController {
     
     private lazy var historyFilteringButtonsView = FilteringButtonsView()
     private lazy var historyCollectionView = HistoryCollectionView()
-    private var quizs = [Quiz.preview, Quiz.preview, Quiz.preview, Quiz.preview, Quiz.preview, Quiz.preview, Quiz.preview, Quiz.preview, Quiz.preview, Quiz.preview, Quiz.preview, Quiz.preview]
+    private var quizs = [Quiz.previewChoice, Quiz.previewChoice, Quiz.previewChoice, Quiz.previewChoice, Quiz.previewChoice, Quiz.previewChoice, Quiz.previewChoice, Quiz.previewChoice, Quiz.previewChoice, Quiz.previewChoice, Quiz.previewChoice, Quiz.previewChoice]
     
     override func loadView() {
         super.loadView()
