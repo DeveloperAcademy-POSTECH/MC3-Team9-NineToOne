@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2686E5E82890D1AF00BB8C09 /* TodayQuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2686E5E72890D1AF00BB8C09 /* TodayQuizViewController.swift */; };
 		AB24C04E288E395C00849B38 /* QuizType2CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB24C04C288E395C00849B38 /* QuizType2CollectionViewCell.swift */; };
 		AB24C04F288E395C00849B38 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB24C04D288E395C00849B38 /* HistoryViewController.swift */; };
 		AB24C051288E585800849B38 /* HistoryCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB24C050288E585800849B38 /* HistoryCollectionView.swift */; };
@@ -88,6 +89,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2686E5E72890D1AF00BB8C09 /* TodayQuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayQuizViewController.swift; sourceTree = "<group>"; };
 		AB24C04C288E395C00849B38 /* QuizType2CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizType2CollectionViewCell.swift; sourceTree = "<group>"; };
 		AB24C04D288E395C00849B38 /* HistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		AB24C050288E585800849B38 /* HistoryCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCollectionView.swift; sourceTree = "<group>"; };
