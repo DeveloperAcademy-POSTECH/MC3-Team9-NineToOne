@@ -17,24 +17,10 @@ final class TodayQuizViewController: UIViewController {
 
     @IBOutlet weak var todayQuizCollectionView: UICollectionView!
     
-    let secretView = UIView()
-    let visualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .regular))
-    let textLabel = UILabel()
-//    
-//    secretView.addSubview(visualEffectView)
-//    visualEffectView.translatesAutoresizingMaskIntoConstraints = false
-//    NSLayoutConstraint.activate([
-//        visualEffectView.topAnchor.constraint(equalTo: cell.topAnchor),
-//        visualEffectView.trailingAnchor.constraint(equalTo: cell.trailingAnchor),
-//        visualEffectView.leadingAnchor.constraint(equalTo: cell.leadingAnchor),
-//        visualEffectView.bottomAnchor.constraint(equalTo: cell.bottomAnchor)
-//    ])
-//    secretView.addSubview(textLabel)
-//    
+//    let visualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .regular))
     
-    var currentHour: Int = 12
-    var flag = true
-    var openTimes = [9,11,18]
+    var currentHour: Int = 0
+    var openTimes = [9,12,18]
     
     var todayQuizs: [Quiz] = [Quiz(question: "나는 ios 개발자가 * 싶다.", type: QuizType.blank, rightAnswer: "되고", wrongAnswer: "돼고"),
                               Quiz(question: "정말 너를 * 좋니.", type: QuizType.blank, rightAnswer: "어떡하면", wrongAnswer: "어떻하면"),
@@ -104,11 +90,12 @@ extension TodayQuizViewController: UICollectionViewDataSource{
         cell.data = self.todayQuizs[indexPath.item]
         cell.quizIndex.text = "문제 \(indexPath.item + 1)"
         
-        if let visualEffectView = cell.subviews.last as? UIVisualEffectView {
-            // 시간 조건에 따라
-            visualEffectView.removeFromSuperview()
-        } else {
-            
+        
+        if let openTimeLabel = cell.subviews.last as? UILabel {
+            openTimeLabel.removeFromSuperview()
+            if let visualEffectView = cell.subviews.last as? UIVisualEffectView {
+                visualEffectView.removeFromSuperview()
+            }
         }
         
         if currentHour < openTimes[indexPath.item] {
@@ -125,9 +112,29 @@ extension TodayQuizViewController: UICollectionViewDataSource{
                 visualEffectView.leadingAnchor.constraint(equalTo: cell.leadingAnchor),
                 visualEffectView.bottomAnchor.constraint(equalTo: cell.bottomAnchor)
             ])
+            
+            let imageAttachment = NSTextAttachment()
+            imageAttachment.image = UIImage(systemName: "lock.fill")
+            let fullString = NSMutableAttributedString(string: "")
+            fullString.append(NSAttributedString(attachment: imageAttachment))
+            
+            let openHour = String(format: "%02d:00", openTimes[indexPath.item])
+
+            
+            fullString.append(NSAttributedString(string: " \(openHour) 공개 예정"))
+//            label.attributedText = fullString
+            
+            let openTimeLabel = UILabel()
+            openTimeLabel.attributedText = fullString
+            cell.addSubview(openTimeLabel)
+            openTimeLabel.translatesAutoresizingMaskIntoConstraints = false
+            NSLayoutConstraint.activate([
+                openTimeLabel.centerXAnchor.constraint(equalTo: cell.centerXAnchor),
+                openTimeLabel.centerYAnchor.constraint(equalTo: cell.centerYAnchor),
+            ])
+            
         }
-//        cell.flag = currentHour < openTimes[indexPath.item]
-//        cell.applyBlur()
+
         return cell
     }
 }
