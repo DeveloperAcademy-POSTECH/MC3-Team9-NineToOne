@@ -32,4 +32,8 @@ class QuizDetailViewController: UIViewController {
         quizDetail.text = detail
         quizDetailExample.text = example
     }
+    
+    @IBAction func tapToHome(_ sender: UIButton) {
+        self.navigationController?.popViewController(animated: true)
+    }
 }
