@@ -18,10 +18,10 @@ final class QuizAnswerViewController: UIViewController {
     }
     
     private func loadData() {
-        choiceQuizStack.isHidden = (quiz.type == .blank)
-        blankQuizStack.isHidden = (quiz.type == .choice)
+        choiceQuizStack.isHidden = (quiz.quizType == .blank)
+        blankQuizStack.isHidden = (quiz.quizType == .choice)
         
-        quiz.type == .blank ? setForBlankType() : setForChoiceType()
+        quiz.quizType == .blank ? setForBlankType() : setForChoiceType()
         
         resultImageView.image = UIImage(systemName: "house")
         resultGuideLabel.text = (quiz.quizState == .right) ? "정답이에요.\n경험치 + \(quiz.quizID)" : "오답이에요.\n해설을 확인해보시겠어요?"
