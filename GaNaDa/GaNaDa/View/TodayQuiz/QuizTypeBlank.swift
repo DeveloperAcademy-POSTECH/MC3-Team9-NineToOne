@@ -27,6 +27,10 @@ final class QuizTypeBlank: UICollectionViewCell {
         contentView.layer.borderWidth = 2
         contentView.layer.borderColor = UIColor.customOrange.cgColor
     }
+    
+    deinit {
+        print("Deinit \(self)")
+    }
 }
 
 extension QuizTypeBlank {

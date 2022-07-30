@@ -17,7 +17,22 @@ final class TodayQuizViewController: UIViewController {
 
     @IBOutlet weak var todayQuizCollectionView: UICollectionView!
     
-    var currentHour: Int = 0
+    let secretView = UIView()
+    let visualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .regular))
+    let textLabel = UILabel()
+//    
+//    secretView.addSubview(visualEffectView)
+//    visualEffectView.translatesAutoresizingMaskIntoConstraints = false
+//    NSLayoutConstraint.activate([
+//        visualEffectView.topAnchor.constraint(equalTo: cell.topAnchor),
+//        visualEffectView.trailingAnchor.constraint(equalTo: cell.trailingAnchor),
+//        visualEffectView.leadingAnchor.constraint(equalTo: cell.leadingAnchor),
+//        visualEffectView.bottomAnchor.constraint(equalTo: cell.bottomAnchor)
+//    ])
+//    secretView.addSubview(textLabel)
+//    
+    
+    var currentHour: Int = 12
     var flag = true
     var openTimes = [9,11,18]
     
@@ -88,8 +103,31 @@ extension TodayQuizViewController: UICollectionViewDataSource{
         let cell = todayQuizCollectionView.dequeueReusableCell(withReuseIdentifier: "todayQuizBlankCell", for: indexPath) as! QuizTypeBlank
         cell.data = self.todayQuizs[indexPath.item]
         cell.quizIndex.text = "문제 \(indexPath.item + 1)"
-        cell.flag = currentHour < openTimes[indexPath.item]
-        cell.applyBlur()
+        
+        if let visualEffectView = cell.subviews.last as? UIVisualEffectView {
+            // 시간 조건에 따라
+            visualEffectView.removeFromSuperview()
+        } else {
+            
+        }
+        
+        if currentHour < openTimes[indexPath.item] {
+            print("blur \(currentHour) \(openTimes[indexPath.item])")
+            let visualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .regular))
+            cell.addSubview(visualEffectView)
+            visualEffectView.translatesAutoresizingMaskIntoConstraints = false
+            visualEffectView.layer.cornerRadius = TodayQuizLayoutValue.CornerRadius.cell
+            visualEffectView.clipsToBounds = true
+            visualEffectView.layer.opacity = 0.9
+            NSLayoutConstraint.activate([
+                visualEffectView.topAnchor.constraint(equalTo: cell.topAnchor),
+                visualEffectView.trailingAnchor.constraint(equalTo: cell.trailingAnchor),
+                visualEffectView.leadingAnchor.constraint(equalTo: cell.leadingAnchor),
+                visualEffectView.bottomAnchor.constraint(equalTo: cell.bottomAnchor)
+            ])
+        }
+//        cell.flag = currentHour < openTimes[indexPath.item]
+//        cell.applyBlur()
         return cell
     }
 }
