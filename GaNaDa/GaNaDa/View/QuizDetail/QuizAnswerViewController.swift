@@ -47,14 +47,11 @@ final class QuizAnswerViewController: UIViewController {
     }
     
     private func setForChoiceType() {
-        leftAnswer.text = quiz.quizID.hashValue.isOdd ? quiz.rightAnswer : quiz.wrongAnswer
-        rightAnswer.text = quiz.quizID.hashValue.isOdd ? quiz.wrongAnswer : quiz.rightAnswer
+        leftAnswer.text = quiz.isLeftAnswer ? quiz.rightAnswer : quiz.wrongAnswer
+        rightAnswer.text = quiz.isLeftAnswer ? quiz.wrongAnswer : quiz.rightAnswer
         
-        quiz.quizState == .right
-        ? setSelectAnswerFont(label: (leftAnswer.text == quiz.rightAnswer) ? leftAnswer : rightAnswer,
-                              strikethroughStyle: false)
-        : setSelectAnswerFont(label: (leftAnswer.text == quiz.wrongAnswer) ? leftAnswer : rightAnswer,
-                              strikethroughStyle: true)
+        setSelectAnswerFont(label: (quiz.isLeftAnswer) == (quiz.quizState == .right) ? leftAnswer : rightAnswer,
+                              strikethroughStyle: quiz.quizState == .wrong)
     }
     
     private func setSelectAnswerFont(label: UILabel, strikethroughStyle: Bool) {

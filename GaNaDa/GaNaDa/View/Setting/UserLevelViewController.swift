@@ -15,12 +15,12 @@ final class UserLevelViewController: UIViewController {
         levelImageView.image = LevelCase.level(exp: User.preview.exp).levelImage
         levelLabel.text = LevelCase.level(exp: User.preview.exp).rawValue
         guideLabel.text = "이리오너라"
-        let answer = " \(quiz.wrongAnswer)"
-        let attributedStr = NSMutableAttributedString(string: answer)
-        attributedStr.addAttribute(.strikethroughStyle,
-                                   value: 1,
-                                   range: ( answer as NSString).range(of: quiz.wrongAnswer))
-        emptyQuizLabel.attributedText = attributedStr
+//        let answer = " \(quiz.wrongAnswer)"
+//        let attributedStr = NSMutableAttributedString(string: answer)
+//        attributedStr.addAttribute(.strikethroughStyle,
+//                                   value: 1,
+//                                   range: ( answer as NSString).range(of: quiz.wrongAnswer))
+//        emptyQuizLabel.attributedText = attributedStr
     }
     
     func setLevelStackView() {
