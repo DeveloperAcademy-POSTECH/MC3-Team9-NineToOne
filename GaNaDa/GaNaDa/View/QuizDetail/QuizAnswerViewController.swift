@@ -18,10 +18,10 @@ final class QuizAnswerViewController: UIViewController {
     }
     
     private func loadData() {
-        choiceQuizStack.isHidden = (quiz.type == .blank)
-        blankQuizStack.isHidden = (quiz.type == .choice)
+        choiceQuizStack.isHidden = (quiz.quizType == .blank)
+        blankQuizStack.isHidden = (quiz.quizType == .choice)
         
-        quiz.type == .blank ? setForBlankType() : setForChoiceType()
+        quiz.quizType == .blank ? setForBlankType() : setForChoiceType()
         
         // TODO: 실제 USER 정보로 바꿔야함
         resultImageView.image = LevelCase.level(exp: User.preview.exp).levelImage

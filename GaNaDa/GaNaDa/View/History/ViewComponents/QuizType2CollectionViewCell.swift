@@ -32,7 +32,6 @@ struct QuizType2LayoutValue {
 }
 
 final class QuizType2CollectionViewCell: UICollectionViewCell {
-    
     private lazy var contentNumberLabel = UILabel()
     private lazy var quizContentLabel = UILabel()
     private lazy var contentAnswerAButton = UIButton()

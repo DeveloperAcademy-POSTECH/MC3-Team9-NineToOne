@@ -7,6 +7,11 @@
 
 import UIKit
 
+struct TodayQuizLayoutValue {
+    enum CornerRadius {
+        static let cell = 16.0
+    }
+}
 
 final class TodayQuizViewController: UIViewController {
 
@@ -15,10 +20,23 @@ final class TodayQuizViewController: UIViewController {
     @IBOutlet weak var userLevel: UILabel!
     @IBOutlet weak var userName: UILabel!
     @IBOutlet weak var userExp: UIProgressView!
-    
-    var todayQuizs: [Quiz] = [Quiz(question: "나는 ios 개발자가 * 싶다.", type: QuizType.blank, rightAnswer: "되고", wrongAnswer: "돼고"),
-                              Quiz(question: "정말 너를 * 좋니.", type: QuizType.blank, rightAnswer: "어떡하면", wrongAnswer: "어떻하면"),
-                              Quiz(question: "오늘도 안 오면 *.", type: QuizType.blank, rightAnswer: "어떡해", wrongAnswer: "어떻게")]
+        
+    var currentHour: Int = 0
+    var openTimes = [9, 12, 18]
+
+    var todayQuizs: [Quiz] = [Quiz(question: "나는 ios 개발자가 * 싶다.", typeRawValue: QuizType.blank.rawValue, rightAnswer: "되고", wrongAnswer: "돼고"),
+                              Quiz.previewChoice,
+                              Quiz(question: "오늘도 안 오면 *.", typeRawValue: QuizType.blank.rawValue, rightAnswer: "어떡해", wrongAnswer: "어떻게")]
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        let formatter = DateFormatter()
+        formatter.dateFormat = "HH"
+        currentHour = Int(formatter.string(from: Date())) ?? 0
+        print("\(currentHour)")
+        todayQuizCollectionView.reloadData()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,9 +47,10 @@ final class TodayQuizViewController: UIViewController {
         
         let todayQuizBlankCellNib = UINib(nibName: "QuizTypeBlank", bundle: nil)
         
+        todayQuizCollectionView.register(QuizType2CollectionViewCell.self, forCellWithReuseIdentifier: QuizType2CollectionViewCell.id)
+        
         todayQuizCollectionView.register(todayQuizBlankCellNib, forCellWithReuseIdentifier: "todayQuizBlankCell")
-        
-        
+
         todayQuizCollectionView.dataSource = self
         
         todayQuizCollectionView.collectionViewLayout = creatCompositionalLayout()
@@ -64,7 +83,7 @@ private extension TodayQuizViewController {
         let layout = UICollectionViewCompositionalLayout{
             (sectionIndex: Int, layoutEnvironment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection? in
             
-            let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(171))
+            let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(125))
             
             let item = NSCollectionLayoutItem(layoutSize: itemSize)
             
@@ -84,7 +103,6 @@ private extension TodayQuizViewController {
     
 }
 
-
 extension TodayQuizViewController: UICollectionViewDelegate {
     
 }
@@ -95,10 +113,75 @@ extension TodayQuizViewController: UICollectionViewDataSource{
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = todayQuizCollectionView.dequeueReusableCell(withReuseIdentifier: "todayQuizBlankCell", for: indexPath) as! QuizTypeBlank
+        if todayQuizs[indexPath.item].quizType == QuizType.blank {
+            let cell = todayQuizCollectionView.dequeueReusableCell(withReuseIdentifier: "todayQuizBlankCell", for: indexPath) as! QuizTypeBlank
+            cell.data = self.todayQuizs[indexPath.item]
+            cell.quizIndex.text = "문제 \(indexPath.item + 1)"
+            
+            if let openTimeLabel = cell.subviews.last as? UILabel {
+                openTimeLabel.removeFromSuperview()
+                if let visualEffectView = cell.subviews.last as? UIVisualEffectView {
+                    visualEffectView.removeFromSuperview()
+                }
+            }
+            
+            if currentHour < openTimes[indexPath.item] {
+                applySecretEffect(cell: cell, hour: openTimes[indexPath.item])
+            }
+            return cell
+        } else {
+            guard let cell = todayQuizCollectionView.dequeueReusableCell(withReuseIdentifier: QuizType2CollectionViewCell.id, for: indexPath) as? QuizType2CollectionViewCell
+            else { return UICollectionViewCell() }
+            cell.setQuiz(quizNum: (indexPath.row) + 1, quiz: todayQuizs[indexPath.row])
+           
+            if let openTimeLabel = cell.subviews.last as? UILabel {
+                openTimeLabel.removeFromSuperview()
+                if let visualEffectView = cell.subviews.last as? UIVisualEffectView {
+                    visualEffectView.removeFromSuperview()
+                }
+            }
+
+            if currentHour < openTimes[indexPath.item] {
+                applySecretEffect(cell: cell, hour: openTimes[indexPath.item])
+            }
+            return cell
+        }
+    }
+}
+
+private extension TodayQuizViewController {
+    func getOpenTimeLabel(openHour : Int) -> UILabel {
+        let openTimeLabel = UILabel()
+        let imageAttachment = NSTextAttachment()
+        imageAttachment.image = UIImage(systemName: "lock.fill")
+        let fullString = NSMutableAttributedString(string: "")
+        fullString.append(NSAttributedString(attachment: imageAttachment))
+        let openHour = String(format: "%02d:00", openHour)
+        fullString.append(NSAttributedString(string: " \(openHour) 공개 예정"))
+        openTimeLabel.attributedText = fullString
+        return openTimeLabel
+    }
+
+    func applySecretEffect(cell: UICollectionViewCell, hour: Int) {
+        let visualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .regular))
+        cell.addSubview(visualEffectView)
+        visualEffectView.translatesAutoresizingMaskIntoConstraints = false
+        visualEffectView.layer.cornerRadius = TodayQuizLayoutValue.CornerRadius.cell
+        visualEffectView.clipsToBounds = true
+        visualEffectView.layer.opacity = 0.9
+        NSLayoutConstraint.activate([
+            visualEffectView.topAnchor.constraint(equalTo: cell.topAnchor),
+            visualEffectView.trailingAnchor.constraint(equalTo: cell.trailingAnchor),
+            visualEffectView.leadingAnchor.constraint(equalTo: cell.leadingAnchor),
+            visualEffectView.bottomAnchor.constraint(equalTo: cell.bottomAnchor)
+        ])
         
-        cell.data = self.todayQuizs[indexPath.item]
-        cell.quizIndex.text = "문제 \(indexPath.item + 1)"
-        return cell
+        let openTimeLabel = getOpenTimeLabel(openHour: hour)
+        cell.addSubview(openTimeLabel)
+        openTimeLabel.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            openTimeLabel.centerXAnchor.constraint(equalTo: cell.centerXAnchor),
+            openTimeLabel.centerYAnchor.constraint(equalTo: cell.centerYAnchor),
+        ])
     }
 }

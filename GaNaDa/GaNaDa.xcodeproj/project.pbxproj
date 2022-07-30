@@ -15,6 +15,9 @@
 		AB3D6B14288E70D3005C452F /* QuizTypeBlank.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB3D6B11288E70D3005C452F /* QuizTypeBlank.xib */; };
 		AB3D6B15288E70D3005C452F /* Quiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3D6B12288E70D3005C452F /* Quiz.swift */; };
 		AB3D6B1928906B7C005C452F /* FilteringButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3D6B1828906B7C005C452F /* FilteringButtonsView.swift */; };
+		AB3D6B1F28911B99005C452F /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB3D6B1E28911B99005C452F /* CloudKit.framework */; };
+		AB3D6B21289130B3005C452F /* ICloudManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3D6B20289130B3005C452F /* ICloudManager.swift */; };
+		AB3D6B2328914A40005C452F /* HistoryQuiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3D6B2228914A40005C452F /* HistoryQuiz.swift */; };
 		AB75333D288A6DCD00A68BFB /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB75333C288A6DCD00A68BFB /* UIColor+Extension.swift */; };
 		AB753377288A7A6400A68BFB /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = AB75336E288A7A6400A68BFB /* Pretendard-SemiBold.otf */; };
 		AB753378288A7A6400A68BFB /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = AB75336E288A7A6400A68BFB /* Pretendard-SemiBold.otf */; };
@@ -49,6 +52,7 @@
 		AB75339B288A7E0C00A68BFB /* NanumPen.otf in Resources */ = {isa = PBXBuildFile; fileRef = AB75339A288A7E0C00A68BFB /* NanumPen.otf */; };
 		AB75339C288A7E0C00A68BFB /* NanumPen.otf in Resources */ = {isa = PBXBuildFile; fileRef = AB75339A288A7E0C00A68BFB /* NanumPen.otf */; };
 		AB75339D288A7E0C00A68BFB /* NanumPen.otf in Resources */ = {isa = PBXBuildFile; fileRef = AB75339A288A7E0C00A68BFB /* NanumPen.otf */; };
+		ABB6E4CD2894FA580064C8C5 /* ICloudService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB6E4CC2894FA580064C8C5 /* ICloudService.swift */; };
 		C70BCA2628878A4800569961 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70BCA2528878A4800569961 /* AppDelegate.swift */; };
 		C70BCA2828878A4800569961 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70BCA2728878A4800569961 /* SceneDelegate.swift */; };
 		C70BCA2D28878A4800569961 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C70BCA2B28878A4800569961 /* Main.storyboard */; };
@@ -105,6 +109,10 @@
 		AB3D6B11288E70D3005C452F /* QuizTypeBlank.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuizTypeBlank.xib; sourceTree = "<group>"; };
 		AB3D6B12288E70D3005C452F /* Quiz.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Quiz.swift; sourceTree = "<group>"; };
 		AB3D6B1828906B7C005C452F /* FilteringButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilteringButtonsView.swift; sourceTree = "<group>"; };
+		AB3D6B1C28911B8E005C452F /* GaNaDa.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GaNaDa.entitlements; sourceTree = "<group>"; };
+		AB3D6B1E28911B99005C452F /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		AB3D6B20289130B3005C452F /* ICloudManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICloudManager.swift; sourceTree = "<group>"; };
+		AB3D6B2228914A40005C452F /* HistoryQuiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryQuiz.swift; sourceTree = "<group>"; };
 		AB75333C288A6DCD00A68BFB /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		AB75336E288A7A6400A68BFB /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.otf"; sourceTree = "<group>"; };
 		AB75336F288A7A6400A68BFB /* Pretendard-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Black.otf"; sourceTree = "<group>"; };
@@ -117,6 +125,7 @@
 		AB753376288A7A6400A68BFB /* Pretendard-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraBold.otf"; sourceTree = "<group>"; };
 		AB753392288A7B2900A68BFB /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
 		AB75339A288A7E0C00A68BFB /* NanumPen.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumPen.otf; sourceTree = "<group>"; };
+		ABB6E4CC2894FA580064C8C5 /* ICloudService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICloudService.swift; sourceTree = "<group>"; };
 		C70BCA2228878A4800569961 /* GaNaDa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GaNaDa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C70BCA2528878A4800569961 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C70BCA2728878A4800569961 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -156,6 +165,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C7171E9F2891739D00EFFD5A /* Lottie in Frameworks */,
+				AB3D6B1F28911B99005C452F /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -212,8 +222,17 @@
 				C7DED598288E8806004A2322 /* User.swift */,
 				C7DED59A288E8C0A004A2322 /* SubmitAnswerDTO.swift */,
 				C7DAC56E289384D0000F4D04 /* UserLevel.swift */,
+				AB3D6B2228914A40005C452F /* HistoryQuiz.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		AB3D6B1D28911B99005C452F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AB3D6B1E28911B99005C452F /* CloudKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		AB75333B288A6DA800A68BFB /* Extension */ = {
@@ -253,6 +272,7 @@
 				C70BCA3B28878A4900569961 /* GaNaDaTests */,
 				C70BCA4528878A4900569961 /* GaNaDaUITests */,
 				C70BCA2328878A4800569961 /* Products */,
+				AB3D6B1D28911B99005C452F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -269,6 +289,7 @@
 		C70BCA2428878A4800569961 /* GaNaDa */ = {
 			isa = PBXGroup;
 			children = (
+				AB3D6B1C28911B8E005C452F /* GaNaDa.entitlements */,
 				C7DED591288E7C30004A2322 /* Manager */,
 				AB75333B288A6DA800A68BFB /* Extension */,
 				AB3D6B17288E7515005C452F /* Model */,
@@ -355,6 +376,8 @@
 			children = (
 				C7DED592288E7C3D004A2322 /* NetworkService.swift */,
 				C7DED594288E7CA8004A2322 /* NetworkManager.swift */,
+				AB3D6B20289130B3005C452F /* ICloudManager.swift */,
+				ABB6E4CC2894FA580064C8C5 /* ICloudService.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -559,14 +582,17 @@
 				C7FA02892890E0E9006B752F /* QuizViewController.swift in Sources */,
 				AB24C051288E585800849B38 /* HistoryCollectionView.swift in Sources */,
 				AB753393288A7B2900A68BFB /* UIFont+Extension.swift in Sources */,
+				AB3D6B21289130B3005C452F /* ICloudManager.swift in Sources */,
 				C7DED599288E8806004A2322 /* User.swift in Sources */,
 				C7A6ED1228942FB400A9D7C2 /* UserLevelViewController.swift in Sources */,
 				AB3D6B13288E70D3005C452F /* QuizTypeBlank.swift in Sources */,
 				C70BCA2828878A4800569961 /* SceneDelegate.swift in Sources */,
 				E29228CD288DB04E0051779B /* TodayQuizCollectionVC.swift in Sources */,
 				AB3D6B15288E70D3005C452F /* Quiz.swift in Sources */,
+				ABB6E4CD2894FA580064C8C5 /* ICloudService.swift in Sources */,
 				C7DED59B288E8C0A004A2322 /* SubmitAnswerDTO.swift in Sources */,
 				C7DAC56F289384D0000F4D04 /* UserLevel.swift in Sources */,
+				AB3D6B2328914A40005C452F /* HistoryQuiz.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -743,9 +769,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = GaNaDa/GaNaDa.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = Z629PZ4XVL;
+				DEVELOPMENT_TEAM = 8QSTXVD8H9;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GaNaDa/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -774,9 +801,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = GaNaDa/GaNaDa.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = Z629PZ4XVL;
+				DEVELOPMENT_TEAM = 8QSTXVD8H9;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GaNaDa/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
