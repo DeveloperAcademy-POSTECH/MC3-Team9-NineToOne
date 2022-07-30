@@ -48,10 +48,8 @@ final class QuizViewController: UIViewController {
             trailingQuizLabel.text = " )" + (quiz.question.components(separatedBy: "*").last ?? "")
         }
         
-        // 해쉬 홀수면 왼쪽, 짝수면 오른쪽
-//        print(String(quiz.quizID).hashValue)
-        firstAnswerButton.setTitle(quiz.quizID.hashValue.isOdd ? quiz.rightAnswer : quiz.wrongAnswer, for: .normal)
-        secondAnswerButton.setTitle(quiz.quizID.hashValue.isOdd ? quiz.wrongAnswer : quiz.rightAnswer, for: .normal)
+        firstAnswerButton.setTitle(quiz.isLeftAnswer ? quiz.rightAnswer : quiz.wrongAnswer, for: .normal)
+        secondAnswerButton.setTitle(quiz.isLeftAnswer ? quiz.wrongAnswer : quiz.rightAnswer, for: .normal)
     }
     
     // MARK: - IBOutlets
