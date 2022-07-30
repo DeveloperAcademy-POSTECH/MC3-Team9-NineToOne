@@ -29,18 +29,27 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cVA-Nk-5Xx">
+                        <rect key="frame" x="-17" y="-9.5" width="124" height="84"/>
+                    </imageView>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
                 <constraint firstItem="a35-ET-veJ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="22" id="4SV-45-WhR"/>
+                <constraint firstItem="Q5v-aZ-sXD" firstAttribute="top" secondItem="a35-ET-veJ" secondAttribute="bottom" constant="23" id="IN6-ls-aAv"/>
+                <constraint firstItem="cVA-Nk-5Xx" firstAttribute="width" secondItem="a35-ET-veJ" secondAttribute="width" multiplier="2.95238" id="Lbk-Re-IDt"/>
+                <constraint firstItem="cVA-Nk-5Xx" firstAttribute="centerY" secondItem="a35-ET-veJ" secondAttribute="centerY" id="LhB-w6-TiF"/>
                 <constraint firstItem="Q5v-aZ-sXD" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="25" id="Lm6-dk-ONU"/>
                 <constraint firstItem="a35-ET-veJ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="24" id="Ole-NJ-24S"/>
+                <constraint firstItem="cVA-Nk-5Xx" firstAttribute="centerX" secondItem="a35-ET-veJ" secondAttribute="centerX" id="SsT-Da-FtT"/>
                 <constraint firstItem="Q5v-aZ-sXD" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="ZXj-Ua-1iJ"/>
+                <constraint firstItem="cVA-Nk-5Xx" firstAttribute="height" secondItem="a35-ET-veJ" secondAttribute="height" multiplier="4" id="e8a-a2-yXP"/>
                 <constraint firstItem="Q5v-aZ-sXD" firstAttribute="top" secondItem="a35-ET-veJ" secondAttribute="bottom" constant="23" id="tvK-9M-Oyr"/>
             </constraints>
             <size key="customSize" width="552" height="142"/>
             <connections>
+                <outlet property="markImage" destination="cVA-Nk-5Xx" id="czS-uI-QaB"/>
                 <outlet property="quizContent" destination="Q5v-aZ-sXD" id="5CK-Kp-fWS"/>
                 <outlet property="quizIndexLabel" destination="a35-ET-veJ" id="RnX-zR-u6A"/>
             </connections>

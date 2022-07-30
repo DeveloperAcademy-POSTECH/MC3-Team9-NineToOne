@@ -14,14 +14,20 @@ struct QuizCellUIValue {
 }
 
 class QuizCollectionViewCell: UICollectionViewCell {
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+//    override init(frame: CGRect) {
+//        super.init(frame: frame)
+//        setCellUI()
+//    }
+//
+//    required init?(coder: NSCoder) {
+//        fatalError("init(coder:) has not been implemented")
+//    }
+    override func awakeFromNib() {
+        super.awakeFromNib()
         setCellUI()
     }
+
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
 }
 
 private extension QuizCollectionViewCell {
