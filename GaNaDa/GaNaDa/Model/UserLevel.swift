@@ -43,9 +43,9 @@ enum LevelCase: String, CaseIterable {
     var levelImage: UIImage? {
         switch self {
         case .학동, .유생, .급제, .세종대왕:
-            return UIImage(named: self.rawValue)
+            return UIImage(named: "Level\(LevelCase.allCases.firstIndex(of: self) ?? 1)")
         default:
-            return UIImage(named: "폼")
+            return UIImage(named: "Level")
         }
     }
 }
