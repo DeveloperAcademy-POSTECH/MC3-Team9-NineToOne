@@ -64,6 +64,7 @@ final class TodayQuizViewController: UIViewController {
     }
     
     func requestUserData() {
+        userImage.image = LevelCase.level(exp: UserDefaults.standard.integer(forKey: "userExp")).levelImage
         userLevel.text = LevelCase.level(exp: UserDefaults.standard.integer(forKey: "userExp")).rawValue
         userName.text = UserDefaults.standard.string(forKey: "userName")
         userExp.progress = Float(UserDefaults.standard.integer(forKey: "userExp") % 100) / 100.0
