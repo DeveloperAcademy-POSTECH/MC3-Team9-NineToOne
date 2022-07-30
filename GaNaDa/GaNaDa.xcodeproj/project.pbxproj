@@ -52,6 +52,7 @@
 		AB75339B288A7E0C00A68BFB /* NanumPen.otf in Resources */ = {isa = PBXBuildFile; fileRef = AB75339A288A7E0C00A68BFB /* NanumPen.otf */; };
 		AB75339C288A7E0C00A68BFB /* NanumPen.otf in Resources */ = {isa = PBXBuildFile; fileRef = AB75339A288A7E0C00A68BFB /* NanumPen.otf */; };
 		AB75339D288A7E0C00A68BFB /* NanumPen.otf in Resources */ = {isa = PBXBuildFile; fileRef = AB75339A288A7E0C00A68BFB /* NanumPen.otf */; };
+		ABB6E4CD2894FA580064C8C5 /* ICloudService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB6E4CC2894FA580064C8C5 /* ICloudService.swift */; };
 		C70BCA2628878A4800569961 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70BCA2528878A4800569961 /* AppDelegate.swift */; };
 		C70BCA2828878A4800569961 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70BCA2728878A4800569961 /* SceneDelegate.swift */; };
 		C70BCA2D28878A4800569961 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C70BCA2B28878A4800569961 /* Main.storyboard */; };
@@ -120,6 +121,7 @@
 		AB753376288A7A6400A68BFB /* Pretendard-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraBold.otf"; sourceTree = "<group>"; };
 		AB753392288A7B2900A68BFB /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
 		AB75339A288A7E0C00A68BFB /* NanumPen.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumPen.otf; sourceTree = "<group>"; };
+		ABB6E4CC2894FA580064C8C5 /* ICloudService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICloudService.swift; sourceTree = "<group>"; };
 		C70BCA2228878A4800569961 /* GaNaDa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GaNaDa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C70BCA2528878A4800569961 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C70BCA2728878A4800569961 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -355,6 +357,7 @@
 				C7DED592288E7C3D004A2322 /* NetworkService.swift */,
 				C7DED594288E7CA8004A2322 /* NetworkManager.swift */,
 				AB3D6B20289130B3005C452F /* ICloudManager.swift */,
+				ABB6E4CC2894FA580064C8C5 /* ICloudService.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -563,6 +566,7 @@
 				C70BCA2828878A4800569961 /* SceneDelegate.swift in Sources */,
 				E29228CD288DB04E0051779B /* TodayQuizCollectionVC.swift in Sources */,
 				AB3D6B15288E70D3005C452F /* Quiz.swift in Sources */,
+				ABB6E4CD2894FA580064C8C5 /* ICloudService.swift in Sources */,
 				C7DED59B288E8C0A004A2322 /* SubmitAnswerDTO.swift in Sources */,
 				AB3D6B2328914A40005C452F /* HistoryQuiz.swift in Sources */,
 			);
