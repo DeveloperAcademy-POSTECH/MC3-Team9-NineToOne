@@ -12,6 +12,7 @@ extension UIViewController {
     func setNavigationBar(navigationTitle: String, popGesture: Bool = false, hidesBackButton: Bool = false) {
         navigationController?.interactivePopGestureRecognizer?.isEnabled = popGesture
         navigationController?.navigationBar.tintColor = .black
+        navigationController?.navigationBar.barTintColor = .white
         navigationController?.navigationItem.largeTitleDisplayMode = .never
         let backBarBtnItem = UIBarButtonItem()
         backBarBtnItem.title = ""

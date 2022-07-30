@@ -14,13 +14,21 @@ final class UserLevelViewController: UIViewController {
     private func loadData() {
         levelImageView.image = LevelCase.level(exp: User.preview.exp).levelImage
         levelLabel.text = LevelCase.level(exp: User.preview.exp).rawValue
-        guideLabel.text = "이리오너라"
-//        let answer = " \(quiz.wrongAnswer)"
-//        let attributedStr = NSMutableAttributedString(string: answer)
-//        attributedStr.addAttribute(.strikethroughStyle,
-//                                   value: 1,
-//                                   range: ( answer as NSString).range(of: quiz.wrongAnswer))
-//        emptyQuizLabel.attributedText = attributedStr
+        let userExp = User.preview.exp
+        if userExp < 2100 {
+            let guideText = "경험치 +\(100 - (userExp % 100)) 달성 시 \(LevelCase.level(exp: userExp + 100).rawValue) 승격"
+            let attributedStr = NSMutableAttributedString(string: guideText)
+            attributedStr.addAttribute(.foregroundColor,
+                                       value: UIColor.black,
+                                       range: (guideText as NSString).range(of: "+\(100 - (userExp % 100))"))
+            attributedStr.addAttribute(.foregroundColor,
+                                       value: UIColor.black,
+                                       range: (guideText as NSString).range(of: "\(LevelCase.level(exp: userExp + 100).rawValue)"))
+            guideLabel.attributedText = attributedStr
+        } else {
+            guideLabel.text = "한글의 창시자 등장, 주상 전하 납시오!"
+        }
+        
     }
     
     func setLevelStackView() {
