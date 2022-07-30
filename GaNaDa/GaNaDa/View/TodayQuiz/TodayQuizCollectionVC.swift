@@ -20,12 +20,9 @@ final class TodayQuizViewController: UIViewController {
     @IBOutlet weak var userLevel: UILabel!
     @IBOutlet weak var userName: UILabel!
     @IBOutlet weak var userExp: UIProgressView!
-    
-//    let visualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .regular))
-    
+        
     var currentHour: Int = 0
     var openTimes = [9,12,18]
-    
     var todayQuizs: [Quiz] = [Quiz(question: "나는 ios 개발자가 * 싶다.", type: QuizType.blank, rightAnswer: "되고", wrongAnswer: "돼고"),
                               Quiz.previewChoice,
                               Quiz(question: "오늘도 안 오면 *.", type: QuizType.blank, rightAnswer: "어떡해", wrongAnswer: "어떻게")]
@@ -121,7 +118,6 @@ extension TodayQuizViewController: UICollectionViewDataSource{
             cell.data = self.todayQuizs[indexPath.item]
             cell.quizIndex.text = "문제 \(indexPath.item + 1)"
             
-            
             if let openTimeLabel = cell.subviews.last as? UILabel {
                 openTimeLabel.removeFromSuperview()
                 if let visualEffectView = cell.subviews.last as? UIVisualEffectView {
@@ -150,8 +146,6 @@ extension TodayQuizViewController: UICollectionViewDataSource{
                 fullString.append(NSAttributedString(attachment: imageAttachment))
                 
                 let openHour = String(format: "%02d:00", openTimes[indexPath.item])
-
-                
                 fullString.append(NSAttributedString(string: " \(openHour) 공개 예정"))
                 
                 let openTimeLabel = UILabel()
@@ -172,6 +166,14 @@ extension TodayQuizViewController: UICollectionViewDataSource{
         }
     }
 }
+
+extension TodayQuizViewController {
+    func applySecretEffect() {
+        
+        
+    }
+}
+
 
 enum level: Int {
     case lowNine = 0
