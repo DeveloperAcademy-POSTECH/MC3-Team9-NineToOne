@@ -326,6 +326,9 @@
                                         <integer key="value" value="16"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="tapToHome:" destination="HqB-oE-7TX" eventType="touchUpInside" id="McD-ER-KO7"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="iPr-DK-wq3"/>
