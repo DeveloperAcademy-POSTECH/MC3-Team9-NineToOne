@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import GameplayKit
 
 struct Quiz: Codable {
     var quizID: Int = 0
@@ -17,6 +18,14 @@ struct Quiz: Codable {
     var example: [String] = []
     var stateRawValue: Int = 0
     var publishedDate: Date?
+    
+    var isLeftAnswer: Bool {
+        let notSoRandomSource1 = GKMersenneTwisterRandomSource(seed: UInt64(quizID))
+        let randomBool = GKRandomDistribution(randomSource: notSoRandomSource1,
+                                       lowestValue: 1,
+                                       highestValue: 3).nextBool()
+        return randomBool
+    }
     
     var quizState: QuizState {
         return QuizState(rawValue: stateRawValue) ?? QuizState.unsolved
