@@ -23,9 +23,10 @@ final class TodayQuizViewController: UIViewController {
         
     var currentHour: Int = 0
     var openTimes = [9, 12, 18]
-    var todayQuizs: [Quiz] = [Quiz(question: "나는 ios 개발자가 * 싶다.", type: QuizType.blank, rightAnswer: "되고", wrongAnswer: "돼고"),
+
+    var todayQuizs: [Quiz] = [Quiz(question: "나는 ios 개발자가 * 싶다.", typeRawValue: QuizType.blank.rawValue, rightAnswer: "되고", wrongAnswer: "돼고"),
                               Quiz.previewChoice,
-                              Quiz(question: "오늘도 안 오면 *.", type: QuizType.blank, rightAnswer: "어떡해", wrongAnswer: "어떻게")]
+                              Quiz(question: "오늘도 안 오면 *.", typeRawValue: QuizType.blank.rawValue, rightAnswer: "어떡해", wrongAnswer: "어떻게")]
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -112,7 +113,7 @@ extension TodayQuizViewController: UICollectionViewDataSource{
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if todayQuizs[indexPath.item].type == QuizType.blank {
+        if todayQuizs[indexPath.item].quizType == QuizType.blank {
             let cell = todayQuizCollectionView.dequeueReusableCell(withReuseIdentifier: "todayQuizBlankCell", for: indexPath) as! QuizTypeBlank
             cell.data = self.todayQuizs[indexPath.item]
             cell.quizIndex.text = "문제 \(indexPath.item + 1)"

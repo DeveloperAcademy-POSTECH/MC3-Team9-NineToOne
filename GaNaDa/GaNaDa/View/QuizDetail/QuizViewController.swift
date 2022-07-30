@@ -36,12 +36,12 @@ final class QuizViewController: UIViewController {
     }
     
     private func loadData() {
-        blankQuizGuideLabel.isHidden = (quiz.type == .choice)
-        blankQuizStack.isHidden = (quiz.type == .choice)
+        blankQuizGuideLabel.isHidden = (quiz.quizType == .choice)
+        blankQuizStack.isHidden = (quiz.quizType == .choice)
         
-        quizLabel.isHidden = (quiz.type == .blank)
+        quizLabel.isHidden = (quiz.quizType == .blank)
         
-        if quiz.type == .blank {
+        if quiz.quizType == .blank {
             leadingQuizLabel.text = (quiz.question.components(separatedBy: "*").first ?? "") + "("
             emptyQuizLabel.text = " \((quiz.rightAnswer.count > quiz.wrongAnswer.count) ? quiz.rightAnswer : quiz.wrongAnswer)"
             

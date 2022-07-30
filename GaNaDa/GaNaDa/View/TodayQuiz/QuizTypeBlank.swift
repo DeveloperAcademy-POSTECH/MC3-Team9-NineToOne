@@ -10,8 +10,10 @@ import UIKit
 final class QuizTypeBlank: UICollectionViewCell {
     @IBOutlet weak var quizIndex: UILabel!
     @IBOutlet weak var quizQuestion: UILabel!
-    
-    var data: Quiz = Quiz(question: "샘플 문장", type: QuizType.blank, rightAnswer: "정답", wrongAnswer: "오답") {
+    @IBOutlet weak var rightAnswer: UIButton!
+    @IBOutlet weak var wrongAnswer: UIButton!
+
+    var data: Quiz = Quiz(question: "샘플 문장", typeRawValue: 0, rightAnswer: "정답", wrongAnswer: "오답") {
         didSet {
             quizQuestion.text = makeQuizSentence(quiz: data)
         }
