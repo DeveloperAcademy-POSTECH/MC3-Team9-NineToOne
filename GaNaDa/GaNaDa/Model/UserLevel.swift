@@ -36,7 +36,7 @@ enum LevelCase: String, CaseIterable {
         if exp > self.allCases.count * 100 {
             return .세종대왕
         }
-        let index = exp % 100
+        let index = exp / 100
         return self.allCases[index]
     }
     

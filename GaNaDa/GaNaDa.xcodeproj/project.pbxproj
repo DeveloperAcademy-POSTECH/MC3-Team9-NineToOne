@@ -66,6 +66,8 @@
 		C7171EA12891859200EFFD5A /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7171EA02891859200EFFD5A /* UIViewController+Extension.swift */; };
 		C72D7A8F2893704400781633 /* lf20_ths0ezn3.json in Resources */ = {isa = PBXBuildFile; fileRef = C72D7A8D2893704400781633 /* lf20_ths0ezn3.json */; };
 		C72D7A902893704400781633 /* lf30_editor_xeckchmn.json in Resources */ = {isa = PBXBuildFile; fileRef = C72D7A8E2893704400781633 /* lf30_editor_xeckchmn.json */; };
+		C741A9852895379E00B61C8D /* LevelCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C741A9842895379E00B61C8D /* LevelCardView.xib */; };
+		C741A987289537BD00B61C8D /* LevelCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C741A986289537BD00B61C8D /* LevelCardView.swift */; };
 		C795FC172890EDFF00BF28EF /* QuizAnswerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C795FC162890EDFF00BF28EF /* QuizAnswerViewController.swift */; };
 		C7A6ED1028942FAA00A9D7C2 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A6ED0F28942FAA00A9D7C2 /* SettingViewController.swift */; };
 		C7A6ED1228942FB400A9D7C2 /* UserLevelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A6ED1128942FB400A9D7C2 /* UserLevelViewController.swift */; };
@@ -142,6 +144,8 @@
 		C7171EA02891859200EFFD5A /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		C72D7A8D2893704400781633 /* lf20_ths0ezn3.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = lf20_ths0ezn3.json; sourceTree = "<group>"; };
 		C72D7A8E2893704400781633 /* lf30_editor_xeckchmn.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = lf30_editor_xeckchmn.json; sourceTree = "<group>"; };
+		C741A9842895379E00B61C8D /* LevelCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LevelCardView.xib; sourceTree = "<group>"; };
+		C741A986289537BD00B61C8D /* LevelCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelCardView.swift; sourceTree = "<group>"; };
 		C795FC162890EDFF00BF28EF /* QuizAnswerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizAnswerViewController.swift; sourceTree = "<group>"; };
 		C7A6ED0F28942FAA00A9D7C2 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		C7A6ED1128942FB400A9D7C2 /* UserLevelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLevelViewController.swift; sourceTree = "<group>"; };
@@ -367,6 +371,8 @@
 			children = (
 				C7A6ED0F28942FAA00A9D7C2 /* SettingViewController.swift */,
 				C7A6ED1128942FB400A9D7C2 /* UserLevelViewController.swift */,
+				C741A9842895379E00B61C8D /* LevelCardView.xib */,
+				C741A986289537BD00B61C8D /* LevelCardView.swift */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -522,6 +528,7 @@
 				AB753386288A7A6400A68BFB /* Pretendard-Thin.otf in Resources */,
 				AB753380288A7A6400A68BFB /* Pretendard-Light.otf in Resources */,
 				AB753389288A7A6400A68BFB /* Pretendard-Medium.otf in Resources */,
+				C741A9852895379E00B61C8D /* LevelCardView.xib in Resources */,
 				C7C527E22892E4ED002EC560 /* GowunBatang-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -580,6 +587,7 @@
 				C7DED595288E7CA8004A2322 /* NetworkManager.swift in Sources */,
 				AB24C04F288E395C00849B38 /* HistoryViewController.swift in Sources */,
 				C7FA02892890E0E9006B752F /* QuizViewController.swift in Sources */,
+				C741A987289537BD00B61C8D /* LevelCardView.swift in Sources */,
 				AB24C051288E585800849B38 /* HistoryCollectionView.swift in Sources */,
 				AB753393288A7B2900A68BFB /* UIFont+Extension.swift in Sources */,
 				AB3D6B21289130B3005C452F /* ICloudManager.swift in Sources */,

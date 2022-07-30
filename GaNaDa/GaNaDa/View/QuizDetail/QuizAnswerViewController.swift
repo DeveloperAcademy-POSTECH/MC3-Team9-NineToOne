@@ -105,7 +105,7 @@ final class QuizAnswerViewController: UIViewController {
     // MARK: - Life Cycles
     override func viewDidLoad() {
         super.viewDidLoad()
-        setNavigationBar(navigationTitle: "문제")
+        setNavigationBar(navigationTitle: "문제", hidesBackButton: true)
         loadData()
         if quiz.quizState == .right {
             configureLottievView()

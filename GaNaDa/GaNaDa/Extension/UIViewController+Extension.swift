@@ -9,11 +9,15 @@ import UIKit
 
 extension UIViewController {
     /// NavigationBar 설정
-    func setNavigationBar(navigationTitle: String, showBackButton: Bool = true) {
+    func setNavigationBar(navigationTitle: String, popGesture: Bool = false, hidesBackButton: Bool = false) {
+        navigationController?.interactivePopGestureRecognizer?.isEnabled = popGesture
+        navigationController?.navigationBar.tintColor = .black
         navigationController?.navigationItem.largeTitleDisplayMode = .never
-        navigationController?.navigationItem.backBarButtonItem = nil
-        navigationController?.interactivePopGestureRecognizer?.isEnabled = false
-        navigationItem.setHidesBackButton(showBackButton, animated: true)
+        let backBarBtnItem = UIBarButtonItem()
+        backBarBtnItem.title = ""
+        navigationItem.backBarButtonItem = backBarBtnItem
+        navigationItem.setHidesBackButton(hidesBackButton, animated: true)
+        
         navigationItem.title = navigationTitle
     }
 }
