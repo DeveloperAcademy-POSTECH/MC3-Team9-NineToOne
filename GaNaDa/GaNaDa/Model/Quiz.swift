@@ -20,8 +20,8 @@ struct Quiz: Codable {
     var publishedDate: Date?
     
     var isLeftAnswer: Bool {
-        let notSoRandomSource1 = GKMersenneTwisterRandomSource(seed: UInt64(quizID))
-        let randomBool = GKRandomDistribution(randomSource: notSoRandomSource1,
+        let generator = GKMersenneTwisterRandomSource(seed: UInt64(quizID))
+        let randomBool = GKRandomDistribution(randomSource: generator,
                                        lowestValue: 1,
                                        highestValue: 3).nextBool()
         return randomBool
