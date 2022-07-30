@@ -16,7 +16,11 @@ final class SettingViewController: UIViewController {
         levelImageView.image = LevelCase.level(exp: User.preview.exp).levelImage
         levelLabel.text = LevelCase.level(exp: User.preview.exp).rawValue
         nameLabel.text = "이리오너라"
+        
+        levelLabel.minimumScaleFactor = 0.5
+        nameLabel.minimumScaleFactor = 0.5
         levelButton.titleLabel?.minimumScaleFactor = 0.5
+//        levelButton.addSubview(UIImageView(image: UIImage(systemName: "chevron.right")))
     }
     
     // MARK: - IBOutlets
@@ -36,7 +40,6 @@ final class SettingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setNavigationBar(navigationTitle: "설정", popGesture: true)
-        
         loadData()
     }
 }
