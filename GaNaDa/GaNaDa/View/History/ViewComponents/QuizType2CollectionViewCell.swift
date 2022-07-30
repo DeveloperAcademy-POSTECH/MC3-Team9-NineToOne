@@ -59,7 +59,8 @@ final class QuizType2CollectionViewCell: UICollectionViewCell {
         configurecontentAnswerBButton()
     }
     
-    func setQuiz(quizNum: Int, quiz: Quiz) {
+    //MARK: quiz: HistoryQuiz -> Quiz로 수정해야함
+    func setQuiz(quizNum: Int, quiz: HistoryQuiz) {
         contentNumberLabel.text = "문제 \(quizNum)"
         quizContentLabel.text = quiz.question
         contentAnswerAButton.setTitle(quiz.rightAnswer, for: .normal)
@@ -72,11 +73,11 @@ final class QuizType2CollectionViewCell: UICollectionViewCell {
 // MARK: - Cell autolayout
 private extension QuizType2CollectionViewCell {
     func configureContentView() {
-        self.backgroundColor = .customColor(.customLightgray)
-        self.layer.cornerRadius = QuizType2LayoutValue.CornerRadius.cell
-        self.layer.applyFigmaShadow(color: .black, alpha: 0.1, x: 0, y: 4, blur: 25, spread: 0)
-        self.clipsToBounds = false
-        self.layer.masksToBounds = false
+//        self.backgroundColor = .customColor(.customLightgray)
+//        self.layer.cornerRadius = QuizType2LayoutValue.CornerRadius.cell
+//        self.layer.applyFigmaShadow(color: .black, alpha: 0.1, x: 0, y: 4, blur: 25, spread: 0)
+//        self.clipsToBounds = false
+//        self.layer.masksToBounds = false
         NSLayoutConstraint.activate([
             self.contentView.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width - QuizType2LayoutValue.Padding.cellHoriz * 2),
             self.contentView.topAnchor.constraint(equalTo: self.topAnchor),
@@ -166,19 +167,19 @@ private extension QuizType2CollectionViewCell {
     }
 }
 
-// REFERENCE: - https://baechukim.tistory.com/112
-extension CALayer {
-    func applyFigmaShadow(color: UIColor, alpha: Float, x: CGFloat, y: CGFloat, blur: CGFloat, spread: CGFloat) {
-        masksToBounds = false
-        shadowColor = color.cgColor
-        shadowOpacity = alpha
-        shadowOffset = CGSize(width: x, height: y)
-        shadowRadius = blur / UIScreen.main.scale
-        if spread == 0 {
-            shadowPath = nil
-        } else {
-            let rect = bounds.insetBy(dx: -spread, dy: -spread)
-            shadowPath = UIBezierPath(rect: rect).cgPath
-        }
-    }
-}
+//// REFERENCE: - https://baechukim.tistory.com/112
+//extension CALayer {
+//    func applyFigmaShadow(color: UIColor, alpha: Float, x: CGFloat, y: CGFloat, blur: CGFloat, spread: CGFloat) {
+//        masksToBounds = false
+//        shadowColor = color.cgColor
+//        shadowOpacity = alpha
+//        shadowOffset = CGSize(width: x, height: y)
+//        shadowRadius = blur / UIScreen.main.scale
+//        if spread == 0 {
+//            shadowPath = nil
+//        } else {
+//            let rect = bounds.insetBy(dx: -spread, dy: -spread)
+//            shadowPath = UIBezierPath(rect: rect).cgPath
+//        }
+//    }
+//}

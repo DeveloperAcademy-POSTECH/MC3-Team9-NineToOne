@@ -132,7 +132,7 @@ extension TodayQuizViewController: UICollectionViewDataSource{
         } else {
             guard let cell = todayQuizCollectionView.dequeueReusableCell(withReuseIdentifier: QuizType2CollectionViewCell.id, for: indexPath) as? QuizType2CollectionViewCell
             else { return UICollectionViewCell() }
-            cell.setQuiz(quizNum: (indexPath.row) + 1, quiz: todayQuizs[indexPath.row])
+//            cell.setQuiz(quizNum: (indexPath.row) + 1, quiz: todayQuizs[indexPath.row])
            
             if let openTimeLabel = cell.subviews.last as? UILabel {
                 openTimeLabel.removeFromSuperview()

@@ -205,11 +205,11 @@
 		AB24C04B288E395C00849B38 /* ViewComponents */ = {
 			isa = PBXGroup;
 			children = (
+				AB8623842890EC7500F71283 /* QuizCollectionViewCell.swift */,
 				AB862371288F7FF900F71283 /* SolvedQuizType1CollectionViewCell.swift */,
 				AB862372288F7FF900F71283 /* SolvedQuizType1CollectionViewCell.xib */,
 				AB3D6B1828906B7C005C452F /* FilteringButtonsView.swift */,
 				AB24C04C288E395C00849B38 /* QuizType2CollectionViewCell.swift */,
-				AB8623842890EC7500F71283 /* QuizCollectionViewCell.swift */,
 				AB8623882891640200F71283 /* SolvedQuizType2CollectionViewCell.swift */,
 				AB8623892891640200F71283 /* SolvedQuizType2CollectionViewCell.xib */,
 			);
