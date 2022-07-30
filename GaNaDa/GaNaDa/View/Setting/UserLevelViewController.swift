@@ -26,7 +26,7 @@ final class UserLevelViewController: UIViewController {
                                        range: (guideText as NSString).range(of: "\(LevelCase.level(exp: userExp + 100).rawValue)"))
             guideLabel.attributedText = attributedStr
         } else {
-            guideLabel.text = "주상 전하 납시오!"
+            guideLabel.text = "한글의 창시자 등장, 주상 전하 납시오!"
         }
         
     }

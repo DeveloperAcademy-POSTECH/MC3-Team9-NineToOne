@@ -547,33 +547,44 @@
                                         </constraints>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Pph-pg-vfS">
-                                        <rect key="frame" x="103.5" y="0.0" width="212.5" height="103.5"/>
+                                        <rect key="frame" x="103.5" y="0.0" width="196.5" height="103.5"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="등급" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w9z-1w-hZo">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="등급" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="1" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="w9z-1w-hZo">
                                                 <rect key="frame" x="0.0" y="0.0" width="31.5" height="103.5"/>
                                                 <fontDescription key="fontDescription" name="Pretendard-Regular" family="Pretendard" pointSize="18"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="닉네임" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VzG-d4-P2Y">
-                                                <rect key="frame" x="51.5" y="0.0" width="161" height="103.5"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="닉네임" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="VzG-d4-P2Y">
+                                                <rect key="frame" x="51.5" y="0.0" width="145" height="103.5"/>
                                                 <fontDescription key="fontDescription" name="GowunBatang-Bold" family="Gowun Batang" pointSize="18"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" horizontalHuggingPriority="252" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W7x-wL-7hJ">
-                                        <rect key="frame" x="316" y="0.0" width="76" height="103.5"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="등급 보기">
-                                            <fontDescription key="titleFontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="14"/>
-                                            <color key="baseForegroundColor" name="lightGray"/>
-                                        </buttonConfiguration>
-                                        <connections>
-                                            <segue destination="o1C-Ua-1fG" kind="show" id="71t-qD-0p9"/>
-                                        </connections>
-                                    </button>
+                                    <view contentMode="scaleToFill" horizontalHuggingPriority="253" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0EM-7j-K21">
+                                        <rect key="frame" x="300" y="0.0" width="92" height="103.5"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" horizontalHuggingPriority="253" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W7x-wL-7hJ">
+                                                <rect key="frame" x="0.0" y="36.5" width="92" height="31"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="등급 보기">
+                                                    <fontDescription key="titleFontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="14"/>
+                                                    <color key="baseForegroundColor" name="lightGray"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <segue destination="o1C-Ua-1fG" kind="show" id="71t-qD-0p9"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="W7x-wL-7hJ" secondAttribute="trailing" id="BmO-Zc-19c"/>
+                                            <constraint firstItem="W7x-wL-7hJ" firstAttribute="centerY" secondItem="0EM-7j-K21" secondAttribute="centerY" id="Dyb-sl-9EO"/>
+                                            <constraint firstItem="W7x-wL-7hJ" firstAttribute="leading" secondItem="0EM-7j-K21" secondAttribute="leading" id="cB0-Hd-cGt"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8bV-vL-LxE">

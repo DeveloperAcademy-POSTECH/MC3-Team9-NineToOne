@@ -15,6 +15,6 @@ struct User: Codable {
 extension User {
     static var preview: User {
         return User(id: "1234-ABCD-5678-EFGH",
-                    exp: 110)
+                    exp: 2110)
     }
 }

@@ -17,10 +17,17 @@ final class SettingViewController: UIViewController {
         levelLabel.text = LevelCase.level(exp: User.preview.exp).rawValue
         nameLabel.text = "이리오너라"
         
-        levelLabel.minimumScaleFactor = 0.5
-        nameLabel.minimumScaleFactor = 0.5
-        levelButton.titleLabel?.minimumScaleFactor = 0.5
-//        levelButton.addSubview(UIImageView(image: UIImage(systemName: "chevron.right")))
+//        levelButton.setImage(UIImage(named: "levelButton"), for: .normal)
+//        levelButton.imageView?.contentMode = .scaleAspectFit
+//        levelButton.titleLabel?.minimumScaleFactor = 0.1
+        
+//        let attributedStr = NSMutableAttributedString(string: "")
+//        let imageAttachment = NSTextAttachment()
+//        imageAttachment.image = UIImage(systemName: "chevron.right")?.withTintColor(.lightGray)
+//        attributedStr.append(levelButton.titleLabel?.attributedText ?? NSAttributedString(string: ""))
+//        attributedStr.append(NSAttributedString(attachment: imageAttachment))
+//        levelButton.titleLabel?.attributedText = attributedStr
+//        levelButton.titleLabel?.numberOfLines = 1
     }
     
     // MARK: - IBOutlets

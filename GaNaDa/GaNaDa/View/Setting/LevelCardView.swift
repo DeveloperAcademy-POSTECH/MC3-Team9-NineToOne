@@ -22,14 +22,14 @@ final class LevelCardView: UIView {
         view.frame = self.bounds
         view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         levelLabel.minimumScaleFactor = 0.5
-        descriptionLabel.minimumScaleFactor = 0.5
+        descriptionLabel.minimumScaleFactor = 0.1
     }
     
     func prepareData(levelCase: LevelCase, index: Int) {
         levelImageView.image = levelCase.levelImage
         levelLabel.text = levelCase.rawValue
         let exp = index * 100
-        descriptionLabel.text = "누적 경험치 \(exp) ~ \(exp+99)점"
+        descriptionLabel.text = (exp < 2100) ? "누적 경험치 \(exp) ~ \(exp+99)점" : "누적 경험치 \(exp)점 이상"
     }
     
     // MARK: - IBOutlets
