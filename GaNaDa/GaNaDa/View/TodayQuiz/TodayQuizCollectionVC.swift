@@ -24,9 +24,6 @@ final class TodayQuizViewController: UIViewController {
     var currentHour: Int = 0
     var openTimes = [9, 12, 18]
 
-//    var todayQuizs: [Quiz] = [Quiz(question: "나는 ios 개발자가 * 싶다.", typeRawValue: QuizType.blank.rawValue, rightAnswer: "되고", wrongAnswer: "돼고"),
-//                              Quiz.previewChoice,
-//                              Quiz(question: "오늘도 안 오면 *.", typeRawValue: QuizType.blank.rawValue, rightAnswer: "어떡해", wrongAnswer: "어떻게")]
     var todayQuizs: [Quiz] = []
 
     override func viewDidAppear(_ animated: Bool) {
@@ -73,7 +70,7 @@ final class TodayQuizViewController: UIViewController {
     func saveUserData(userName: String) {
         if UserDefaults.standard.object(forKey: "userName") == nil {
             UserDefaults.standard.setValue(userName, forKey: "userName")
-            UserDefaults.standard.setValue(280, forKey: "userExp")
+            UserDefaults.standard.setValue(0, forKey: "userExp")
         }
     }
     
@@ -120,11 +117,18 @@ private extension TodayQuizViewController {
 
 extension TodayQuizViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        if let quizViewController = storyboard.instantiateViewController(withIdentifier: "QuizView") as? QuizViewController {
-            quizViewController.prepareData(quiz: todayQuizs[indexPath.row])
-            navigationController?.pushViewController(quizViewController, animated: true)
+        if currentHour < openTimes[indexPath.item] {
+            let openHour = String(format: "%02d:00", openTimes[indexPath.item])
+            showAlertController(title: "미공개 문제", message: "\(openHour)에 공개됩니다.")
+        } else {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            if let quizViewController = storyboard.instantiateViewController(withIdentifier: "QuizView") as? QuizViewController {
+                quizViewController.prepareData(quiz: todayQuizs[indexPath.row])
+                navigationController?.pushViewController(quizViewController, animated: true)
+            }
         }
+        
+        
     }
 }
 

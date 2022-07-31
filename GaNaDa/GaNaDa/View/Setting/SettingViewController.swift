@@ -13,9 +13,10 @@ final class SettingViewController: UIViewController {
     
     // MARK: - Methods
     private func loadData() {
-        levelImageView.image = LevelCase.level(exp: User.preview.exp).levelImage
-        levelLabel.text = LevelCase.level(exp: User.preview.exp).rawValue
-        nameLabel.text = "이리오너라"
+        let userExp = UserDefaults.standard.integer(forKey: "userExp")
+        levelImageView.image = LevelCase.level(exp: userExp).levelImage
+        levelLabel.text = LevelCase.level(exp: userExp).rawValue
+        nameLabel.text = UserDefaults.standard.string(forKey: "userName")
     }
     
     // MARK: - IBOutlets
@@ -35,7 +36,6 @@ final class SettingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setNavigationBar(navigationTitle: "설정", popGesture: true)
-        print(navigationItem.backButtonTitle)
         loadData()
     }
 }

@@ -155,53 +155,91 @@
         <!--퀴즈해설-->
         <scene sceneID="ad0-NP-btC">
             <objects>
-                <viewController title="퀴즈해설" id="HqB-oE-7TX" customClass="QuizDetailViewController" customModule="GaNaDa" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="QuizDetailView" title="퀴즈해설" useStoryboardIdentifierAsRestorationIdentifier="YES" id="HqB-oE-7TX" customClass="QuizDetailViewController" customModule="GaNaDa" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jGW-QO-JZ1">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xjl-zJ-xHN">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xjl-zJ-xHN">
+                                <rect key="frame" x="0.0" y="44" width="414" height="708"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="soM-Rl-yRv">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="305"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="52" translatesAutoresizingMaskIntoConstraints="NO" id="gwk-po-f3h">
-                                                <rect key="frame" x="18" y="0.0" width="378" height="768"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="gwk-po-f3h">
+                                                <rect key="frame" x="18" y="0.0" width="378" height="305"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" verticalHuggingPriority="500" translatesAutoresizingMaskIntoConstraints="NO" id="1SN-Po-sPV" userLabel="Quiz Section Super">
                                                         <rect key="frame" x="0.0" y="0.0" width="378" height="125"/>
                                                         <subviews>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="MFf-1t-5Gt" userLabel="Quiz Section">
-                                                                <rect key="frame" x="22" y="22" width="334" height="50"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="500" text="문제 번호" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aJA-Za-3aY">
+                                                                <rect key="frame" x="22" y="22" width="334" height="14.5"/>
+                                                                <fontDescription key="fontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="12"/>
+                                                                <color key="textColor" name="lightGray"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vzj-Iq-Dke">
+                                                                <rect key="frame" x="22" y="31.5" width="334" height="62.5"/>
                                                                 <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="500" text="문제 번호" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aJA-Za-3aY">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="334" height="17"/>
-                                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
-                                                                        <color key="textColor" red="0.46274509803921571" green="0.46274509803921571" blue="0.46274509803921571" alpha="1" colorSpace="calibratedRGB"/>
-                                                                        <nil key="highlightedColor"/>
-                                                                    </label>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="문제" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bie-6B-HUI">
-                                                                        <rect key="frame" x="0.0" y="32" width="334" height="18"/>
-                                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
-                                                                        <nil key="textColor"/>
-                                                                        <nil key="highlightedColor"/>
-                                                                    </label>
+                                                                    <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wX6-kA-gf7">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="62.5"/>
+                                                                        <subviews>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ab9-qs-e2Z">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="62.5"/>
+                                                                                <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="20"/>
+                                                                                <nil key="textColor"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="252" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AQI-pL-Rpf">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="62.5"/>
+                                                                                <fontDescription key="fontDescription" name="GowunBatang-Bold" family="Gowun Batang" pointSize="20"/>
+                                                                                <color key="textColor" red="0.92941176469999998" green="0.43137254899999999" blue="0.1764705882" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ix4-fH-pUl">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="62.5"/>
+                                                                                <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="20"/>
+                                                                                <nil key="textColor"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                        </subviews>
+                                                                    </stackView>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="aQW-qg-jav">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="334" height="62.5"/>
+                                                                        <subviews>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Frb-nt-tgA">
+                                                                                <rect key="frame" x="0.0" y="19" width="141" height="24"/>
+                                                                                <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="20"/>
+                                                                                <nil key="textColor"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="vs" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3oX-BE-ZJJ">
+                                                                                <rect key="frame" x="156" y="19" width="22" height="24"/>
+                                                                                <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="20"/>
+                                                                                <nil key="textColor"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HZN-BF-5yE">
+                                                                                <rect key="frame" x="193" y="19" width="141" height="24"/>
+                                                                                <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="20"/>
+                                                                                <nil key="textColor"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                        </subviews>
+                                                                    </stackView>
                                                                 </subviews>
-                                                                <constraints>
-                                                                    <constraint firstItem="Bie-6B-HUI" firstAttribute="top" secondItem="aJA-Za-3aY" secondAttribute="bottom" constant="15" id="1TR-iK-6Jk"/>
-                                                                    <constraint firstItem="Bie-6B-HUI" firstAttribute="centerX" secondItem="MFf-1t-5Gt" secondAttribute="centerX" id="MpG-Ti-jl1"/>
-                                                                    <constraint firstItem="aJA-Za-3aY" firstAttribute="centerX" secondItem="MFf-1t-5Gt" secondAttribute="centerX" id="RoJ-AF-AUw"/>
-                                                                    <constraint firstItem="aJA-Za-3aY" firstAttribute="top" secondItem="MFf-1t-5Gt" secondAttribute="top" id="tak-fW-xHg"/>
-                                                                </constraints>
                                                             </stackView>
                                                         </subviews>
                                                         <constraints>
-                                                            <constraint firstAttribute="trailing" secondItem="MFf-1t-5Gt" secondAttribute="trailing" constant="22" id="CfI-Qb-d7b"/>
-                                                            <constraint firstItem="MFf-1t-5Gt" firstAttribute="leading" secondItem="1SN-Po-sPV" secondAttribute="leading" constant="22" id="Ltu-8A-8A6"/>
-                                                            <constraint firstItem="MFf-1t-5Gt" firstAttribute="top" secondItem="1SN-Po-sPV" secondAttribute="top" constant="22" id="SVW-p8-cJ5"/>
+                                                            <constraint firstAttribute="trailing" secondItem="aJA-Za-3aY" secondAttribute="trailing" constant="22" id="Byw-v7-clB"/>
+                                                            <constraint firstItem="Vzj-Iq-Dke" firstAttribute="centerY" secondItem="1SN-Po-sPV" secondAttribute="centerY" id="CMk-Nk-0u1"/>
+                                                            <constraint firstItem="Vzj-Iq-Dke" firstAttribute="leading" secondItem="1SN-Po-sPV" secondAttribute="leading" constant="22" id="DgQ-Vu-tdk"/>
+                                                            <constraint firstItem="3oX-BE-ZJJ" firstAttribute="centerX" secondItem="1SN-Po-sPV" secondAttribute="centerX" id="FN5-mf-8Te"/>
+                                                            <constraint firstItem="Vzj-Iq-Dke" firstAttribute="height" secondItem="1SN-Po-sPV" secondAttribute="height" multiplier="0.5" id="R9q-za-GkE"/>
+                                                            <constraint firstItem="aJA-Za-3aY" firstAttribute="leading" secondItem="1SN-Po-sPV" secondAttribute="leading" constant="22" id="WdN-2a-WHe"/>
                                                             <constraint firstAttribute="height" constant="125" id="bAp-mg-RHS"/>
-                                                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="MFf-1t-5Gt" secondAttribute="bottom" constant="22" id="dM8-b9-IVo"/>
+                                                            <constraint firstItem="aJA-Za-3aY" firstAttribute="top" secondItem="1SN-Po-sPV" secondAttribute="top" constant="22" id="fNy-1l-w5v"/>
+                                                            <constraint firstAttribute="trailing" secondItem="Vzj-Iq-Dke" secondAttribute="trailing" constant="22" id="x3E-n7-tgu"/>
                                                         </constraints>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -210,21 +248,21 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sBj-jF-etY" userLabel="Detail Section Super">
-                                                        <rect key="frame" x="0.0" y="177" width="378" height="189"/>
+                                                        <rect key="frame" x="0.0" y="165" width="378" height="50"/>
                                                         <subviews>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="qBY-X4-R1Q" userLabel="Detail Section">
-                                                                <rect key="frame" x="22" y="0.0" width="334" height="45.5"/>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="qBY-X4-R1Q" userLabel="Detail Section">
+                                                                <rect key="frame" x="22" y="0.0" width="334" height="50"/>
                                                                 <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="500" text="문제 풀이" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gW5-B9-GJN">
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="문제 풀이" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gW5-B9-GJN">
                                                                         <rect key="frame" x="0.0" y="0.0" width="334" height="17"/>
-                                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
-                                                                        <color key="textColor" red="0.59215686270000001" green="0.59215686270000001" blue="0.59215686270000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                                        <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="14"/>
+                                                                        <color key="textColor" name="lightGray"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="풀이" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ScC-uv-19a">
-                                                                        <rect key="frame" x="0.0" y="24" width="334" height="21.5"/>
-                                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
-                                                                        <nil key="textColor"/>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="풀이" lineBreakMode="tailTruncation" numberOfLines="100" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ScC-uv-19a">
+                                                                        <rect key="frame" x="0.0" y="17" width="334" height="33"/>
+                                                                        <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="18"/>
+                                                                        <color key="textColor" name="black"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                 </subviews>
@@ -232,7 +270,6 @@
                                                                     <constraint firstItem="ScC-uv-19a" firstAttribute="centerX" secondItem="qBY-X4-R1Q" secondAttribute="centerX" id="5kX-Eg-HYI"/>
                                                                     <constraint firstItem="gW5-B9-GJN" firstAttribute="top" secondItem="qBY-X4-R1Q" secondAttribute="top" id="a6m-jK-j7g"/>
                                                                     <constraint firstItem="gW5-B9-GJN" firstAttribute="centerX" secondItem="qBY-X4-R1Q" secondAttribute="centerX" id="g0r-eB-P6E"/>
-                                                                    <constraint firstItem="ScC-uv-19a" firstAttribute="top" secondItem="gW5-B9-GJN" secondAttribute="bottom" constant="7" id="lJO-QD-YAs"/>
                                                                     <constraint firstAttribute="bottom" secondItem="ScC-uv-19a" secondAttribute="bottom" id="vPc-QL-ibV"/>
                                                                 </constraints>
                                                             </stackView>
@@ -242,39 +279,38 @@
                                                             <constraint firstItem="qBY-X4-R1Q" firstAttribute="top" secondItem="sBj-jF-etY" secondAttribute="top" id="IXG-qQ-Yom"/>
                                                             <constraint firstItem="qBY-X4-R1Q" firstAttribute="leading" secondItem="sBj-jF-etY" secondAttribute="leading" constant="22" id="a7B-Jw-eTv"/>
                                                             <constraint firstAttribute="trailing" secondItem="qBY-X4-R1Q" secondAttribute="trailing" constant="22" id="qNm-1g-cc1"/>
-                                                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="qBY-X4-R1Q" secondAttribute="bottom" id="taU-6S-v0x"/>
+                                                            <constraint firstAttribute="bottom" secondItem="qBY-X4-R1Q" secondAttribute="bottom" id="taU-6S-v0x"/>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xpS-YS-sqf" userLabel="Sample Section Super">
-                                                        <rect key="frame" x="0.0" y="418" width="378" height="350"/>
+                                                        <rect key="frame" x="0.0" y="255" width="378" height="50"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="BdD-Wk-wX7" userLabel="Sample Section">
-                                                                <rect key="frame" x="22" y="0.0" width="334" height="38.5"/>
+                                                                <rect key="frame" x="22" y="0.0" width="334" height="50"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="예시" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pk6-z5-Io3">
                                                                         <rect key="frame" x="0.0" y="0.0" width="334" height="17"/>
-                                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
-                                                                        <color key="textColor" red="0.59215686274509804" green="0.59215686274509804" blue="0.59215686274509804" alpha="1" colorSpace="calibratedRGB"/>
+                                                                        <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="14"/>
+                                                                        <color key="textColor" name="lightGray"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="- 예시 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HMJ-aT-Vd0">
-                                                                        <rect key="frame" x="0.0" y="17" width="334" height="21.5"/>
-                                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="- 예시 1" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HMJ-aT-Vd0">
+                                                                        <rect key="frame" x="0.0" y="17" width="334" height="33"/>
+                                                                        <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="18"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                 </subviews>
                                                                 <constraints>
-                                                                    <constraint firstItem="HMJ-aT-Vd0" firstAttribute="top" secondItem="pk6-z5-Io3" secondAttribute="bottom" id="FaC-TX-Mcf"/>
                                                                     <constraint firstAttribute="bottom" secondItem="HMJ-aT-Vd0" secondAttribute="bottom" id="PsO-ig-l1Q"/>
                                                                 </constraints>
                                                             </stackView>
                                                         </subviews>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="BdD-Wk-wX7" secondAttribute="bottom" id="ESb-hh-8JK"/>
                                                             <constraint firstAttribute="trailing" secondItem="BdD-Wk-wX7" secondAttribute="trailing" constant="22" id="Hb1-Au-X4O"/>
                                                             <constraint firstItem="BdD-Wk-wX7" firstAttribute="top" secondItem="xpS-YS-sqf" secondAttribute="top" id="L90-9O-o9Q"/>
+                                                            <constraint firstAttribute="bottom" secondItem="BdD-Wk-wX7" secondAttribute="bottom" id="N81-eQ-aGG"/>
                                                             <constraint firstItem="BdD-Wk-wX7" firstAttribute="leading" secondItem="xpS-YS-sqf" secondAttribute="leading" constant="22" id="aaQ-wA-1tI"/>
                                                         </constraints>
                                                     </view>
@@ -285,11 +321,8 @@
                                                     <constraint firstAttribute="trailing" secondItem="xpS-YS-sqf" secondAttribute="trailing" id="Epx-aS-Jaa"/>
                                                     <constraint firstItem="1SN-Po-sPV" firstAttribute="leading" secondItem="gwk-po-f3h" secondAttribute="leading" id="NqA-Gc-qsN"/>
                                                     <constraint firstItem="xpS-YS-sqf" firstAttribute="leading" secondItem="gwk-po-f3h" secondAttribute="leading" id="YX2-6p-qkH"/>
-                                                    <constraint firstItem="xpS-YS-sqf" firstAttribute="top" secondItem="sBj-jF-etY" secondAttribute="bottom" constant="52" id="apS-MZ-a4l"/>
-                                                    <constraint firstItem="sBj-jF-etY" firstAttribute="top" secondItem="1SN-Po-sPV" secondAttribute="bottom" constant="52" id="b3b-Fh-kZy"/>
                                                     <constraint firstAttribute="trailing" secondItem="1SN-Po-sPV" secondAttribute="trailing" id="qUI-vr-sdI"/>
                                                     <constraint firstAttribute="trailing" secondItem="sBj-jF-etY" secondAttribute="trailing" id="uHO-8U-a24"/>
-                                                    <constraint firstItem="xpS-YS-sqf" firstAttribute="height" secondItem="sBj-jF-etY" secondAttribute="height" multiplier="1.85185" id="xE3-bP-hIy"/>
                                                     <constraint firstItem="1SN-Po-sPV" firstAttribute="top" secondItem="gwk-po-f3h" secondAttribute="top" id="xgj-Ln-Arx"/>
                                                 </constraints>
                                             </stackView>
@@ -297,26 +330,23 @@
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstItem="gwk-po-f3h" firstAttribute="leading" secondItem="soM-Rl-yRv" secondAttribute="leading" constant="18" id="A5t-jf-icd"/>
-                                            <constraint firstAttribute="bottom" secondItem="gwk-po-f3h" secondAttribute="bottom" constant="50" id="Jxj-x4-Pfg"/>
+                                            <constraint firstAttribute="bottom" secondItem="gwk-po-f3h" secondAttribute="bottom" id="Jxj-x4-Pfg"/>
                                             <constraint firstItem="gwk-po-f3h" firstAttribute="top" secondItem="soM-Rl-yRv" secondAttribute="top" id="OPc-7W-xYl"/>
                                             <constraint firstAttribute="trailing" secondItem="gwk-po-f3h" secondAttribute="trailing" constant="18" id="mbf-Sw-WYU"/>
                                         </constraints>
                                     </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="soM-Rl-yRv" firstAttribute="height" secondItem="DdU-18-nar" secondAttribute="height" id="FeE-jl-8Co"/>
-                                    <constraint firstItem="soM-Rl-yRv" firstAttribute="leading" secondItem="DdU-18-nar" secondAttribute="leading" id="One-fG-PKo"/>
-                                    <constraint firstItem="DdU-18-nar" firstAttribute="trailing" secondItem="soM-Rl-yRv" secondAttribute="trailing" id="e86-a3-1fT"/>
-                                    <constraint firstItem="nXO-qc-g6G" firstAttribute="bottom" secondItem="soM-Rl-yRv" secondAttribute="bottom" id="mVd-q4-dTi"/>
-                                    <constraint firstItem="soM-Rl-yRv" firstAttribute="width" secondItem="DdU-18-nar" secondAttribute="width" id="p2Y-pg-Q60"/>
-                                    <constraint firstItem="soM-Rl-yRv" firstAttribute="width" secondItem="nXO-qc-g6G" secondAttribute="width" id="rln-3q-de7"/>
-                                    <constraint firstItem="soM-Rl-yRv" firstAttribute="top" secondItem="nXO-qc-g6G" secondAttribute="top" id="vFt-l7-c5r"/>
+                                    <constraint firstItem="soM-Rl-yRv" firstAttribute="leading" secondItem="xjl-zJ-xHN" secondAttribute="leading" id="One-fG-PKo"/>
+                                    <constraint firstAttribute="trailing" secondItem="soM-Rl-yRv" secondAttribute="trailing" id="e86-a3-1fT"/>
+                                    <constraint firstAttribute="bottom" secondItem="soM-Rl-yRv" secondAttribute="bottom" id="mVd-q4-dTi"/>
+                                    <constraint firstItem="soM-Rl-yRv" firstAttribute="width" secondItem="xjl-zJ-xHN" secondAttribute="width" id="p2Y-pg-Q60"/>
+                                    <constraint firstItem="soM-Rl-yRv" firstAttribute="width" secondItem="xjl-zJ-xHN" secondAttribute="width" id="rln-3q-de7"/>
+                                    <constraint firstItem="soM-Rl-yRv" firstAttribute="top" secondItem="xjl-zJ-xHN" secondAttribute="top" id="vFt-l7-c5r"/>
                                 </constraints>
-                                <viewLayoutGuide key="contentLayoutGuide" id="nXO-qc-g6G"/>
-                                <viewLayoutGuide key="frameLayoutGuide" id="DdU-18-nar"/>
                             </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="duc-qO-GO4">
-                                <rect key="frame" x="42.5" y="812" width="329" height="50"/>
+                                <rect key="frame" x="42.5" y="772" width="329" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="2Co-X8-vkZ"/>
                                 </constraints>
@@ -341,8 +371,8 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="iPr-DK-wq3" firstAttribute="trailing" secondItem="xjl-zJ-xHN" secondAttribute="trailing" id="AkR-JT-4gj"/>
-                            <constraint firstItem="iPr-DK-wq3" firstAttribute="bottom" secondItem="xjl-zJ-xHN" secondAttribute="bottom" id="BZT-dF-63k"/>
-                            <constraint firstItem="iPr-DK-wq3" firstAttribute="bottom" secondItem="duc-qO-GO4" secondAttribute="bottom" id="FWc-S0-OJP"/>
+                            <constraint firstItem="duc-qO-GO4" firstAttribute="top" secondItem="xjl-zJ-xHN" secondAttribute="bottom" constant="20" id="BZT-dF-63k"/>
+                            <constraint firstItem="iPr-DK-wq3" firstAttribute="bottom" secondItem="duc-qO-GO4" secondAttribute="bottom" constant="40" id="FWc-S0-OJP"/>
                             <constraint firstItem="duc-qO-GO4" firstAttribute="width" secondItem="iPr-DK-wq3" secondAttribute="width" multiplier="31/39" id="PGC-IV-WO1"/>
                             <constraint firstItem="xjl-zJ-xHN" firstAttribute="leading" secondItem="iPr-DK-wq3" secondAttribute="leading" id="PIf-NG-eLa"/>
                             <constraint firstItem="duc-qO-GO4" firstAttribute="centerX" secondItem="iPr-DK-wq3" secondAttribute="centerX" id="TDE-Fp-uwh"/>
@@ -350,17 +380,23 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="blankQuizStack" destination="wX6-kA-gf7" id="DDX-tp-3Vk"/>
+                        <outlet property="choiceQuizStack" destination="aQW-qg-jav" id="eEp-xN-cCb"/>
                         <outlet property="closeButton" destination="duc-qO-GO4" id="dpM-qc-zeO"/>
-                        <outlet property="quizContent" destination="Bie-6B-HUI" id="qRO-eL-gML"/>
+                        <outlet property="emptyQuizLabel" destination="AQI-pL-Rpf" id="hyD-2S-6xr"/>
+                        <outlet property="leadingQuizLabel" destination="Ab9-qs-e2Z" id="fdY-US-1ed"/>
+                        <outlet property="leftAnswer" destination="Frb-nt-tgA" id="Jc6-wj-FMX"/>
                         <outlet property="quizDetail" destination="ScC-uv-19a" id="TCU-Sm-kAu"/>
                         <outlet property="quizDetailExample" destination="HMJ-aT-Vd0" id="7gO-Rt-7HS"/>
                         <outlet property="quizNum" destination="aJA-Za-3aY" id="91Z-t2-QRV"/>
                         <outlet property="quizSection" destination="1SN-Po-sPV" id="Eya-Z1-c69"/>
+                        <outlet property="rightAnswer" destination="HZN-BF-5yE" id="GbV-Td-IKh"/>
+                        <outlet property="trailingQuizLabel" destination="ix4-fH-pUl" id="K0Y-2t-qxx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="axR-qC-znk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2752" y="-494"/>
+            <point key="canvasLocation" x="2750.7246376811595" y="-494.19642857142856"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Ok9-Nh-6A8">
@@ -899,7 +935,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G2i-a0-dDn">
                                 <rect key="frame" x="62" y="335.5" width="290" height="261"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="학동" translatesAutoresizingMaskIntoConstraints="NO" id="wAh-Eh-gQw">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Level0" translatesAutoresizingMaskIntoConstraints="NO" id="wAh-Eh-gQw">
                                         <rect key="frame" x="27.5" y="0.0" width="235" height="235"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="wAh-Eh-gQw" secondAttribute="height" multiplier="1:1" id="msN-1Y-dND"/>
@@ -962,9 +998,11 @@
                         <outlet property="blankQuizStack" destination="Sy8-cN-sCq" id="xmU-i1-M5N"/>
                         <outlet property="choiceQuizStack" destination="3Jh-jN-uda" id="wlJ-A6-9jq"/>
                         <outlet property="emptyQuizLabel" destination="eUj-IX-5Da" id="kgO-yv-aP6"/>
+                        <outlet property="homeButton" destination="6X9-Ed-I5L" id="uTr-qy-wyz"/>
                         <outlet property="leadingQuizLabel" destination="z1u-8V-14Z" id="nQm-b2-kZB"/>
                         <outlet property="leftAnswer" destination="xQL-Do-uKH" id="VyW-Rh-Epp"/>
                         <outlet property="lottieView" destination="J2U-ev-o8v" id="VzK-V3-rGL"/>
+                        <outlet property="quizDetailButton" destination="GBb-mF-YEW" id="3pq-8j-WYr"/>
                         <outlet property="resultGuideLabel" destination="Arm-Ng-O0X" id="0fZ-uJ-aOD"/>
                         <outlet property="resultImageView" destination="wAh-Eh-gQw" id="IGQ-L4-h9j"/>
                         <outlet property="rightAnswer" destination="OA1-JE-7hW" id="ago-NE-UOG"/>
@@ -1006,11 +1044,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Level0" width="100" height="100"/>
         <image name="QuizBackground" width="690" height="552"/>
         <image name="gearshape" catalog="system" width="128" height="121"/>
         <image name="questionmark.square" catalog="system" width="128" height="114"/>
         <image name="rectangle.stack" catalog="system" width="128" height="122"/>
-        <image name="학동" width="100" height="100"/>
         <namedColor name="black">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

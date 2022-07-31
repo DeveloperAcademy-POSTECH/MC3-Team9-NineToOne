@@ -43,7 +43,7 @@ final class QuizViewController: UIViewController {
         
         if quiz.quizType == .blank {
             leadingQuizLabel.text = (quiz.question.components(separatedBy: "*").first ?? "") + "("
-            emptyQuizLabel.text = " \((quiz.rightAnswer.count > quiz.wrongAnswer.count) ? quiz.rightAnswer : quiz.wrongAnswer) "
+            emptyQuizLabel.text = " \((quiz.rightAnswer.count > quiz.wrongAnswer.count) ? quiz.rightAnswer : quiz.wrongAnswer)"
             
             trailingQuizLabel.text = " )" + (quiz.question.components(separatedBy: "*").last ?? "")
         }
@@ -80,7 +80,7 @@ final class QuizViewController: UIViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         if let quizAnswerViewController = storyboard.instantiateViewController(withIdentifier: "QuizAnswerView") as? QuizAnswerViewController {
             quiz.stateRawValue = (selectedAnswer == quiz.rightAnswer) ? 1 : 2
-            quizAnswerViewController.prepareView(quiz: quiz)
+            quizAnswerViewController.prepareData(quiz: quiz)
             navigationController?.pushViewController(quizAnswerViewController, animated: true)
         }
     }
@@ -89,7 +89,7 @@ final class QuizViewController: UIViewController {
     // MARK: - Life Cycles
     override func viewDidLoad() {
         super.viewDidLoad()
-//        self.quiz = .previewChoice // [Quiz.previewBlank, Quiz.previewChoice].randomElement()
+        self.quiz = .previewChoice // [Quiz.previewBlank, Quiz.previewChoice].randomElement()
         setNavigationBar(navigationTitle: "문제")
         loadData()
     }

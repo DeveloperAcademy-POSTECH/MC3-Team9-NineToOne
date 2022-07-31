@@ -12,9 +12,9 @@ final class UserLevelViewController: UIViewController {
     
     // MARK: - Methods
     private func loadData() {
-        levelImageView.image = LevelCase.level(exp: User.preview.exp).levelImage
-        levelLabel.text = LevelCase.level(exp: User.preview.exp).rawValue
-        let userExp = User.preview.exp
+        let userExp = UserDefaults.standard.integer(forKey: "userExp")
+        levelImageView.image = LevelCase.level(exp: userExp).levelImage
+        levelLabel.text = LevelCase.level(exp: userExp).rawValue
         if userExp < 2100 {
             let guideText = "경험치 +\(100 - (userExp % 100)) 달성 시 \(LevelCase.level(exp: userExp + 100).rawValue) 승격"
             let attributedStr = NSMutableAttributedString(string: guideText)
