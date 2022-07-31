@@ -156,6 +156,8 @@ extension TodayQuizViewController: UICollectionViewDataSource{
             
             if currentHour < openTimes[indexPath.item] {
                 applySecretEffect(cell: cell, hour: openTimes[indexPath.item])
+            } else {
+                cell.layer.applyShadow(color: UIColor.black, alpha: 0.1, x: 0, y: 4, blur: 20, spread: 0)
             }
             return cell
         } else {
@@ -171,6 +173,8 @@ extension TodayQuizViewController: UICollectionViewDataSource{
 
             if currentHour < openTimes[indexPath.item] {
                 applySecretEffect(cell: cell, hour: openTimes[indexPath.item])
+            } else {
+                cell.layer.applyShadow(color: UIColor.black, alpha: 0.1, x: 0, y: 4, blur: 20, spread: 0)
             }
             return cell
         }
