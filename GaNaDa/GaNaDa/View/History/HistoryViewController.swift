@@ -112,49 +112,40 @@ extension HistoryViewController: UICollectionViewDelegate {
 // MARK: - UICollectionViewDataSource
 extension HistoryViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return HistoryQuiz.preview.count //테스트용
+        return quizs.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        // 안풀었다(0) -> quizCellBlank / quizCellChoice
-        // 풀었다 -> 정답(1) : solvedQuizCellBlank / solvedQuizCellChoice
-        //         오답(2) : solvedQuizCellBlank / solvedQuizCellChoice
-//        let quizExample = HistoryQuiz.preview
-//        if quizExample[indexPath.row].status == 0, quizExample[indexPath.row].type == .blank  {
-//            guard let cell = historyCollectionView.collectionView.dequeueReusableCell(withReuseIdentifier: "todayQuizBlankCell", for: indexPath) as? QuizType2CollectionViewCell
-//            else { return UICollectionViewCell() }
-//            return cell
-//        } else if quizExample[indexPath.row].status == 0, quizExample[indexPath.row].type == .choice  {
-//            guard let cell = historyCollectionView.collectionView.dequeueReusableCell(withReuseIdentifier: QuizType2CollectionViewCell.id, for: indexPath) as? QuizType2CollectionViewCell
-//            else { return UICollectionViewCell() }
-//            cell.setQuiz(quizNum: indexPath.row, quiz: quizExample[indexPath.row])
-//            return cell
-//
-//        } else if quizExample[indexPath.row].type == .blank  {
-//            guard let cell = historyCollectionView.collectionView.dequeueReusableCell(withReuseIdentifier: SolvedQuizType1CollectionViewCell.identifier, for: indexPath) as? SolvedQuizType1CollectionViewCell
-//            else { return UICollectionViewCell() }
-//            cell.setBlankQuiz(indexPath: indexPath)
-//            return cell
-//
-//        } else {
-//            guard let cell = historyCollectionView.collectionView.dequeueReusableCell(withReuseIdentifier: SolvedQuizType2CollectionViewCell.identifier, for: indexPath) as? SolvedQuizType2CollectionViewCell
-//            else { return UICollectionViewCell() }
-//            cell.setChoiceQuiz(indexPath: indexPath)
-//            return cell
-//        }
-//    }
         
-        
-        // SolvedQuize Blank타입셀 테스트 코드
-        guard let cell = historyCollectionView.collectionView.dequeueReusableCell(withReuseIdentifier: SolvedQuizType1CollectionViewCell.identifier, for: indexPath) as? SolvedQuizType1CollectionViewCell
-        else { return UICollectionViewCell() }
-        cell.setBlankQuiz(indexPath: indexPath)
-        return cell
-        
-        // SolvedQuize Choice 타입셀 테스트 코드
-//        guard let cell = historyCollectionView.collectionView.dequeueReusableCell(withReuseIdentifier: SolvedQuizType2CollectionViewCell.identifier, for: indexPath) as? SolvedQuizType2CollectionViewCell
-//        else { return UICollectionViewCell() }
-//        cell.setChoiceQuiz(indexPath: indexPath)
-//        return cell
+        //랜스 셀 합치기
+        if quizs[indexPath.row].stateRawValue == 0, quizs[indexPath.row].typeRawValue == 0  {
+            guard let cell = historyCollectionView.collectionView.dequeueReusableCell(withReuseIdentifier: "todayQuizBlankCell", for: indexPath) as? QuizType2CollectionViewCell
+            else { return UICollectionViewCell() }
+            return cell
+        } else if quizs[indexPath.row].stateRawValue == 0, quizs[indexPath.row].typeRawValue == 1  {
+            guard let cell = historyCollectionView.collectionView.dequeueReusableCell(withReuseIdentifier: QuizType2CollectionViewCell.id, for: indexPath) as? QuizType2CollectionViewCell
+            else { return UICollectionViewCell() }
+            cell.setQuiz(quizNum: (indexPath.row) + 1, quiz: quizs[indexPath.row])
+            return cell
+
+        } else if quizs[indexPath.row].typeRawValue == 0  {
+            guard let cell = historyCollectionView.collectionView.dequeueReusableCell(withReuseIdentifier: SolvedQuizType1CollectionViewCell.identifier, for: indexPath) as? SolvedQuizType1CollectionViewCell
+            else { return UICollectionViewCell() }
+            cell.setBlankQuiz(indexPath: indexPath, quiz: quizs[indexPath.row])
+            return cell
+
+        } else {
+            guard let cell = historyCollectionView.collectionView.dequeueReusableCell(withReuseIdentifier: SolvedQuizType2CollectionViewCell.identifier, for: indexPath) as? SolvedQuizType2CollectionViewCell
+            else { return UICollectionViewCell() }
+            cell.setChoiceQuiz(indexPath: indexPath, quiz: quizs[indexPath.row])
+            return cell
+        }
+    }
+}
+
+extension HistoryViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width = UIScreen.main.bounds.width - QuizType2LayoutValue.Padding.cellHoriz * 2
+        return CGSize(width: width, height: 125)
     }
 }
