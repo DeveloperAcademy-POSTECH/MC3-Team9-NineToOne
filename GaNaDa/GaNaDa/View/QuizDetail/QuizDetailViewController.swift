@@ -8,28 +8,76 @@
 import UIKit
 
 class QuizDetailViewController: UIViewController {
+    private var quiz: Quiz!
+    
+    // Choice
+    @IBOutlet weak var choiceQuizStack: UIStackView!
+    @IBOutlet weak var rightAnswer: UILabel!
+    @IBOutlet weak var leftAnswer: UILabel!
+    
+    // Blank
+    @IBOutlet weak var blankQuizStack: UIStackView!
+    @IBOutlet weak var leadingQuizLabel: UILabel!
+    @IBOutlet weak var emptyQuizLabel: UILabel!
+    @IBOutlet weak var trailingQuizLabel: UILabel!
+    
     @IBOutlet weak var quizSection: UIView!
     @IBOutlet weak var quizNum: UILabel!
-    @IBOutlet weak var quizContent: UILabel!
     @IBOutlet weak var quizDetail: UILabel!
     @IBOutlet weak var quizDetailExample: UILabel!
     @IBOutlet weak var closeButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        configureView()
+        setNavigationBar(navigationTitle: "퀴즈해설", hidesBackButton: true)
+        fetchQuizDetail()
+    }
+    
+    func configureView() {
         quizSection.layer.borderColor = UIColor.orange.cgColor
         quizSection.layer.borderWidth = 1
         closeButton.layer.cornerRadius = 16
         closeButton.clipsToBounds = true
-        
-        requestQuizDetail(num: 1, content: "그 사람은 왜 그리 똑똑하( 대 )?", detail: "제시하신 문장들에는 놀라거나 못마땅하게 여기는 뜻을 섞어, 어떤 사실을 주어진 것으로 치고 그 사실에 대한 의문을 나타내는 종결 어미 '-는대', '-대'를 써서, '그 사람 아직도 놀고 먹는대?', '그 사람은 왜 그리 똑똑하대?'와 같이 표현합니다.", example: "- 그사람은 왜 그랬었대?")
     }
     
-    func requestQuizDetail(num: Int, content: String, detail: String, example: String) {
-        quizNum.text = "문제 \(num)"
-        quizContent.text = content
-        quizDetail.text = detail
+    func fetchQuizDetail() {
+        quizNum.text = "문제 \(quiz.quizID + 1)"
+        quizDetail.text = quiz.description
+        
+        quiz.quizType == .blank ? setForBlankType() : setForChoiceType()
+        
+        var example = quiz.example.reduce("") { result, example in
+            return result + example + "\n"
+        }
+        example.removeLast()
         quizDetailExample.text = example
+    }
+    
+    private func setForBlankType() {
+        leadingQuizLabel.text = (quiz.question.components(separatedBy: "*").first ?? "") + "("
+        emptyQuizLabel.text = " \(quiz.rightAnswer)"
+        trailingQuizLabel.text = " )" + (quiz.question.components(separatedBy: "*").last ?? "")
+    }
+    
+    private func setForChoiceType() {
+        leftAnswer.text = quiz.isLeftAnswer ? quiz.rightAnswer : quiz.wrongAnswer
+        rightAnswer.text = quiz.isLeftAnswer ? quiz.wrongAnswer : quiz.rightAnswer
+        
+        setSelectAnswerFont(label: (quiz.isLeftAnswer) ? leftAnswer : rightAnswer)
+    }
+    
+    private func setSelectAnswerFont(label: UILabel) {
+        label.font = UIFont(name: "GowunBatang-Bold", size: 24)
+        label.textColor = UIColor.point
+    }
+    
+    // MARK: - Methods
+    public func prepareData(quiz: Quiz = .previewChoice) {
+        self.quiz = quiz
+    }
+    
+    @IBAction func tapToHome(_ sender: UIButton) {
+        navigationController?.popToRootViewController(animated: true)
     }
 }

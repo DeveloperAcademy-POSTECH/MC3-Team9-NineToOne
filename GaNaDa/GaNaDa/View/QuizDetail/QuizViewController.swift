@@ -13,11 +13,11 @@ final class QuizViewController: UIViewController {
     private var selectedAnswer: String = "" {
         willSet {
             answerButton.isEnabled = !newValue.isEmpty
-            answerButton.backgroundColor = newValue.isEmpty ? .init(hex: 0xFEECC3) : .init(hex: 0xFFAD3C)
+            answerButton.backgroundColor = newValue.isEmpty ? .customIvory : .customOrange
             if newValue != "" {
                 emptyQuizLabel.text = " \(newValue)"
             }
-            emptyQuizLabel.textColor = (newValue == "") ? .clear : .init(hex: 0xFFAD3C)
+            emptyQuizLabel.textColor = (newValue == "") ? .clear : .customOrange
         }
     }
     
@@ -28,9 +28,9 @@ final class QuizViewController: UIViewController {
     
     private func touchAnswerButton(_ touchButton: UIButton, other: UIButton) {
         let answer = touchButton.title(for: .normal) ?? ""
-        touchButton.backgroundColor = (selectedAnswer == answer) ? .init(hex: 0xFEECC3) : .init(hex: 0xFFAD3C)
+        touchButton.backgroundColor = (selectedAnswer == answer) ? .customIvory : .customOrange
         if (selectedAnswer != answer) {
-            other.backgroundColor = .init(hex: 0xFEECC3)
+            other.backgroundColor = .customIvory
         }
         selectedAnswer = (selectedAnswer == answer) ? "" : answer
     }
@@ -80,7 +80,7 @@ final class QuizViewController: UIViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         if let quizAnswerViewController = storyboard.instantiateViewController(withIdentifier: "QuizAnswerView") as? QuizAnswerViewController {
             quiz.stateRawValue = (selectedAnswer == quiz.rightAnswer) ? 1 : 2
-            quizAnswerViewController.prepareView(quiz: quiz)
+            quizAnswerViewController.prepareData(quiz: quiz)
             navigationController?.pushViewController(quizAnswerViewController, animated: true)
         }
     }

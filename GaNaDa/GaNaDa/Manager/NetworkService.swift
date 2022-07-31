@@ -32,10 +32,12 @@ extension NetworkService {
         self.manager.getRequest(route: .todayQuiz) { result in
             switch result {
             case .success(let data):
-                guard let todayQuiz = try? JSONDecoder().decode([Quiz].self, from: data) else {
+                print(data)
+                guard let todayQuizDTO = try? JSONDecoder().decode([QuizDTO].self, from: data) else {
                     completeHandler(.failure(NetworkError.errorDecodingJson))
                     return
                 }
+                let todayQuiz = todayQuizDTO.map{ $0.quiz }
                 completeHandler(.success(todayQuiz))
             case .failure(let error):
                 completeHandler(.failure(error))

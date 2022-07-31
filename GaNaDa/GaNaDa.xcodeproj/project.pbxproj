@@ -71,13 +71,22 @@
 		C70BCA612887975400569961 /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C70BCA602887975400569961 /* Color.xcassets */; };
 		C7171E9F2891739D00EFFD5A /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = C7171E9E2891739D00EFFD5A /* Lottie */; };
 		C7171EA12891859200EFFD5A /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7171EA02891859200EFFD5A /* UIViewController+Extension.swift */; };
-		C74867FD2893137200E18393 /* lf20_ths0ezn3.json in Resources */ = {isa = PBXBuildFile; fileRef = C74867FC2893137200E18393 /* lf20_ths0ezn3.json */; };
+		C72D7A8F2893704400781633 /* lf20_ths0ezn3.json in Resources */ = {isa = PBXBuildFile; fileRef = C72D7A8D2893704400781633 /* lf20_ths0ezn3.json */; };
+		C72D7A902893704400781633 /* lf30_editor_xeckchmn.json in Resources */ = {isa = PBXBuildFile; fileRef = C72D7A8E2893704400781633 /* lf30_editor_xeckchmn.json */; };
+		C741A9852895379E00B61C8D /* LevelCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C741A9842895379E00B61C8D /* LevelCardView.xib */; };
+		C741A987289537BD00B61C8D /* LevelCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C741A986289537BD00B61C8D /* LevelCardView.swift */; };
+		C75BD9B92896C2ED00BBB18B /* QuizDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75BD9B82896C2ED00BBB18B /* QuizDTO.swift */; };
+		C75BD9BB2896C4F700BBB18B /* UIWindow+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75BD9BA2896C4F700BBB18B /* UIWindow+Extension.swift */; };
+		C75BD9BD2896C53600BBB18B /* UIActivityIndicatorView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75BD9BC2896C53600BBB18B /* UIActivityIndicatorView+Extension.swift */; };
 		C795FC172890EDFF00BF28EF /* QuizAnswerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C795FC162890EDFF00BF28EF /* QuizAnswerViewController.swift */; };
+		C7A6ED1028942FAA00A9D7C2 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A6ED0F28942FAA00A9D7C2 /* SettingViewController.swift */; };
+		C7A6ED1228942FB400A9D7C2 /* UserLevelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A6ED1128942FB400A9D7C2 /* UserLevelViewController.swift */; };
 		C7AC8E2D2890CFF3005F4558 /* LaunchScreen.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7AC8E2C2890CFF3005F4558 /* LaunchScreen.xcassets */; };
 		C7C527DA2892D7FE002EC560 /* Int+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7C527D92892D7FE002EC560 /* Int+Extension.swift */; };
-		C7C527DE2892E07A002EC560 /* fireWork.gif in Resources */ = {isa = PBXBuildFile; fileRef = C7C527DD2892E07A002EC560 /* fireWork.gif */; };
 		C7C527E12892E4ED002EC560 /* GowunBatang-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C7C527DF2892E4ED002EC560 /* GowunBatang-Bold.ttf */; };
 		C7C527E22892E4ED002EC560 /* GowunBatang-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C7C527E02892E4ED002EC560 /* GowunBatang-Regular.ttf */; };
+		C7DAC56F289384D0000F4D04 /* UserLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DAC56E289384D0000F4D04 /* UserLevel.swift */; };
+		C7DAC571289386EE000F4D04 /* UserLevel.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7DAC570289386EE000F4D04 /* UserLevel.xcassets */; };
 		C7DED593288E7C3D004A2322 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DED592288E7C3D004A2322 /* NetworkService.swift */; };
 		C7DED595288E7CA8004A2322 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DED594288E7CA8004A2322 /* NetworkManager.swift */; };
 		C7DED599288E8806004A2322 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DED598288E8806004A2322 /* User.swift */; };
@@ -150,13 +159,22 @@
 		C70BCA4828878A4900569961 /* GaNaDaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaNaDaUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		C70BCA602887975400569961 /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
 		C7171EA02891859200EFFD5A /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
-		C74867FC2893137200E18393 /* lf20_ths0ezn3.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = lf20_ths0ezn3.json; sourceTree = "<group>"; };
+		C72D7A8D2893704400781633 /* lf20_ths0ezn3.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = lf20_ths0ezn3.json; sourceTree = "<group>"; };
+		C72D7A8E2893704400781633 /* lf30_editor_xeckchmn.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = lf30_editor_xeckchmn.json; sourceTree = "<group>"; };
+		C741A9842895379E00B61C8D /* LevelCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LevelCardView.xib; sourceTree = "<group>"; };
+		C741A986289537BD00B61C8D /* LevelCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelCardView.swift; sourceTree = "<group>"; };
+		C75BD9B82896C2ED00BBB18B /* QuizDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizDTO.swift; sourceTree = "<group>"; };
+		C75BD9BA2896C4F700BBB18B /* UIWindow+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIWindow+Extension.swift"; sourceTree = "<group>"; };
+		C75BD9BC2896C53600BBB18B /* UIActivityIndicatorView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIActivityIndicatorView+Extension.swift"; sourceTree = "<group>"; };
 		C795FC162890EDFF00BF28EF /* QuizAnswerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizAnswerViewController.swift; sourceTree = "<group>"; };
+		C7A6ED0F28942FAA00A9D7C2 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		C7A6ED1128942FB400A9D7C2 /* UserLevelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLevelViewController.swift; sourceTree = "<group>"; };
 		C7AC8E2C2890CFF3005F4558 /* LaunchScreen.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = LaunchScreen.xcassets; sourceTree = "<group>"; };
 		C7C527D92892D7FE002EC560 /* Int+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extension.swift"; sourceTree = "<group>"; };
-		C7C527DD2892E07A002EC560 /* fireWork.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = fireWork.gif; sourceTree = "<group>"; };
 		C7C527DF2892E4ED002EC560 /* GowunBatang-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GowunBatang-Bold.ttf"; sourceTree = "<group>"; };
 		C7C527E02892E4ED002EC560 /* GowunBatang-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GowunBatang-Regular.ttf"; sourceTree = "<group>"; };
+		C7DAC56E289384D0000F4D04 /* UserLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLevel.swift; sourceTree = "<group>"; };
+		C7DAC570289386EE000F4D04 /* UserLevel.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = UserLevel.xcassets; sourceTree = "<group>"; };
 		C7DED592288E7C3D004A2322 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		C7DED594288E7CA8004A2322 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		C7DED598288E8806004A2322 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -230,8 +248,10 @@
 			isa = PBXGroup;
 			children = (
 				AB3D6B12288E70D3005C452F /* Quiz.swift */,
+				C75BD9B82896C2ED00BBB18B /* QuizDTO.swift */,
 				C7DED598288E8806004A2322 /* User.swift */,
 				C7DED59A288E8C0A004A2322 /* SubmitAnswerDTO.swift */,
+				C7DAC56E289384D0000F4D04 /* UserLevel.swift */,
 				AB3D6B2228914A40005C452F /* HistoryQuiz.swift */,
 			);
 			path = Model;
@@ -254,6 +274,8 @@
 				C7C527D92892D7FE002EC560 /* Int+Extension.swift */,
 				C7171EA02891859200EFFD5A /* UIViewController+Extension.swift */,
 				AB753392288A7B2900A68BFB /* UIFont+Extension.swift */,
+				C75BD9BA2896C4F700BBB18B /* UIWindow+Extension.swift */,
+				C75BD9BC2896C53600BBB18B /* UIActivityIndicatorView+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -343,8 +365,8 @@
 		C70BCA562887928B00569961 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				C7C527DD2892E07A002EC560 /* fireWork.gif */,
-				C74867FC2893137200E18393 /* lf20_ths0ezn3.json */,
+				C72D7A8D2893704400781633 /* lf20_ths0ezn3.json */,
+				C72D7A8E2893704400781633 /* lf30_editor_xeckchmn.json */,
 				AB753369288A7A3C00A68BFB /* Font */,
 				C70BCA5A288792D900569961 /* Assets */,
 			);
@@ -354,10 +376,11 @@
 		C70BCA572887929900569961 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				C7FA028A2890E0F4006B752F /* QuizDetail */,
 				C70BCA2B28878A4800569961 /* Main.storyboard */,
 				AB3D6B0F288E70D3005C452F /* TodayQuiz */,
 				AB24C04A288E395C00849B38 /* History */,
+				C7FA028A2890E0F4006B752F /* QuizDetail */,
+				C7A6ED0E28942F9900A9D7C2 /* Setting */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -366,10 +389,22 @@
 			isa = PBXGroup;
 			children = (
 				C70BCA2E28878A4900569961 /* Assets.xcassets */,
+				C7DAC570289386EE000F4D04 /* UserLevel.xcassets */,
 				C7AC8E2C2890CFF3005F4558 /* LaunchScreen.xcassets */,
 				C70BCA602887975400569961 /* Color.xcassets */,
 			);
 			path = Assets;
+			sourceTree = "<group>";
+		};
+		C7A6ED0E28942F9900A9D7C2 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				C7A6ED0F28942FAA00A9D7C2 /* SettingViewController.swift */,
+				C7A6ED1128942FB400A9D7C2 /* UserLevelViewController.swift */,
+				C741A9842895379E00B61C8D /* LevelCardView.xib */,
+				C741A986289537BD00B61C8D /* LevelCardView.swift */,
+			);
+			path = Setting;
 			sourceTree = "<group>";
 		};
 		C7DED591288E7C30004A2322 /* Manager */ = {
@@ -503,6 +538,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C7DAC571289386EE000F4D04 /* UserLevel.xcassets in Resources */,
 				C70BCA3228878A4900569961 /* LaunchScreen.storyboard in Resources */,
 				C7C527E12892E4ED002EC560 /* GowunBatang-Bold.ttf in Resources */,
 				AB75337D288A7A6400A68BFB /* Pretendard-Bold.otf in Resources */,
@@ -513,17 +549,18 @@
 				AB862374288F7FF900F71283 /* SolvedQuizType1CollectionViewCell.xib in Resources */,
 				AB3D6B14288E70D3005C452F /* QuizTypeBlank.xib in Resources */,
 				AB86238B2891640200F71283 /* SolvedQuizType2CollectionViewCell.xib in Resources */,
+				C72D7A8F2893704400781633 /* lf20_ths0ezn3.json in Resources */,
 				C70BCA2D28878A4800569961 /* Main.storyboard in Resources */,
 				AB75339B288A7E0C00A68BFB /* NanumPen.otf in Resources */,
 				AB75337A288A7A6400A68BFB /* Pretendard-Black.otf in Resources */,
-				C7C527DE2892E07A002EC560 /* fireWork.gif in Resources */,
-				C74867FD2893137200E18393 /* lf20_ths0ezn3.json in Resources */,
+				C72D7A902893704400781633 /* lf30_editor_xeckchmn.json in Resources */,
 				AB75338C288A7A6400A68BFB /* Pretendard-ExtraLight.otf in Resources */,
 				AB753383288A7A6400A68BFB /* Pretendard-Regular.otf in Resources */,
 				C7AC8E2D2890CFF3005F4558 /* LaunchScreen.xcassets in Resources */,
 				AB753386288A7A6400A68BFB /* Pretendard-Thin.otf in Resources */,
 				AB753380288A7A6400A68BFB /* Pretendard-Light.otf in Resources */,
 				AB753389288A7A6400A68BFB /* Pretendard-Medium.otf in Resources */,
+				C741A9852895379E00B61C8D /* LevelCardView.xib in Resources */,
 				C7C527E22892E4ED002EC560 /* GowunBatang-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -570,24 +607,30 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB8623852890EC7500F71283 /* QuizCollectionViewCell.swift in Sources */,
+				C75BD9B92896C2ED00BBB18B /* QuizDTO.swift in Sources */,
+				C75BD9BD2896C53600BBB18B /* UIActivityIndicatorView+Extension.swift in Sources */,
 				C7C527DA2892D7FE002EC560 /* Int+Extension.swift in Sources */,
+				C7A6ED1028942FAA00A9D7C2 /* SettingViewController.swift in Sources */,
 				262FD09C28918A7700AF5DA1 /* QuizDetailViewController.swift in Sources */,
 				C7DED593288E7C3D004A2322 /* NetworkService.swift in Sources */,
 				C795FC172890EDFF00BF28EF /* QuizAnswerViewController.swift in Sources */,
 				AB24C04E288E395C00849B38 /* QuizType2CollectionViewCell.swift in Sources */,
 				AB3D6B1928906B7C005C452F /* FilteringButtonsView.swift in Sources */,
 				AB75333D288A6DCD00A68BFB /* UIColor+Extension.swift in Sources */,
+				C75BD9BB2896C4F700BBB18B /* UIWindow+Extension.swift in Sources */,
 				C7171EA12891859200EFFD5A /* UIViewController+Extension.swift in Sources */,
 				C70BCA2628878A4800569961 /* AppDelegate.swift in Sources */,
 				C7DED595288E7CA8004A2322 /* NetworkManager.swift in Sources */,
 				AB24C04F288E395C00849B38 /* HistoryViewController.swift in Sources */,
 				AB86238728915FB100F71283 /* UILabel+Extension.swift in Sources */,
 				C7FA02892890E0E9006B752F /* QuizViewController.swift in Sources */,
+				C741A987289537BD00B61C8D /* LevelCardView.swift in Sources */,
 				AB24C051288E585800849B38 /* HistoryCollectionView.swift in Sources */,
 				AB753393288A7B2900A68BFB /* UIFont+Extension.swift in Sources */,
 				AB862376288FDAA000F71283 /* CALayer+Extension.swift in Sources */,
 				AB3D6B21289130B3005C452F /* ICloudManager.swift in Sources */,
 				C7DED599288E8806004A2322 /* User.swift in Sources */,
+				C7A6ED1228942FB400A9D7C2 /* UserLevelViewController.swift in Sources */,
 				AB3D6B13288E70D3005C452F /* QuizTypeBlank.swift in Sources */,
 				C70BCA2828878A4800569961 /* SceneDelegate.swift in Sources */,
 				E29228CD288DB04E0051779B /* TodayQuizCollectionVC.swift in Sources */,
@@ -596,6 +639,7 @@
 				ABB6E4CD2894FA580064C8C5 /* ICloudService.swift in Sources */,
 				C7DED59B288E8C0A004A2322 /* SubmitAnswerDTO.swift in Sources */,
 				AB86238A2891640200F71283 /* SolvedQuizType2CollectionViewCell.swift in Sources */,
+				C7DAC56F289384D0000F4D04 /* UserLevel.swift in Sources */,
 				AB3D6B2328914A40005C452F /* HistoryQuiz.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

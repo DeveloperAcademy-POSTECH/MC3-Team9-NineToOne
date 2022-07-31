@@ -6,14 +6,14 @@
 //
 
 import UIKit
-import WebKit
+import Lottie
 
 final class QuizAnswerViewController: UIViewController {
     // MARK: - Properties
     var quiz: Quiz!
     
     // MARK: - Methods
-    func prepareView(quiz: Quiz) {
+    func prepareData(quiz: Quiz) {
         self.quiz = quiz
     }
     
@@ -23,8 +23,15 @@ final class QuizAnswerViewController: UIViewController {
         
         quiz.quizType == .blank ? setForBlankType() : setForChoiceType()
         
-        resultImageView.image = UIImage(systemName: "house")
-        resultGuideLabel.text = (quiz.quizState == .right) ? "정답이에요.\n경험치 + \(quiz.quizID)" : "오답이에요.\n해설을 확인해보시겠어요?"
+        // TODO: 실제 USER 정보로 바꿔야함
+        resultImageView.image = LevelCase.level(exp: User.preview.exp).levelImage
+        
+        // TODO: 실제 USER 정보로 바꿔야함
+        resultGuideLabel.text = (quiz.quizState == .right) ? "정답이에요.\n경험치 + 20" : "오답이에요.\n해설을 확인해보시겠어요?"
+        if quiz.quizState == .right {
+            let userExp = UserDefaults.standard.integer(forKey: "userExp")
+            UserDefaults.standard.setValue(userExp + 20, forKey: "userExp")
+        }
     }
     
     private func setForBlankType() {
@@ -44,19 +51,16 @@ final class QuizAnswerViewController: UIViewController {
     }
     
     private func setForChoiceType() {
-        leftAnswer.text = quiz.quizID.hashValue.isOdd ? quiz.rightAnswer : quiz.wrongAnswer
-        rightAnswer.text = quiz.quizID.hashValue.isOdd ? quiz.wrongAnswer : quiz.rightAnswer
+        leftAnswer.text = quiz.isLeftAnswer ? quiz.rightAnswer : quiz.wrongAnswer
+        rightAnswer.text = quiz.isLeftAnswer ? quiz.wrongAnswer : quiz.rightAnswer
         
-        quiz.quizState == .right
-        ? setSelectAnswerFont(label: (leftAnswer.text == quiz.rightAnswer) ? leftAnswer : rightAnswer,
-                              strikethroughStyle: false)
-        : setSelectAnswerFont(label: (leftAnswer.text == quiz.wrongAnswer) ? leftAnswer : rightAnswer,
-                              strikethroughStyle: true)
+        setSelectAnswerFont(label: (quiz.isLeftAnswer) == (quiz.quizState == .right) ? leftAnswer : rightAnswer,
+                              strikethroughStyle: quiz.quizState == .wrong)
     }
     
     private func setSelectAnswerFont(label: UILabel, strikethroughStyle: Bool) {
         label.font = UIFont(name: "GowunBatang-Bold", size: 24)
-        label.textColor = .init(hex: 0xED6E2D)
+        label.textColor = UIColor.point
         if strikethroughStyle {
             let attributedStr = NSMutableAttributedString(string: quiz.wrongAnswer)
             attributedStr.addAttribute(.strikethroughStyle,
@@ -66,31 +70,20 @@ final class QuizAnswerViewController: UIViewController {
         }
     }
     
-    private func configureLottievView() {
-        let fileName = "fireWork"
-        
-        guard let url = Bundle.main.url(forResource: fileName, withExtension: "gif") else {
-            return
-        }
-        
-        guard let data = try? Data(contentsOf: url) else {
-            return
-        }
-        
-        lottieWebView.load(data,
-                           mimeType: "image/gif",
-                           characterEncodingName: "UTF-8",
-                           baseURL: url.deletingLastPathComponent())
-        lottieWebView.scrollView.isScrollEnabled = false
-        lottieWebView.scrollView.isUserInteractionEnabled = false
-        //        lottieWebView.transform =  CGAffineTransform(rotationAngle: 90 * .pi / 180)
-        lottieWebView.isHidden = false
+    private func configureLottieView() {
+        lottieView.isHidden = false
+        lottieView.loopMode = .loop
+        lottieView.layer.opacity = 0.5
+        lottieView.play()
+    }
+    
+    private func configureView() {
+        homeButton.isHidden = true
+        quizDetailButton.backgroundColor = .customOrange
     }
     
     // MARK: - IBOutlets
-    @IBOutlet weak var lottieWebView: WKWebView!
-    
-    //    @IBOutlet weak var quizLabel: UILabel!
+    @IBOutlet weak var lottieView: AnimationView!
     
     // Choice
     @IBOutlet weak var choiceQuizStack: UIStackView!
@@ -106,22 +99,31 @@ final class QuizAnswerViewController: UIViewController {
     @IBOutlet weak var resultImageView: UIImageView!
     @IBOutlet weak var resultGuideLabel: UILabel!
     
+    @IBOutlet weak var quizDetailButton: UIButton!
+    @IBOutlet weak var homeButton: UIButton!
+    
     // MARK: - IBActions
     @IBAction func goToQuizDescriptView(_ sender: UIButton) {
-        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        if let quizDetailViewController = storyboard.instantiateViewController(withIdentifier: "QuizDetailView") as? QuizDetailViewController {
+            quizDetailViewController.prepareData(quiz: quiz)
+            navigationController?.pushViewController(quizDetailViewController, animated: true)
+        }
     }
     
     @IBAction func goToMainView(_ sender: UIButton) {
-        
+        navigationController?.popToRootViewController(animated: true)
     }
     
     // MARK: - Life Cycles
     override func viewDidLoad() {
         super.viewDidLoad()
-        setNavigationBar(navigationTitle: "문제")
+        setNavigationBar(navigationTitle: "문제", hidesBackButton: true)
         loadData()
         if quiz.quizState == .right {
-            configureLottievView()
+            configureLottieView()
+        } else {
+            configureView()
         }
     }
 }
