@@ -20,14 +20,6 @@ class SolvedQuizType2CollectionViewCell: QuizCollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         drawSolvedQuizeType1CellUI()
-        //MARK: 임시 레이아웃
-        NSLayoutConstraint.activate([
-            self.contentView.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width - QuizType2LayoutValue.Padding.cellHoriz * 2),
-            self.contentView.topAnchor.constraint(equalTo: self.topAnchor),
-            self.contentView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-            self.contentView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            self.contentView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
-        ])
     }
 }
 
@@ -40,15 +32,15 @@ extension SolvedQuizType2CollectionViewCell {
         wrongAnswerLabel.font = .customFont(.customAnswer)
         vsTextLabel.textColor = .customColor(.customGray)
         vsTextLabel.font = .customFont(.content)
+        vsTextLabel.text = "vs"
     }
     
-    func setChoiceQuiz(indexPath: IndexPath) {
-        let quiz = HistoryQuiz.preview[indexPath.row]
-        quizIndexLabel.text = "\(indexPath.row + 1)"
+    func setChoiceQuiz(indexPath: IndexPath, quiz: Quiz) {
+        quizIndexLabel.text = "문제 \(indexPath.row + 1)"
         rightAnswerLabel.text = quiz.rightAnswer
         wrongAnswerLabel.text = quiz.wrongAnswer
         wrongAnswerLabel.setTargetStringStrikeThrough(targetString: quiz.wrongAnswer, color: .black)
-        if quiz.status == 1 {
+        if quiz.stateRawValue == 1 {
             markImage.image = .init(named: "right")
         }else {
             markImage.image = .init(named: "wrong")
