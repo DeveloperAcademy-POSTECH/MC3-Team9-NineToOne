@@ -16,7 +16,7 @@ struct Quiz: Codable {
     var wrongAnswer: String
     var description: String = ""
     var example: [String] = []
-    var stateRawValue: Int = 0
+    var stateRawValue: Int = 2
     var publishedDate: Date?
     
     var isLeftAnswer: Bool {

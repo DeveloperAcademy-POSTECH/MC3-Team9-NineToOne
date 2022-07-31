@@ -7,31 +7,6 @@
 
 import UIKit
 
-// http://ec2-3-237-49-198.compute-1.amazonaws.com/quiz/allQuiz
-
-
-final class SectionHeader: UICollectionReusableView {
-    var label: UILabel = {
-        let label: UILabel = UILabel()
-        label.sizeToFit()
-        return label
-    }()
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        addSubview(label)
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-        label.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 20).isActive = true
-        label.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
-        label.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-}
-
 struct HistoryLayoutValue {
     enum Padding {
         static let collectionViewFromTop: CGFloat = 140
@@ -47,6 +22,7 @@ final class HistoryViewController: UIViewController {
     private lazy var historyFilteringButtonsView = FilteringButtonsView()
     private lazy var historyCollectionView = HistoryCollectionView()
     private var quizs: [Quiz] = []
+    private var rawQuizsByDate: [Dictionary<Date, [Quiz]>.Element] = []
     private var quizsByDate: [Dictionary<Date, [Quiz]>.Element] = []
     
     override func loadView() {
@@ -70,8 +46,33 @@ final class HistoryViewController: UIViewController {
 
 // MARK: - Configure Filtering Buttons
 extension HistoryViewController: FilteringButtonsDelegate {
-    func filteringButtonPressed(type: FilteringButtonType) {
-        print(type)
+    func filteringButtonPressed(type: FilteringButtonType, isActive: Bool) {
+        print("??: ", type.rawValue)
+        if isActive {
+            quizsByDate = rawQuizsByDate.filter({
+                $0.value.filter {
+                    $0.stateRawValue == type.rawValue
+                }.count > 0
+            })
+            for idx in quizsByDate.indices {
+                quizsByDate[idx].value = quizsByDate[idx].value.filter({
+                    $0.stateRawValue == type.rawValue
+                })
+            }
+            //.filter({
+//                return $0.value.filter {
+//                    return $0.stateRawValue == type.rawValue
+//                }.count > 0
+            print(quizsByDate)
+            DispatchQueue.main.async {
+                self.historyCollectionView.collectionView.reloadData()
+            }
+        } else {
+            quizsByDate = rawQuizsByDate
+            DispatchQueue.main.async {
+                self.historyCollectionView.collectionView.reloadData()
+            }
+        }
         // TODO: - HISTORY database 만든 이후 구현 필요
     }
     
@@ -83,7 +84,7 @@ extension HistoryViewController: FilteringButtonsDelegate {
         self.view.addSubview(historyFilteringButtonsView)
         historyFilteringButtonsView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            historyFilteringButtonsView.topAnchor.constraint(equalTo: view.topAnchor, constant: HistoryLayoutValue.Padding.collectionViewFromTop / 2),
+            historyFilteringButtonsView.topAnchor.constraint(equalTo: view.topAnchor, constant: HistoryLayoutValue.Padding.collectionViewFromTop * 0.7),
             historyFilteringButtonsView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             historyFilteringButtonsView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             historyFilteringButtonsView.heightAnchor.constraint(equalToConstant: HistoryLayoutValue.Size.filteringButtonsHeight)
@@ -111,7 +112,8 @@ private extension HistoryViewController {
     func loadHistoryCollectionView() {
         ICloudService.requestAllHistoryQuizs() { quizs in
             self.quizs = quizs
-            self.quizsByDate = quizs.sliced(by: [.year, .month, .day], for: \.publishedDate).sorted {  $0.key > $1.key }
+            self.rawQuizsByDate = quizs.sliced(by: [.year, .month, .day], for: \.publishedDate).sorted {  $0.key > $1.key }
+            self.quizsByDate = self.rawQuizsByDate
             print(self.quizsByDate)
             DispatchQueue.main.async {
                 self.historyCollectionView.collectionView.reloadData()
