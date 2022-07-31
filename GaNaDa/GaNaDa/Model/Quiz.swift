@@ -10,10 +10,10 @@ import GameplayKit
 
 struct Quiz: Codable {
     var quizID: Int = 0
-    let question: String
+    var question: String
     var typeRawValue: Int = 0
-    let rightAnswer: String
-    let wrongAnswer: String
+    var rightAnswer: String
+    var wrongAnswer: String
     var description: String = ""
     var example: [String] = []
     var stateRawValue: Int = 0

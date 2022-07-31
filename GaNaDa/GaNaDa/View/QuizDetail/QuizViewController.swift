@@ -80,7 +80,7 @@ final class QuizViewController: UIViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         if let quizAnswerViewController = storyboard.instantiateViewController(withIdentifier: "QuizAnswerView") as? QuizAnswerViewController {
             quiz.stateRawValue = (selectedAnswer == quiz.rightAnswer) ? 1 : 2
-            quizAnswerViewController.prepareView(quiz: quiz)
+            quizAnswerViewController.prepareData(quiz: quiz)
             navigationController?.pushViewController(quizAnswerViewController, animated: true)
         }
     }

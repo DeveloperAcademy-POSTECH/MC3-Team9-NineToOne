@@ -13,7 +13,7 @@ final class QuizAnswerViewController: UIViewController {
     var quiz: Quiz!
     
     // MARK: - Methods
-    func prepareView(quiz: Quiz) {
+    func prepareData(quiz: Quiz) {
         self.quiz = quiz
     }
     
@@ -27,7 +27,11 @@ final class QuizAnswerViewController: UIViewController {
         resultImageView.image = LevelCase.level(exp: User.preview.exp).levelImage
         
         // TODO: 실제 USER 정보로 바꿔야함
-        resultGuideLabel.text = (quiz.quizState == .right) ? "정답이에요.\n경험치 + \(quiz.quizID)" : "오답이에요.\n해설을 확인해보시겠어요?"
+        resultGuideLabel.text = (quiz.quizState == .right) ? "정답이에요.\n경험치 + 20" : "오답이에요.\n해설을 확인해보시겠어요?"
+        if quiz.quizState == .right {
+            let userExp = UserDefaults.standard.integer(forKey: "userExp")
+            UserDefaults.standard.setValue(userExp + 20, forKey: "userExp")
+        }
     }
     
     private func setForBlankType() {
@@ -66,11 +70,16 @@ final class QuizAnswerViewController: UIViewController {
         }
     }
     
-    private func configureLottievView() {
+    private func configureLottieView() {
         lottieView.isHidden = false
         lottieView.loopMode = .loop
         lottieView.layer.opacity = 0.5
         lottieView.play()
+    }
+    
+    private func configureView() {
+        homeButton.isHidden = true
+        quizDetailButton.backgroundColor = .customOrange
     }
     
     // MARK: - IBOutlets
@@ -90,13 +99,20 @@ final class QuizAnswerViewController: UIViewController {
     @IBOutlet weak var resultImageView: UIImageView!
     @IBOutlet weak var resultGuideLabel: UILabel!
     
+    @IBOutlet weak var quizDetailButton: UIButton!
+    @IBOutlet weak var homeButton: UIButton!
+    
     // MARK: - IBActions
     @IBAction func goToQuizDescriptView(_ sender: UIButton) {
-        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        if let quizDetailViewController = storyboard.instantiateViewController(withIdentifier: "QuizDetailView") as? QuizDetailViewController {
+            quizDetailViewController.prepareData(quiz: quiz)
+            navigationController?.pushViewController(quizDetailViewController, animated: true)
+        }
     }
     
     @IBAction func goToMainView(_ sender: UIButton) {
-        
+        navigationController?.popToRootViewController(animated: true)
     }
     
     // MARK: - Life Cycles
@@ -105,7 +121,9 @@ final class QuizAnswerViewController: UIViewController {
         setNavigationBar(navigationTitle: "문제", hidesBackButton: true)
         loadData()
         if quiz.quizState == .right {
-            configureLottievView()
+            configureLottieView()
+        } else {
+            configureView()
         }
     }
 }

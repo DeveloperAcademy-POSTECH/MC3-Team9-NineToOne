@@ -100,7 +100,13 @@ private extension HistoryViewController {
 
 // MARK: - UICollectionViewDelegate
 extension HistoryViewController: UICollectionViewDelegate {
-
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        if let quizViewController = storyboard.instantiateViewController(withIdentifier: "QuizView") as? QuizViewController {
+            quizViewController.prepareData(quiz: quizs[indexPath.row])
+            navigationController?.pushViewController(quizViewController, animated: true)
+        }
+    }
 }
 
 // MARK: - UICollectionViewDataSource
