@@ -11,6 +11,10 @@ struct TodayQuizLayoutValue {
     enum CornerRadius {
         static let cell = 16.0
     }
+    
+    enum Size {
+        static let cellBorderWidth = 1.0
+    }
 }
 
 final class TodayQuizViewController: UIViewController {
@@ -22,7 +26,7 @@ final class TodayQuizViewController: UIViewController {
     @IBOutlet weak var userExp: UIProgressView!
         
     var currentHour: Int = 0
-    var openTimes = [9, 12, 18]
+    var openTimes = [0, 0, 18]
 
     var todayQuizs: [Quiz] = []
 
@@ -157,8 +161,7 @@ extension TodayQuizViewController: UICollectionViewDataSource{
         } else {
             guard let cell = todayQuizCollectionView.dequeueReusableCell(withReuseIdentifier: QuizType2CollectionViewCell.id, for: indexPath) as? QuizType2CollectionViewCell
             else { return UICollectionViewCell() }
-//            cell.setQuiz(quizNum: (indexPath.row) + 1, quiz: todayQuizs[indexPath.row])
-           
+            cell.setQuiz(quizNum: (indexPath.row) + 1, quiz: todayQuizs[indexPath.row])
             if let openTimeLabel = cell.subviews.last as? UILabel {
                 openTimeLabel.removeFromSuperview()
                 if let visualEffectView = cell.subviews.last as? UIVisualEffectView {

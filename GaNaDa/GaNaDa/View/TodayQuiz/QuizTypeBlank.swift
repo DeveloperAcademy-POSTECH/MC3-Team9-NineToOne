@@ -16,13 +16,16 @@ final class QuizTypeBlank: UICollectionViewCell {
     var data: Quiz = Quiz(question: "샘플 문장", typeRawValue: 0, rightAnswer: "정답", wrongAnswer: "오답") {
         didSet {
             quizQuestion.text = makeQuizSentence(quiz: data)
+            quizQuestion.font = .customFont(.content)
+            quizIndex.textColor = .customColor(.customGray)
+            quizIndex.font = .customFont(.subContent)
         }
     }
     
     override func awakeFromNib() {
         super.awakeFromNib()
         contentView.layer.cornerRadius = TodayQuizLayoutValue.CornerRadius.cell
-        contentView.layer.borderWidth = 2
+        contentView.layer.borderWidth = TodayQuizLayoutValue.Size.cellBorderWidth
         contentView.layer.borderColor = UIColor.customOrange.cgColor
     }
 }
