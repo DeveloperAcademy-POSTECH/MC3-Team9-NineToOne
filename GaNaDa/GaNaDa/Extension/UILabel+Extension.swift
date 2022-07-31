@@ -8,6 +8,17 @@
 import UIKit
 
 extension UILabel {
+    func setTargetStringUI(rightAnswer: String, wrongAnswer: String) {
+        guard let fullText = text else { return }
+        let attributedString = NSMutableAttributedString(string: fullText)
+        var range = (fullText as NSString).range(of: rightAnswer)
+        attributedString.addAttribute(.font, value: UIFont.customFont(.customAnswer), range: range)
+        attributedString.addAttribute(.foregroundColor, value: UIColor.customOrange, range: range)
+        range = (fullText as NSString).range(of: wrongAnswer)
+        attributedString.addAttribute(.font, value: UIFont.customFont(.customAnswer), range: range)
+        attributedString.addAttribute(.strikethroughStyle, value: NSUnderlineStyle.single.rawValue, range: range)
+        attributedText = attributedString
+    }
     func setTargetStringFont(targetString: String, font: UIFont) {
         guard let fullText = text else { return }
         let attributedString = NSMutableAttributedString(string: fullText)
