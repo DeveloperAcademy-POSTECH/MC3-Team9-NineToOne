@@ -26,7 +26,7 @@ final class TodayQuizViewController: UIViewController {
     @IBOutlet weak var userExp: UIProgressView!
         
     var currentHour: Int = 0
-    var openTimes = [0, 0, 18]
+    var openTimes = [9, 12, 18]
 
     var todayQuizs: [Quiz] = []
 
