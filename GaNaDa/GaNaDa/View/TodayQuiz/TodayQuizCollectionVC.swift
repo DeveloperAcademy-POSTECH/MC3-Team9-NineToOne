@@ -24,9 +24,10 @@ final class TodayQuizViewController: UIViewController {
     var currentHour: Int = 0
     var openTimes = [9, 12, 18]
 
-    var todayQuizs: [Quiz] = [Quiz(question: "나는 ios 개발자가 * 싶다.", typeRawValue: QuizType.blank.rawValue, rightAnswer: "되고", wrongAnswer: "돼고"),
-                              Quiz.previewChoice,
-                              Quiz(question: "오늘도 안 오면 *.", typeRawValue: QuizType.blank.rawValue, rightAnswer: "어떡해", wrongAnswer: "어떻게")]
+//    var todayQuizs: [Quiz] = [Quiz(question: "나는 ios 개발자가 * 싶다.", typeRawValue: QuizType.blank.rawValue, rightAnswer: "되고", wrongAnswer: "돼고"),
+//                              Quiz.previewChoice,
+//                              Quiz(question: "오늘도 안 오면 *.", typeRawValue: QuizType.blank.rawValue, rightAnswer: "어떡해", wrongAnswer: "어떻게")]
+    var todayQuizs: [Quiz] = []
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -35,12 +36,24 @@ final class TodayQuizViewController: UIViewController {
         formatter.dateFormat = "HH"
         currentHour = Int(formatter.string(from: Date())) ?? 0
         print("\(currentHour)")
-        todayQuizCollectionView.reloadData()
+        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        startIndicatingActivity()
+        NetworkService.requestTodayQuiz { result in
+            DispatchQueue.main.async { [weak self] in
+                switch result {
+                case .success(let todayQuizs):
+                    self?.todayQuizs = todayQuizs
+                case .failure(let error):
+                    self?.showAlertController(title: "네트워크 에러", message: "Error: \(error)")
+                }
+                self?.todayQuizCollectionView.reloadData()
+                self?.stopIndicatingActivity()
+            }
+        }
         configureProgressBar()
         saveUserData(userName: "박가네감자탕둘째며느리의셋째아들")
         requestUserData()
@@ -52,6 +65,7 @@ final class TodayQuizViewController: UIViewController {
         todayQuizCollectionView.register(todayQuizBlankCellNib, forCellWithReuseIdentifier: "todayQuizBlankCell")
 
         todayQuizCollectionView.dataSource = self
+        todayQuizCollectionView.delegate = self
         
         todayQuizCollectionView.collectionViewLayout = creatCompositionalLayout()
     }
@@ -105,7 +119,13 @@ private extension TodayQuizViewController {
 }
 
 extension TodayQuizViewController: UICollectionViewDelegate {
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        if let quizViewController = storyboard.instantiateViewController(withIdentifier: "QuizView") as? QuizViewController {
+            quizViewController.prepareData(quiz: todayQuizs[indexPath.row])
+            navigationController?.pushViewController(quizViewController, animated: true)
+        }
+    }
 }
 
 extension TodayQuizViewController: UICollectionViewDataSource{

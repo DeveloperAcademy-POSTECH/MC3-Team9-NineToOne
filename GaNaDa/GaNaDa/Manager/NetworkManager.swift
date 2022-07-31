@@ -7,7 +7,7 @@
 
 import Foundation
 
-typealias NetworkClosure<ResultType: Codable> = (Result<ResultType, Error>) -> ()
+typealias NetworkClosure<ResultType: Codable> = (Result<ResultType, NetworkError>) -> ()
 
 enum HTTPMethod: String {
     case GET
@@ -17,6 +17,7 @@ enum HTTPMethod: String {
 enum NetworkError: Error {
     case invalidData
     case invalidURL
+    case failureRequest
     case failureResponse
     case errorEncodingJson
     case errorDecodingJson
@@ -55,23 +56,23 @@ extension NetworkManager {
     /// Internal Request Function
     private func sendRequest(with request: URLRequest, _ completeHandler: @escaping NetworkClosure<Data>) {
         self.session.dataTask(with: request) { data, response, error in
-            if let error = error {
-                completeHandler(.failure(error))
+            if let _ = error {
+                completeHandler(.failure(.failureRequest))
                 return
             }
             
             guard let response = response as? HTTPURLResponse else {
-                completeHandler(.failure(NetworkError.invalidURL))
+                completeHandler(.failure(.invalidURL))
                 return
             }
             
             guard (200...299).contains(response.statusCode) else {
-                completeHandler(.failure(NetworkError.failureResponse))
+                completeHandler(.failure(.failureResponse))
                 return
             }
             
             guard let data = data else {
-                completeHandler(.failure(NetworkError.invalidData))
+                completeHandler(.failure(.invalidData))
                 return
             }
             completeHandler(.success(data))
@@ -98,14 +99,14 @@ extension NetworkManager {
         let urlString = self.baseURL + route.rawValue
         
         guard let url = URL(string: urlString) else {
-            completeHandler(.failure(NetworkError.invalidURL))
+            completeHandler(.failure(.invalidURL))
             return
         }
         
         var request = self.request(url, .POST)
         
         guard let httpBody = try? JSONEncoder().encode(body) else {
-            completeHandler(.failure(NetworkError.errorEncodingJson))
+            completeHandler(.failure(.errorEncodingJson))
             return
         }
         request.httpBody = httpBody
