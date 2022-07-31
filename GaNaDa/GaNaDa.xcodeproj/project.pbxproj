@@ -52,6 +52,13 @@
 		AB75339B288A7E0C00A68BFB /* NanumPen.otf in Resources */ = {isa = PBXBuildFile; fileRef = AB75339A288A7E0C00A68BFB /* NanumPen.otf */; };
 		AB75339C288A7E0C00A68BFB /* NanumPen.otf in Resources */ = {isa = PBXBuildFile; fileRef = AB75339A288A7E0C00A68BFB /* NanumPen.otf */; };
 		AB75339D288A7E0C00A68BFB /* NanumPen.otf in Resources */ = {isa = PBXBuildFile; fileRef = AB75339A288A7E0C00A68BFB /* NanumPen.otf */; };
+		AB862373288F7FF900F71283 /* SolvedQuizType1CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB862371288F7FF900F71283 /* SolvedQuizType1CollectionViewCell.swift */; };
+		AB862374288F7FF900F71283 /* SolvedQuizType1CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB862372288F7FF900F71283 /* SolvedQuizType1CollectionViewCell.xib */; };
+		AB862376288FDAA000F71283 /* CALayer+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB862375288FDAA000F71283 /* CALayer+Extension.swift */; };
+		AB8623852890EC7500F71283 /* QuizCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8623842890EC7500F71283 /* QuizCollectionViewCell.swift */; };
+		AB86238728915FB100F71283 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB86238628915FB100F71283 /* UILabel+Extension.swift */; };
+		AB86238A2891640200F71283 /* SolvedQuizType2CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8623882891640200F71283 /* SolvedQuizType2CollectionViewCell.swift */; };
+		AB86238B2891640200F71283 /* SolvedQuizType2CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB8623892891640200F71283 /* SolvedQuizType2CollectionViewCell.xib */; };
 		ABB6E4CD2894FA580064C8C5 /* ICloudService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB6E4CC2894FA580064C8C5 /* ICloudService.swift */; };
 		C70BCA2628878A4800569961 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70BCA2528878A4800569961 /* AppDelegate.swift */; };
 		C70BCA2828878A4800569961 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70BCA2728878A4800569961 /* SceneDelegate.swift */; };
@@ -130,6 +137,13 @@
 		AB753376288A7A6400A68BFB /* Pretendard-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraBold.otf"; sourceTree = "<group>"; };
 		AB753392288A7B2900A68BFB /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
 		AB75339A288A7E0C00A68BFB /* NanumPen.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumPen.otf; sourceTree = "<group>"; };
+		AB862371288F7FF900F71283 /* SolvedQuizType1CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolvedQuizType1CollectionViewCell.swift; sourceTree = "<group>"; };
+		AB862372288F7FF900F71283 /* SolvedQuizType1CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SolvedQuizType1CollectionViewCell.xib; sourceTree = "<group>"; };
+		AB862375288FDAA000F71283 /* CALayer+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+Extension.swift"; sourceTree = "<group>"; };
+		AB8623842890EC7500F71283 /* QuizCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizCollectionViewCell.swift; sourceTree = "<group>"; };
+		AB86238628915FB100F71283 /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
+		AB8623882891640200F71283 /* SolvedQuizType2CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolvedQuizType2CollectionViewCell.swift; sourceTree = "<group>"; };
+		AB8623892891640200F71283 /* SolvedQuizType2CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SolvedQuizType2CollectionViewCell.xib; sourceTree = "<group>"; };
 		ABB6E4CC2894FA580064C8C5 /* ICloudService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICloudService.swift; sourceTree = "<group>"; };
 		C70BCA2228878A4800569961 /* GaNaDa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GaNaDa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C70BCA2528878A4800569961 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -209,8 +223,13 @@
 		AB24C04B288E395C00849B38 /* ViewComponents */ = {
 			isa = PBXGroup;
 			children = (
+				AB8623842890EC7500F71283 /* QuizCollectionViewCell.swift */,
+				AB862371288F7FF900F71283 /* SolvedQuizType1CollectionViewCell.swift */,
+				AB862372288F7FF900F71283 /* SolvedQuizType1CollectionViewCell.xib */,
 				AB3D6B1828906B7C005C452F /* FilteringButtonsView.swift */,
 				AB24C04C288E395C00849B38 /* QuizType2CollectionViewCell.swift */,
+				AB8623882891640200F71283 /* SolvedQuizType2CollectionViewCell.swift */,
+				AB8623892891640200F71283 /* SolvedQuizType2CollectionViewCell.xib */,
 			);
 			path = ViewComponents;
 			sourceTree = "<group>";
@@ -250,6 +269,8 @@
 			isa = PBXGroup;
 			children = (
 				AB75333C288A6DCD00A68BFB /* UIColor+Extension.swift */,
+				AB862375288FDAA000F71283 /* CALayer+Extension.swift */,
+				AB86238628915FB100F71283 /* UILabel+Extension.swift */,
 				C7C527D92892D7FE002EC560 /* Int+Extension.swift */,
 				C7171EA02891859200EFFD5A /* UIViewController+Extension.swift */,
 				AB753392288A7B2900A68BFB /* UIFont+Extension.swift */,
@@ -525,7 +546,9 @@
 				C70BCA612887975400569961 /* Color.xcassets in Resources */,
 				C70BCA2F28878A4900569961 /* Assets.xcassets in Resources */,
 				AB753377288A7A6400A68BFB /* Pretendard-SemiBold.otf in Resources */,
+				AB862374288F7FF900F71283 /* SolvedQuizType1CollectionViewCell.xib in Resources */,
 				AB3D6B14288E70D3005C452F /* QuizTypeBlank.xib in Resources */,
+				AB86238B2891640200F71283 /* SolvedQuizType2CollectionViewCell.xib in Resources */,
 				C72D7A8F2893704400781633 /* lf20_ths0ezn3.json in Resources */,
 				C70BCA2D28878A4800569961 /* Main.storyboard in Resources */,
 				AB75339B288A7E0C00A68BFB /* NanumPen.otf in Resources */,
@@ -583,6 +606,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB8623852890EC7500F71283 /* QuizCollectionViewCell.swift in Sources */,
 				C75BD9B92896C2ED00BBB18B /* QuizDTO.swift in Sources */,
 				C75BD9BD2896C53600BBB18B /* UIActivityIndicatorView+Extension.swift in Sources */,
 				C7C527DA2892D7FE002EC560 /* Int+Extension.swift in Sources */,
@@ -598,10 +622,12 @@
 				C70BCA2628878A4800569961 /* AppDelegate.swift in Sources */,
 				C7DED595288E7CA8004A2322 /* NetworkManager.swift in Sources */,
 				AB24C04F288E395C00849B38 /* HistoryViewController.swift in Sources */,
+				AB86238728915FB100F71283 /* UILabel+Extension.swift in Sources */,
 				C7FA02892890E0E9006B752F /* QuizViewController.swift in Sources */,
 				C741A987289537BD00B61C8D /* LevelCardView.swift in Sources */,
 				AB24C051288E585800849B38 /* HistoryCollectionView.swift in Sources */,
 				AB753393288A7B2900A68BFB /* UIFont+Extension.swift in Sources */,
+				AB862376288FDAA000F71283 /* CALayer+Extension.swift in Sources */,
 				AB3D6B21289130B3005C452F /* ICloudManager.swift in Sources */,
 				C7DED599288E8806004A2322 /* User.swift in Sources */,
 				C7A6ED1228942FB400A9D7C2 /* UserLevelViewController.swift in Sources */,
@@ -609,8 +635,10 @@
 				C70BCA2828878A4800569961 /* SceneDelegate.swift in Sources */,
 				E29228CD288DB04E0051779B /* TodayQuizCollectionVC.swift in Sources */,
 				AB3D6B15288E70D3005C452F /* Quiz.swift in Sources */,
+				AB862373288F7FF900F71283 /* SolvedQuizType1CollectionViewCell.swift in Sources */,
 				ABB6E4CD2894FA580064C8C5 /* ICloudService.swift in Sources */,
 				C7DED59B288E8C0A004A2322 /* SubmitAnswerDTO.swift in Sources */,
+				AB86238A2891640200F71283 /* SolvedQuizType2CollectionViewCell.swift in Sources */,
 				C7DAC56F289384D0000F4D04 /* UserLevel.swift in Sources */,
 				AB3D6B2328914A40005C452F /* HistoryQuiz.swift in Sources */,
 			);

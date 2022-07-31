@@ -16,5 +16,5 @@ struct HistoryQuiz: Codable {
     var description: String = ""
     var example: [String] = []
     var publishedDate: Date?
-    var status: Int
+    var status: Int = 0
 }
