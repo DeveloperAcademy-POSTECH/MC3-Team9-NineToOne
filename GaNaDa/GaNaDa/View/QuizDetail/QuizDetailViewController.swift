@@ -35,8 +35,16 @@ class QuizDetailViewController: UIViewController {
     }
     
     func configureView() {
-        quizSection.layer.borderColor = UIColor.orange.cgColor
+        quizSection.layer.borderColor = UIColor.customOrange.cgColor
         quizSection.layer.borderWidth = 1
+        quizSection.layer.applyShadow(color: UIColor.darkGray, alpha: 0.05, x: 0, y: 4, blur: 16, spread: 0)
+        quizSection.clipsToBounds = false
+//        quizSection.layer.shadowRadius = 10
+//        quizSection.layer.shadowPath
+//        quizSection.layer.shadowColor
+//        quizSection.layer.shadowOpacity
+//        quizSection.layer.shadowOffset
+        
         closeButton.layer.cornerRadius = 16
         closeButton.clipsToBounds = true
     }
@@ -44,6 +52,9 @@ class QuizDetailViewController: UIViewController {
     func fetchQuizDetail() {
         quizNum.text = "문제 \(quiz.quizID + 1)"
         quizDetail.text = quiz.description
+        
+        choiceQuizStack.isHidden = (quiz.quizType == .blank)
+        blankQuizStack.isHidden = (quiz.quizType == .choice)
         
         quiz.quizType == .blank ? setForBlankType() : setForChoiceType()
         

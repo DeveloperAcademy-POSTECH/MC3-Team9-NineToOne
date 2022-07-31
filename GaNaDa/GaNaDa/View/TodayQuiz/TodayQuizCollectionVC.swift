@@ -32,8 +32,12 @@ final class TodayQuizViewController: UIViewController {
         let formatter = DateFormatter()
         formatter.dateFormat = "HH"
         currentHour = Int(formatter.string(from: Date())) ?? 0
-        print("\(currentHour)")
-        
+//        print("\(currentHour)")
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        todayQuizCollectionView.reloadData()
+        requestUserData()
     }
     
     override func viewDidLoad() {
@@ -127,8 +131,6 @@ extension TodayQuizViewController: UICollectionViewDelegate {
                 navigationController?.pushViewController(quizViewController, animated: true)
             }
         }
-        
-        
     }
 }
 
