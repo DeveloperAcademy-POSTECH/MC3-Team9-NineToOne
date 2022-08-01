@@ -121,14 +121,18 @@ final class TodayQuizViewController: UIViewController {
     }
     
     func loadHistoryCollectionView(completion: @escaping () -> Void) {
-        ICloudService.requestAllHistoryQuizs() { quizs in
-            self.data.quizs = quizs
-            self.data.rawQuizsByDate = quizs.sliced(by: [.year, .month, .day], for: \.publishedDate).sorted {  $0.key > $1.key }
-            self.data.quizsByDate = self.data.rawQuizsByDate
-            self.data.rawQuizsByDateExceptToday = self.data.rawQuizsByDate.filter({
-                return !self.isSameDay(date1: $0.key, date2: Date())
-            })
-            completion()
+        if self.data.semaphore == false {
+            self.data.semaphore = true
+            ICloudService.requestAllHistoryQuizs() { quizs in
+                self.data.quizs = quizs
+                self.data.rawQuizsByDate = quizs.sliced(by: [.year, .month, .day], for: \.publishedDate).sorted {  $0.key > $1.key }
+                self.data.quizsByDate = self.data.rawQuizsByDate
+                self.data.rawQuizsByDateExceptToday = self.data.rawQuizsByDate.filter({
+                    return !self.isSameDay(date1: $0.key, date2: Date())
+                })
+                completion()
+                self.data.semaphore = false
+            }
         }
     }
     

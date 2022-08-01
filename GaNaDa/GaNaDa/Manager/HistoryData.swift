@@ -11,6 +11,7 @@ final class HistoryData {
     static let shared = HistoryData()
     private init() {}
     
+    var semaphore: Bool = false
     var quizs: [Quiz] = []
     var rawQuizsByDate: [Dictionary<Date, [Quiz]>.Element] = []
     var rawQuizsByDateExceptToday: [Dictionary<Date, [Quiz]>.Element] = []
