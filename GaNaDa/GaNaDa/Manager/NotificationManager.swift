@@ -18,23 +18,44 @@ enum NotificationManager {
     static func registerNotification() {
         UNUserNotificationCenter.current().getNotificationSettings { settings in
             if settings.authorizationStatus == .authorized {
+                
                 let content = UNMutableNotificationContent()
-                content.badge = 1
-                content.title = "로컬 푸시"
-                content.subtitle = "서브 타이틀"
-                content.body = "바디바디바디받비ㅏ디바딥다비답디ㅏㅂ딥다비다비답다ㅣ"
+                content.title = "문제 도착"
+                content.body = "오늘의 첫번째 문제가 도착했습니다!"
                 content.sound = .default
-                content.userInfo = ["name": "tree"]
+
+                let content2 = UNMutableNotificationContent()
+                content2.title = "문제 도착"
+                content2.body = "오늘의 두번째 문제가 도착했습니다!"
+                content2.sound = .default
+
+                let content3 = UNMutableNotificationContent()
+                content3.title = "문제 도착"
+                content3.body = "오늘의 세번째 문제가 도착했습니다!"
+                content3.sound = .default
                 
-                //5초 후, 반복하지 않음
-                let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
-                
+                var dateComponents = DateComponents()
+                dateComponents.calendar = Calendar.current
+                dateComponents.hour = 9
+                let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
                 let request = UNNotificationRequest(identifier: "firstPush", content: content, trigger: trigger)
                 
-                //발송을 위한 센터에 추가
+                var dateComponents2 = DateComponents()
+                dateComponents2.calendar = Calendar.current
+                dateComponents2.hour = 12
+                let trigger2 = UNCalendarNotificationTrigger(dateMatching: dateComponents2, repeats: true)
+                let request2 =  UNNotificationRequest(identifier: "secondPush", content: content, trigger: trigger2)
+                
+                var dateComponents3 = DateComponents()
+                dateComponents3.calendar = Calendar.current
+                dateComponents3.hour = 18
+                let trigger3 = UNCalendarNotificationTrigger(dateMatching: dateComponents3, repeats: true)
+                let request3 =  UNNotificationRequest(identifier: "thirdPush", content: content, trigger: trigger3)
+                
                 UNUserNotificationCenter.current().add(request)
+                UNUserNotificationCenter.current().add(request2)
+                UNUserNotificationCenter.current().add(request3)
             } else {
-                //사용자가 알림을 허용하지 않음
                 print("알림 허용 않음")
             }
         }
