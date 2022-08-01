@@ -9,6 +9,7 @@ import Foundation
 import GameplayKit
 
 struct Quiz: Codable {
+    var recordName: String = ""
     var quizID: Int = 0
     var question: String
     var typeRawValue: Int = 0
@@ -16,7 +17,7 @@ struct Quiz: Codable {
     var wrongAnswer: String
     var description: String = ""
     var example: [String] = []
-    var stateRawValue: Int = 2
+    var stateRawValue: Int = 0
     var publishedDate: Date?
     
     var isLeftAnswer: Bool {

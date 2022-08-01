@@ -13,6 +13,9 @@ enum ICloudService {
 
 extension ICloudService {
     
+    static func fetchHistoryQuiz() {
+    }
+    
     static func createNewHistoryQUiz(newQuiz: Quiz, completion: @escaping () -> Void) {
         let newQuizData: [String : Any] = ["quizID": newQuiz.quizID,
                                            "question": newQuiz.question,
@@ -32,7 +35,8 @@ extension ICloudService {
         var quizs: [Quiz] = []
         manager.requestCloudData(record: "QuizHistory") { records in
             for record in records {
-                let fetchedQuiz = Quiz(quizID: record["quizID"] as? Int ?? 0,
+                let fetchedQuiz = Quiz(recordName: record.recordID.recordName,
+                                       quizID: record["quizID"] as? Int ?? 0,
                                        question: record["question"] ?? "",
                                        typeRawValue: record["type"] as? Int ?? 0,
                                        rightAnswer: record["rightAnswer"] ?? "",
