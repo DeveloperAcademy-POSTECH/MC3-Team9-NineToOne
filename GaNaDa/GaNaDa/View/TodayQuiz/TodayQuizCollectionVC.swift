@@ -56,7 +56,7 @@ final class TodayQuizViewController: UIViewController {
             }
         }
         configureProgressBar()
-        saveUserData(userName: "박가네감자탕둘째며느리의셋째아들")
+        saveUserData(userName: "박가네감자탕둘째며느리")
         requestUserData()
         
         let todayQuizBlankCellNib = UINib(nibName: "QuizTypeBlank", bundle: nil)
