@@ -216,7 +216,7 @@ extension HistoryViewController: UICollectionViewDataSource {
             guard let cell = historyCollectionView.collectionView.dequeueReusableCell(withReuseIdentifier: "todayQuizBlankCell", for: indexPath) as? QuizTypeBlank
             else { return UICollectionViewCell() }
             cell.data = data.quizsByDate[indexPath.section].value[indexPath.row]
-            
+            cell.quizIndex.text = "문제 \(indexPath.item + 1)"
             return cell
         } else if data.quizsByDate[indexPath.section].value[indexPath.row].stateRawValue == 0, data.quizsByDate[indexPath.section].value[indexPath.row].typeRawValue == 1  {
             guard let cell = historyCollectionView.collectionView.dequeueReusableCell(withReuseIdentifier: QuizType2CollectionViewCell.id, for: indexPath) as? QuizType2CollectionViewCell

@@ -179,9 +179,16 @@ extension TodayQuizViewController: UICollectionViewDelegate {
             showAlertController(title: "미공개 문제", message: "\(openHour)에 공개됩니다.")
         } else {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            if let quizViewController = storyboard.instantiateViewController(withIdentifier: "QuizView") as? QuizViewController {
-                quizViewController.prepareData(quiz: todayQuizs[indexPath.row])
-                navigationController?.pushViewController(quizViewController, animated: true)
+            if todayQuizs[indexPath.item].quizState == .unsolved {
+                if let quizViewController = storyboard.instantiateViewController(withIdentifier: "QuizView") as? QuizViewController {
+                    quizViewController.prepareData(quiz: todayQuizs[indexPath.row])
+                    navigationController?.pushViewController(quizViewController, animated: true)
+                }
+            } else {
+                if let quizDetailViewController = storyboard.instantiateViewController(withIdentifier: "QuizDetailView") as? QuizDetailViewController {
+                    quizDetailViewController.prepareData(quiz : todayQuizs[indexPath.row])
+                    navigationController?.pushViewController(quizDetailViewController, animated: true)
+                }
             }
         }
     }
@@ -193,7 +200,7 @@ extension TodayQuizViewController: UICollectionViewDataSource{
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {        
-        if todayQuizs[indexPath.item].quizType == QuizType.blank && todayQuizs[indexPath.item].stateRawValue == 0 {
+        if todayQuizs[indexPath.item].quizType == QuizType.blank && todayQuizs[indexPath.item].quizState == .unsolved {
             let cell = todayQuizCollectionView.dequeueReusableCell(withReuseIdentifier: "todayQuizBlankCell", for: indexPath) as! QuizTypeBlank
             cell.data = self.todayQuizs[indexPath.item]
             cell.quizIndex.text = "문제 \(indexPath.item + 1)"
@@ -211,12 +218,12 @@ extension TodayQuizViewController: UICollectionViewDataSource{
                 cell.layer.applyShadow(color: UIColor.black, alpha: 0.1, x: 0, y: 4, blur: 20, spread: 0)
             }
             return cell
-        } else if todayQuizs[indexPath.item].quizType == QuizType.blank && todayQuizs[indexPath.item].stateRawValue != 0 {
+        } else if todayQuizs[indexPath.item].quizType == QuizType.blank && todayQuizs[indexPath.item].quizState != .unsolved {
             guard let cell = todayQuizCollectionView.dequeueReusableCell(withReuseIdentifier: SolvedQuizType1CollectionViewCell.identifier, for: indexPath) as? SolvedQuizType1CollectionViewCell
             else { return UICollectionViewCell() }
             cell.setBlankQuiz(indexPath: indexPath, quiz: todayQuizs[indexPath.item])
             return cell
-        } else if todayQuizs[indexPath.item].quizType == QuizType.choice && todayQuizs[indexPath.item].stateRawValue == 0{
+        } else if todayQuizs[indexPath.item].quizType == QuizType.choice && todayQuizs[indexPath.item].quizState == .unsolved {
             guard let cell = todayQuizCollectionView.dequeueReusableCell(withReuseIdentifier: QuizType2CollectionViewCell.id, for: indexPath) as? QuizType2CollectionViewCell
             else { return UICollectionViewCell() }
             cell.setQuiz(quizNum: (indexPath.row) + 1, quiz: todayQuizs[indexPath.row])
