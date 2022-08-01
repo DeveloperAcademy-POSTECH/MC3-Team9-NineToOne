@@ -688,7 +688,7 @@
                                         <rect key="frame" x="321" y="0.0" width="51" height="31"/>
                                         <color key="onTintColor" name="customOrange"/>
                                         <connections>
-                                            <action selector="toggleQuizNotification:" destination="zgm-ad-i2m" eventType="valueChanged" id="vgo-BD-I0c"/>
+                                            <action selector="toggleQuizNotification:" destination="zgm-ad-i2m" eventType="touchUpInside" id="QVO-1Q-yGx"/>
                                         </connections>
                                     </switch>
                                 </subviews>
