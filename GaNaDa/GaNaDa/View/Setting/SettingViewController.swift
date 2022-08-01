@@ -19,7 +19,7 @@ final class SettingViewController: UIViewController {
         nameLabel.text = UserDefaultManager.userName
         nameLabel.sizeToFit()
         levelLabel.sizeToFit()
-        
+        pushNotificationSwitch.isOn = UserDefaultManager.pushNotification
     }
     
     
@@ -28,10 +28,11 @@ final class SettingViewController: UIViewController {
     @IBOutlet weak var levelLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var levelButton: UIButton!
+    @IBOutlet weak var pushNotificationSwitch: UISwitch!
     
     // MARK: - IBActions
     @IBAction func toggleQuizNotification(_ sender: UISwitch) {
-        
+        UserDefaultManager.setPushNotification(sender.isOn)
     }
     
     // MARK: - Delegates And DataSources

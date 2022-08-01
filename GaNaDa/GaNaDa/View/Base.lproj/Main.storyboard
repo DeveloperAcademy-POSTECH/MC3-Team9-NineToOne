@@ -722,6 +722,7 @@
                         <outlet property="levelImageView" destination="eU7-Xd-CRw" id="AzH-cj-u52"/>
                         <outlet property="levelLabel" destination="w9z-1w-hZo" id="wqx-KR-CIT"/>
                         <outlet property="nameLabel" destination="VzG-d4-P2Y" id="mfB-I9-RJw"/>
+                        <outlet property="pushNotificationSwitch" destination="Nun-YH-v9L" id="Xzo-BN-oiB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uh6-KX-fT4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

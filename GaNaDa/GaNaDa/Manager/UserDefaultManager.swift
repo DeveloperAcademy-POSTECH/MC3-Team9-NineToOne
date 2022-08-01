@@ -24,9 +24,14 @@ enum UserDefaultManager: String {
         return uds.integer(forKey: userExpKey.rawValue)
     }
     
+    static var pushNotification: Bool {
+        return uds.bool(forKey: pushNotificationKey.rawValue)
+    }
+    
     static func initUserInfo() {
         let userName = "박가네감자탕둘째며느리"
         if uds.string(forKey: userNameKey.rawValue) == nil {
+            uds.setValue(false, forKey: pushNotificationKey.rawValue)
             uds.setValue(userName, forKey: userNameKey.rawValue)
             uds.setValue(220, forKey: userExpKey.rawValue)
         }
@@ -38,5 +43,9 @@ enum UserDefaultManager: String {
     
     static func setUserExp(exp: Int) {
         uds.setValue(exp, forKey: userExpKey.rawValue)
+    }
+    
+    static func setPushNotification(_ value: Bool) {
+        uds.setValue(value, forKey: pushNotificationKey.rawValue)
     }
 }
