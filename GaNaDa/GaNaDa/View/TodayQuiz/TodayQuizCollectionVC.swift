@@ -6,7 +6,41 @@
 //
 
 import UIKit
-
+//loadHistoryCollectionView {
+//    let todayFiltered = self.data.rawQuizsByDate.filter {
+//        return self.isSameDay(date1: $0.key, date2: Date())
+//    }
+//    if todayFiltered.count == 0 {
+//        NetworkService.requestTodayQuiz { result in
+//            DispatchQueue.main.async { //[weak self] in
+//                switch result {
+//                case .success(let todayQuizs):
+//                    self.todayQuizs = todayQuizs
+//                    for todayQuiz in todayQuizs {
+//                        ICloudService.createNewHistoryQUiz(newQuiz: todayQuiz) {
+//                            print("new quiz Saved")
+//                        }
+//                    }
+//                    DispatchQueue.main.async {
+//                        self.todayQuizCollectionView.reloadData()
+//                        self.stopIndicatingActivity()
+//                    }
+//                case .failure(let error):
+//                    self.showAlertController(title: "네트워크 에러", message: "Error: \(error)")
+//                }
+//
+//            }
+//        }
+//    } else {
+//        for todayFilteredQuiz in todayFiltered {
+//            self.todayQuizs = todayFilteredQuiz.value
+//        }
+//        DispatchQueue.main.async {
+//            self.todayQuizCollectionView.reloadData()
+//            self.stopIndicatingActivity()
+//        }
+//    }
+//}
 struct TodayQuizLayoutValue {
     enum CornerRadius {
         static let cell = 16.0
@@ -27,7 +61,7 @@ final class TodayQuizViewController: UIViewController {
         
     var currentHour: Int = 0
     var openTimes = [9, 12, 18]
-
+    private let data = HistoryData.shared
     var todayQuizs: [Quiz] = []
 
     override func viewDidAppear(_ animated: Bool) {
@@ -36,27 +70,53 @@ final class TodayQuizViewController: UIViewController {
         let formatter = DateFormatter()
         formatter.dateFormat = "HH"
         currentHour = Int(formatter.string(from: Date())) ?? 0
-//        print("\(currentHour)")
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        todayQuizCollectionView.reloadData()
+        loadHistoryCollectionView() {
+            DispatchQueue.main.async {
+                self.todayQuizCollectionView.reloadData()
+            }
+        }
         requestUserData()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         startIndicatingActivity()
-        NetworkService.requestTodayQuiz { result in
-            DispatchQueue.main.async { [weak self] in
-                switch result {
-                case .success(let todayQuizs):
-                    self?.todayQuizs = todayQuizs
-                case .failure(let error):
-                    self?.showAlertController(title: "네트워크 에러", message: "Error: \(error)")
+        loadHistoryCollectionView {
+            let todayFiltered = self.data.rawQuizsByDate.filter {
+                return self.isSameDay(date1: $0.key, date2: Date())
+            }
+            if todayFiltered.count == 0 {
+                NetworkService.requestTodayQuiz { result in
+                    DispatchQueue.main.async { [weak self] in
+                        switch result {
+                        case .success(let todayQuizs):
+                            self?.todayQuizs = todayQuizs
+                            for todayQuiz in todayQuizs {
+                                ICloudService.createNewHistoryQUiz(newQuiz: todayQuiz) {
+                                    print("new quiz Saved")
+                                }
+                            }
+                        case .failure(let error):
+                            self?.showAlertController(title: "네트워크 에러", message: "Error: \(error)")
+                        }
+                        self?.todayQuizCollectionView.reloadData()
+                        self?.stopIndicatingActivity()
+                    }
                 }
-                self?.todayQuizCollectionView.reloadData()
-                self?.stopIndicatingActivity()
+            } else {
+                DispatchQueue.main.async {
+                    self.todayQuizCollectionView.reloadData()
+                    self.stopIndicatingActivity()
+                    
+                    for todayFilteredQuiz in todayFiltered {
+                        self.todayQuizs = todayFilteredQuiz.value
+                    }
+                    self.todayQuizCollectionView.reloadData()
+                    self.stopIndicatingActivity()
+                }
             }
         }
         configureProgressBar()
@@ -68,7 +128,7 @@ final class TodayQuizViewController: UIViewController {
         todayQuizCollectionView.register(QuizType2CollectionViewCell.self, forCellWithReuseIdentifier: QuizType2CollectionViewCell.id)
         
         todayQuizCollectionView.register(todayQuizBlankCellNib, forCellWithReuseIdentifier: "todayQuizBlankCell")
-
+        
         todayQuizCollectionView.dataSource = self
         todayQuizCollectionView.delegate = self
         
@@ -94,6 +154,27 @@ final class TodayQuizViewController: UIViewController {
         userExp.subviews[1].clipsToBounds = true
         userExp.progressTintColor = .point
         userExp.trackTintColor = .customIvory
+    }
+    
+    func loadHistoryCollectionView(completion: @escaping () -> Void) {
+        ICloudService.requestAllHistoryQuizs() { quizs in
+            self.data.quizs = quizs
+            self.data.rawQuizsByDate = quizs.sliced(by: [.year, .month, .day], for: \.publishedDate).sorted {  $0.key > $1.key }
+            self.data.quizsByDate = self.data.rawQuizsByDate
+            self.data.rawQuizsByDateExceptToday = self.data.rawQuizsByDate.filter({
+                return !self.isSameDay(date1: $0.key, date2: Date())
+            })
+            completion()
+        }
+    }
+    
+    func isSameDay(date1: Date, date2: Date) -> Bool {
+        let diff = Calendar.current.dateComponents([.day], from: date1, to: date2)
+        if diff.day == 0 {
+            return true
+        } else {
+            return false
+        }
     }
 }
 
