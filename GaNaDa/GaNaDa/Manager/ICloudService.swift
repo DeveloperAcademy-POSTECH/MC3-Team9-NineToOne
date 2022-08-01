@@ -13,6 +13,9 @@ enum ICloudService {
 
 extension ICloudService {
     
+    static func fetchHistoryQuiz() {
+    }
+    
     static func createNewHistoryQUiz(newQuiz: Quiz, completion: @escaping () -> Void) {
         let newQuizData: [String : Any] = ["quizID": newQuiz.quizID,
                                            "question": newQuiz.question,

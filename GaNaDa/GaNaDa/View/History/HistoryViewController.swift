@@ -21,9 +21,7 @@ final class HistoryViewController: UIViewController {
     
     private lazy var historyFilteringButtonsView = FilteringButtonsView()
     private lazy var historyCollectionView = HistoryCollectionView()
-    private var quizs: [Quiz] = []
-    private var rawQuizsByDate: [Dictionary<Date, [Quiz]>.Element] = []
-    private var quizsByDate: [Dictionary<Date, [Quiz]>.Element] = []
+    private let data = HistoryData.shared
     
     override func loadView() {
         super.loadView()
@@ -47,28 +45,23 @@ final class HistoryViewController: UIViewController {
 // MARK: - Configure Filtering Buttons
 extension HistoryViewController: FilteringButtonsDelegate {
     func filteringButtonPressed(type: FilteringButtonType, isActive: Bool) {
-        print("??: ", type.rawValue)
         if isActive {
-            quizsByDate = rawQuizsByDate.filter({
+            data.quizsByDate = data.rawQuizsByDateExceptToday .filter({
                 $0.value.filter {
                     $0.stateRawValue == type.rawValue
                 }.count > 0
             })
-            for idx in quizsByDate.indices {
-                quizsByDate[idx].value = quizsByDate[idx].value.filter({
+            for idx in data.quizsByDate.indices {
+                let new = data.quizsByDate[idx].value.filter({
                     $0.stateRawValue == type.rawValue
                 })
+                data.quizsByDate[idx].value = new
             }
-            //.filter({
-//                return $0.value.filter {
-//                    return $0.stateRawValue == type.rawValue
-//                }.count > 0
-            print(quizsByDate)
             DispatchQueue.main.async {
                 self.historyCollectionView.collectionView.reloadData()
             }
         } else {
-            quizsByDate = rawQuizsByDate
+            data.quizsByDate = data.rawQuizsByDateExceptToday
             DispatchQueue.main.async {
                 self.historyCollectionView.collectionView.reloadData()
             }
@@ -110,14 +103,25 @@ private extension HistoryViewController {
     }
     
     func loadHistoryCollectionView() {
+        self.data.quizsByDate = self.data.rawQuizsByDateExceptToday
         ICloudService.requestAllHistoryQuizs() { quizs in
-            self.quizs = quizs
-            self.rawQuizsByDate = quizs.sliced(by: [.year, .month, .day], for: \.publishedDate).sorted {  $0.key > $1.key }
-            self.quizsByDate = self.rawQuizsByDate
-            print(self.quizsByDate)
+            self.data.quizs = quizs
+            self.data.rawQuizsByDate = quizs.sliced(by: [.year, .month, .day], for: \.publishedDate).sorted {  $0.key > $1.key }
+            self.data.rawQuizsByDateExceptToday = self.data.rawQuizsByDate .filter({
+                return !self.isSameDay(date1: $0.key, date2: Date())
+            })
             DispatchQueue.main.async {
                 self.historyCollectionView.collectionView.reloadData()
             }
+        }
+    }
+    
+    func isSameDay(date1: Date, date2: Date) -> Bool {
+        let diff = Calendar.current.dateComponents([.day], from: date1, to: date2)
+        if diff.day == 0 {
+            return true
+        } else {
+            return false
         }
     }
 }
@@ -154,14 +158,13 @@ extension HistoryViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         if let quizViewController = storyboard.instantiateViewController(withIdentifier: "QuizView") as? QuizViewController {
-            quizViewController.prepareData(quiz: quizs[indexPath.row])
+            quizViewController.prepareData(quiz: data.quizsByDate[indexPath.section].value[indexPath.row])
             navigationController?.pushViewController(quizViewController, animated: true)
         }
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        //        print(self.quizsByDate.count)
-        return self.quizsByDate.count
+        return self.data.quizsByDate.count
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
@@ -169,7 +172,7 @@ extension HistoryViewController: UICollectionViewDelegate {
         format.dateFormat = "yyyy년 MM월 dd일"
         if kind == UICollectionView.elementKindSectionHeader {
             let sectionHeader = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "header", for: indexPath) as! SectionHeader
-            sectionHeader.label.text = format.string(from: quizsByDate[indexPath.section].key)
+            sectionHeader.label.text = format.string(from: data.quizsByDate[indexPath.section].key)
             sectionHeader.label.textColor = .customColor(.customGray)
             sectionHeader.label.font = .customFont(.content)
             return sectionHeader
@@ -186,33 +189,32 @@ extension HistoryViewController: UICollectionViewDelegate {
 // MARK: - UICollectionViewDataSource
 extension HistoryViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print(quizsByDate[section].value.count)
-        return quizsByDate[section].value.count
+        return data.quizsByDate[section].value.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         //랜스 셀 합치기
-        if quizsByDate[indexPath.section].value[indexPath.row].stateRawValue == 0, quizsByDate[indexPath.section].value[indexPath.row].typeRawValue == 0  {
+        if data.quizsByDate[indexPath.section].value[indexPath.row].stateRawValue == 0, data.quizsByDate[indexPath.section].value[indexPath.row].typeRawValue == 0  {
             guard let cell = historyCollectionView.collectionView.dequeueReusableCell(withReuseIdentifier: "todayQuizBlankCell", for: indexPath) as? QuizType2CollectionViewCell
             else { return UICollectionViewCell() }
             return cell
-        } else if quizsByDate[indexPath.section].value[indexPath.row].stateRawValue == 0, quizsByDate[indexPath.section].value[indexPath.row].typeRawValue == 1  {
+        } else if data.quizsByDate[indexPath.section].value[indexPath.row].stateRawValue == 0, data.quizsByDate[indexPath.section].value[indexPath.row].typeRawValue == 1  {
             guard let cell = historyCollectionView.collectionView.dequeueReusableCell(withReuseIdentifier: QuizType2CollectionViewCell.id, for: indexPath) as? QuizType2CollectionViewCell
             else { return UICollectionViewCell() }
-            cell.setQuiz(quizNum: (indexPath.row) + 1, quiz: quizsByDate[indexPath.section].value[indexPath.row])
+            cell.setQuiz(quizNum: (indexPath.row) + 1, quiz: data.quizsByDate[indexPath.section].value[indexPath.row])
             return cell
             
-        } else if quizsByDate[indexPath.section].value[indexPath.row].typeRawValue == 0  {
+        } else if data.quizsByDate[indexPath.section].value[indexPath.row].typeRawValue == 0  {
             guard let cell = historyCollectionView.collectionView.dequeueReusableCell(withReuseIdentifier: SolvedQuizType1CollectionViewCell.identifier, for: indexPath) as? SolvedQuizType1CollectionViewCell
             else { return UICollectionViewCell() }
-            cell.setBlankQuiz(indexPath: indexPath, quiz: quizsByDate[indexPath.section].value[indexPath.row])
+            cell.setBlankQuiz(indexPath: indexPath, quiz: data.quizsByDate[indexPath.section].value[indexPath.row])
             return cell
             
         } else {
             guard let cell = historyCollectionView.collectionView.dequeueReusableCell(withReuseIdentifier: SolvedQuizType2CollectionViewCell.identifier, for: indexPath) as? SolvedQuizType2CollectionViewCell
             else { return UICollectionViewCell() }
-            cell.setChoiceQuiz(indexPath: indexPath, quiz: quizsByDate[indexPath.section].value[indexPath.row])
+            cell.setChoiceQuiz(indexPath: indexPath, quiz: data.quizsByDate[indexPath.section].value[indexPath.row])
             return cell
         }
     }
