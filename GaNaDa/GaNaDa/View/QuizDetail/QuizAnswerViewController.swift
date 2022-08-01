@@ -11,6 +11,7 @@ import Lottie
 final class QuizAnswerViewController: UIViewController {
     // MARK: - Properties
     var quiz: Quiz!
+    var publishedDate: Date = Date()
     
     // MARK: - Methods
     func prepareData(quiz: Quiz) {
@@ -23,15 +24,13 @@ final class QuizAnswerViewController: UIViewController {
         
         quiz.quizType == .blank ? setForBlankType() : setForChoiceType()
         
-        // TODO: 실제 USER 정보로 바꿔야함
-        resultImageView.image = LevelCase.level(exp: User.preview.exp).levelImage
-        
-        // TODO: 실제 USER 정보로 바꿔야함
+        var userExp = UserDefaults.standard.integer(forKey: "userExp")
+    
         resultGuideLabel.text = (quiz.quizState == .right) ? "정답이에요.\n경험치 + 20" : "오답이에요.\n해설을 확인해보시겠어요?"
-        if quiz.quizState == .right {
-            let userExp = UserDefaults.standard.integer(forKey: "userExp")
-            UserDefaults.standard.setValue(userExp + 20, forKey: "userExp")
-        }
+        
+        userExp += (quiz.quizState == .right ? 20 : 10)
+        UserDefaults.standard.setValue(userExp, forKey: "userExp")
+        resultImageView.image = LevelCase.level(exp: userExp).levelImage
     }
     
     private func setForBlankType() {

@@ -89,7 +89,6 @@ final class QuizViewController: UIViewController {
     // MARK: - Life Cycles
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.quiz = .previewChoice // [Quiz.previewBlank, Quiz.previewChoice].randomElement()
         setNavigationBar(navigationTitle: "문제")
         loadData()
     }
