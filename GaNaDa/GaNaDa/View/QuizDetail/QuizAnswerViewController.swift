@@ -30,7 +30,9 @@ final class QuizAnswerViewController: UIViewController {
         
         userExp += (quiz.quizState == .right ? 20 : 10)
         UserDefaultManager.setUserExp(exp: userExp)
-        resultImageView.image = LevelCase.level(exp: userExp).levelImage
+        resultImageView.image = quiz.quizState == .right
+        ? LevelCase.level(exp: userExp).levelImage
+        : LevelCase.level(exp: userExp).levelxImage
     }
     
     private func setForBlankType() {
