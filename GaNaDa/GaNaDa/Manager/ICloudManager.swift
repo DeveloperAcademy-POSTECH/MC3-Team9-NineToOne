@@ -15,7 +15,7 @@ final class ICloudManager {
         container = CKContainer(identifier: id)
     }
     
-    func fetchRecord(record: String, newState: Int) {
+    func fetchRecordState(record: String, newState: Int, completion: @escaping () -> Void) {
         let recordID = CKRecord.ID(recordName: record)
         container.publicCloudDatabase.fetch(withRecordID: recordID) { record, error in
             if let record = record, error == nil {

@@ -35,7 +35,8 @@ extension ICloudService {
         var quizs: [Quiz] = []
         manager.requestCloudData(record: "QuizHistory") { records in
             for record in records {
-                let fetchedQuiz = Quiz(quizID: record["quizID"] as? Int ?? 0,
+                let fetchedQuiz = Quiz(recordName: record.recordID.recordName,
+                                       quizID: record["quizID"] as? Int ?? 0,
                                        question: record["question"] ?? "",
                                        typeRawValue: record["type"] as? Int ?? 0,
                                        rightAnswer: record["rightAnswer"] ?? "",
