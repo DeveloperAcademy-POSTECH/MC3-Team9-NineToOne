@@ -255,8 +255,11 @@ private extension TodayQuizViewController {
         cell.addSubview(visualEffectView)
         visualEffectView.translatesAutoresizingMaskIntoConstraints = false
         visualEffectView.layer.cornerRadius = TodayQuizLayoutValue.CornerRadius.cell
+        visualEffectView.layer.borderWidth = TodayQuizLayoutValue.Size.cellBorderWidth
+        visualEffectView.layer.borderColor = UIColor.customOrange.cgColor
         visualEffectView.clipsToBounds = true
         visualEffectView.layer.opacity = 0.9
+        
         NSLayoutConstraint.activate([
             visualEffectView.topAnchor.constraint(equalTo: cell.topAnchor),
             visualEffectView.trailingAnchor.constraint(equalTo: cell.trailingAnchor),
