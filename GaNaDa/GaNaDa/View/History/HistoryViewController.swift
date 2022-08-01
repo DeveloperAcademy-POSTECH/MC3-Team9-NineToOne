@@ -58,9 +58,7 @@ extension HistoryViewController: FilteringButtonsDelegate {
                     $0.stateRawValue == type.rawValue
                 })
                 quizsByDate[idx].value = new
-                print("new: ", new)
             }
-            print(quizsByDate)
             DispatchQueue.main.async {
                 self.historyCollectionView.collectionView.reloadData()
             }
@@ -111,7 +109,6 @@ private extension HistoryViewController {
             self.quizs = quizs
             self.rawQuizsByDate = quizs.sliced(by: [.year, .month, .day], for: \.publishedDate).sorted {  $0.key > $1.key }
             self.quizsByDate = self.rawQuizsByDate
-            print(self.quizsByDate)
             DispatchQueue.main.async {
                 self.historyCollectionView.collectionView.reloadData()
             }
@@ -157,7 +154,6 @@ extension HistoryViewController: UICollectionViewDelegate {
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        //        print(self.quizsByDate.count)
         return self.quizsByDate.count
     }
     
@@ -183,7 +179,6 @@ extension HistoryViewController: UICollectionViewDelegate {
 // MARK: - UICollectionViewDataSource
 extension HistoryViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print(quizsByDate[section].value.count)
         return quizsByDate[section].value.count
     }
     
