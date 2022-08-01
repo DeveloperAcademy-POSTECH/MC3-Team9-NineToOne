@@ -157,9 +157,17 @@ private extension HistoryViewController {
 extension HistoryViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        if let quizViewController = storyboard.instantiateViewController(withIdentifier: "QuizView") as? QuizViewController {
-            quizViewController.prepareData(quiz: data.quizsByDate[indexPath.section].value[indexPath.row])
-            navigationController?.pushViewController(quizViewController, animated: true)
+        
+        if data.quizsByDate[indexPath.section].value[indexPath.row].quizState == .unsolved {
+            if let quizViewController = storyboard.instantiateViewController(withIdentifier: "QuizView") as? QuizViewController {
+                quizViewController.prepareData(quiz: data.quizsByDate[indexPath.section].value[indexPath.row])
+                navigationController?.pushViewController(quizViewController, animated: true)
+            }
+        } else {
+            if let quizDetailViewController = storyboard.instantiateViewController(withIdentifier: "QuizDetailView") as? QuizDetailViewController {
+                quizDetailViewController.prepareData(quiz : data.quizsByDate[indexPath.section].value[indexPath.row])
+                navigationController?.pushViewController(quizDetailViewController, animated: true)
+            }
         }
     }
     
@@ -196,8 +204,10 @@ extension HistoryViewController: UICollectionViewDataSource {
         
         //랜스 셀 합치기
         if data.quizsByDate[indexPath.section].value[indexPath.row].stateRawValue == 0, data.quizsByDate[indexPath.section].value[indexPath.row].typeRawValue == 0  {
-            guard let cell = historyCollectionView.collectionView.dequeueReusableCell(withReuseIdentifier: "todayQuizBlankCell", for: indexPath) as? QuizType2CollectionViewCell
+            guard let cell = historyCollectionView.collectionView.dequeueReusableCell(withReuseIdentifier: "todayQuizBlankCell", for: indexPath) as? QuizTypeBlank
             else { return UICollectionViewCell() }
+            cell.data = data.quizsByDate[indexPath.section].value[indexPath.row]
+            
             return cell
         } else if data.quizsByDate[indexPath.section].value[indexPath.row].stateRawValue == 0, data.quizsByDate[indexPath.section].value[indexPath.row].typeRawValue == 1  {
             guard let cell = historyCollectionView.collectionView.dequeueReusableCell(withReuseIdentifier: QuizType2CollectionViewCell.id, for: indexPath) as? QuizType2CollectionViewCell
