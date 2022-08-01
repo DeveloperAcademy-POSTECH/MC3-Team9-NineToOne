@@ -66,7 +66,6 @@ extension HistoryViewController: FilteringButtonsDelegate {
                 self.historyCollectionView.collectionView.reloadData()
             }
         }
-        // TODO: - HISTORY database 만든 이후 구현 필요
     }
     
     private func configureFilteringButtons() {
@@ -114,6 +113,7 @@ private extension HistoryViewController {
                     return !self.isSameDay(date1: $0.key, date2: Date())
                 })
                 DispatchQueue.main.async {
+                    self.data.quizsByDate = self.data.rawQuizsByDateExceptToday
                     self.data.semaphore = false
                     if let idx = self.historyFilteringButtonsView.isButtonPressed.firstIndex(of: true) {
                         self.filteringButtonPressed(type: FilteringButtonType(rawValue: idx) ?? .incomplete, isActive: true)

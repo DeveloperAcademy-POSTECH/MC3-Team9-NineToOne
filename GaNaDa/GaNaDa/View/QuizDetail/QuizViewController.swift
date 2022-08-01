@@ -80,6 +80,9 @@ final class QuizViewController: UIViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         if let quizAnswerViewController = storyboard.instantiateViewController(withIdentifier: "QuizAnswerView") as? QuizAnswerViewController {
             quiz.stateRawValue = (selectedAnswer == quiz.rightAnswer) ? 1 : 2
+            ICloudService.fetchHistoryQuiz(record: quiz.recordName, newState: quiz.stateRawValue) {
+                
+            }
             quizAnswerViewController.prepareData(quiz: quiz)
             navigationController?.pushViewController(quizAnswerViewController, animated: true)
         }
