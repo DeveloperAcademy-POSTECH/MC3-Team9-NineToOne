@@ -7,6 +7,18 @@
 
 import UIKit
 
+extension UIButton {
+    func setBackgroundColor(_ color: UIColor, for state: UIControl.State) {
+        UIGraphicsBeginImageContext(CGSize(width: 1.0, height: 1.0))
+        guard let context = UIGraphicsGetCurrentContext() else { return }
+        context.setFillColor(color.cgColor)
+        context.fill(CGRect(x: 0.0, y: 0.0, width: 1.0, height: 1.0))
+        let backgroundImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        setBackgroundImage(backgroundImage, for: state)
+    }
+}
+
 enum FilteringButtonType: Int {
     case incomplete = 0
     case correct = 1
@@ -21,7 +33,20 @@ class FilteringButtonsView: UIView {
     lazy private var correctFilteringButton = UIButton()
     lazy private var wrongFilteringButton = UIButton()
     lazy private var incompleteFilteringButton = UIButton()
-    lazy private var isButtonPressed: [Bool] = Array.init(repeating: false, count: 3)
+    lazy private var isButtonPressed: [Bool] = Array.init(repeating: false, count: 3) {
+        didSet {
+            correctFilteringButton.layer.backgroundColor = UIColor.customIvory.cgColor
+            wrongFilteringButton.layer.backgroundColor = UIColor.customIvory.cgColor
+            incompleteFilteringButton.layer.backgroundColor = UIColor.customIvory.cgColor
+            if isButtonPressed[1] == true {
+                wrongFilteringButton.layer.backgroundColor = UIColor.customOrange.cgColor
+            } else if isButtonPressed[0] == true {
+                correctFilteringButton.layer.backgroundColor = UIColor.customOrange.cgColor
+            } else if  isButtonPressed[2] == true {
+                incompleteFilteringButton.layer.backgroundColor = UIColor.customOrange.cgColor
+            }
+        }
+    }
     
     weak var delegate: FilteringButtonsDelegate?
     
@@ -81,6 +106,8 @@ private extension FilteringButtonsView {
         ])
         correctFilteringButton.setTitle("정답", for: .normal)
         correctFilteringButton.setTitleColor(.black, for: .normal)
+        correctFilteringButton.layer.cornerRadius = 16
+        correctFilteringButton.layer.backgroundColor = UIColor.customIvory.cgColor
         correctFilteringButton.tag = FilteringButtonType.correct.rawValue
         correctFilteringButton.addTarget(self, action: #selector(buttonsAction), for: .touchUpInside)
     }
@@ -96,6 +123,8 @@ private extension FilteringButtonsView {
         ])
         wrongFilteringButton.setTitle("오답", for: .normal)
         wrongFilteringButton.setTitleColor(.black, for: .normal)
+        wrongFilteringButton.layer.cornerRadius = 16
+        wrongFilteringButton.layer.backgroundColor = UIColor.customIvory.cgColor
         wrongFilteringButton.tag = FilteringButtonType.wrong.rawValue
         wrongFilteringButton.addTarget(self, action: #selector(buttonsAction), for: .touchUpInside)
     }
@@ -111,6 +140,8 @@ private extension FilteringButtonsView {
         ])
         incompleteFilteringButton.setTitle("미완", for: .normal)
         incompleteFilteringButton.setTitleColor(.black, for: .normal)
+        incompleteFilteringButton.layer.cornerRadius = 16
+        incompleteFilteringButton.layer.backgroundColor = UIColor.customIvory.cgColor
         incompleteFilteringButton.tag = FilteringButtonType.incomplete.rawValue
         incompleteFilteringButton.addTarget(self, action: #selector(buttonsAction), for: .touchUpInside)
     }
