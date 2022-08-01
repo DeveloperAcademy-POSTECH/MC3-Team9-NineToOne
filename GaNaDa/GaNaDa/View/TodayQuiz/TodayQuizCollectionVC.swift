@@ -28,7 +28,7 @@ final class TodayQuizViewController: UIViewController {
     var currentHour: Int = 0
     var openTimes = [9, 12, 18]
 
-    var todayQuizs: [Quiz] = []
+    var todayQuizs: [Quiz] = [Quiz.previewBlank,Quiz.previewChoice, Quiz.previewBlank]
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -62,11 +62,13 @@ final class TodayQuizViewController: UIViewController {
         configureProgressBar()
         saveUserData(userName: "박가네감자탕둘째며느리의셋째아들")
         requestUserData()
-        
         let todayQuizBlankCellNib = UINib(nibName: "QuizTypeBlank", bundle: nil)
         
+        let solvedQuizBlankCellNib = UINib(nibName: "SolvedQuizType1CollectionViewCell", bundle: nil)
+        let solvedQuizChoiceCellNib = UINib(nibName: "SolvedQuizType2CollectionViewCell", bundle: nil)
+        todayQuizCollectionView.register(solvedQuizChoiceCellNib.self, forCellWithReuseIdentifier: SolvedQuizType2CollectionViewCell.identifier)
+        todayQuizCollectionView.register(solvedQuizBlankCellNib.self, forCellWithReuseIdentifier: SolvedQuizType1CollectionViewCell.identifier)
         todayQuizCollectionView.register(QuizType2CollectionViewCell.self, forCellWithReuseIdentifier: QuizType2CollectionViewCell.id)
-        
         todayQuizCollectionView.register(todayQuizBlankCellNib, forCellWithReuseIdentifier: "todayQuizBlankCell")
 
         todayQuizCollectionView.dataSource = self
@@ -143,8 +145,8 @@ extension TodayQuizViewController: UICollectionViewDataSource{
         return todayQuizs.count
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if todayQuizs[indexPath.item].quizType == QuizType.blank {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {        
+        if todayQuizs[indexPath.item].quizType == QuizType.blank && todayQuizs[indexPath.item].stateRawValue == 0 {
             let cell = todayQuizCollectionView.dequeueReusableCell(withReuseIdentifier: "todayQuizBlankCell", for: indexPath) as! QuizTypeBlank
             cell.data = self.todayQuizs[indexPath.item]
             cell.quizIndex.text = "문제 \(indexPath.item + 1)"
@@ -162,7 +164,12 @@ extension TodayQuizViewController: UICollectionViewDataSource{
                 cell.layer.applyShadow(color: UIColor.black, alpha: 0.1, x: 0, y: 4, blur: 20, spread: 0)
             }
             return cell
-        } else {
+        } else if todayQuizs[indexPath.item].quizType == QuizType.blank && todayQuizs[indexPath.item].stateRawValue != 0 {
+            guard let cell = todayQuizCollectionView.dequeueReusableCell(withReuseIdentifier: SolvedQuizType1CollectionViewCell.identifier, for: indexPath) as? SolvedQuizType1CollectionViewCell
+            else { return UICollectionViewCell() }
+            cell.setBlankQuiz(indexPath: indexPath, quiz: todayQuizs[indexPath.item])
+            return cell
+        } else if todayQuizs[indexPath.item].quizType == QuizType.choice && todayQuizs[indexPath.item].stateRawValue == 0{
             guard let cell = todayQuizCollectionView.dequeueReusableCell(withReuseIdentifier: QuizType2CollectionViewCell.id, for: indexPath) as? QuizType2CollectionViewCell
             else { return UICollectionViewCell() }
             cell.setQuiz(quizNum: (indexPath.row) + 1, quiz: todayQuizs[indexPath.row])
@@ -172,12 +179,17 @@ extension TodayQuizViewController: UICollectionViewDataSource{
                     visualEffectView.removeFromSuperview()
                 }
             }
-
+            
             if currentHour < openTimes[indexPath.item] {
                 applySecretEffect(cell: cell, hour: openTimes[indexPath.item])
             } else {
                 cell.layer.applyShadow(color: UIColor.black, alpha: 0.1, x: 0, y: 4, blur: 20, spread: 0)
             }
+            return cell
+        } else {
+            guard let cell = todayQuizCollectionView.dequeueReusableCell(withReuseIdentifier: SolvedQuizType2CollectionViewCell.identifier, for: indexPath) as? SolvedQuizType2CollectionViewCell
+            else { return UICollectionViewCell() }
+            cell.setChoiceQuiz(indexPath: indexPath, quiz: todayQuizs[indexPath.item])
             return cell
         }
     }
@@ -219,3 +231,5 @@ private extension TodayQuizViewController {
         ])
     }
 }
+
+
