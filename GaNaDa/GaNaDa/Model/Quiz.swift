@@ -9,6 +9,7 @@ import Foundation
 import GameplayKit
 
 struct Quiz: Codable {
+    var recordName: String = ""
     var quizID: Int = 0
     var question: String
     var typeRawValue: Int = 0

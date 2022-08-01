@@ -59,10 +59,14 @@ final class TodayQuizViewController: UIViewController {
                     DispatchQueue.main.async { [weak self] in
                         switch result {
                         case .success(let todayQuizs):
-                            self?.todayQuizs = todayQuizs
                             for todayQuiz in todayQuizs {
                                 ICloudService.createNewHistoryQUiz(newQuiz: todayQuiz) {
                                     print("new quiz Saved")
+                                    self?.loadHistoryCollectionView {
+                                        for todayFilteredQuiz in todayFiltered {
+                                            self?.todayQuizs = todayFilteredQuiz.value
+                                        }
+                                    }
                                 }
                             }
                         case .failure(let error):
@@ -74,9 +78,6 @@ final class TodayQuizViewController: UIViewController {
                 }
             } else {
                 DispatchQueue.main.async {
-                    self.todayQuizCollectionView.reloadData()
-                    self.stopIndicatingActivity()
-                    
                     for todayFilteredQuiz in todayFiltered {
                         self.todayQuizs = todayFilteredQuiz.value
                     }
