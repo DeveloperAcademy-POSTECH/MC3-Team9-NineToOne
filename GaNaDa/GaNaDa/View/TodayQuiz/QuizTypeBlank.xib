@@ -25,7 +25,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="나는 iOS 개발자가 ____ 싶다." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tMP-fU-g21">
-                        <rect key="frame" x="24" y="59" width="300" height="17.5"/>
+                        <rect key="frame" x="84.5" y="59" width="179.5" height="17.5"/>
                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -34,8 +34,7 @@
                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 <constraints>
                     <constraint firstItem="tMP-fU-g21" firstAttribute="top" secondItem="nMd-tl-K2U" secondAttribute="bottom" constant="23" id="5pW-6P-sBO"/>
-                    <constraint firstAttribute="trailing" secondItem="tMP-fU-g21" secondAttribute="trailing" constant="24" id="91F-6a-afu"/>
-                    <constraint firstItem="tMP-fU-g21" firstAttribute="leading" secondItem="aJc-NF-WYa" secondAttribute="leading" constant="24" id="FyH-nf-zmO"/>
+                    <constraint firstItem="tMP-fU-g21" firstAttribute="centerX" secondItem="aJc-NF-WYa" secondAttribute="centerX" id="FM3-0z-k6T"/>
                     <constraint firstItem="nMd-tl-K2U" firstAttribute="leading" secondItem="aJc-NF-WYa" secondAttribute="leading" constant="24" id="PPF-Qh-AZR"/>
                     <constraint firstItem="nMd-tl-K2U" firstAttribute="top" secondItem="aJc-NF-WYa" secondAttribute="top" constant="22" id="rEJ-Ch-MYN"/>
                 </constraints>
