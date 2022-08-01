@@ -109,12 +109,17 @@ private extension HistoryViewController {
             ICloudService.requestAllHistoryQuizs() { quizs in
                 self.data.quizs = quizs
                 self.data.rawQuizsByDate = quizs.sliced(by: [.year, .month, .day], for: \.publishedDate).sorted {  $0.key > $1.key }
+                
                 self.data.rawQuizsByDateExceptToday = self.data.rawQuizsByDate .filter({
                     return !self.isSameDay(date1: $0.key, date2: Date())
                 })
                 DispatchQueue.main.async {
                     self.data.semaphore = false
-                    self.historyCollectionView.collectionView.reloadData()
+                    if let idx = self.historyFilteringButtonsView.isButtonPressed.firstIndex(of: true) {
+                        self.filteringButtonPressed(type: FilteringButtonType(rawValue: idx) ?? .incomplete, isActive: true)
+                    } else {
+                        self.historyCollectionView.collectionView.reloadData()
+                    }
                 }
             }
         }
