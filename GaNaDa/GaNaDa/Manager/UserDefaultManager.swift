@@ -29,7 +29,7 @@ enum UserDefaultManager: String {
     }
     
     static func initUserInfo() {
-        let userName = "박가네감자탕둘째며느리"
+        let userName = "맞춤법요정" // "박가네감자탕둘째며느리의셋째아들"
         if uds.string(forKey: userNameKey.rawValue) == nil {
             uds.setValue(false, forKey: pushNotificationKey.rawValue)
             uds.setValue(userName, forKey: userNameKey.rawValue)
