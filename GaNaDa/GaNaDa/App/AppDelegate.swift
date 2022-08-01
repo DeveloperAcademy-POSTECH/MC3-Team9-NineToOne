@@ -18,7 +18,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 NotificationManager.registerNotification()
             }
         })
-        
         return true
     }
 

@@ -21,7 +21,7 @@ final class SettingViewController: UIViewController {
         levelLabel.sizeToFit()
         pushNotificationSwitch.isOn = UserDefaultManager.pushNotification
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapSwitch(_:)))
-        pushNotificationSwitch.addGestureRecognizer(tapGestureRecognizer)
+        switchCoverView.addGestureRecognizer(tapGestureRecognizer)
     }
     
     // MARK: - IBOutlets
@@ -30,14 +30,43 @@ final class SettingViewController: UIViewController {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var levelButton: UIButton!
     @IBOutlet weak var pushNotificationSwitch: UISwitch!
+    @IBOutlet weak var switchCoverView: UIView!
     
     // MARK: - IBActions
-    @IBAction func toggleQuizNotification(_ sender: UISwitch) {
+    @IBAction func touchDownQuizNotification(_ sender: UISwitch) {
         NotificationManager.getAuthorizationStatus { status in
             DispatchQueue.main.async { [weak self] in
                 switch status {
                 case .authorized:
-                    UserDefaultManager.setPushNotification(sender.isOn)
+                    break
+                default:
+                    sender.isOn = !sender.isOn
+                    self?.showAlertController(title: "알림 권한 필요", message: "설정페이지에서 알림 설정을 켜주세요.", addCancel: true) {
+                        guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else {
+                            return
+                        }
+                        if UIApplication.shared.canOpenURL(settingsUrl) {
+                            UIApplication.shared.open(settingsUrl)
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    @IBAction func toggleQuizNotification(_ sender: UISwitch) {
+        UserDefaultManager.setPushNotification(sender.isOn)
+    }
+    
+    // MARK: - Objective-C Runtime Method
+    @objc func tapSwitch(_ sender: UITapGestureRecognizer) {
+        NotificationManager.getAuthorizationStatus { status in
+            DispatchQueue.main.async { [weak self] in
+                switch status {
+                case .authorized:
+                    let switchStatus = !(self?.pushNotificationSwitch.isOn ?? false)
+                    self?.pushNotificationSwitch.setOn(switchStatus, animated: true)
+                    UserDefaultManager.setPushNotification(switchStatus)
                 default:
                     self?.showAlertController(title: "알림 권한 필요", message: "설정페이지에서 알림 설정을 켜주세요.", addCancel: true) {
                         guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else {
@@ -52,27 +81,6 @@ final class SettingViewController: UIViewController {
         }
     }
     
-    // MARK: - Objective-C Runtime Method
-    @objc func tapSwitch(_ sender: UITapGestureRecognizer) {
-//        NotificationManager.getAuthorizationStatus { status in
-//            DispatchQueue.main.async { [weak self] in
-//                switch status {
-//                case .authorized:
-//                    UserDefaultManager.setPushNotification(sender.isOn)
-//                default:
-//                    self?.showAlertController(title: "알림 권한 필요", message: "설정페이지에서 알림 설정을 켜주세요.", addCancel: true) {
-//                        guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else {
-//                            return
-//                        }
-//                        if UIApplication.shared.canOpenURL(settingsUrl) {
-//                            UIApplication.shared.open(settingsUrl)
-//                        }
-//                    }
-//                }
-//            }
-//        }
-    }
-    
     // MARK: - Life Cycles
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -81,10 +89,13 @@ final class SettingViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-//        NotificationManager.getAuthorizationStatus { status in
-//            DispatchQueue.main.async { [weak self] in
-//                self?.pushNotificationSwitch.isEnabled = (status == .authorized)
-//            }
-//        }
+        NotificationManager.getAuthorizationStatus { status in
+            if status != .authorized {
+                DispatchQueue.main.async { [weak self] in
+                    self?.pushNotificationSwitch.setOn(false, animated: false)
+                    UserDefaultManager.setPushNotification(false)
+                }
+            }
+        }
     }
 }
