@@ -15,6 +15,18 @@ final class ICloudManager {
         container = CKContainer(identifier: id)
     }
     
+    func fetchRecord(record: String, newState: Int) {
+        let recordID = CKRecord.ID(recordName: record)
+        container.publicCloudDatabase.fetch(withRecordID: recordID) { record, error in
+            if let record = record, error == nil {
+                record.setValue(newState, forKey: "status")
+                self.container.publicCloudDatabase.save(record) { _, error in
+                    print("fetch error")
+                }
+            }
+        }
+    }
+    
     func createCloudData(record: String, postValue: [String: Any], completion: @escaping () -> Void) {
         let record = CKRecord(recordType: record)
         record.setValuesForKeys(postValue)

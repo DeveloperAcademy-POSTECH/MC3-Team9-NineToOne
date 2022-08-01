@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import CloudKit
 
 enum ICloudService {
     static private let manager = ICloudManager(id: "iCloud.GaNaDaCloud")
@@ -15,17 +14,6 @@ enum ICloudService {
 extension ICloudService {
     
     static func fetchHistoryQuiz() {
-        let recordID = CKRecord.ID(recordName: "[record_name_here]")
-        manager.fetch(withRecordID: recordID) { record, error in
-            if let record = record, error == nil {
-
-                //update your record here
-
-                self.database.save(record) { _, error in
-                    completion?(error)
-                }
-            }
-        }
     }
     
     static func createNewHistoryQUiz(newQuiz: Quiz, completion: @escaping () -> Void) {
