@@ -47,7 +47,6 @@ final class HistoryViewController: UIViewController {
 // MARK: - Configure Filtering Buttons
 extension HistoryViewController: FilteringButtonsDelegate {
     func filteringButtonPressed(type: FilteringButtonType, isActive: Bool) {
-        print("??: ", type.rawValue)
         if isActive {
             quizsByDate = rawQuizsByDate.filter({
                 $0.value.filter {
@@ -55,14 +54,12 @@ extension HistoryViewController: FilteringButtonsDelegate {
                 }.count > 0
             })
             for idx in quizsByDate.indices {
-                quizsByDate[idx].value = quizsByDate[idx].value.filter({
+                let new = quizsByDate[idx].value.filter({
                     $0.stateRawValue == type.rawValue
                 })
+                quizsByDate[idx].value = new
+                print("new: ", new)
             }
-            //.filter({
-//                return $0.value.filter {
-//                    return $0.stateRawValue == type.rawValue
-//                }.count > 0
             print(quizsByDate)
             DispatchQueue.main.async {
                 self.historyCollectionView.collectionView.reloadData()
