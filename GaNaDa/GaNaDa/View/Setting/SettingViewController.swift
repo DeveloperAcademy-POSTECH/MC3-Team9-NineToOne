@@ -13,10 +13,10 @@ final class SettingViewController: UIViewController {
     
     // MARK: - Methods
     private func loadData() {
-        let userExp = UserDefaults.standard.integer(forKey: "userExp")
+        let userExp = UserDefaultManager.userExp
         levelImageView.image = LevelCase.level(exp: userExp).levelImage
         levelLabel.text = LevelCase.level(exp: userExp).rawValue
-        nameLabel.text = UserDefaults.standard.string(forKey: "userName")
+        nameLabel.text = UserDefaultManager.userName
         nameLabel.sizeToFit()
         levelLabel.sizeToFit()
         

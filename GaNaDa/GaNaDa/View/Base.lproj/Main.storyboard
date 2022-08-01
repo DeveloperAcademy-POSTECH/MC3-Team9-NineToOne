@@ -150,10 +150,10 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="todayQuizCollectionView" destination="4mY-0s-P4z" id="bKy-hQ-2F6"/>
-                        <outlet property="userExp" destination="Ota-2I-TMg" id="iyS-Yy-3gd"/>
-                        <outlet property="userImage" destination="dss-8y-X23" id="gfv-Mq-xzj"/>
-                        <outlet property="userLevel" destination="Zbc-VP-OdD" id="Fur-KU-v2J"/>
-                        <outlet property="userName" destination="PSx-iV-Wal" id="cau-Sm-hkX"/>
+                        <outlet property="userExpLabel" destination="Ota-2I-TMg" id="iyS-Yy-3gd"/>
+                        <outlet property="userImageView" destination="dss-8y-X23" id="gfv-Mq-xzj"/>
+                        <outlet property="userLevelLabel" destination="Zbc-VP-OdD" id="Fur-KU-v2J"/>
+                        <outlet property="userNameLabel" destination="PSx-iV-Wal" id="cau-Sm-hkX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bLh-Mq-iJa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

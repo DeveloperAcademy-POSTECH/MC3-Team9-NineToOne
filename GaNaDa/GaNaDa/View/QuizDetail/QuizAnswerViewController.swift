@@ -24,12 +24,12 @@ final class QuizAnswerViewController: UIViewController {
         
         quiz.quizType == .blank ? setForBlankType() : setForChoiceType()
         
-        var userExp = UserDefaults.standard.integer(forKey: "userExp")
+        var userExp = UserDefaultManager.userExp
     
         resultGuideLabel.text = (quiz.quizState == .right) ? "정답이에요.\n경험치 + 20" : "오답이에요.\n해설을 확인해보시겠어요?"
         
         userExp += (quiz.quizState == .right ? 20 : 10)
-        UserDefaults.standard.setValue(userExp, forKey: "userExp")
+        UserDefaultManager.setUserExp(exp: userExp)
         resultImageView.image = LevelCase.level(exp: userExp).levelImage
     }
     

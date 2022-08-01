@@ -20,10 +20,10 @@ struct TodayQuizLayoutValue {
 final class TodayQuizViewController: UIViewController {
 
     @IBOutlet weak var todayQuizCollectionView: UICollectionView!
-    @IBOutlet weak var userImage: UIImageView!
-    @IBOutlet weak var userLevel: UILabel!
-    @IBOutlet weak var userName: UILabel!
-    @IBOutlet weak var userExp: UIProgressView!
+    @IBOutlet weak var userImageView: UIImageView!
+    @IBOutlet weak var userLevelLabel: UILabel!
+    @IBOutlet weak var userNameLabel: UILabel!
+    @IBOutlet weak var userExpLabel: UIProgressView!
         
     var currentHour: Int = 0
     var openTimes = [9, 12, 18]
@@ -60,7 +60,7 @@ final class TodayQuizViewController: UIViewController {
             }
         }
         configureProgressBar()
-        saveUserData(userName: "박가네감자탕둘째며느리")
+        UserDefaultManager.initUserInfo()
         requestUserData()
         
         let todayQuizBlankCellNib = UINib(nibName: "QuizTypeBlank", bundle: nil)
@@ -75,25 +75,20 @@ final class TodayQuizViewController: UIViewController {
         todayQuizCollectionView.collectionViewLayout = creatCompositionalLayout()
     }
     
-    func saveUserData(userName: String) {
-        if UserDefaults.standard.object(forKey: "userName") == nil {
-            UserDefaults.standard.setValue(userName, forKey: "userName")
-            UserDefaults.standard.setValue(220, forKey: "userExp")
-        }
-    }
-    
     func requestUserData() {
-        userImage.image = LevelCase.level(exp: UserDefaults.standard.integer(forKey: "userExp")).levelImage
-        userLevel.text = LevelCase.level(exp: UserDefaults.standard.integer(forKey: "userExp")).rawValue
-        userName.text = UserDefaults.standard.string(forKey: "userName")
-        userExp.progress = Float(UserDefaults.standard.integer(forKey: "userExp") % 100) / 100.0
+        let userExp = UserDefaultManager.userExp
+        let userName = UserDefaultManager.userName
+        userImageView.image = LevelCase.level(exp: userExp).levelImage
+        userLevelLabel.text = LevelCase.level(exp: userExp).rawValue
+        userNameLabel.text = userName
+        userExpLabel.progress = Float(userExp % 100) / 100.0
     }
     
     func configureProgressBar() {
-        userExp.layer.sublayers![1].cornerRadius = 6
-        userExp.subviews[1].clipsToBounds = true
-        userExp.progressTintColor = .point
-        userExp.trackTintColor = .customIvory
+        userExpLabel.layer.sublayers![1].cornerRadius = 6
+        userExpLabel.subviews[1].clipsToBounds = true
+        userExpLabel.progressTintColor = .point
+        userExpLabel.trackTintColor = .customIvory
     }
 }
 
