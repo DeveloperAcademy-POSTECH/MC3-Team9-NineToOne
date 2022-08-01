@@ -687,12 +687,13 @@
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nun-YH-v9L">
                                         <rect key="frame" x="321" y="0.0" width="51" height="31"/>
                                         <color key="onTintColor" name="customOrange"/>
-                                        <connections>
-                                            <action selector="toggleQuizNotification:" destination="zgm-ad-i2m" eventType="valueChanged" id="vgo-BD-I0c"/>
-                                        </connections>
                                     </switch>
                                 </subviews>
                             </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7FL-J0-vVo">
+                                <rect key="frame" x="343" y="276.5" width="49" height="31"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Re2-ip-1oA"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -702,10 +703,14 @@
                             <constraint firstItem="CBI-9w-OQx" firstAttribute="leading" secondItem="Re2-ip-1oA" secondAttribute="leading" id="Equ-xX-d1g"/>
                             <constraint firstItem="W7x-wL-7hJ" firstAttribute="trailing" secondItem="Re2-ip-1oA" secondAttribute="trailing" constant="-16" id="K6l-RS-tQe"/>
                             <constraint firstItem="CBI-9w-OQx" firstAttribute="top" secondItem="Re2-ip-1oA" secondAttribute="top" constant="10" id="N10-JT-tkF"/>
+                            <constraint firstItem="7FL-J0-vVo" firstAttribute="width" secondItem="Nun-YH-v9L" secondAttribute="width" id="Qt5-ir-qjx"/>
                             <constraint firstItem="yTm-gv-eGP" firstAttribute="top" secondItem="8bV-vL-LxE" secondAttribute="bottom" constant="22" id="Ryb-U9-lk3"/>
+                            <constraint firstItem="7FL-J0-vVo" firstAttribute="height" secondItem="Nun-YH-v9L" secondAttribute="height" id="WQK-nj-Edn"/>
+                            <constraint firstItem="7FL-J0-vVo" firstAttribute="centerY" secondItem="Nun-YH-v9L" secondAttribute="centerY" id="WQy-WS-Vzs"/>
                             <constraint firstItem="mrK-aL-JUH" firstAttribute="top" secondItem="yTm-gv-eGP" secondAttribute="bottom" constant="22" id="XS3-iK-4hS"/>
                             <constraint firstItem="8bV-vL-LxE" firstAttribute="width" secondItem="Re2-ip-1oA" secondAttribute="width" id="Z2V-1f-BcL"/>
                             <constraint firstItem="eU7-Xd-CRw" firstAttribute="width" secondItem="Re2-ip-1oA" secondAttribute="width" multiplier="0.25" id="a92-pi-Hdq"/>
+                            <constraint firstItem="7FL-J0-vVo" firstAttribute="centerX" secondItem="Nun-YH-v9L" secondAttribute="centerX" id="fom-3N-1K2"/>
                             <constraint firstItem="W7x-wL-7hJ" firstAttribute="centerY" secondItem="CBI-9w-OQx" secondAttribute="centerY" id="j6Y-VS-fpw"/>
                             <constraint firstItem="8bV-vL-LxE" firstAttribute="centerX" secondItem="Re2-ip-1oA" secondAttribute="centerX" id="p0f-DY-rW2"/>
                             <constraint firstItem="W7x-wL-7hJ" firstAttribute="leading" secondItem="CBI-9w-OQx" secondAttribute="trailing" id="rTS-x5-6dZ"/>
@@ -723,6 +728,7 @@
                         <outlet property="levelLabel" destination="w9z-1w-hZo" id="wqx-KR-CIT"/>
                         <outlet property="nameLabel" destination="VzG-d4-P2Y" id="mfB-I9-RJw"/>
                         <outlet property="pushNotificationSwitch" destination="Nun-YH-v9L" id="Xzo-BN-oiB"/>
+                        <outlet property="switchCoverView" destination="7FL-J0-vVo" id="u0e-oV-NCt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uh6-KX-fT4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

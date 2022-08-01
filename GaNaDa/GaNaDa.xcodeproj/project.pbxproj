@@ -72,6 +72,7 @@
 		C70BCA4928878A4900569961 /* GaNaDaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70BCA4828878A4900569961 /* GaNaDaUITestsLaunchTests.swift */; };
 		C70BCA612887975400569961 /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C70BCA602887975400569961 /* Color.xcassets */; };
 		C70DD510289768B3002BB7E0 /* UserDefaultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70DD50F289768B3002BB7E0 /* UserDefaultManager.swift */; };
+		C70DD51228977192002BB7E0 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70DD51128977192002BB7E0 /* NotificationManager.swift */; };
 		C7171E9F2891739D00EFFD5A /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = C7171E9E2891739D00EFFD5A /* Lottie */; };
 		C7171EA12891859200EFFD5A /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7171EA02891859200EFFD5A /* UIViewController+Extension.swift */; };
 		C72D7A8F2893704400781633 /* lf20_ths0ezn3.json in Resources */ = {isa = PBXBuildFile; fileRef = C72D7A8D2893704400781633 /* lf20_ths0ezn3.json */; };
@@ -164,6 +165,7 @@
 		C70BCA4828878A4900569961 /* GaNaDaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaNaDaUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		C70BCA602887975400569961 /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
 		C70DD50F289768B3002BB7E0 /* UserDefaultManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultManager.swift; sourceTree = "<group>"; };
+		C70DD51128977192002BB7E0 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		C7171EA02891859200EFFD5A /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		C72D7A8D2893704400781633 /* lf20_ths0ezn3.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = lf20_ths0ezn3.json; sourceTree = "<group>"; };
 		C72D7A8E2893704400781633 /* lf30_editor_xeckchmn.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = lf30_editor_xeckchmn.json; sourceTree = "<group>"; };
@@ -418,6 +420,7 @@
 			isa = PBXGroup;
 			children = (
 				C70DD50F289768B3002BB7E0 /* UserDefaultManager.swift */,
+				C70DD51128977192002BB7E0 /* NotificationManager.swift */,
 				C7DED592288E7C3D004A2322 /* NetworkService.swift */,
 				C7DED594288E7CA8004A2322 /* NetworkManager.swift */,
 				ABB6E4CC2894FA580064C8C5 /* ICloudService.swift */,
@@ -649,6 +652,7 @@
 				ABB6E4CD2894FA580064C8C5 /* ICloudService.swift in Sources */,
 				C7DED59B288E8C0A004A2322 /* SubmitAnswerDTO.swift in Sources */,
 				AB03631A28970EA7002CCD14 /* SectionHeader.swift in Sources */,
+				C70DD51228977192002BB7E0 /* NotificationManager.swift in Sources */,
 				AB03631C28976765002CCD14 /* HistoryData.swift in Sources */,
 				AB86238A2891640200F71283 /* SolvedQuizType2CollectionViewCell.swift in Sources */,
 				C7DAC56F289384D0000F4D04 /* UserLevel.swift in Sources */,
