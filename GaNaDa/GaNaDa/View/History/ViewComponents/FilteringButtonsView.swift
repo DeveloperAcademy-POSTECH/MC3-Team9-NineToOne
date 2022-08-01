@@ -33,16 +33,16 @@ class FilteringButtonsView: UIView {
     lazy private var correctFilteringButton = UIButton()
     lazy private var wrongFilteringButton = UIButton()
     lazy private var incompleteFilteringButton = UIButton()
-    lazy private var isButtonPressed: [Bool] = Array.init(repeating: false, count: 3) {
+    var isButtonPressed: [Bool] = Array.init(repeating: false, count: 3) {
         didSet {
             correctFilteringButton.layer.backgroundColor = UIColor.customIvory.cgColor
             wrongFilteringButton.layer.backgroundColor = UIColor.customIvory.cgColor
             incompleteFilteringButton.layer.backgroundColor = UIColor.customIvory.cgColor
-            if isButtonPressed[1] == true {
+            if isButtonPressed[2] == true {
                 wrongFilteringButton.layer.backgroundColor = UIColor.customOrange.cgColor
-            } else if isButtonPressed[0] == true {
+            } else if isButtonPressed[1] == true {
                 correctFilteringButton.layer.backgroundColor = UIColor.customOrange.cgColor
-            } else if  isButtonPressed[2] == true {
+            } else if  isButtonPressed[0] == true {
                 incompleteFilteringButton.layer.backgroundColor = UIColor.customOrange.cgColor
             }
         }
@@ -63,25 +63,25 @@ class FilteringButtonsView: UIView {
         if let delegate = delegate {
             switch sender.tag {
             case FilteringButtonType.correct.rawValue:
-                isButtonPressed[0].toggle()
-                isButtonPressed[1] = false
-                isButtonPressed[2] = false
-                delegate.filteringButtonPressed(type: .correct, isActive: isButtonPressed[0])
-            case FilteringButtonType.wrong.rawValue:
                 isButtonPressed[1].toggle()
                 isButtonPressed[0] = false
                 isButtonPressed[2] = false
-                delegate.filteringButtonPressed(type: .wrong, isActive: isButtonPressed[1])
-            case FilteringButtonType.incomplete.rawValue:
+                delegate.filteringButtonPressed(type: .correct, isActive: isButtonPressed[1])
+            case FilteringButtonType.wrong.rawValue:
                 isButtonPressed[2].toggle()
                 isButtonPressed[0] = false
                 isButtonPressed[1] = false
-                delegate.filteringButtonPressed(type: .incomplete, isActive: isButtonPressed[2])
-            default:
+                delegate.filteringButtonPressed(type: .wrong, isActive: isButtonPressed[2])
+            case FilteringButtonType.incomplete.rawValue:
                 isButtonPressed[0].toggle()
                 isButtonPressed[1] = false
                 isButtonPressed[2] = false
-                delegate.filteringButtonPressed(type: .correct, isActive: isButtonPressed[0])
+                delegate.filteringButtonPressed(type: .incomplete, isActive: isButtonPressed[0])
+            default:
+                isButtonPressed[1].toggle()
+                isButtonPressed[0] = false
+                isButtonPressed[2] = false
+                delegate.filteringButtonPressed(type: .correct, isActive: isButtonPressed[1])
             }
         }
     }
