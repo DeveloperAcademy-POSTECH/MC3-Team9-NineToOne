@@ -22,6 +22,8 @@ final class HistoryViewController: UIViewController {
     private lazy var historyFilteringButtonsView = FilteringButtonsView()
     private lazy var historyCollectionView = HistoryCollectionView()
     private var quizs: [Quiz] = []
+    private var rawQuizsByDate: [Dictionary<Date, [Quiz]>.Element] = []
+    private var quizsByDate: [Dictionary<Date, [Quiz]>.Element] = []
     
     override func loadView() {
         super.loadView()
@@ -44,8 +46,33 @@ final class HistoryViewController: UIViewController {
 
 // MARK: - Configure Filtering Buttons
 extension HistoryViewController: FilteringButtonsDelegate {
-    func filteringButtonPressed(type: FilteringButtonType) {
-        print(type)
+    func filteringButtonPressed(type: FilteringButtonType, isActive: Bool) {
+        print("??: ", type.rawValue)
+        if isActive {
+            quizsByDate = rawQuizsByDate.filter({
+                $0.value.filter {
+                    $0.stateRawValue == type.rawValue
+                }.count > 0
+            })
+            for idx in quizsByDate.indices {
+                quizsByDate[idx].value = quizsByDate[idx].value.filter({
+                    $0.stateRawValue == type.rawValue
+                })
+            }
+            //.filter({
+//                return $0.value.filter {
+//                    return $0.stateRawValue == type.rawValue
+//                }.count > 0
+            print(quizsByDate)
+            DispatchQueue.main.async {
+                self.historyCollectionView.collectionView.reloadData()
+            }
+        } else {
+            quizsByDate = rawQuizsByDate
+            DispatchQueue.main.async {
+                self.historyCollectionView.collectionView.reloadData()
+            }
+        }
         // TODO: - HISTORY database 만든 이후 구현 필요
     }
     
@@ -57,7 +84,7 @@ extension HistoryViewController: FilteringButtonsDelegate {
         self.view.addSubview(historyFilteringButtonsView)
         historyFilteringButtonsView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            historyFilteringButtonsView.topAnchor.constraint(equalTo: view.topAnchor, constant: HistoryLayoutValue.Padding.collectionViewFromTop / 2),
+            historyFilteringButtonsView.topAnchor.constraint(equalTo: view.topAnchor, constant: HistoryLayoutValue.Padding.collectionViewFromTop * 0.7),
             historyFilteringButtonsView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             historyFilteringButtonsView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             historyFilteringButtonsView.heightAnchor.constraint(equalToConstant: HistoryLayoutValue.Size.filteringButtonsHeight)
@@ -79,15 +106,33 @@ private extension HistoryViewController {
         historyCollectionView.collectionView.register(QuizType2CollectionViewCell.self, forCellWithReuseIdentifier: QuizType2CollectionViewCell.id)
         historyCollectionView.collectionView.register(solvedQuizBlankCellNib.self, forCellWithReuseIdentifier: SolvedQuizType1CollectionViewCell.identifier)
         historyCollectionView.collectionView.register(solvedQuizChoiceCellNib.self, forCellWithReuseIdentifier: SolvedQuizType2CollectionViewCell.identifier)
+        historyCollectionView.collectionView.register(SectionHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "header")
     }
     
     func loadHistoryCollectionView() {
         ICloudService.requestAllHistoryQuizs() { quizs in
             self.quizs = quizs
+            self.rawQuizsByDate = quizs.sliced(by: [.year, .month, .day], for: \.publishedDate).sorted {  $0.key > $1.key }
+            self.quizsByDate = self.rawQuizsByDate
+            print(self.quizsByDate)
             DispatchQueue.main.async {
                 self.historyCollectionView.collectionView.reloadData()
             }
         }
+    }
+}
+
+extension Array {
+    func sliced(by dateComponents: Set<Calendar.Component>, for key: KeyPath<Element, Date?>) -> [Date: [Element]] {
+        let initial: [Date: [Element]] = [:]
+        let groupedByDateComponents = reduce(into: initial) { acc, cur in
+            let components = Calendar.current.dateComponents(dateComponents, from: cur[keyPath: key] ?? Date())
+            let date = Calendar.current.date(from: components)!
+            let existing = acc[date] ?? []
+            acc[date] = existing + [cur]
+        }
+        
+        return groupedByDateComponents
     }
 }
 
@@ -113,37 +158,61 @@ extension HistoryViewController: UICollectionViewDelegate {
             navigationController?.pushViewController(quizViewController, animated: true)
         }
     }
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        //        print(self.quizsByDate.count)
+        return self.quizsByDate.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        let format = DateFormatter()
+        format.dateFormat = "yyyy년 MM월 dd일"
+        if kind == UICollectionView.elementKindSectionHeader {
+            let sectionHeader = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "header", for: indexPath) as! SectionHeader
+            sectionHeader.label.text = format.string(from: quizsByDate[indexPath.section].key)
+            sectionHeader.label.textColor = .customColor(.customGray)
+            sectionHeader.label.font = .customFont(.content)
+            return sectionHeader
+        } else {
+            return UICollectionReusableView()
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        return CGSize(width: collectionView.frame.width, height: 40)
+    }
 }
 
 // MARK: - UICollectionViewDataSource
 extension HistoryViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return quizs.count
+        print(quizsByDate[section].value.count)
+        return quizsByDate[section].value.count
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         //랜스 셀 합치기
-        if quizs[indexPath.row].stateRawValue == 0, quizs[indexPath.row].typeRawValue == 0  {
+        if quizsByDate[indexPath.section].value[indexPath.row].stateRawValue == 0, quizsByDate[indexPath.section].value[indexPath.row].typeRawValue == 0  {
             guard let cell = historyCollectionView.collectionView.dequeueReusableCell(withReuseIdentifier: "todayQuizBlankCell", for: indexPath) as? QuizType2CollectionViewCell
             else { return UICollectionViewCell() }
             return cell
-        } else if quizs[indexPath.row].stateRawValue == 0, quizs[indexPath.row].typeRawValue == 1  {
+        } else if quizsByDate[indexPath.section].value[indexPath.row].stateRawValue == 0, quizsByDate[indexPath.section].value[indexPath.row].typeRawValue == 1  {
             guard let cell = historyCollectionView.collectionView.dequeueReusableCell(withReuseIdentifier: QuizType2CollectionViewCell.id, for: indexPath) as? QuizType2CollectionViewCell
             else { return UICollectionViewCell() }
-            cell.setQuiz(quizNum: (indexPath.row) + 1, quiz: quizs[indexPath.row])
+            cell.setQuiz(quizNum: (indexPath.row) + 1, quiz: quizsByDate[indexPath.section].value[indexPath.row])
             return cell
-
-        } else if quizs[indexPath.row].typeRawValue == 0  {
+            
+        } else if quizsByDate[indexPath.section].value[indexPath.row].typeRawValue == 0  {
             guard let cell = historyCollectionView.collectionView.dequeueReusableCell(withReuseIdentifier: SolvedQuizType1CollectionViewCell.identifier, for: indexPath) as? SolvedQuizType1CollectionViewCell
             else { return UICollectionViewCell() }
-            cell.setBlankQuiz(indexPath: indexPath, quiz: quizs[indexPath.row])
+            cell.setBlankQuiz(indexPath: indexPath, quiz: quizsByDate[indexPath.section].value[indexPath.row])
             return cell
-
+            
         } else {
             guard let cell = historyCollectionView.collectionView.dequeueReusableCell(withReuseIdentifier: SolvedQuizType2CollectionViewCell.identifier, for: indexPath) as? SolvedQuizType2CollectionViewCell
             else { return UICollectionViewCell() }
-            cell.setChoiceQuiz(indexPath: indexPath, quiz: quizs[indexPath.row])
+            cell.setChoiceQuiz(indexPath: indexPath, quiz: quizsByDate[indexPath.section].value[indexPath.row])
             return cell
         }
     }

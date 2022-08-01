@@ -11,6 +11,10 @@ struct TodayQuizLayoutValue {
     enum CornerRadius {
         static let cell = 16.0
     }
+    
+    enum Size {
+        static let cellBorderWidth = 1.0
+    }
 }
 
 final class TodayQuizViewController: UIViewController {
@@ -154,13 +158,14 @@ extension TodayQuizViewController: UICollectionViewDataSource{
             
             if currentHour < openTimes[indexPath.item] {
                 applySecretEffect(cell: cell, hour: openTimes[indexPath.item])
+            } else {
+                cell.layer.applyShadow(color: UIColor.black, alpha: 0.1, x: 0, y: 4, blur: 20, spread: 0)
             }
             return cell
         } else {
             guard let cell = todayQuizCollectionView.dequeueReusableCell(withReuseIdentifier: QuizType2CollectionViewCell.id, for: indexPath) as? QuizType2CollectionViewCell
             else { return UICollectionViewCell() }
-//            cell.setQuiz(quizNum: (indexPath.row) + 1, quiz: todayQuizs[indexPath.row])
-           
+            cell.setQuiz(quizNum: (indexPath.row) + 1, quiz: todayQuizs[indexPath.row])
             if let openTimeLabel = cell.subviews.last as? UILabel {
                 openTimeLabel.removeFromSuperview()
                 if let visualEffectView = cell.subviews.last as? UIVisualEffectView {
@@ -170,6 +175,8 @@ extension TodayQuizViewController: UICollectionViewDataSource{
 
             if currentHour < openTimes[indexPath.item] {
                 applySecretEffect(cell: cell, hour: openTimes[indexPath.item])
+            } else {
+                cell.layer.applyShadow(color: UIColor.black, alpha: 0.1, x: 0, y: 4, blur: 20, spread: 0)
             }
             return cell
         }

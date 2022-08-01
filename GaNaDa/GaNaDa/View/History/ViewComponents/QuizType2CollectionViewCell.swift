@@ -12,6 +12,7 @@ struct QuizType2LayoutValue {
         static let cellHoriz: CGFloat = 18.0
         static let textTop: CGFloat = 22.0
         static let textLeft: CGFloat = 24.0
+        static let labelTop: CGFloat = 59
         static let rightFromContentNumber: CGFloat = 12.0
         static let topFromContentText: CGFloat = 30.0
         static let buttonHoriz: CGFloat = 14.0
@@ -55,26 +56,22 @@ final class QuizType2CollectionViewCell: UICollectionViewCell {
         configureContentView()
         configureContentNumberLabel()
         configureContentLabel()
-        configurecontentAnswerAButton()
-        configurecontentAnswerBButton()
     }
     
     //MARK: quiz: HistoryQuiz -> Quiz로 수정해야함
     func setQuiz(quizNum: Int, quiz: Quiz) {
         contentNumberLabel.text = "문제 \(quizNum)"
-        quizContentLabel.text = quiz.question
-        contentAnswerAButton.setTitle(quiz.rightAnswer, for: .normal)
-        contentAnswerBButton.setTitle(quiz.wrongAnswer, for: .normal)
-        //TODO: - if 문제가 아직 열리지 않았으면!!
-//        if quizNum % 4 == 0 { configureBlurView(flag: true) } else { configureBlurView(flag: false) }
+        quizContentLabel.text = quiz.isLeftAnswer ? "\(quiz.rightAnswer) vs \(quiz.wrongAnswer)" : "\(quiz.wrongAnswer) vs \(quiz.rightAnswer)"
     }
 }
 
 // MARK: - Cell autolayout
 private extension QuizType2CollectionViewCell {
     func configureContentView() {
-        self.backgroundColor = .customColor(.customLightgray)
+//        self.backgroundColor = .customColor(.customLightgray)
         self.layer.cornerRadius = QuizType2LayoutValue.CornerRadius.cell
+        self.layer.borderWidth = TodayQuizLayoutValue.Size.cellBorderWidth
+        self.layer.borderColor = UIColor.customOrange.cgColor
         NSLayoutConstraint.activate([
             self.contentView.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width - QuizType2LayoutValue.Padding.cellHoriz * 2),
             self.contentView.topAnchor.constraint(equalTo: self.topAnchor),
@@ -88,8 +85,8 @@ private extension QuizType2CollectionViewCell {
         self.contentView.addSubview(contentNumberLabel)
         contentNumberLabel.translatesAutoresizingMaskIntoConstraints = false
         contentNumberLabel.text = "문제 N"
-        contentNumberLabel.font = UIFont.customFont(.content)
-        contentNumberLabel.textColor = UIColor.customColor(.customGray)
+        contentNumberLabel.font = .customFont(.subContent)
+        contentNumberLabel.textColor = .customColor(.customGray)
         contentNumberLabel.textAlignment = .left
         contentNumberLabel.sizeToFit()
         NSLayoutConstraint.activate([
@@ -103,63 +100,12 @@ private extension QuizType2CollectionViewCell {
         self.contentView.addSubview(quizContentLabel)
         quizContentLabel.translatesAutoresizingMaskIntoConstraints = false
         quizContentLabel.text = "다음 중 맞는 것을 고르세요"
-        quizContentLabel.font = UIFont.customFont(.content)
-        quizContentLabel.textColor = UIColor.customColor(.customGray)
+        quizContentLabel.font = .customFont(.content)
         quizContentLabel.textAlignment = .left
         quizContentLabel.sizeToFit()
         NSLayoutConstraint.activate([
-            quizContentLabel.heightAnchor.constraint(equalToConstant: 20),
-            quizContentLabel.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: QuizType2LayoutValue.Padding.textTop),
-            quizContentLabel.leadingAnchor.constraint(equalTo: self.contentNumberLabel.trailingAnchor, constant: QuizType2LayoutValue.Padding.rightFromContentNumber)
+            quizContentLabel.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: QuizType2LayoutValue.Padding.labelTop),
+            quizContentLabel.centerXAnchor.constraint(equalTo: self.contentView.centerXAnchor)
         ])
-    }
-    
-    func configurecontentAnswerAButton() {
-        self.contentView.addSubview(contentAnswerAButton)
-        contentAnswerAButton.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            contentAnswerAButton.topAnchor.constraint(equalTo: self.contentNumberLabel.bottomAnchor, constant: QuizType2LayoutValue.Padding.topFromContentText),
-            contentAnswerAButton.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: QuizType2LayoutValue.Padding.buttonHoriz),
-            contentAnswerAButton.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -1 * QuizType2LayoutValue.Padding.buttonHoriz),
-            contentAnswerAButton.heightAnchor.constraint(equalToConstant: QuizType2LayoutValue.Size.Height.answerButton)
-        ])
-        contentAnswerAButton.backgroundColor = .customColor(.subBrand)
-        contentAnswerAButton.layer.cornerRadius = QuizType2LayoutValue.CornerRadius.answerButton
-        contentAnswerAButton.titleLabel?.font = .customFont(.subContent)
-        contentAnswerAButton.setTitleColor(.white, for: .normal)
-    }
-    
-    func configurecontentAnswerBButton() {
-        self.contentView.addSubview(contentAnswerBButton)
-        contentAnswerBButton.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            contentAnswerBButton.topAnchor.constraint(equalTo: self.contentAnswerAButton.bottomAnchor, constant: QuizType2LayoutValue.Padding.betweenButton),
-            contentAnswerBButton.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: QuizType2LayoutValue.Padding.buttonHoriz),
-            contentAnswerBButton.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -1 * QuizType2LayoutValue.Padding.buttonHoriz),
-            contentAnswerBButton.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor, constant: -1 * QuizType2LayoutValue.Padding.buttonFromBottom),
-            contentAnswerBButton.heightAnchor.constraint(equalToConstant: QuizType2LayoutValue.Size.Height.answerButton)
-        ])
-        contentAnswerBButton.backgroundColor = .customColor(.subBrand)
-        contentAnswerBButton.layer.cornerRadius = QuizType2LayoutValue.CornerRadius.answerButton
-        contentAnswerBButton.titleLabel?.font = .customFont(.subContent)
-        contentAnswerBButton.setTitleColor(.white, for: .normal)
-    }
-    
-    func configureBlurView(flag: Bool) {
-        if flag {
-            self.addSubview(visualEffectView)
-            visualEffectView.translatesAutoresizingMaskIntoConstraints = false
-            visualEffectView.layer.cornerRadius = QuizType2LayoutValue.CornerRadius.cell
-            visualEffectView.clipsToBounds = true
-            visualEffectView.layer.opacity = 0.9
-            NSLayoutConstraint.activate([
-                visualEffectView.topAnchor.constraint(equalTo: self.topAnchor),
-                visualEffectView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-                visualEffectView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-                visualEffectView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
-            ])
-        } else {
-            visualEffectView.removeFromSuperview()
-        }
     }
 }
