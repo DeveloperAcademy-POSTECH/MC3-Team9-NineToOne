@@ -39,17 +39,6 @@ final class TodayQuizViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        loadHistoryCollectionView() {
-            DispatchQueue.main.async {
-                self.todayQuizCollectionView.reloadData()
-            }
-        }
-        requestUserData()
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        startIndicatingActivity()
         loadHistoryCollectionView {
             let todayFiltered = self.data.rawQuizsByDate.filter {
                 return self.isSameDay(date1: $0.key, date2: Date())
@@ -86,6 +75,11 @@ final class TodayQuizViewController: UIViewController {
                 }
             }
         }
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        startIndicatingActivity()
         configureProgressBar()
         UserDefaultManager.initUserInfo()
         requestUserData()

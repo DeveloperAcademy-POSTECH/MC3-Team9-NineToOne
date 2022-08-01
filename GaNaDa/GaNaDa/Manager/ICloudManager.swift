@@ -21,7 +21,9 @@ final class ICloudManager {
             if let record = record, error == nil {
                 record.setValue(newState, forKey: "status")
                 self.container.publicCloudDatabase.save(record) { _, error in
-                    print("fetch error")
+                    if error != nil {
+                        print("fetch error")
+                    }
                 }
             }
         }

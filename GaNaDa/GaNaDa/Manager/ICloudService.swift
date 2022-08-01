@@ -13,7 +13,10 @@ enum ICloudService {
 
 extension ICloudService {
     
-    static func fetchHistoryQuiz() {
+    static func fetchHistoryQuiz(record: String, newState: Int, completion: @escaping () -> Void) {
+        manager.fetchRecordState(record: record, newState: newState) {
+            completion()
+        }
     }
     
     static func createNewHistoryQUiz(newQuiz: Quiz, completion: @escaping () -> Void) {
