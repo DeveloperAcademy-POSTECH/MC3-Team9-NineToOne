@@ -29,14 +29,16 @@ final class ICloudManager {
         }
     }
     
-    func createCloudData(record: String, postValue: [String: Any], completion: @escaping () -> Void) {
+    func createCloudData(record: String, postValue: [String: Any], completion: @escaping (CKRecord) -> Void) {
         let record = CKRecord(recordType: record)
         record.setValuesForKeys(postValue)
         container.publicCloudDatabase.save(record) { record, error in
             if let error = error {
                 print(error)
             } else {
-                completion()
+                if let record = record {
+                    completion(record)
+                }
             }
         }
     }
