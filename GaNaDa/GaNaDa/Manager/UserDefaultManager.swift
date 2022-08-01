@@ -33,7 +33,7 @@ enum UserDefaultManager: String {
         if uds.string(forKey: userNameKey.rawValue) == nil {
             uds.setValue(false, forKey: pushNotificationKey.rawValue)
             uds.setValue(userName, forKey: userNameKey.rawValue)
-            uds.setValue(220, forKey: userExpKey.rawValue)
+            uds.setValue(0, forKey: userExpKey.rawValue)
         }
     }
     
