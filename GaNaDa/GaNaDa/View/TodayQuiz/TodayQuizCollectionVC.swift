@@ -179,9 +179,16 @@ extension TodayQuizViewController: UICollectionViewDelegate {
             showAlertController(title: "미공개 문제", message: "\(openHour)에 공개됩니다.")
         } else {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            if let quizViewController = storyboard.instantiateViewController(withIdentifier: "QuizView") as? QuizViewController {
-                quizViewController.prepareData(quiz: todayQuizs[indexPath.row])
-                navigationController?.pushViewController(quizViewController, animated: true)
+            if todayQuizs[indexPath.item].quizState == .unsolved {
+                if let quizViewController = storyboard.instantiateViewController(withIdentifier: "QuizView") as? QuizViewController {
+                    quizViewController.prepareData(quiz: todayQuizs[indexPath.row])
+                    navigationController?.pushViewController(quizViewController, animated: true)
+                }
+            } else {
+                if let quizDetailViewController = storyboard.instantiateViewController(withIdentifier: "QuizDetailView") as? QuizDetailViewController {
+                    quizDetailViewController.prepareData(quiz : todayQuizs[indexPath.row])
+                    navigationController?.pushViewController(quizDetailViewController, animated: true)
+                }
             }
         }
     }
