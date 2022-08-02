@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CloudKit
 
 struct TodayQuizLayoutValue {
     enum CornerRadius {
@@ -18,21 +19,21 @@ struct TodayQuizLayoutValue {
 }
 
 final class TodayQuizViewController: UIViewController {
-
+    
     @IBOutlet weak var todayQuizCollectionView: UICollectionView!
     @IBOutlet weak var userImageView: UIImageView!
     @IBOutlet weak var userLevelLabel: UILabel!
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var userExpLabel: UIProgressView!
-        
+    
     var currentHour: Int = 0
     var openTimes = [8, 12, 18]
     private let data = HistoryData.shared
     var todayQuizs: [Quiz] = []
-
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-
+        
         let formatter = DateFormatter()
         formatter.dateFormat = "HH"
         currentHour = Int(formatter.string(from: Date())) ?? 0
@@ -43,38 +44,42 @@ final class TodayQuizViewController: UIViewController {
             let todayFiltered = self.data.rawQuizsByDate.filter {
                 return self.isSameDay(date1: $0.key, date2: Date())
             }
+            self.todayQuizs.removeAll()
             if todayFiltered.count == 0 {
                 NetworkService.requestTodayQuiz { result in
-                    DispatchQueue.main.async { [weak self] in
-                        switch result {
-                        case .success(let todayQuizs):
-                            for todayQuiz in todayQuizs {
-                                let currentDate = Date()
-                                var quizWithPublishDate = todayQuiz
-                                quizWithPublishDate.publishedDate = currentDate
-                                ICloudService.createNewHistoryQUiz(newQuiz: quizWithPublishDate) { record in
-                                    print("new quiz Saved")
-                                    self?.loadHistoryCollectionView {
-                                        var newQuiz = todayQuiz
-                                        newQuiz.recordName = record.recordID.recordName
-                                        newQuiz.publishedDate = currentDate
-                                        self?.todayQuizs.append(newQuiz)
-                                        DispatchQueue.main.async {
-                                            self?.todayQuizCollectionView.reloadData()
-                                            self?.stopIndicatingActivity()
+                    switch result {
+                    case .success(let todayQuizs):
+                        for todayQuiz in todayQuizs {
+                            let currentDate = Date()
+                            var quizWithPublishDate = todayQuiz
+                            quizWithPublishDate.publishedDate = currentDate
+                            ICloudService.createNewHistoryQUiz(newQuiz: quizWithPublishDate) { record in
+                                var newQuiz = todayQuiz
+                                newQuiz.recordName = record.recordID.recordName
+                                newQuiz.publishedDate = currentDate
+                                self.todayQuizs.append(todayQuiz)
+                                if self.todayQuizs.count >= 3 {
+                                    DispatchQueue.main.async {
+                                        self.todayQuizs.sort {
+                                            $0.quizID < $1.quizID
                                         }
+                                        self.todayQuizCollectionView.reloadData()
+                                        self.stopIndicatingActivity()
                                     }
                                 }
                             }
-                        case .failure(let error):
-                            self?.showAlertController(title: "네트워크 에러", message: "Error: \(error)")
                         }
+                    case .failure(let error):
+                        self.showAlertController(title: "네트워크 에러", message: "Error: \(error)")
                     }
                 }
             } else {
                 DispatchQueue.main.async {
                     for todayFilteredQuiz in todayFiltered {
                         self.todayQuizs = todayFilteredQuiz.value
+                        self.todayQuizs.sort {
+                            $0.quizID < $1.quizID
+                        }
                     }
                     self.todayQuizCollectionView.reloadData()
                     self.stopIndicatingActivity()
@@ -157,12 +162,12 @@ private extension TodayQuizViewController {
             let item = NSCollectionLayoutItem(layoutSize: itemSize)
             
             item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 11, trailing: 0)
-
+            
             let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: itemSize.heightDimension)
             
             let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 1)
             group.contentInsets = NSDirectionalEdgeInsets(top: 20, leading: 0, bottom: 20, trailing: 0)
-
+            
             let section = NSCollectionLayoutSection(group: group)
             return section
         }
@@ -199,7 +204,7 @@ extension TodayQuizViewController: UICollectionViewDataSource{
         return todayQuizs.count
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {        
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if todayQuizs[indexPath.item].quizType == QuizType.blank && todayQuizs[indexPath.item].quizState == .unsolved {
             let cell = todayQuizCollectionView.dequeueReusableCell(withReuseIdentifier: "todayQuizBlankCell", for: indexPath) as! QuizTypeBlank
             cell.data = self.todayQuizs[indexPath.item]
@@ -261,7 +266,7 @@ private extension TodayQuizViewController {
         openTimeLabel.attributedText = fullString
         return openTimeLabel
     }
-
+    
     func applySecretEffect(cell: UICollectionViewCell, hour: Int) {
         let visualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .regular))
         cell.addSubview(visualEffectView)

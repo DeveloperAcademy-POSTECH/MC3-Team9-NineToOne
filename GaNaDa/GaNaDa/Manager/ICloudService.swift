@@ -35,6 +35,20 @@ extension ICloudService {
         }
     }
     
+    static func createNewHistoryQUizs(newQuizs: [Quiz], completion: @escaping ([CKRecord]) -> Void) {
+        for newQuiz in newQuizs {
+            let newQuizData: [String : Any] = ["quizID": newQuiz.quizID,
+                                               "question": newQuiz.question,
+                                               "type": newQuiz.typeRawValue,
+                                               "rightAnswer": newQuiz.rightAnswer,
+                                               "wrongAnswer": newQuiz.wrongAnswer,
+                                               "description": newQuiz.description,
+                                               "example": newQuiz.example,
+                                               "status": newQuiz.stateRawValue,
+                                               "publishedDate": newQuiz.publishedDate ?? Date()]
+        }
+    }
+    
     static func requestAllHistoryQuizs(completion: @escaping (_ quizs: [Quiz]) -> Void) {
         var quizs: [Quiz] = []
         manager.requestCloudData(record: "QuizHistory") { records in
