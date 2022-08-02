@@ -9,6 +9,7 @@ import UIKit
 
 class QuizDetailViewController: UIViewController {
     private var quiz: Quiz!
+    private var isSolved: Bool = false
     
     // Choice
     @IBOutlet weak var choiceQuizStack: UIStackView!
@@ -30,7 +31,7 @@ class QuizDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureView()
-        setNavigationBar(navigationTitle: "퀴즈해설", hidesBackButton: true)
+        setNavigationBar(navigationTitle: "해설", popGesture: isSolved, hidesBackButton: !isSolved)
         fetchQuizDetail()
     }
     
@@ -84,8 +85,9 @@ class QuizDetailViewController: UIViewController {
     }
     
     // MARK: - Methods
-    public func prepareData(quiz: Quiz = .previewChoice) {
+    public func prepareData(quiz: Quiz = .previewChoice, isSolved: Bool = false) {
         self.quiz = quiz
+        self.isSolved = isSolved
     }
     
     @IBAction func tapToHome(_ sender: UIButton) {
