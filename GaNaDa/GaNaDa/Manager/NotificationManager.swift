@@ -44,13 +44,13 @@ enum NotificationManager {
                 dateComponents2.calendar = Calendar.current
                 dateComponents2.hour = 12
                 let trigger2 = UNCalendarNotificationTrigger(dateMatching: dateComponents2, repeats: true)
-                let request2 =  UNNotificationRequest(identifier: "secondPush", content: content, trigger: trigger2)
+                let request2 =  UNNotificationRequest(identifier: "secondPush", content: content2, trigger: trigger2)
                 
                 var dateComponents3 = DateComponents()
                 dateComponents3.calendar = Calendar.current
                 dateComponents3.hour = 18
                 let trigger3 = UNCalendarNotificationTrigger(dateMatching: dateComponents3, repeats: true)
-                let request3 =  UNNotificationRequest(identifier: "thirdPush", content: content, trigger: trigger3)
+                let request3 =  UNNotificationRequest(identifier: "thirdPush", content: content3, trigger: trigger3)
                 
                 UNUserNotificationCenter.current().add(request)
                 UNUserNotificationCenter.current().add(request2)
