@@ -106,12 +106,25 @@ private extension HistoryViewController {
             self.data.semaphore = true
             self.data.quizsByDate = self.data.rawQuizsByDateExceptToday
             ICloudService.requestAllHistoryQuizs() { quizs in
-                self.data.quizs = quizs
-                self.data.rawQuizsByDate = quizs.sliced(by: [.year, .month, .day], for: \.publishedDate).sorted {  $0.key > $1.key }
+                self.data.quizs = quizs.sorted(by: { $0.quizID < $1.quizID })
+                self.data.rawQuizsByDate = self.data.quizs.sliced(by: [.year, .month, .day], for: \.publishedDate).sorted {  $0.key > $1.key }
                 
-                self.data.rawQuizsByDateExceptToday = self.data.rawQuizsByDate .filter({
-                    return !self.isSameDay(date1: $0.key, date2: Date())
+                var todayCompleted: [Quiz] = []
+                self.data.rawQuizsByDateExceptToday = self.data.rawQuizsByDate.filter({
+                    if self.isSameDay(date1: $0.key, date2: Date()) {
+                        todayCompleted = $0.value.filter {
+                            $0.stateRawValue != 0
+                        }.sorted(by: {
+                            $0.quizID < $1.quizID
+                        })
+                        return false
+                    } else {
+                        return true
+                    }
                 })
+                let todayCompletedDic = todayCompleted.sliced(by: [.year, .month, .day], for: \.publishedDate).sorted {  $0.key > $1.key }
+                self.data.rawQuizsByDateExceptToday.insert(contentsOf: todayCompletedDic, at: 0)
+                
                 DispatchQueue.main.async {
                     self.data.quizsByDate = self.data.rawQuizsByDateExceptToday
                     self.data.semaphore = false
@@ -216,12 +229,12 @@ extension HistoryViewController: UICollectionViewDataSource {
             guard let cell = historyCollectionView.collectionView.dequeueReusableCell(withReuseIdentifier: "todayQuizBlankCell", for: indexPath) as? QuizTypeBlank
             else { return UICollectionViewCell() }
             cell.data = data.quizsByDate[indexPath.section].value[indexPath.row]
-            cell.quizIndex.text = "문제 \(indexPath.item + 1)"
+            cell.quizIndex.text = "문제 \((data.quizsByDate[indexPath.section].value[indexPath.row].quizID - 1) % 3 + 1)"
             return cell
         } else if data.quizsByDate[indexPath.section].value[indexPath.row].stateRawValue == 0, data.quizsByDate[indexPath.section].value[indexPath.row].typeRawValue == 1  {
             guard let cell = historyCollectionView.collectionView.dequeueReusableCell(withReuseIdentifier: QuizType2CollectionViewCell.id, for: indexPath) as? QuizType2CollectionViewCell
             else { return UICollectionViewCell() }
-            cell.setQuiz(quizNum: (indexPath.row) + 1, quiz: data.quizsByDate[indexPath.section].value[indexPath.row])
+            cell.setQuiz(quizNum: (data.quizsByDate[indexPath.section].value[indexPath.row].quizID - 1) % 3 + 1, quiz: data.quizsByDate[indexPath.section].value[indexPath.row])
             return cell
             
         } else if data.quizsByDate[indexPath.section].value[indexPath.row].typeRawValue == 0  {

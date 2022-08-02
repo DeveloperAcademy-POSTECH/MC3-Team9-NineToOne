@@ -58,7 +58,7 @@ final class TodayQuizViewController: UIViewController {
                                 var newQuiz = todayQuiz
                                 newQuiz.recordName = record.recordID.recordName
                                 newQuiz.publishedDate = currentDate
-                                self.todayQuizs.append(todayQuiz)
+                                self.todayQuizs.append(newQuiz)
                                 if self.todayQuizs.count >= 3 {
                                     DispatchQueue.main.async {
                                         self.todayQuizs.sort {
@@ -113,6 +113,7 @@ final class TodayQuizViewController: UIViewController {
     func requestUserData() {
         let userExp = UserDefaultManager.userExp
         let userName = UserDefaultManager.userName
+        ICloudService.fetchUserExp()
         userImageView.image = LevelCase.level(exp: userExp).levelImage
         userLevelLabel.text = LevelCase.level(exp: userExp).rawValue
         userNameLabel.text = userName
@@ -130,12 +131,26 @@ final class TodayQuizViewController: UIViewController {
         if self.data.semaphore == false {
             self.data.semaphore = true
             ICloudService.requestAllHistoryQuizs() { quizs in
-                self.data.quizs = quizs
-                self.data.rawQuizsByDate = quizs.sliced(by: [.year, .month, .day], for: \.publishedDate).sorted {  $0.key > $1.key }
+                self.data.quizs = quizs.sorted(by: { $0.quizID < $1.quizID })
+                self.data.rawQuizsByDate = self.data.quizs.sliced(by: [.year, .month, .day], for: \.publishedDate).sorted {  $0.key > $1.key }
                 self.data.quizsByDate = self.data.rawQuizsByDate
+                 
+                var todayCompleted: [Quiz] = []
                 self.data.rawQuizsByDateExceptToday = self.data.rawQuizsByDate.filter({
-                    return !self.isSameDay(date1: $0.key, date2: Date())
+                    if self.isSameDay(date1: $0.key, date2: Date()) {
+                        todayCompleted = $0.value.filter {
+                            $0.stateRawValue != 0
+                        }.sorted(by: {
+                            $0.quizID < $1.quizID
+                        })
+                        return false
+                    } else {
+                        return true
+                    }
                 })
+                
+                let todayCompletedDic = todayCompleted.sliced(by: [.year, .month, .day], for: \.publishedDate).sorted {  $0.key > $1.key }
+                self.data.rawQuizsByDateExceptToday.insert(contentsOf: todayCompletedDic, at: 0)
                 completion()
                 self.data.semaphore = false
             }
@@ -209,7 +224,7 @@ extension TodayQuizViewController: UICollectionViewDataSource{
         if todayQuizs[indexPath.item].quizType == QuizType.blank && todayQuizs[indexPath.item].quizState == .unsolved {
             let cell = todayQuizCollectionView.dequeueReusableCell(withReuseIdentifier: "todayQuizBlankCell", for: indexPath) as! QuizTypeBlank
             cell.data = self.todayQuizs[indexPath.item]
-            cell.quizIndex.text = "문제 \(indexPath.item + 1)"
+            cell.quizIndex.text = "문제 \((todayQuizs[indexPath.item].quizID - 1) % 3 + 1)"
             
             if let openTimeLabel = cell.subviews.last as? UILabel {
                 openTimeLabel.removeFromSuperview()
@@ -232,7 +247,7 @@ extension TodayQuizViewController: UICollectionViewDataSource{
         } else if todayQuizs[indexPath.item].quizType == QuizType.choice && todayQuizs[indexPath.item].quizState == .unsolved {
             guard let cell = todayQuizCollectionView.dequeueReusableCell(withReuseIdentifier: QuizType2CollectionViewCell.id, for: indexPath) as? QuizType2CollectionViewCell
             else { return UICollectionViewCell() }
-            cell.setQuiz(quizNum: (indexPath.row) + 1, quiz: todayQuizs[indexPath.row])
+            cell.setQuiz(quizNum: (todayQuizs[indexPath.row].quizID - 1) % 3 + 1, quiz: todayQuizs[indexPath.row])
             if let openTimeLabel = cell.subviews.last as? UILabel {
                 openTimeLabel.removeFromSuperview()
                 if let visualEffectView = cell.subviews.last as? UIVisualEffectView {

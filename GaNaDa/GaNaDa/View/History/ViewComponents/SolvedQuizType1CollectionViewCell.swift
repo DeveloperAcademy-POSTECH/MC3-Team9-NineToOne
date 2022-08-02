@@ -29,7 +29,7 @@ extension SolvedQuizType1CollectionViewCell {
     }
     
     func setBlankQuiz (indexPath: IndexPath, quiz: Quiz) {
-        quizIndexLabel.text = "문제 \(indexPath.row + 1)"
+        quizIndexLabel.text = "문제 \((quiz.quizID - 1) % 3 + 1)"
         quizContent.text = makeQuestion(question: quiz.question, rightAnswer: quiz.rightAnswer, wrongAnswer: quiz.wrongAnswer)
         quizContent.setTargetStringUI(rightAnswer: quiz.rightAnswer, wrongAnswer: quiz.wrongAnswer)
         if quiz.stateRawValue == 1 {
