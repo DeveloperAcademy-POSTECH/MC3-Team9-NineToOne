@@ -27,7 +27,7 @@ final class TodayQuizViewController: UIViewController {
     @IBOutlet weak var userExpLabel: UIProgressView!
     
     var currentHour: Int = 0
-    var openTimes = [8, 12, 18]
+    var openTimes = [0, 0, 0]
     private let data = HistoryData.shared
     var todayQuizs: [Quiz] = []
     
