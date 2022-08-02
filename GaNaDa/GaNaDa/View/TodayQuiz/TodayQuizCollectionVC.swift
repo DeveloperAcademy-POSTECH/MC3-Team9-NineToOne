@@ -192,7 +192,7 @@ extension TodayQuizViewController: UICollectionViewDelegate {
                 }
             } else {
                 if let quizDetailViewController = storyboard.instantiateViewController(withIdentifier: "QuizDetailView") as? QuizDetailViewController {
-                    quizDetailViewController.prepareData(quiz : todayQuizs[indexPath.row])
+                    quizDetailViewController.prepareData(quiz : todayQuizs[indexPath.row], isSolved: true)
                     navigationController?.pushViewController(quizDetailViewController, animated: true)
                 }
             }
