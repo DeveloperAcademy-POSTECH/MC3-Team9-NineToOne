@@ -17,10 +17,10 @@ final class ICloudManager {
     
     func fetchRecordState(record: String, newState: Int, completion: @escaping () -> Void) {
         let recordID = CKRecord.ID(recordName: record)
-        container.publicCloudDatabase.fetch(withRecordID: recordID) { record, error in
+        container.privateCloudDatabase.fetch(withRecordID: recordID) { record, error in
             if let record = record, error == nil {
                 record.setValue(newState, forKey: "status")
-                self.container.publicCloudDatabase.save(record) { _, error in
+                self.container.privateCloudDatabase.save(record) { _, error in
                     if error != nil {
                         print("fetch error")
                     }
@@ -32,7 +32,7 @@ final class ICloudManager {
     func createCloudData(record: String, postValue: [String: Any], completion: @escaping (CKRecord) -> Void) {
         let record = CKRecord(recordType: record)
         record.setValuesForKeys(postValue)
-        container.publicCloudDatabase.save(record) { record, error in
+        container.privateCloudDatabase.save(record) { record, error in
             if let error = error {
                 print(error)
             } else {
@@ -49,7 +49,7 @@ final class ICloudManager {
         let query = CKQuery(recordType: record, predicate: predicate)
         query.sortDescriptors = [NSSortDescriptor(key: "quizID", ascending: false)]
         let operation = CKQueryOperation(query: query)
-        operation.database = container.publicCloudDatabase
+        operation.database = container.privateCloudDatabase
         
         if #available(iOS 15.0, *) {
             operation.recordMatchedBlock = { recordID, result in
