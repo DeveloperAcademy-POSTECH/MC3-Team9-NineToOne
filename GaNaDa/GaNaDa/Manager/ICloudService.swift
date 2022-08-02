@@ -14,6 +14,12 @@ enum ICloudService {
 
 extension ICloudService {
     
+    static func fetchUserExp() {
+        manager.requestCloudData(record: "Users") { records in
+            print(records)
+        }
+    }
+    
     static func fetchHistoryQuiz(record: String, newState: Int, completion: @escaping () -> Void) {
         manager.fetchRecordState(record: record, newState: newState) {
             completion()
@@ -32,20 +38,6 @@ extension ICloudService {
                                            "publishedDate": newQuiz.publishedDate ?? Date()]
         manager.createCloudData(record: "QuizHistory", postValue: newQuizData) { record in
             completion(record)
-        }
-    }
-    
-    static func createNewHistoryQUizs(newQuizs: [Quiz], completion: @escaping ([CKRecord]) -> Void) {
-        for newQuiz in newQuizs {
-            let newQuizData: [String : Any] = ["quizID": newQuiz.quizID,
-                                               "question": newQuiz.question,
-                                               "type": newQuiz.typeRawValue,
-                                               "rightAnswer": newQuiz.rightAnswer,
-                                               "wrongAnswer": newQuiz.wrongAnswer,
-                                               "description": newQuiz.description,
-                                               "example": newQuiz.example,
-                                               "status": newQuiz.stateRawValue,
-                                               "publishedDate": newQuiz.publishedDate ?? Date()]
         }
     }
     
