@@ -36,7 +36,7 @@ extension SolvedQuizType2CollectionViewCell {
     }
     
     func setChoiceQuiz(indexPath: IndexPath, quiz: Quiz) {
-        quizIndexLabel.text = "문제 \(indexPath.row + 1)"
+        quizIndexLabel.text = "문제 \((quiz.quizID - 1) % 3 + 1)"
         rightAnswerLabel.text = quiz.rightAnswer
         wrongAnswerLabel.text = quiz.wrongAnswer
         wrongAnswerLabel.setTargetStringStrikeThrough(targetString: quiz.wrongAnswer, color: .black)
