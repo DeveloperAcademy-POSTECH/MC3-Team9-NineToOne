@@ -1,5 +1,5 @@
 # MC3-Team9-NineToOne
-![Logo](https://dummyimage.com/1000x300/000/fff.png)
+![gitCover](https://user-images.githubusercontent.com/52963399/182272711-5c61ab70-bb4a-4d89-a242-993b6416f1f2.svg)
 
 ## 📌 Features
 

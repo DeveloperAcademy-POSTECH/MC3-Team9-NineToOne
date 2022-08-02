@@ -27,7 +27,7 @@ final class TodayQuizViewController: UIViewController {
     @IBOutlet weak var userExpLabel: UIProgressView!
     
     var currentHour: Int = 0
-    var openTimes = [8, 12, 18]
+    var openTimes = [0, 0, 0]
     private let data = HistoryData.shared
     var todayQuizs: [Quiz] = []
     
@@ -40,6 +40,7 @@ final class TodayQuizViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        requestUserData()
         loadHistoryCollectionView {
             let todayFiltered = self.data.rawQuizsByDate.filter {
                 return self.isSameDay(date1: $0.key, date2: Date())
