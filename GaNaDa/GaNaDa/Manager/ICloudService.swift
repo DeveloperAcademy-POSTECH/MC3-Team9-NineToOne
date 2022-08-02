@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CloudKit
 
 enum ICloudService {
     static private let manager = ICloudManager(id: "iCloud.GaNaDaCloud")
@@ -19,7 +20,7 @@ extension ICloudService {
         }
     }
     
-    static func createNewHistoryQUiz(newQuiz: Quiz, completion: @escaping () -> Void) {
+    static func createNewHistoryQUiz(newQuiz: Quiz, completion: @escaping (CKRecord) -> Void) {
         let newQuizData: [String : Any] = ["quizID": newQuiz.quizID,
                                            "question": newQuiz.question,
                                            "type": newQuiz.typeRawValue,
@@ -29,8 +30,8 @@ extension ICloudService {
                                            "example": newQuiz.example,
                                            "status": newQuiz.stateRawValue,
                                            "publishedDate": newQuiz.publishedDate ?? Date()]
-        manager.createCloudData(record: "QuizHistory", postValue: newQuizData) {
-            completion()
+        manager.createCloudData(record: "QuizHistory", postValue: newQuizData) { record in
+            completion(record)
         }
     }
     

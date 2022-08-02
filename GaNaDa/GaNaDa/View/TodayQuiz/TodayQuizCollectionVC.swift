@@ -49,11 +49,19 @@ final class TodayQuizViewController: UIViewController {
                         switch result {
                         case .success(let todayQuizs):
                             for todayQuiz in todayQuizs {
-                                ICloudService.createNewHistoryQUiz(newQuiz: todayQuiz) {
+                                let currentDate = Date()
+                                var quizWithPublishDate = todayQuiz
+                                quizWithPublishDate.publishedDate = currentDate
+                                ICloudService.createNewHistoryQUiz(newQuiz: quizWithPublishDate) { record in
                                     print("new quiz Saved")
                                     self?.loadHistoryCollectionView {
-                                        for todayFilteredQuiz in todayFiltered {
-                                            self?.todayQuizs = todayFilteredQuiz.value
+                                        var newQuiz = todayQuiz
+                                        newQuiz.recordName = record.recordID.recordName
+                                        newQuiz.publishedDate = currentDate
+                                        self?.todayQuizs.append(newQuiz)
+                                        DispatchQueue.main.async {
+                                            self?.todayQuizCollectionView.reloadData()
+                                            self?.stopIndicatingActivity()
                                         }
                                     }
                                 }
@@ -61,8 +69,6 @@ final class TodayQuizViewController: UIViewController {
                         case .failure(let error):
                             self?.showAlertController(title: "네트워크 에러", message: "Error: \(error)")
                         }
-                        self?.todayQuizCollectionView.reloadData()
-                        self?.stopIndicatingActivity()
                     }
                 }
             } else {
